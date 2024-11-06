@@ -19,7 +19,7 @@ const TopRate = () => {
                 <div class="col-xl-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="top-rating-box-item ">
                         <div class="book-thumb">
-                            <a href="shop-details.html">
+                            <a href="/Single/:id">
                                 <img src="assets/img/top-book/01.png" alt="Top book image"/>
                             </a>
                         </div>
@@ -27,12 +27,12 @@ const TopRate = () => {
                             <div class="title-header">
                                 <div>
                                     <h5>Design Low Book</h5>
-                                    <h3><a href="shop-details.html">Simple Things You To Save BOOK</a></h3>
+                                    <h3><a href="/Single/:id">Simple Things You To Save BOOK</a></h3>
                                 </div>
                                 <ul class="shop-icon d-flex justify-content-center align-items-center">
-                                    <li><a href="shop-cart.html"><i class="far fa-heart"></i></a></li>
-                                    <li><a href="shop-cart.html"><img class="icon" src="assets/img/icon/shuffle.svg" alt="Shuffle icon"/></a></li>
-                                    <li><a href="shop-details.html"><i class="far fa-eye"></i></a></li>
+                                    <li><a href="/Cart"><i class="far fa-heart"></i></a></li>
+                                    <li><a href="/Cart"><img class="icon" src="assets/img/icon/shuffle.svg" alt="Shuffle icon"/></a></li>
+                                    <li><a href="/Single/:id"><i class="far fa-eye"></i></a></li>
                                 </ul>
                             </div>
                             <span class="mt-10">$30.00</span>
@@ -50,7 +50,7 @@ const TopRate = () => {
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <a href="shop-details.html" class="theme-btn">
+                                <a href="/Single/:id" class="theme-btn">
                                     <i class="fa-solid fa-basket-shopping"></i> Add To Cart
                                 </a>
                             </div>

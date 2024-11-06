@@ -81,9 +81,9 @@ const Footer = () => {
               </div>
               <ul className="list-area">
                 <li><a href="shop.html"><i className="fa-solid fa-chevron-right"></i> Store List</a></li>
-                <li><a href="contact.html"><i className="fa-solid fa-chevron-right"></i> Opening Hours</a></li>
-                <li><a href="contact.html"><i className="fa-solid fa-chevron-right"></i> Contact Us</a></li>
-                <li><a href="contact.html"><i className="fa-solid fa-chevron-right"></i> Return Policy</a></li>
+                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Opening Hours</a></li>
+                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Return Policy</a></li>
               </ul>
             </div>
           </div>
@@ -95,8 +95,8 @@ const Footer = () => {
               <ul className="list-area">
                 <li><a href="shop.html"><i className="fa-solid fa-chevron-right"></i> Novel Books</a></li>
                 <li><a href="shop.html"><i className="fa-solid fa-chevron-right"></i> Poetry Books</a></li>
-                <li><a href="contact.html"><i className="fa-solid fa-chevron-right"></i> Political Books</a></li>
-                <li><a href="contact.html"><i className="fa-solid fa-chevron-right"></i> History Books</a></li>
+                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Political Books</a></li>
+                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> History Books</a></li>
               </ul>
             </div>
           </div>
@@ -126,10 +126,10 @@ const Footer = () => {
             © All Rights Reserved 2024 by <a href="index.html">Bookle</a>
           </p>
           <ul className="brand-logo wow fadeInRight" data-wow-delay=".5s">
-            <li><a href="contact.html"><img src="assets/img/visa-logo.png" alt="img" /></a></li>
-            <li><a href="contact.html"><img src="assets/img/mastercard.png" alt="img" /></a></li>
-            <li><a href="contact.html"><img src="assets/img/payoneer.png" alt="img" /></a></li>
-            <li><a href="contact.html"><img src="assets/img/affirm.png" alt="img" /></a></li>
+            <li><a href="ContactUs"><img src="assets/img/visa-logo.png" alt="img" /></a></li>
+            <li><a href="ContactUs"><img src="assets/img/mastercard.png" alt="img" /></a></li>
+            <li><a href="ContactUs"><img src="assets/img/payoneer.png" alt="img" /></a></li>
+            <li><a href="ContactUs"><img src="assets/img/affirm.png" alt="img" /></a></li>
           </ul>
         </div>
       </div>

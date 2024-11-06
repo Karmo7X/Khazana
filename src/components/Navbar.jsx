@@ -21,8 +21,8 @@ const Navbar = () => {
                 <div class="offcanvas__content">
                     <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                         <div class="offcanvas__logo">
-                            <a href="index.html">
-                                {/* <img  src={logo} className="w-50" alt="logo-img"/> */}
+                            <a href="/">
+                            <img  src={logo} className="w-50" alt="logo-img"/>
                             </a>
                         </div>
                         <div class="offcanvas__close">
@@ -74,7 +74,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                         <div class="header-button mt-4">
-                            <a href="contact.html" class="theme-btn text-center">
+                            <a href="ContactUs" class="theme-btn text-center">
                                 Get A Quote <i class="fa-solid fa-arrow-right-long"></i>
                             </a>
                         </div>
@@ -109,7 +109,9 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <ul class="list">
-                    <li><i class="fa-light fa-comments"></i><a href="contact.html">Live Chat</a></li>
+                    <li>
+                        {/* <i class="fa-light fa-comments"></i><a href="ContactUs">Live Chat</a> */}
+                        </li>
                     <li><i class="fa-light fa-user"></i>
                         <button data-bs-toggle="modal" data-bs-target="#loginModal">
                             Login
@@ -144,41 +146,18 @@ const Navbar = () => {
                                                    
                                                 </li>
                                                 <li>
-                                                    <a href="shop.html">
-                                                        Shop
-                                                        <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="shop.html">Shop Default</a></li>
-                                                        <li><a href="shop-list.html">Shop List</a></li>
-                                                        <li><a href="shop-details.html">Shop Details</a></li>
-                                                        <li><a href="shop-cart.html">Shop Cart</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                    </ul>
+                                                <Link to="/Shop">
+                                                        Shop  
+                                                    </Link>
                                                 </li>
                                                 <li class="has-dropdown">
-                                                    <a href="about.html">
-                                                        Pages
-                                                        <i class="fas fa-angle-down"></i>
+                                                    <a href="AboutUs">
+                                                       About US
+                                                       
                                                     </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="about.html">About Us</a></li>
-                                                        <li class="has-dropdown">
-                                                            <a href="team.html">
-                                                                Author
-                                                                <i class="fas fa-angle-down"></i>
-                                                            </a>
-                                                            <ul class="submenu">
-                                                                <li><a href="team.html">Author</a></li>
-                                                                <li><a href="team-details.html">Author Profile</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><a href="faq.html">Faq's</a></li>
-                                                        <li><a href="404.html">404 Page</a></li>
-                                                    </ul>
+                                                    
                                                 </li>
-                                                <li>
+                                                {/* <li>
                                                     <a href="news.html">
                                                         Blog
                                                         <i class="fas fa-angle-down"></i>
@@ -188,9 +167,9 @@ const Navbar = () => {
                                                         <li><a href="news.html">Blog List</a></li>
                                                         <li><a href="news-details.html">Blog Details</a></li>
                                                     </ul>
-                                                </li>
+                                                </li> */}
                                                 <li>
-                                                    <a href="contact.html">Contact</a>
+                                                    <a href="ContactUs">Contact</a>
                                                 </li>
                                             </ul>
                                         </nav>
@@ -231,12 +210,16 @@ const Navbar = () => {
                                     </form>
                                 </div>
                                 <div class="menu-cart">
-                                    <a href="wishlist.html" class="cart-icon">
+                                    <a href="Wishlist" class="cart-icon">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
-                                    <a href="shop-cart.html" class="cart-icon">
+                                    <a href="/Cart" class="cart-icon">
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </a>
+                                    <a href="/Profile" class="profile-icon">
+                                    <i class="fa-light fa-user"></i>
+                                    </a>
+                                   
                                     <div class="header-humbager ml-30">
                                         <a class="sidebar__toggle" href="javascript:void(0)">
                                             <div class="bar-icon-2">
@@ -278,41 +261,19 @@ const Navbar = () => {
                                                     </Link> 
                                                 </li>
                                                 <li>
-                                                    <a href="shop.html">
-                                                        Shop
-                                                        <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="shop.html">Shop Default</a></li>
-                                                        <li><a href="shop-list.html">Shop List</a></li>
-                                                        <li><a href="shop-details.html">Shop Details</a></li>
-                                                        <li><a href="shop-cart.html">Shop Cart</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                    </ul>
+                                                <Link to="/Shop">
+                                                        Shop  
+                                                    </Link>
+                                                   
                                                 </li>
                                                 <li class="has-dropdown">
-                                                    <a href="about.html">
-                                                        Pages
-                                                        <i class="fas fa-angle-down"></i>
+                                                    <a href="AboutUs">
+                                                       About US
+                                                        
                                                     </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="about.html">About Us</a></li>
-                                                        <li class="has-dropdown">
-                                                            <a href="team.html">
-                                                                Author
-                                                                <i class="fas fa-angle-down"></i>
-                                                            </a>
-                                                            <ul class="submenu">
-                                                                <li><a href="team.html">Author</a></li>
-                                                                <li><a href="team-details.html">Author Profile</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><a href="faq.html">Faq's</a></li>
-                                                        <li><a href="404.html">404 Page</a></li>
-                                                    </ul>
+                                                   
                                                 </li>
-                                                <li>
+                                                {/* <li>
                                                     <a href="news.html">
                                                         Blog
                                                         <i class="fas fa-angle-down"></i>
@@ -322,9 +283,9 @@ const Navbar = () => {
                                                         <li><a href="news.html">Blog List</a></li>
                                                         <li><a href="news-details.html">Blog Details</a></li>
                                                     </ul>
-                                                </li>
+                                                </li> */}
                                                 <li>
-                                                    <a href="contact.html">Contact</a>
+                                                    <a href="ContactUs">Contact</a>
                                                 </li>
                                             </ul>
                                         </nav>
@@ -365,11 +326,14 @@ const Navbar = () => {
                                     </form>
                                 </div>
                                 <div class="menu-cart">
-                                    <a href="wishlist.html" class="cart-icon">
+                                    <a href="Wishlist" class="cart-icon">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
-                                    <a href="shop-cart.html" class="cart-icon">
+                                    <a href="/Cart" class="cart-icon">
                                         <i class="fa-regular fa-cart-shopping"></i>
+                                    </a>
+                                    <a href="/Profile" class="profile-icon">
+                                    <i class="fa-light fa-user"></i>
                                     </a>
                                     <div class="header-humbager ml-30">
                                         <a class="sidebar__toggle" href="javascript:void(0)">

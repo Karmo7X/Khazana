@@ -1,6 +1,14 @@
 import React from 'react'
 
+import { Navigation ,Autoplay} from 'swiper/modules';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 
 const authors = [
@@ -19,43 +27,71 @@ const Authors = () => {
     <section className="team-section fix section-padding pt-0 mb-30">
       <div className="container">
         <div className="section-title text-center">
-          <h2 className="mb-3 wow fadeInUp" data-wow-delay=".3s">Featured Author</h2>
-          <p className="wow fadeInUp" data-wow-delay=".5s">
+          <h2 className="mb-3">Featured Author</h2>
+          <p>
             Interdum et malesuada fames ac ante ipsum primis in faucibus. <br />
             Donec at nulla nulla. Duis posuere ex lacus
           </p>
         </div>
 
+        <Swiper
+          modules={[Navigation,Autoplay]}
+          spaceBetween={20}
+          slidesPerView={5}
+          navigation={{
+              nextEl: '.array-next',
+              prevEl: '.array-prev',
+          }}
+          autoplay={{ delay: 2000 }}
+          breakpoints={{
+              0: {
+                slidesPerView: 2,
+              },
+              390: {
+                slidesPerView: 2,
+              },
+              502: {
+                slidesPerView: 2,
+              },
+              802: {
+                slidesPerView: 3,
+              },
+              992: {
+                slidesPerView: 4,
+              },
+              1200: {
+                slidesPerView: 5,
+              },
+            }}
+            loop={true}
+          className="team-slider"
+        >
+          {authors.map((author, index) => (
+            <SwiperSlide key={index} className="swiper-slide">
+              <div className="team-box-items">
+                <div className="team-image">
+                  <div className="thumb">
+                    <img src={`assets/img/team/${author.image}`} alt={`Image of ${author.name}`} />
+                  </div>
+                  <div className="shape-img">
+                    <img src="assets/img/team/shape-img.png" alt="Decorative Shape" />
+                  </div>
+                </div>
+                <div className="team-content text-center">
+                  <h6><a href="team-details.html">{author.name}</a></h6>
+                  <p>{author.books}</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
         <div className="array-button">
           <button className="array-prev"><i className="fal fa-arrow-left"></i></button>
           <button className="array-next"><i className="fal fa-arrow-right"></i></button>
         </div>
-
-        <div className="swiper team-slider">
-          <div className="swiper-wrapper">
-            {authors.map((author, index) => (
-              <div className="swiper-slide" key={index}>
-                <div className="team-box-items">
-                  <div className="team-image">
-                    <div className="thumb">
-                      <img src={`assets/img/team/${author.image}`} alt={`Image of ${author.name}`} />
-                    </div>
-                    <div className="shape-img">
-                      <img src="assets/img/team/shape-img.png" alt="Decorative Shape" />
-                    </div>
-                  </div>
-                  <div className="team-content text-center">
-                    <h6><a href="team-details.html">{author.name}</a></h6>
-                    <p>{author.books}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
-
     </>
   )
 }

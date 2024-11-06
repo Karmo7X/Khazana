@@ -163,21 +163,21 @@ const Home = () => {
                         </ul>
                         <ul className="shop-icon d-grid justify-content-center align-items-center">
                             <li>
-                                <a href="shop-cart.html"><i className="far fa-heart"></i></a>
+                                <a href="/Cart"><i className="far fa-heart"></i></a>
                             </li>
                             <li>
-                                <a href="shop-cart.html">
+                                <a href="/Cart">
                                     <img className="icon" src={'/assets/img/icon/shuffle.svg'} alt="svg-icon" />
                                 </a>
                             </li>
                             <li>
-                                <a href="shop-details.html"><i className="far fa-eye"></i></a>
+                                <a href="/Single/:id"><i className="far fa-eye"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div className="shop-content">
                         <h5>Design Low Book</h5>
-                        <h3><a href="shop-details.html">Simple Things You To <br /> Save BOOK</a></h3>
+                        <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
                             <li>$30.00</li>
                             <li><del>$39.99</del></li>
@@ -199,7 +199,7 @@ const Home = () => {
                         </ul>
                     </div>
                     <div className="shop-button">
-                        <a href="shop-details.html" className="theme-btn">
+                        <a href="/Single/:id" className="theme-btn">
                             <i className="fa-solid fa-basket-shopping"></i> Add To Cart
                         </a>
                     </div>
@@ -217,21 +217,21 @@ const Home = () => {
                         </ul>
                         <ul className="shop-icon d-grid justify-content-center align-items-center">
                             <li>
-                                <a href="shop-cart.html"><i className="far fa-heart"></i></a>
+                                <a href="/Cart"><i className="far fa-heart"></i></a>
                             </li>
                             <li>
-                                <a href="shop-cart.html">
+                                <a href="/Cart">
                                     <img className="icon" src={'/assets/img/icon/shuffle.svg'} alt="svg-icon" />
                                 </a>
                             </li>
                             <li>
-                                <a href="shop-details.html"><i className="far fa-eye"></i></a>
+                                <a href="/Single/:id"><i className="far fa-eye"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div className="shop-content">
                         <h5>Design Low Book</h5>
-                        <h3><a href="shop-details.html">Simple Things You To <br /> Save BOOK</a></h3>
+                        <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
                             <li>$30.00</li>
                             <li><del>$39.99</del></li>
@@ -253,7 +253,7 @@ const Home = () => {
                         </ul>
                     </div>
                     <div className="shop-button">
-                        <a href="shop-details.html" className="theme-btn">
+                        <a href="/Single/:id" className="theme-btn">
                             <i className="fa-solid fa-basket-shopping"></i> Add To Cart
                         </a>
                     </div>
@@ -271,21 +271,21 @@ const Home = () => {
                         </ul>
                         <ul className="shop-icon d-grid justify-content-center align-items-center">
                             <li>
-                                <a href="shop-cart.html"><i className="far fa-heart"></i></a>
+                                <a href="/Cart"><i className="far fa-heart"></i></a>
                             </li>
                             <li>
-                                <a href="shop-cart.html">
+                                <a href="/Cart">
                                     <img className="icon" src={'/assets/img/icon/shuffle.svg'} alt="svg-icon" />
                                 </a>
                             </li>
                             <li>
-                                <a href="shop-details.html"><i className="far fa-eye"></i></a>
+                                <a href="/Single/:id"><i className="far fa-eye"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div className="shop-content">
                         <h5>Design Low Book</h5>
-                        <h3><a href="shop-details.html">Simple Things You To <br /> Save BOOK</a></h3>
+                        <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
                             <li>$30.00</li>
                             <li><del>$39.99</del></li>
@@ -307,7 +307,7 @@ const Home = () => {
                         </ul>
                     </div>
                     <div className="shop-button">
-                        <a href="shop-details.html" className="theme-btn">
+                        <a href="/Single/:id" className="theme-btn">
                             <i className="fa-solid fa-basket-shopping"></i> Add To Cart
                         </a>
                     </div>
@@ -325,21 +325,21 @@ const Home = () => {
                         </ul>
                         <ul className="shop-icon d-grid justify-content-center align-items-center">
                             <li>
-                                <a href="shop-cart.html"><i className="far fa-heart"></i></a>
+                                <a href="/Cart"><i className="far fa-heart"></i></a>
                             </li>
                             <li>
-                                <a href="shop-cart.html">
+                                <a href="/Cart">
                                     <img className="icon" src={'/assets/img/icon/shuffle.svg'} alt="svg-icon" />
                                 </a>
                             </li>
                             <li>
-                                <a href="shop-details.html"><i className="far fa-eye"></i></a>
+                                <a href="/Single/:id"><i className="far fa-eye"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div className="shop-content">
                         <h5>Design Low Book</h5>
-                        <h3><a href="shop-details.html">Simple Things You To <br /> Save BOOK</a></h3>
+                        <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
                             <li>$30.00</li>
                             <li><del>$39.99</del></li>
@@ -361,7 +361,7 @@ const Home = () => {
                         </ul>
                     </div>
                     <div className="shop-button">
-                        <a href="shop-details.html" className="theme-btn">
+                        <a href="/Single/:id" className="theme-btn">
                             <i className="fa-solid fa-basket-shopping"></i> Add To Cart
                         </a>
                     </div>
@@ -379,21 +379,21 @@ const Home = () => {
                         </ul>
                         <ul className="shop-icon d-grid justify-content-center align-items-center">
                             <li>
-                                <a href="shop-cart.html"><i className="far fa-heart"></i></a>
+                                <a href="/Cart"><i className="far fa-heart"></i></a>
                             </li>
                             <li>
-                                <a href="shop-cart.html">
+                                <a href="/Cart">
                                     <img className="icon" src={'/assets/img/icon/shuffle.svg'} alt="svg-icon" />
                                 </a>
                             </li>
                             <li>
-                                <a href="shop-details.html"><i className="far fa-eye"></i></a>
+                                <a href="/Single/:id"><i className="far fa-eye"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div className="shop-content">
                         <h5>Design Low Book</h5>
-                        <h3><a href="shop-details.html">Simple Things You To <br /> Save BOOK</a></h3>
+                        <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
                             <li>$30.00</li>
                             <li><del>$39.99</del></li>
@@ -415,7 +415,7 @@ const Home = () => {
                         </ul>
                     </div>
                     <div className="shop-button">
-                        <a href="shop-details.html" className="theme-btn">
+                        <a href="/Single/:id" className="theme-btn">
                             <i className="fa-solid fa-basket-shopping"></i> Add To Cart
                         </a>
                     </div>
@@ -433,21 +433,21 @@ const Home = () => {
                         </ul>
                         <ul className="shop-icon d-grid justify-content-center align-items-center">
                             <li>
-                                <a href="shop-cart.html"><i className="far fa-heart"></i></a>
+                                <a href="/Cart"><i className="far fa-heart"></i></a>
                             </li>
                             <li>
-                                <a href="shop-cart.html">
+                                <a href="/Cart">
                                     <img className="icon" src={'/assets/img/icon/shuffle.svg'} alt="svg-icon" />
                                 </a>
                             </li>
                             <li>
-                                <a href="shop-details.html"><i className="far fa-eye"></i></a>
+                                <a href="/Single/:id"><i className="far fa-eye"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div className="shop-content">
                         <h5>Design Low Book</h5>
-                        <h3><a href="shop-details.html">Simple Things You To <br /> Save BOOK</a></h3>
+                        <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
                             <li>$30.00</li>
                             <li><del>$39.99</del></li>
@@ -469,7 +469,7 @@ const Home = () => {
                         </ul>
                     </div>
                     <div className="shop-button">
-                        <a href="shop-details.html" className="theme-btn">
+                        <a href="/Single/:id" className="theme-btn">
                             <i className="fa-solid fa-basket-shopping"></i> Add To Cart
                         </a>
                     </div>

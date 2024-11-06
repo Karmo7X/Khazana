@@ -1,4 +1,94 @@
 import React from 'react'
+import { Navigation ,Autoplay} from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+
+
+const books = [
+    {
+        id: 1,
+        image: "assets/img/book/01.png",
+        title: "Simple Things You To Save BOOK",
+        price: "$30.00",
+        discountPrice: "$39.99",
+        authorImage: "assets/img/testimonial/client-1.png",
+        authorName: "Wilson",
+        rating: 4,
+        labels: ["Hot", "-30%"]
+    },
+    {
+        id: 2,
+        image: "assets/img/book/02.png",
+        title: "How Deal With Very Bad BOOK",
+        price: "$30.00",
+        discountPrice: "$39.99",
+        authorImage: "assets/img/testimonial/client-2.png",
+        authorName: "Alexander",
+        rating: 4,
+        labels: ["New"]
+    },
+    {
+        id: 3,
+        image: "assets/img/book/03.png",
+        title: "The Art of Not Giving Up",
+        price: "$25.00",
+        discountPrice: "$29.99",
+        authorImage: "assets/img/testimonial/client-3.png",
+        authorName: "Samantha",
+        rating: 5,
+        labels: ["Best Seller"]
+    },
+    {
+        id: 4,
+        image: "assets/img/book/04.png",
+        title: "Learning React Efficiently",
+        price: "$35.00",
+        discountPrice: "$45.99",
+        authorImage: "assets/img/testimonial/client-4.png",
+        authorName: "David",
+        rating: 3,
+        labels: ["Hot"]
+    },
+    {
+        id: 5,
+        image: "assets/img/book/05.png",
+        title: "Mastering CSS for Beginners",
+        price: "$20.00",
+        discountPrice: "$25.99",
+        authorImage: "assets/img/testimonial/client-5.png",
+        authorName: "Olivia",
+        rating: 4,
+        labels: ["Limited Edition"]
+    },
+    {
+        id: 6,
+        image: "assets/img/book/06.png",
+        title: "JavaScript Essentials",
+        price: "$18.00",
+        discountPrice: "$23.99",
+        authorImage: "assets/img/testimonial/client-6.png",
+        authorName: "Michael",
+        rating: 5,
+        labels: ["New Arrival"]
+    },
+    {
+        id: 7,
+        image: "assets/img/book/07.png",
+        title: "Understanding UX/UI Design",
+        price: "$28.00",
+        discountPrice: "$34.99",
+        authorImage: "assets/img/testimonial/client-7.png",
+        authorName: "Laura",
+        rating: 5,
+        labels: ["Featured"]
+    }
+];
 
 const Shop_sec = () => {
   return (
@@ -13,114 +103,92 @@ const Shop_sec = () => {
                 Explore More <i class="fa-solid fa-arrow-right-long"></i>
             </a>
         </div>
-        <div class="swiper book-slider">
-            <div class="swiper-wrapper">
-                {/* <!-- Book Item Template Start --> */}
-                <div class="swiper-slide">
-                    <div class="shop-box-items style-2">
-                        <div class="book-thumb center">
+        
+      <Swiper 
+            modules={[Navigation,Autoplay]}
+            spaceBetween={20}
+            slidesPerView={5}
+            navigation={{
+                nextEl: '.array-next',
+                prevEl: '.array-prev',
+            }}
+            autoplay={{ delay: 2000 }}
+            breakpoints={{
+                0: {
+                  slidesPerView: 2,
+                },
+                390: {
+                  slidesPerView: 2,
+                },
+                502: {
+                  slidesPerView: 2,
+                },
+                802: {
+                  slidesPerView: 3,
+                },
+                992: {
+                  slidesPerView: 4,
+                },
+                1200: {
+                  slidesPerView: 5,
+                },
+              }}
+        >
+            {books.map((book) => (
+                <SwiperSlide key={book.id}>
+                    <div className="shop-box-items style-2">
+                        <div className="book-thumb center">
                             <a href="shop-details">
-                                <img src="assets/img/book/01.png" alt="img" />
+                                <img src={book.image} alt="Book cover" />
                             </a>
-                            <ul class="post-box">
-                                <li>Hot</li>
-                                <li>-30%</li>
+                            <ul className="post-box">
+                                {book.labels.map((label, index) => (
+                                    <li key={index}>{label}</li>
+                                ))}
                             </ul>
-                            <ul class="shop-icon d-grid justify-content-center align-items-center">
-                                <li><a href="shop-cart.html"><i class="far fa-heart"></i></a></li>
+                            <ul className="shop-icon d-grid justify-content-center align-items-center">
+                                <li><a href="/Cart"><i className="far fa-heart"></i></a></li>
                                 <li>
-                                    <a href="shop-cart.html">
-                                        <img class="icon" src="assets/img/icon/shuffle.svg" alt="svg-icon" />
+                                    <a href="/Cart">
+                                        <img className="icon" src="assets/img/icon/shuffle.svg" alt="svg-icon" />
                                     </a>
                                 </li>
-                                <li><a href="shop-details.html"><i class="far fa-eye"></i></a></li>
+                                <li><a href="/Single/:id"><i className="far fa-eye"></i></a></li>
                             </ul>
                         </div>
-                        <div class="shop-content">
+                        <div className="shop-content">
                             <h5>Design Low Book</h5>
-                            <h3><a href="shop-details.html">Simple Things You To Save BOOK</a></h3>
-                            <ul class="price-list">
-                                <li>$30.00</li>
-                                <li><del>$39.99</del></li>
+                            <h3><a href="/Single/:id">{book.title}</a></h3>
+                            <ul className="price-list">
+                                <li>{book.price}</li>
+                                <li><del>{book.discountPrice}</del></li>
                             </ul>
-                            <ul class="author-post">
-                                <li class="authot-list">
-                                    <span class="thumb">
-                                        <img src="assets/img/testimonial/client-1.png" alt="img" />
+                            <ul className="author-post">
+                                <li className="authot-list">
+                                    <span className="thumb">
+                                        <img src={book.authorImage} alt="Author" />
                                     </span>
-                                    <span class="content">Wilson</span>
+                                    <span className="content">{book.authorName}</span>
                                 </li>
-                                <li class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
+                                <li className="star">
+                                    {[...Array(5)].map((_, i) => (
+                                        <i
+                                            key={i}
+                                            className={i < book.rating ? "fa-solid fa-star" : "fa-regular fa-star"}
+                                        ></i>
+                                    ))}
                                 </li>
                             </ul>
                         </div>
-                        <div class="shop-button">
-                            <a href="shop-details.html" class="theme-btn">
-                                <i class="fa-solid fa-basket-shopping"></i> Add To Cart
+                        <div className="shop-button">
+                            <a href="/Single/:id" className="theme-btn">
+                                <i className="fa-solid fa-basket-shopping"></i> Add To Cart
                             </a>
                         </div>
                     </div>
-                </div>
-                {/* <!-- Book Item Template End -->
-                
-                <!-- Duplicate the above block with unique content for each book --> */}
-                
-                <div class="swiper-slide">
-                    <div class="shop-box-items style-2">
-                        <div class="book-thumb center">
-                            <a href="shop-details">
-                                <img src="assets/img/book/02.png" alt="img" />
-                            </a>
-                            <ul class="shop-icon d-grid justify-content-center align-items-center">
-                                <li><a href="shop-cart.html"><i class="far fa-heart"></i></a></li>
-                                <li>
-                                    <a href="shop-cart.html">
-                                        <img class="icon" src="assets/img/icon/shuffle.svg" alt="svg-icon" />
-                                    </a>
-                                </li>
-                                <li><a href="shop-details.html"><i class="far fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="shop-content">
-                            <h5>Design Low Book</h5>
-                            <h3><a href="shop-details.html">How Deal With Very Bad BOOK</a></h3>
-                            <ul class="price-list">
-                                <li>$30.00</li>
-                                <li><del>$39.99</del></li>
-                            </ul>
-                            <ul class="author-post">
-                                <li class="authot-list">
-                                    <span class="thumb">
-                                        <img src="assets/img/testimonial/client-2.png" alt="img" />
-                                    </span>
-                                    <span class="content">Alexander</span>
-                                </li>
-                                <li class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="shop-button">
-                            <a href="shop-details.html" class="theme-btn">
-                                <i class="fa-solid fa-basket-shopping"></i> Add To Cart
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-            </div>
-        </div>
+                </SwiperSlide>
+            ))}
+        </Swiper>
     </div>
 </section>
 

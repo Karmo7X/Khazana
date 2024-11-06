@@ -65,7 +65,7 @@ const Top_category = () => {
                                     </div>
                                 </div>
                                 <div className="number">{String(id).padStart(2, '0')}</div>
-                                <h3><a href="shop-details.html">{`${title} (${count})`}</a></h3>
+                                <h3><a href="/Single/:id">{`${title} (${count})`}</a></h3>
                             </div>
                         </SwiperSlide>
                     ))}
