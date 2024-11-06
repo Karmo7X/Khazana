@@ -1,0 +1,109 @@
+//>>>>> Component Button Here <<<<<//
+.theme-btn {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    vertical-align: middle;
+    display: inline-block;
+    border: none;
+    text-transform: capitalize;
+    text-align: center;
+    background-color: $theme-color;
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 20px 40px;
+    min-width: 170px;
+    border-radius: 100px;
+
+    i {
+        margin-left: 5px;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        background-color: $theme-color-2;
+        z-index: -1;
+        transition: all 0.4s ease-out;
+        border-radius: inherit;
+    }
+
+    &:hover {
+        color: $white;
+        box-shadow: none;
+
+        &::before {
+            width: 100%;
+        }
+    }
+
+    &.header-bg {
+        background-color: $header-color;
+
+        &::before {
+            background-color: $theme-color;
+        }
+    }
+
+    &.white-bg {
+        background-color: $white;
+        color: $text-color;
+
+        &::before {
+            background-color: $theme-color-2;
+        }
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &.transparent-btn {
+        background-color: transparent;
+        color: $text-color;
+        border: 1px solid rgba(92, 112, 126, 0.30);
+
+        &::before {
+            background-color:  $theme-color-2;
+        }
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+
+    @include breakpoint (max-md){
+        padding: 20px 32px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 18px 30px;
+        font-size: 14px;
+    }
+}
+
+.theme-btn-2 {
+    font-size: 16px;
+    display: inline-block;
+    font-weight: 700;
+    color: $theme-color;
+    text-transform: capitalize;
+
+    i {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        color: $theme-color-2;
+    }
+}
+
+
+//>>>>> Component Button End <<<<<//

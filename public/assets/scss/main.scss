@@ -1,0 +1,86 @@
+/*
+Theme Name: Bookle
+Author: Gramentheme
+Author URI: https://themeforest.net/user/gramentheme
+Description: Bookle - Book Store WooCommerce Html Template 
+Version: 1.0.0
+*/
+/*  CSS Index Here  
+
+*** Mixins
+*** Variables
+*** Buttons
+*** Typography
+*** About
+*** Animation
+*** Contact
+*** Cta
+*** Faq
+*** Feature
+*** Footer
+*** Header
+*** Footer
+*** Helping
+*** Hero
+*** MeanMenu
+*** News
+*** Preloader
+*** Section
+*** Shop
+*** Team
+*** Testimonial   
+
+/*CSS Table Of Content Ends Here*/
+
+//>> Basic Start <<//
+
+//>> Mixins <<//
+@import "_mixins";
+//>> Variables <<//	
+@import "_variables";
+//>> Buttons <<//
+@import "_buttons";
+//>> Typography <<//
+@import "_typography";
+//>> Basic End <<//	
+
+
+//>> Template Section Style Start <<//
+
+//>> About <<//
+@import "_about";
+//>> Animation <<//
+@import "_animation";
+//>> Contact <<//
+@import "_contact";
+//>> Cta <<//
+@import "_cta";
+//>> Faq <<//
+@import "_faq";
+//>> Feature <<//
+@import "_feature";
+//>> Footer <<//
+@import "_footer";
+//>> Header <<//
+@import "_header";
+//>> Helping <<//
+@import "_helping";
+//>> Hero <<//
+@import "_hero";
+//>> MeanMenu <<//
+@import "_meanmenu";
+//>> News <<//
+@import "_news";
+//>> Preloader <<//
+@import "_preloader";
+//>> Section <<//
+@import "_section";
+//>> Shop <<//
+@import "_shop";
+//>> Team <<//
+@import "_team";
+//>> Testimonial <<//
+@import "_testimonial";
+
+
+//>> Template Section Style End <<//

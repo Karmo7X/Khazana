@@ -1,0 +1,127 @@
+/* --------------------------------------------
+    Template Default Fonts & Fonts Styles
+ ---------------------------------------------- */
+
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Moon+Dance&display=swap');
+
+$heading-font: "Inter", sans-serif;
+$body-font: "Inter", sans-serif;
+
+//font-family: "Font Awesome 6 Free";
+$fa: "Font Awesome 6 Pro";
+
+body {
+    font-family: $body-font;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 28px;
+    color: $text-color;
+    background-color: $white;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+	padding: 0;
+}
+
+input:focus{
+	color: $header-color;
+	outline: none;
+}
+
+input{
+	color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font;
+    margin: 0px;
+	padding: 0;
+    color: $header-color;
+	text-transform: capitalize;
+	@include transition;
+}
+
+h1 {
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 120%;
+}
+
+h2 {
+	font-size: 40px;
+	line-height: 145%;
+	font-weight: 700;
+
+	@include breakpoint(max-md){
+		font-size: 34px;
+	}
+
+	@include breakpoint(max-sm){
+		font-size: 28px;
+	}
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 145%;
+
+	@include breakpoint(max-md){
+		font-size: 18px;
+	}
+}
+
+h4 {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 130%;
+}
+
+h5 {
+	font-size: 18px;
+	font-weight: 700;
+}
+
+h6 {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 145%;
+}
+
+a {
+    text-decoration: none;
+    outline: none !important;
+    cursor: pointer;
+    color: $header-color;
+	@include transition;
+	&:hover{
+		color: $theme-color-2;
+	}
+}
+
+p {
+    margin: 0px;
+	@include transition;
+}
+
+span {
+	margin: 0px;
+	@include transition;
+}
+

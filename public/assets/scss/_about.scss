@@ -1,0 +1,74 @@
+.about-wrapper {
+    .about-image {
+        max-width: 728px;
+        position: relative;
+
+        .video-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            .video-btn {
+                background-color: $white;
+                color: $theme-color;
+                display: inline-block;
+                font-size: 16px;
+                height: 90px;
+                width: 90px;
+                line-height: 90px;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 20px;
+
+                @include breakpoint (max-sm){
+                    width: 70px;
+                    height: 70px;
+                    font-size: 16px;
+                    line-height: 70px;
+                }
+            }
+
+            .ripple {
+               &::before,&::after {
+                    height: 90px;
+                    width: 90px;
+                    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+
+                    @include breakpoint (max-sm){
+                        width: 70px;
+                        height: 70px;
+                    }
+               }
+            }
+        }
+
+        img {
+            @include imgw;
+        }
+    }
+
+    .about-content {
+        .link-btn {
+            font-size: 16px;
+            display: inline-block;
+            font-weight: 600;
+            color: $theme-color-2;
+            text-transform: capitalize;
+            text-decoration: underline;
+            margin-top: 25px;
+
+            i {
+                transform: rotate(-40deg);
+                margin-left: 10px;
+                @include transition;
+            }
+
+            &:hover {
+                i {
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.feature-wrapper {
+    background-color: $bg-color;
+    padding: 20px 25px;
+        @include flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    @include breakpoint (max-xxl)
+{
+        flex-wrap: wrap;
+        gap: 25px;
+        padding: 45px 25px;
+    }
+
+    .feature-box-items {
+        @include flex;
+        gap: 20px;
+
+        &:not(:last-child){
+            border-right: 1px solid #DFDCDC;
+            padding-right: 60px;
+
+            @include breakpoint (max-xxxl){
+                border: none !important;
+                padding: 0;
+            }
+        }
+
+        .content {
+            h3 {
+                font-size: 24px;
+            }
+    
+            p {
+                font-weight: 500;
+            }
+        }
+    
+        .icon {
+            width: 84px;
+            height: 84px;
+            background-color: $theme-color;
+            border-radius: 8px;
+            font-size: 50px;
+            line-height: 95px;
+            text-align: center;
+            color: $white;
+        }
+    }
+}

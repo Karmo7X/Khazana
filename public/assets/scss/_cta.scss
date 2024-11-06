@@ -1,0 +1,70 @@
+.cta-banner-wrapper {
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+
+    .book-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+
+        @include breakpoint (max-lg) {
+            display: none;
+        }
+
+        img {
+            @include imgw;
+            border-radius: 0 0 0 20px;
+            object-fit: cover;
+        }
+    }
+
+    .girl-shape {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+
+        @include breakpoint (max-lg) {
+            display: none;
+        }
+    }
+
+    .cta-content {
+        padding: 0 20px;
+        margin-left: 80px;
+        @include breakpoint(max-lg){
+            margin-left: 0;
+        }
+    }
+
+
+    &.style-2 {
+        position: relative;
+        z-index: 1;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            background: linear-gradient(90deg, #012E4A 0.13%, rgba(1, 46, 74, 0.89) 11.56%, rgba(1, 46, 74, 0.78) 24.08%, rgba(1, 46, 74, 0.63) 40.96%, rgba(1, 46, 74, 0.45) 60.02%, rgba(1, 46, 74, 0.00) 109.02%);
+            z-index: 3;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 3;
+        }
+    }
+}

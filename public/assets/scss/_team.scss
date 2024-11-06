@@ -1,0 +1,186 @@
+.team-box-items {
+    margin-top: 30px;
+    background-color: $white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.06);
+    padding: 30px 20px;
+    margin-bottom: 30px;
+
+    .team-image {
+        position: relative;
+        .thumb {
+            text-align: center;
+            margin: 0 auto;   
+
+            img {
+                max-width: 100%;
+                     
+            }
+        }
+
+        .shape-img {
+            position: absolute;
+            top: 58%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+
+    .team-content {
+        margin-top: 43px;
+        border: 1.9px dashed $theme-color;
+        padding: 20px 15px;
+        border-radius: 8px;
+
+        h6 {
+            font-size: 16px;
+            font-weight: 600;
+
+            a {
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        p {
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+}
+
+.team-section {
+    position: relative;
+
+    .array-button {
+        opacity: 0;
+        visibility: hidden;
+        @include transition;
+
+        .array-prev {
+            position: absolute;
+            top: 50%;
+            left: 7%;
+            transform: translateY(-50%);
+            z-index: 9;
+        }
+
+        .array-next {
+            position: absolute;
+            top: 50%;
+            right: 7%;
+            transform: translateY(-50%);
+            z-index: 9;
+        }
+    }
+
+    &:hover {
+        .array-button {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.team-details-wrapper {
+    background-color: $bg-color;
+    border-radius: 16px;
+    padding: 40px 50px;
+    @include flex;
+    gap: 50px;
+    z-index: 9;
+    position: relative;
+
+    @include breakpoint (max-xxl){
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .team-details-items {
+        @include flex;
+        gap: 30px;
+
+        @include breakpoint (max-xxs){
+            flex-wrap: wrap;
+        }
+
+        .details-image {
+            border: 1px dashed $theme-color-2;
+            max-width: 186px;
+            border-radius: 50%;
+            padding: 8px;
+
+            img {
+                @include imgw;
+            }
+        }
+
+        .details-content {
+            h3 {
+                font-size: 24px;
+                color: $header-color;
+            }
+
+            span {
+                font-weight: 500;
+                color: $header-color;
+            }
+
+            .social-icon {
+                margin-top: 20px;
+                gap: 10px;
+                position: relative;
+                z-index: 9;
+
+                a {
+                    width: 36px;
+                    height: 36px;
+                    line-height: 36px;
+                    text-align: center;
+                    border: 1px solid $header-color;
+                    background-color: transparent;
+                    color: $theme-color;
+                    border-radius: 50%;
+
+                    &:hover {
+                        background-color: $white;
+                        color: $theme-color-2;
+                        border: 1px solid $theme-color-2;
+                    }
+                }
+            }
+        }
+    }
+
+    p {
+        max-width: 550px;
+        color: $header-color;
+        font-weight: 500;
+    }
+
+    .details-counter-area {
+        @include flex;
+        gap: 40px;
+
+        .counter-items {
+            &:not(:last-child){
+                padding-right: 20px;
+                border-right: 1px solid $text-color;
+            }
+            
+            h2 {
+                font-size: 24px;
+                color: $header-color;
+                font-weight: 700;
+            }
+
+            p {
+                font-size: 24px;
+                font-weight: 700;
+                color: $header-color;
+                max-width: initial;
+            }
+        }
+    }
+}
