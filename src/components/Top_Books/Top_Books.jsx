@@ -9,7 +9,7 @@ const Top_Books = () => {
             <div className="section-title mb- wow fadeInUp" data-wow-delay=".3s">
                 <h2>Bookle Top Books</h2>
             </div>
-            <a href="shop.html" className="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
+            <a href="Shop" className="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
                 Explore More <i className="fa-solid fa-arrow-right-long"></i>
             </a>
         </div>
@@ -68,7 +68,7 @@ const Top_Books = () => {
             <div className="cta-shop-box">
                 <h2 className="wow fadeInUp" data-wow-delay=".2s">Find Your Next Books!</h2>
                 <h6 className="wow fadeInUp" data-wow-delay=".4s">And get your 25% discount now!</h6>
-                <a href="shop.html" className="theme-btn white-bg wow fadeInUp" data-wow-delay=".6s">
+                <a href="Shop" className="theme-btn white-bg wow fadeInUp" data-wow-delay=".6s">
                     Shop Now <i className="fa-solid fa-arrow-right-long"></i>
                 </a>
                 <div className="girl-shape">

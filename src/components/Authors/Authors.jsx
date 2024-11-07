@@ -44,24 +44,24 @@ const Authors = () => {
           }}
           autoplay={{ delay: 2000 }}
           breakpoints={{
-              0: {
-                slidesPerView: 2,
-              },
-              390: {
-                slidesPerView: 2,
-              },
-              502: {
-                slidesPerView: 2,
-              },
-              802: {
-                slidesPerView: 3,
-              },
-              992: {
-                slidesPerView: 4,
-              },
-              1200: {
-                slidesPerView: 5,
-              },
+            0: {
+              slidesPerView: 1,
+            },
+            390: {
+              slidesPerView: 1,
+            },
+            502: {
+              slidesPerView: 1,
+            },
+            802: {
+              slidesPerView: 3,
+            },
+            992: {
+              slidesPerView: 4,
+            },
+            1200: {
+              slidesPerView: 5,
+            },
             }}
             loop={true}
           className="team-slider"

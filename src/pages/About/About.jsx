@@ -15,7 +15,7 @@ const About = () => {
             <div class="page-heading">
                 <h1>About Us</h1>
                 <div class="page-header">
-                    <ul class="br/eadcrumb-items wow fadeInUp" data-wow-delay=".3s">
+                    <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                         <li>
                             <a href="index.html">
                                 Home
@@ -91,7 +91,7 @@ const About = () => {
                 <div class="cta-content text-center">
                     <h2 class="text-white mb-40 wow fadeInUp" data-wow-delay=".3s">Get 25% discount in all <br/> kind of
                         super Selling</h2>
-                    <a href="shop.html" class="theme-btn white-bg wow fadeInUp" data-wow-delay=".5s">Shop Now <i
+                    <a href="Shop" class="theme-btn white-bg wow fadeInUp" data-wow-delay=".5s">Shop Now <i
                             class="fa-solid fa-arrow-right-long"></i></a>
                 </div>
             </div>

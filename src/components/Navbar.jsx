@@ -1,6 +1,11 @@
 import React from 'react'
 import logo from '/assets/img/favicon.png'
 import { Link } from 'react-router-dom'
+import Login from './Modals/Login'
+import Register from './Modals/Register'
+import OTP from './Modals/OTP'
+import Forgetpassword from './Modals/Forgetpasswor'
+import Restpassword from './Modals/Restpassword'
 const Navbar = () => {
   return (
     <>
@@ -36,6 +41,17 @@ const Navbar = () => {
                         feugiat leo urna eget eros. Duis Aenean a imperdiet risus.
                     </p>
                     <div class="mobile-menu fix mb-3"></div>
+                    <div class="menu-cart d-flex align-items-center gap-2">
+                                    <a href="Wishlist" class="cart-icon profile-icon">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </a>
+                                    <a href="/Cart" class="cart-icon profile-icon">
+                                        <i class="fa-regular fa-cart-shopping"></i>
+                                    </a>
+                                   
+                                   
+                                    
+                                </div>
                     <div class="offcanvas__contact">
                         <h4>Contact Info</h4>
                         <ul>
@@ -132,7 +148,7 @@ const Navbar = () => {
                             <div class="header-left">
                                 <div class="logo mb-0">
                                     <Link to="/" class="header-logo d-flex align-items-center justify-content-center">
-                                        <img  src={logo} className="w-50" alt="logo-img"/>
+                                        <img  src={logo} style={{width:'70px'}} alt="logo-img"/>
                                     </Link>
                                 </div>
                                 <div class="mean__menu-wrapper">
@@ -140,9 +156,9 @@ const Navbar = () => {
                                         <nav>
                                             <ul>
                                                 <li>
-                                                <Link to="/">
-                                                        Home  
-                                                    </Link> 
+                                                 <Link to={'/'}>
+                                                   Home
+                                                 </Link>
                                                    
                                                 </li>
                                                 <li>
@@ -216,7 +232,7 @@ const Navbar = () => {
                                     <a href="/Cart" class="cart-icon">
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </a>
-                                    <a href="/Profile" class="profile-icon">
+                                    <a href="/Profile" class="profile-icon ">
                                     <i class="fa-light fa-user"></i>
                                     </a>
                                    
@@ -248,7 +264,7 @@ const Navbar = () => {
                             <div class="header-left">
                                 <div class="logo mb-0">
                                     <Link to="/" class="header-logo  d-flex align-items-center justify-content-center">
-                                        <img  src={logo} className="w-50" alt="logo-img"/>
+                                        <img  src={logo} style={{width:'70px'}} alt="logo-img"/>
                                     </Link>
                                 </div>
                                 <div class="mean__menu-wrapper">
@@ -256,9 +272,10 @@ const Navbar = () => {
                                         <nav id="mobile-menu">
                                             <ul>
                                                 <li>
-                                                    <Link to="/">
-                                                        Home  
-                                                    </Link> 
+                                                <Link to={'/'}>
+                                                   Home
+                                                 </Link>
+                                                   
                                                 </li>
                                                 <li>
                                                 <Link to="/Shop">
@@ -332,7 +349,7 @@ const Navbar = () => {
                                     <a href="/Cart" class="cart-icon">
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </a>
-                                    <a href="/Profile" class="profile-icon">
+                                    <a href="/Profile" class="profile-icon ">
                                     <i class="fa-light fa-user"></i>
                                     </a>
                                     <div class="header-humbager ml-30">
@@ -354,136 +371,16 @@ const Navbar = () => {
     </header>
 
     {/* <!-- Login Modal --> */}
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="close-btn">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="identityBox">
-                        <div class="form-wrapper">
-                            <h1 id="loginModalLabel">welcome back!</h1>
-                            <input class="inputField" type="email" name="email" placeholder="Email Address"/>
-                            <input class="inputField" type="password" name="password" placeholder="Enter Password"/>
-                            <div class="input-check remember-me">
-                                <div class="checkbox-wrapper">
-                                    <input type="checkbox" class="form-check-input" name="save-for-next"
-                                        id="saveForNext"/>
-                                    <label for="saveForNext">Remember me</label>
-                                </div>
-                                <div class="text"> <a href="index-2.html">Forgot Your password?</a> </div>
-                            </div>
-                            <div class="loginBtn">
-                                <a href="index-2.html" class="theme-btn rounded-0"> Log in </a>
-                            </div>
-                            <div class="orting-badge">
-                                Or
-                            </div>
-                            <div>
-                                <a class="another-option" href="https://www.google.com/">
-                                    <img src="/assets/img/google.png" alt="google"/>
-                                    Continue With Google
-                                </a>
-                            </div>
-                            <div>
-                                <a class="another-option another-option-two" href="https://www.facebook.com/">
-                                    <img src="/assets/img/facebook.png" alt="google"/>
-                                    Continue With Facebook
-                                </a>
-                            </div>
-
-                            <div class="form-check-3 d-flex align-items-center from-customradio-2 mt-3">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"/>
-                                <label class="form-check-label">
-                                    I Accept Your Terms & Conditions
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="banner">
-                            <button type="button" class="rounded-0 login-btn" data-bs-toggle="modal"
-                                data-bs-target="#loginModal">Log in</button>
-                            <button type="button" class="theme-btn rounded-0 register-btn" data-bs-toggle="modal"
-                                data-bs-target="#registrationModal">Create
-                                Account</button>
-                            <div class="loginBg">
-                                <img src="/assets/img/signUpbg.jpg" alt="signUpBg"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+      <Login/>
     {/* <!-- Registration Modal --> */}
-    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="close-btn">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="identityBox">
-                        <div class="form-wrapper">
-                            <h1 id="registrationModalLabel">Create account!</h1>
-                            <input class="inputField" type="text" name="name" id="name" placeholder="User Name"/>
-                            <input class="inputField" type="email" name="email" placeholder="Email Address"/>
-                            <input class="inputField" type="password" name="password" placeholder="Enter Password"/>
-                            <input class="inputField" type="password" name="password"
-                                placeholder="Enter Confirm Password"/>
-                            <div class="input-check remember-me">
-                                <div class="checkbox-wrapper">
-                                    <input type="checkbox" class="form-check-input" name="save-for-next"
-                                        id="rememberMe"/>
-                                    <label for="rememberMe">Remember me</label>
-                                </div>
-                                <div class="text"> <a href="index-2.html">Forgot Your password?</a> </div>
-                            </div>
-                            <div class="loginBtn">
-                                <a href="index-2.html" class="theme-btn rounded-0"> Log in </a>
-                            </div>
-                            <div class="orting-badge">
-                                Or
-                            </div>
-                            <div>
-                                <a class="another-option" href="https://www.google.com/">
-                                    <img src="/assets/img/google.png" alt="google"/>
-                                    Continue With Google
-                                </a>
-                            </div>
-                            <div>
-                                <a class="another-option another-option-two" href="https://www.facebook.com/">
-                                    <img src="/assets/img/facebook.png" alt="Facebook"/>
-                                    Continue With Facebook
-                                </a>
-                            </div>
-                            <div class="form-check-3 d-flex align-items-center from-customradio-2 mt-3">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"/>
-                                <label class="form-check-label">
-                                    I Accept Your Terms & Conditions
-                                </label>
-                            </div>
-                        </div>
+      <Register/>
 
-                        <div class="banner">
-                            <button type="button" class="rounded-0 login-btn" data-bs-toggle="modal"
-                                data-bs-target="#loginModal">Log in</button>
-                            <button type="button" class="theme-btn rounded-0 register-btn" data-bs-toggle="modal"
-                                data-bs-target="#registrationModal">Create
-                                Account</button>
-                            <div class="signUpBg">
-                                <img src="/assets/img/registrationbg.jpg" alt="signUpBg"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    {/* <!-- OTP Modal --> */}
+         <OTP/>
+     {/* <!-- forgetpassword Modal --> */}
+       <Forgetpassword/>
+       {/* <!-- resetpassword Modal --> */}
+       <Restpassword/>
     </>
   )
 }

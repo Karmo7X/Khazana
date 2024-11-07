@@ -102,7 +102,29 @@ Description: Bookle - Book Store WooCommerce Html Template
                 spaceBetween: 30,
                 speed: 2000,
                 loop: true,
-
+                breakpoints: {
+                    1499: {
+                        slidesPerView: 5,
+                    },
+                    1399: {
+                        slidesPerView: 4,
+                    },
+                    1199: {
+                        slidesPerView: 3,
+                    },
+                    991: {
+                        slidesPerView: 3,
+                    },
+                    767: {
+                        slidesPerView: 2,
+                    },
+                    575: {
+                        slidesPerView: 1,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                    },
+                },
                 navigation: {
                     nextEl: ".array-prev",
                     prevEl: ".array-next",

@@ -28,7 +28,7 @@ const CTA = () => {
               Get 25% discount in all <br /> kind of super Selling
             </h2>
             <a
-              href="shop.html"
+              href="Shop"
               className="theme-btn wow fadeInUp"
               data-wow-delay=".5s"
               style={{

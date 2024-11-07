@@ -99,7 +99,7 @@ const Shop_sec = () => {
             <div class="section-title wow fadeInUp" data-wow-delay=".3s">
                 <h2>Top Selling Books</h2>
             </div>
-            <a href="shop.html" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
+            <a href="Shop" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
                 Explore More <i class="fa-solid fa-arrow-right-long"></i>
             </a>
         </div>
@@ -115,30 +115,30 @@ const Shop_sec = () => {
             autoplay={{ delay: 2000 }}
             breakpoints={{
                 0: {
-                  slidesPerView: 2,
-                },
-                390: {
-                  slidesPerView: 2,
-                },
-                502: {
-                  slidesPerView: 2,
-                },
-                802: {
-                  slidesPerView: 3,
-                },
-                992: {
-                  slidesPerView: 4,
-                },
-                1200: {
-                  slidesPerView: 5,
-                },
+                    slidesPerView: 1,
+                  },
+                  390: {
+                    slidesPerView: 1,
+                  },
+                  502: {
+                    slidesPerView: 1,
+                  },
+                  802: {
+                    slidesPerView: 3,
+                  },
+                  992: {
+                    slidesPerView: 4,
+                  },
+                  1200: {
+                    slidesPerView: 5,
+                  },
               }}
         >
             {books.map((book) => (
                 <SwiperSlide key={book.id}>
                     <div className="shop-box-items style-2">
                         <div className="book-thumb center">
-                            <a href="shop-details">
+                            <a href="Single/:id">
                                 <img src={book.image} alt="Book cover" />
                             </a>
                             <ul className="post-box">

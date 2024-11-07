@@ -48,7 +48,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -83,7 +83,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -121,7 +121,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -161,7 +161,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -196,7 +196,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -236,7 +236,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -271,7 +271,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -306,7 +306,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -341,7 +341,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -376,7 +376,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -411,7 +411,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -446,7 +446,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -494,7 +494,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -529,7 +529,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -567,7 +567,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -607,7 +607,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -642,7 +642,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -682,7 +682,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -717,7 +717,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -752,7 +752,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -787,7 +787,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -822,7 +822,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -857,7 +857,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -892,7 +892,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -940,7 +940,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -975,7 +975,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1013,7 +1013,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1053,7 +1053,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1088,7 +1088,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1128,7 +1128,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1163,7 +1163,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1198,7 +1198,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1233,7 +1233,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1268,7 +1268,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1303,7 +1303,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1338,7 +1338,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1386,7 +1386,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1421,7 +1421,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1459,7 +1459,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1499,7 +1499,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1534,7 +1534,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1574,7 +1574,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1609,7 +1609,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1644,7 +1644,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1679,7 +1679,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1714,7 +1714,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1749,7 +1749,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1784,7 +1784,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1832,7 +1832,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1867,7 +1867,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1905,7 +1905,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1945,7 +1945,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -1980,7 +1980,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2020,7 +2020,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2055,7 +2055,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2090,7 +2090,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2125,7 +2125,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2160,7 +2160,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2195,7 +2195,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2230,7 +2230,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2278,7 +2278,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2313,7 +2313,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2351,7 +2351,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2391,7 +2391,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2426,7 +2426,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2466,7 +2466,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2501,7 +2501,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2536,7 +2536,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2571,7 +2571,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2606,7 +2606,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2641,7 +2641,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                     <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>
@@ -2676,7 +2676,7 @@ const Shopdefault = () => {
                                                     </li>
                                                 </ul>
                                                 <div className="shop-button">
-                                                    <a href="/Single/:id" className="theme-btn"><i
+                                                    <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
                                                 </div>
                                             </div>

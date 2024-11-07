@@ -15,7 +15,7 @@ const SingleProduct = () => {
             <div class="page-heading">
                 <h1>Shop Details</h1>
                 <div class="page-header">
-                    <ul class="br/eadcrumb-items wow fadeInUp" data-wow-delay=".3s">
+                    <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                         <li>
                             <a href="index.html">
                                 Home
@@ -120,6 +120,7 @@ const SingleProduct = () => {
                                 <h3>$16.00</h3>
                             </div>
                             <div class="cart-wrapper">
+                                <div className='d-flex align-items-center gap-1'>
                                 <div class="quantity-basket">
                                     <p class="qty">
                                         <button class="qtyminus" aria-hidden="true">−</button>
@@ -130,6 +131,8 @@ const SingleProduct = () => {
                                 <button type="button"  class="theme-btn style-2" data-bs-toggle="modal" data-bs-target="#readMoreModal">
                                     Read A little
                                   </button>
+                                </div>
+                               
                                   {/* <!-- Read More Modal --> */}
                                 <div class="modal fade" id="readMoreModal" tabindex="-1" aria-labelledby="readMoreModalLabel" aria-hidden="true">
                                     <div class="modal-dialog"> 

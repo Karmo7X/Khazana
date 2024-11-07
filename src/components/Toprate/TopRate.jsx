@@ -10,14 +10,14 @@ const TopRate = () => {
                 <div class="section-title">
                     <h2 class="wow fadeInUp" data-wow-delay=".3s">Top Rating Books</h2>
                 </div>
-                <a href="shop.html" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
+                <a href="Shop" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
                     View More <i class="fa-solid fa-arrow-right-long"></i>
                 </a>
             </div>
             <div class="row">
                 {/* <!-- Book Item Template --> */}
                 <div class="col-xl-6 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="top-rating-box-item ">
+                    <div class="top-ratting-box-items ">
                         <div class="book-thumb">
                             <a href="/Single/:id">
                                 <img src="assets/img/top-book/01.png" alt="Top book image"/>

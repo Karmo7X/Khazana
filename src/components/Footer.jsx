@@ -49,7 +49,7 @@ const Footer = () => {
     </div>
     <div className="footer-widgets-wrapper">
       <div className="plane-shape float-bob-y">
-        <img src="assets/img/plane-shape.png" alt="img" />
+        <img src="/assets/img/plane-shape.png" alt="img" />
       </div>
       <div className="container">
         <div className="row">
@@ -80,7 +80,7 @@ const Footer = () => {
                 <h3>Customer Support</h3>
               </div>
               <ul className="list-area">
-                <li><a href="shop.html"><i className="fa-solid fa-chevron-right"></i> Store List</a></li>
+                <li><a href="Shop"><i className="fa-solid fa-chevron-right"></i> Store List</a></li>
                 <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Opening Hours</a></li>
                 <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Contact Us</a></li>
                 <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Return Policy</a></li>
@@ -93,8 +93,8 @@ const Footer = () => {
                 <h3>Categories</h3>
               </div>
               <ul className="list-area">
-                <li><a href="shop.html"><i className="fa-solid fa-chevron-right"></i> Novel Books</a></li>
-                <li><a href="shop.html"><i className="fa-solid fa-chevron-right"></i> Poetry Books</a></li>
+                <li><a href="Shop"><i className="fa-solid fa-chevron-right"></i> Novel Books</a></li>
+                <li><a href="Shop"><i className="fa-solid fa-chevron-right"></i> Poetry Books</a></li>
                 <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Political Books</a></li>
                 <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> History Books</a></li>
               </ul>
@@ -126,10 +126,10 @@ const Footer = () => {
             © All Rights Reserved 2024 by <a href="index.html">Bookle</a>
           </p>
           <ul className="brand-logo wow fadeInRight" data-wow-delay=".5s">
-            <li><a href="ContactUs"><img src="assets/img/visa-logo.png" alt="img" /></a></li>
-            <li><a href="ContactUs"><img src="assets/img/mastercard.png" alt="img" /></a></li>
-            <li><a href="ContactUs"><img src="assets/img/payoneer.png" alt="img" /></a></li>
-            <li><a href="ContactUs"><img src="assets/img/affirm.png" alt="img" /></a></li>
+            <li><a href="ContactUs"><img src="/assets/img/visa-logo.png" alt="img" /></a></li>
+            <li><a href="ContactUs"><img src="/assets/img/mastercard.png" alt="img" /></a></li>
+            <li><a href="ContactUs"><img src="/assets/img/payoneer.png" alt="img" /></a></li>
+            <li><a href="ContactUs"><img src="/assets/img/affirm.png" alt="img" /></a></li>
           </ul>
         </div>
       </div>

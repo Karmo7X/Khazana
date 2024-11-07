@@ -35,13 +35,13 @@ const Top_category = () => {
                     autoplay={{ delay: 2000 }}
                     breakpoints={{
                         0: {
-                          slidesPerView: 2,
+                          slidesPerView: 1,
                         },
                         390: {
-                          slidesPerView: 2,
+                          slidesPerView: 1,
                         },
                         502: {
-                          slidesPerView: 2,
+                          slidesPerView: 1,
                         },
                         802: {
                           slidesPerView: 3,
