@@ -110,8 +110,13 @@ const Home = () => {
             </div>
         </div>
     </section>
-
-    {/* <!-- Shop Section start  --> */}
+   {/* <!-- Book Catagories Section start  --> */}
+    <Top_category/>
+    {/* <!-- Authors Section start  --> */}
+    <Authors/>
+{/* <!-- Shop Section start  --> */}
+<Top_Books/>
+     {/* <!-- Shop Section start  --> */}
     <section class="shop-section section-padding fix pt-0">
         <div class="container">
             <div class="section-title-area">
@@ -179,8 +184,8 @@ const Home = () => {
                         <h5>Design Low Book</h5>
                         <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
-                            <li>$30.00</li>
-                            <li><del>$39.99</del></li>
+                            <li>30.00 R.S</li>
+                            <li><del>39.99 R.S</del></li>
                         </ul>
                         <ul className="author-post">
                             <li className="authot-list">
@@ -233,8 +238,8 @@ const Home = () => {
                         <h5>Design Low Book</h5>
                         <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
-                            <li>$30.00</li>
-                            <li><del>$39.99</del></li>
+                            <li>30.00 R.S</li>
+                            <li><del>39.99 R.S</del></li>
                         </ul>
                         <ul className="author-post">
                             <li className="authot-list">
@@ -287,8 +292,8 @@ const Home = () => {
                         <h5>Design Low Book</h5>
                         <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
-                            <li>$30.00</li>
-                            <li><del>$39.99</del></li>
+                            <li>30.00 R.S</li>
+                            <li><del>39.99 R.S</del></li>
                         </ul>
                         <ul className="author-post">
                             <li className="authot-list">
@@ -341,8 +346,8 @@ const Home = () => {
                         <h5>Design Low Book</h5>
                         <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
-                            <li>$30.00</li>
-                            <li><del>$39.99</del></li>
+                            <li>30.00 R.S</li>
+                            <li><del>39.99 R.S</del></li>
                         </ul>
                         <ul className="author-post">
                             <li className="authot-list">
@@ -395,8 +400,8 @@ const Home = () => {
                         <h5>Design Low Book</h5>
                         <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
-                            <li>$30.00</li>
-                            <li><del>$39.99</del></li>
+                            <li>30.00 R.S</li>
+                            <li><del>39.99 R.S</del></li>
                         </ul>
                         <ul className="author-post">
                             <li className="authot-list">
@@ -449,8 +454,8 @@ const Home = () => {
                         <h5>Design Low Book</h5>
                         <h3><a href="/Single/:id">Simple Things You To <br /> Save BOOK</a></h3>
                         <ul className="price-list">
-                            <li>$30.00</li>
-                            <li><del>$39.99</del></li>
+                            <li>30.00 R.S</li>
+                            <li><del>39.99 R.S</del></li>
                         </ul>
                         <ul className="author-post">
                             <li className="authot-list">
@@ -480,11 +485,9 @@ const Home = () => {
         </div>
     </section>
 
-    {/* <!-- Book Catagories Section start  --> */}
-    <Top_category/>
+   
 
-    {/* <!-- Shop Section start  --> */}
-    <Top_Books/>
+    
 
     {/* <!-- Cta Banner Section start  --> */}
     <CTA/>
@@ -495,8 +498,7 @@ const Home = () => {
     {/* <!-- Shop Section start  --> */}
      <Shop_sec/>
 
-    {/* <!-- Authors Section start  --> */}
-    <Authors/>
+    
 
    
     </>

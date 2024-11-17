@@ -41,7 +41,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">Simple Things You Save BOOK</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00</li>
+                                                    <li>30.00 R.S</li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -112,8 +112,8 @@ const Shopdefault = () => {
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
                                                     <li>
-                                                        $30.00
-                                                        <del>$39.99</del>
+                                                        30.00 R.S
+                                                        <del>39.99 R.S</del>
                                                     </li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
@@ -404,7 +404,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00 <del>$39.99</del></li>
+                                                    <li>30.00 R.S <del>39.99 R.S</del></li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -487,7 +487,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">Simple Things You Save BOOK</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00</li>
+                                                    <li>30.00 R.S</li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -558,8 +558,8 @@ const Shopdefault = () => {
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
                                                     <li>
-                                                        $30.00
-                                                        <del>$39.99</del>
+                                                        30.00 R.S
+                                                        <del>39.99 R.S</del>
                                                     </li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
@@ -850,7 +850,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00 <del>$39.99</del></li>
+                                                    <li>30.00 R.S <del>39.99 R.S</del></li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -933,7 +933,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">Simple Things You Save BOOK</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00</li>
+                                                    <li>30.00 R.S</li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -1004,8 +1004,8 @@ const Shopdefault = () => {
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
                                                     <li>
-                                                        $30.00
-                                                        <del>$39.99</del>
+                                                        30.00 R.S
+                                                        <del>39.99 R.S</del>
                                                     </li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
@@ -1296,7 +1296,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00 <del>$39.99</del></li>
+                                                    <li>30.00 R.S <del>39.99 R.S</del></li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -1379,7 +1379,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">Simple Things You Save BOOK</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00</li>
+                                                    <li>30.00 R.S</li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -1450,8 +1450,8 @@ const Shopdefault = () => {
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
                                                     <li>
-                                                        $30.00
-                                                        <del>$39.99</del>
+                                                        30.00 R.S
+                                                        <del>39.99 R.S</del>
                                                     </li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
@@ -1742,7 +1742,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00 <del>$39.99</del></li>
+                                                    <li>30.00 R.S <del>39.99 R.S</del></li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -1825,7 +1825,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">Simple Things You Save BOOK</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00</li>
+                                                    <li>30.00 R.S</li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -1896,8 +1896,8 @@ const Shopdefault = () => {
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
                                                     <li>
-                                                        $30.00
-                                                        <del>$39.99</del>
+                                                        30.00 R.S
+                                                        <del>39.99 R.S</del>
                                                     </li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
@@ -2188,7 +2188,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00 <del>$39.99</del></li>
+                                                    <li>30.00 R.S <del>39.99 R.S</del></li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -2271,7 +2271,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">Simple Things You Save BOOK</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00</li>
+                                                    <li>30.00 R.S</li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
@@ -2342,8 +2342,8 @@ const Shopdefault = () => {
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
                                                     <li>
-                                                        $30.00
-                                                        <del>$39.99</del>
+                                                        30.00 R.S
+                                                        <del>39.99 R.S</del>
                                                     </li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
@@ -2634,7 +2634,7 @@ const Shopdefault = () => {
                                             <div className="shop-content">
                                                 <h3><a href="/Single/:id">The Hidden Mystery Behind</a></h3>
                                                 <ul className="price-list">
-                                                    <li>$30.00 <del>$39.99</del></li>
+                                                    <li>30.00 R.S <del>39.99 R.S</del></li>
                                                     <li>
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)

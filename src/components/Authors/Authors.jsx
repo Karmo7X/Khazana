@@ -24,7 +24,7 @@ const authors = [
 const Authors = () => {
   return (
     <>
-    <section className="team-section fix section-padding pt-0 mb-30">
+    <section className="team-section fix section-padding mt-5 pt-0 mb-30">
       <div className="container">
         <div className="section-title text-center">
           <h2 className="mb-3">Featured Author</h2>

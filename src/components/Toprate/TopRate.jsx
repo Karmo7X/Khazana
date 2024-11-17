@@ -35,7 +35,7 @@ const TopRate = () => {
                                     <li><a href="/Single/:id"><i class="far fa-eye"></i></a></li>
                                 </ul>
                             </div>
-                            <span class="mt-10">$30.00</span>
+                            <span class="mt-10">30.00 R.S</span>
                             <ul class="author-post">
                                 <li class="author-list">
                                     <span class="thumb"><img src="assets/img/testimonial/client-2.png" alt="Author image"/></span>

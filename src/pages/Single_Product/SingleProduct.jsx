@@ -461,9 +461,9 @@ const SingleProduct = () => {
                                 <h5> Design Low Book </h5>
                                 <h3><a href="/Single/:id">Simple Things You To <br/> Save BOOK</a></h3>
                                 <ul class="price-list">
-                                    <li>$30.00</li>
+                                    <li>30.00 R.S</li>
                                     <li>
-                                        <del>$39.99</del>
+                                        <del>39.99 R.S</del>
                                     </li>
                                 </ul>
                                 <ul class="author-post">
@@ -512,9 +512,9 @@ const SingleProduct = () => {
                                 <h5> Design Low Book </h5>
                                 <h3><a href="/Single/:id">How Deal With Very <br/> Bad BOOK</a></h3>
                                 <ul class="price-list">
-                                    <li>$30.00</li>
+                                    <li>30.00 R.S</li>
                                     <li>
-                                        <del>$39.99</del>
+                                        <del>39.99 R.S</del>
                                     </li>
                                 </ul>
                                 <ul class="author-post">
@@ -563,9 +563,9 @@ const SingleProduct = () => {
                                 <h5> Design Low Book </h5>
                                 <h3><a href="/Single/:id">Qple GPad With Retina <br/> Sisplay</a></h3>
                                 <ul class="price-list">
-                                    <li>$30.00</li>
+                                    <li>30.00 R.S</li>
                                     <li>
-                                        <del>$39.99</del>
+                                        <del>39.99 R.S</del>
                                     </li>
                                 </ul>
                                 <ul class="author-post">
@@ -619,9 +619,9 @@ const SingleProduct = () => {
                                 <h5> Design Low Book </h5>
                                 <h3><a href="/Single/:id">Qple GPad With Retina <br/> Sisplay</a></h3>
                                 <ul class="price-list">
-                                    <li>$30.00</li>
+                                    <li>30.00 R.S</li>
                                     <li>
-                                        <del>$39.99</del>
+                                        <del>39.99 R.S</del>
                                     </li>
                                 </ul>
                                 <ul class="author-post">
@@ -670,9 +670,9 @@ const SingleProduct = () => {
                                 <h5> Design Low Book </h5>
                                 <h3><a href="/Single/:id">Simple Things You To <br/> Save BOOK</a></h3>
                                 <ul class="price-list">
-                                    <li>$30.00</li>
+                                    <li>30.00 R.S</li>
                                     <li>
-                                        <del>$39.99</del>
+                                        <del>39.99 R.S</del>
                                     </li>
                                 </ul>
                                 <ul class="author-post">

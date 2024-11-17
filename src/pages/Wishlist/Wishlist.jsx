@@ -65,7 +65,7 @@ const Wishlist = () => {
                                             </span>
                                         </td>
                                         <td>
-                                            <span class="cart-price">$30.00</span>
+                                            <span class="cart-price">30.00 R.S</span>
                                         </td>
                                         <td>
                                             <span class="stock-title">

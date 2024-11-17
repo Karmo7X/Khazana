@@ -58,7 +58,7 @@ const Shoplist = () => {
                                     </div>
                                     <div class="shop-list-content">
                                         <h3><a href="/Single/:id">Simple things you to Save to Book</a></h3>
-                                        <h5>$30.00</h5>
+                                        <h5>30.00 R.S</h5>
                                         <div class="star">
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>

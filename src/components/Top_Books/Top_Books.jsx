@@ -7,7 +7,7 @@ const Top_Books = () => {
     <div className="container">
         <div className="section-title-area">
             <div className="section-title mb- wow fadeInUp" data-wow-delay=".3s">
-                <h2>Bookle Top Books</h2>
+                <h2>Khazana Top Books</h2>
             </div>
             <a href="Shop" className="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
                 Explore More <i className="fa-solid fa-arrow-right-long"></i>
@@ -37,8 +37,8 @@ const Top_Books = () => {
                     <h5>Design Low Book</h5>
                     <h3><a href="/Single/:id">Flovely and Unicom <br /> Erna</a></h3>
                     <ul className="price-list">
-                        <li>$30.00</li>
-                        <li><del>$39.99</del></li>
+                        <li>30.00 R.S</li>
+                        <li><del>39.99 R.S</del></li>
                     </ul>
                     <ul className="author-post">
                         <li className="authot-list">
