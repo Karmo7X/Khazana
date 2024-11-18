@@ -24,7 +24,7 @@ const Home = () => {
     <div class="hero-section hero-1 fix">
         <div class="container">
         <div className="row">
-            <div className="col-12 col-xl-8 col-lg-6">
+            <div className="col-sm-12 col-xl-8 col-lg-6">
                 <div className="hero-items">
                     <div className="book-shape">
                         <img src={bookImage} alt="Book Shape" />
@@ -58,9 +58,9 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-12 col-xl-4 col-lg-6">
+            <div className="col-12 col-xl-4 col-lg-6 ">
                 <div className="girl-image">
-                    <img className="float-bob-x" src={girlImage} alt="Hero Girl" />
+                    <img className="float-bob-x" style={{width:'750px'}} src={girlImage} alt="Hero Girl"  />
                 </div>
             </div>
         </div>

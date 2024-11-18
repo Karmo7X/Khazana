@@ -13,7 +13,7 @@ const CTA = () => {
             <img src="assets/img/book-shape.png" alt="shape" />
           </div>
           <div className="girl-shape float-bob-x">
-            <img src="assets/img/girl-shape-2.png" alt="shape" />
+            <img src="assets/img/girl-shape-2.png" className='img-fluid' style={{width:'88%'}} alt="shape" />
           </div>
           <div className="cta-content text-center">
             <h2

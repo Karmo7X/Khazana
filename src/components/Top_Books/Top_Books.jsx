@@ -72,7 +72,7 @@ const Top_Books = () => {
                     Shop Now <i className="fa-solid fa-arrow-right-long"></i>
                 </a>
                 <div className="girl-shape">
-                    <img src="assets/img/girl-shape.png" alt="Shape Image" />
+                    <img src="assets/img/girl-shape.png" className='img-fluid'  alt="Shape Image" />
                 </div>
                 <div className="circle-shape">
                     <img src="assets/img/circle-shape.png" alt="Shape Image" />

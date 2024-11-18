@@ -3,16 +3,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation ,Autoplay } from 'swiper/modules';
 const Top_category = () => {
     const bookCategories = [
-        { id: 1, title: 'Romance Books', count: 80, imgSrc: '/assets/img/book-categori/01.png' },
-        { id: 2, title: 'Design Low Book', count: 6, imgSrc: '/assets/img/book-categori/02.png' },
-        { id: 3, title: 'Safe Home', count: 5, imgSrc: '/assets/img/book-categori/03.png' },
-        { id: 4, title: 'Grow Flower', count: 7, imgSrc: '/assets/img/book-categori/04.png' },
-        { id: 5, title: 'Adventure Book', count: 4, imgSrc: '/assets/img/book-categori/05.png' },
-        { id: 6, title: 'Adventure Book', count: 4, imgSrc: '/assets/img/book-categori/05.png' },
-        { id: 7, title: 'Adventure Book', count: 4, imgSrc: '/assets/img/book-categori/05.png' },
-        { id: 8, title: 'Adventure Book', count: 4, imgSrc: '/assets/img/book-categori/05.png' },
+        { id: 1, title: 'Literature', count: 50, imgSrc: '/assets/img/book-categori/01.png' },
+        { id: 2, title: 'Scientific Books', count: 30, imgSrc: '/assets/img/book-categori/02.png' },
+        { id: 3, title: 'Religious Books', count: 40, imgSrc: '/assets/img/book-categori/03.png'  },
+        { id: 4, title: 'Novels', count: 100, imgSrc: '/assets/img/book-categori/04.png' },
+        { id: 5, title: 'Adventure Books', count: 4, imgSrc: '/assets/img/book-categori/05.png' },
+        { id: 6, title: 'Design Law Books', count: 6, imgSrc: '/assets/img/book-categori/02.png' },
+        { id: 7, title: 'Safe Home', count: 5, imgSrc: '/assets/img/book-categori/03.png' },
+        { id: 8, title: 'Grow Flowers', count: 7, imgSrc: '/assets/img/book-categori/04.png' },
     ];
-
+    
     return (
         <section className="book-catagories-section fix section-padding">
         <div className="container">
@@ -59,7 +59,7 @@ const Top_category = () => {
                         <SwiperSlide key={id}>
                             <div className="book-catagories-items">
                                 <div className="book-thumb">
-                                    <img src={imgSrc} alt={`img-${id}`} />
+                                    <img src={imgSrc} alt={`img-${id}`}  style={{width:'120px',height:'147px'}}/>
                                     <div className="circle-shape">
                                         <img src="/assets/img/book-categori/circle-shape.png" alt="shape-img" />
                                     </div>

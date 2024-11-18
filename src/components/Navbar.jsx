@@ -113,7 +113,7 @@ const Navbar = () => {
                 <ul class="contact-list">
                     <li>
                         <i class="fa-regular fa-phone"></i>
-                        <a href="tel:+20866660112">+208-6666-0112</a>
+                        <a href="tel:+966506300345">+966506300345</a>
                     </li>
                     <li>
                         <i class="far fa-envelope"></i>
@@ -196,7 +196,7 @@ const Navbar = () => {
                         <div class="col-6 col-md-6 col-lg-2 col-xl-4 col-xxl-2">
                             <div class="header-right">
                                 <div class="category-oneadjust gap-6 d-flex align-items-center">
-                                    <div class="icon">
+                                    {/* <div class="icon">
                                         <i class="fa-sharp fa-solid fa-grid-2"></i>
                                     </div>
                                     <select name="cate" class="category">
@@ -215,10 +215,10 @@ const Navbar = () => {
                                         <option value="1">
                                             Softwer Eng
                                         </option>
-                                    </select>
+                                    </select> */}
                                     <form action="#" class="search-toggle-box d-md-block">
                                         <div class="input-area">
-                                            <input type="text" placeholder="Author"/>
+                                            <input type="text" placeholder="search"/>
                                             <button class="cmn-btn">
                                                 <i class="far fa-search"></i>
                                             </button>
@@ -313,7 +313,7 @@ const Navbar = () => {
                         <div class="col-6 col-md-6 col-lg-2 col-xl-4 col-xxl-2">
                             <div class="header-right">
                                 <div class="category-oneadjust gap-6 d-flex align-items-center">
-                                    <div class="icon">
+                                    {/* <div class="icon">
                                         <i class="fa-sharp fa-solid fa-grid-2"></i>
                                     </div>
                                     <select name="cate" class="category">
@@ -332,10 +332,10 @@ const Navbar = () => {
                                         <option value="1">
                                             Softwer Eng
                                         </option>
-                                    </select>
+                                    </select> */}
                                     <form action="#" class="search-toggle-box d-md-block">
                                         <div class="input-area">
-                                            <input type="text" placeholder="Author"/>
+                                            <input type="text" placeholder="search"/>
                                             <button class="cmn-btn">
                                                 <i class="far fa-search"></i>
                                             </button>

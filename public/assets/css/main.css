@@ -2436,9 +2436,9 @@ span {
   outline: none;
   border: 1px solid rgba(92, 112, 126, 0.3);
   background-color: var(--white);
-  padding: 14px 20px;
+  padding: 12px 40px;
   width: 100%;
-  border-radius: 0px 100px 100px 0px;
+  border-radius: 100px;
   color: var(--header);
   font-weight: 500;
 }
@@ -3949,6 +3949,12 @@ span {
   position: relative;
   z-index: 5;
   bottom: -50px;
+}
+
+@media (max-width:1024) {
+  .hero-1 .girl-image img{
+    display: none !important;
+  }
 }
 .hero-1 .hero-content h6 {
   color: var(--theme2);
@@ -8125,4 +8131,9 @@ span {
   .contact-info-area .contact-info-items .content h3 {
     font-size: 18px !important;
   }
+}
+
+
+.nice-select .category{
+  display: none !important;
 }
