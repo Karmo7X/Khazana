@@ -1,6 +1,8 @@
 import React from 'react';
+import Dashboard from '../../components/Dashboard/Dashboard';
 const Profile = () => {
   return (
+    <> 
     <div className="container my-5">
       <h1 className="text-muted fs-3">Account Settings</h1>
       
@@ -51,6 +53,11 @@ const Profile = () => {
         <button className="btn theme-btn rounded-0 w-100 mt-4">Edit Profile</button>
       </div>
     </div>
+
+    {/* for author */}
+    <Dashboard/>
+    </>
+   
   );
 };
 
