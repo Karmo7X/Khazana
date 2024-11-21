@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useTranslation } from "react-i18next";
 const OTP = () => {
+  const { t, i18n } = useTranslation();
     const [otp, setOtp] = useState(new Array(6).fill(""));
   const [timer, setTimer] = useState(30); // Countdown time in seconds
   const [canResend, setCanResend] = useState(false);
@@ -65,8 +67,8 @@ const OTP = () => {
                     <div class="identityBox">
                         <div class="form-wrapper d-flex align-items-center justify-content-center flex-column gap-5">
                             <div className='d-flex align-items-center justify-content-center flex-column text-center'>
-                            <h1 id="loginModalLabel">Verify Phone</h1>
-                            <p className='w-75'>Enter the 4-digit code we sent to your WhatsApp number to complete the order</p>
+                            <h1 id="loginModalLabel">{t("global.otp.verifyPhone")}</h1>
+                            <p className='w-75'>{t("global.otp.enterOtpCode")}</p>
                             </div>
                            
                             <div className="otp-inputs d-flex align-items-center justify-content-center gap-2">
@@ -89,20 +91,20 @@ const OTP = () => {
                 {canResend ? (
                     <div className='d-flex align-items-center justify-content-center flex-column'>
                         <p>
-                         Didn't receive the verification code?
+                        {t("global.otp.didntReceiveCode")}
                     </p>
                   <button className="btn btn-link" onClick={handleResend}>
                   
-                     Resend code
+                  {t("global.otp.resendCode")}
                   </button>
                     </div>
                     
                 ) : (
-                  <span>Resend code in {timer} seconds</span>
+                  <span>{t("global.otp.resendTimer")} {timer}</span>
                 )}
               </div>
               <button className="theme-btn rounded-0 w-100  mt-3" onClick={() => console.log('OTP:', otp.join(''))}>
-                Verify OTP
+              {t("global.otp.verifyOtp")}
               </button>
                         </div>
 

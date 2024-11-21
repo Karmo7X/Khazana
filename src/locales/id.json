@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "backToTop": "Kembali ke Atas",
+    "contactInfo": "Info Kontak",
+    "address": "Jalan Utama, Melbourne, Australia",
+    "email": "info@example.com",
+    "workingHours": "Senin-Jumat, 09am - 05pm",
+    "phone": "+966506300345",
+    "getAQuote": "Dapatkan Penawaran",
+    "home": "Beranda",
+    "shop": "Toko",
+    "aboutUs": "Tentang Kami",
+    "contact": "Hubungi Kami",
+    "searchPlaceholder": "Cari",
+    "wishlist": "Daftar Keinginan",
+    "cart": "Keranjang",
+    "profile": "Profil",
+    "login": "Masuk",
+    "liveChat": "Obrolan Langsung",
+    "supportEmail": "Email Dukungan",
+    "supportPhone": "Telepon Dukungan",
+    "languages": {
+      "en": "Inggris",
+      "ar": "Arab",
+      "zh": "Cina",
+      "id": "Indonesia"
+    }
+  },
+  "forgetpass":{
+    "recoverPassword": "Pulihkan kata sandi",
+    "description": "Masukkan nomor ponsel yang terkait dengan akun Anda dan kami akan mengirimkan kode untuk mereset kata sandi Anda.",
+    "phoneNumber": "Nomor Telepon",
+    "submit": "Kirim"
+  },
+  "resetpass":{
+    "recoverPassword": "Pulihkan kata sandi",
+    "description": "Tambahkan kata sandi baru ke akun Anda",
+    "password": "Kata Sandi",
+    "confirmPassword": "Konfirmasi Kata Sandi",
+    "enterPassword": "Masukkan Kata Sandi",
+    "enterConfirmPassword": "Masukkan Konfirmasi Kata Sandi",
+    "submit": "Kirim"
+  },
+  "login":{
+    "welcomeBack": "Selamat datang kembali!",
+    "phoneNumber": "Nomor Telepon",
+    "enterPassword": "Masukkan Kata Sandi",
+    "rememberMe": "Ingat saya",
+    "forgotPassword": "Lupa Kata Sandi?",
+    "login": "Masuk",
+    "createAccount": "Buat Akun",
+    "or": "Atau",
+    "continueWithGoogle": "Lanjutkan dengan Google",
+    "continueWithFacebook": "Lanjutkan dengan Facebook",
+    "acceptTerms": "Saya menerima Syarat & Ketentuan Anda"
+  },
+  "register":{
+   "createAccount": "Buat Akun!",
+  "userName": "Nama Pengguna",
+  "dateOfBirth": "Tanggal Lahir",
+  "categories": "Kategori yang diminati",
+  "city": "Kota",
+  "rememberMe": "Ingat saya",
+  "forgotPassword": "Lupa Kata Sandi?",
+  "createAccountBtn": "Buat Akun",
+  "loginBtn": "Masuk",
+  "or": "Atau",
+  "continueWithGoogle": "Lanjutkan dengan Google",
+  "continueWithFacebook": "Lanjutkan dengan Facebook",
+  "acceptTerms": "Saya menerima Syarat & Ketentuan Anda"
+  },
+  "otp":{
+    "verifyPhone": "Verifikasi Nomor Telepon",
+    "enterOtpCode": "Masukkan kode 4 digit yang kami kirim ke nomor WhatsApp Anda untuk menyelesaikan pesanan",
+    "didntReceiveCode": "Tidak menerima kode verifikasi?",
+    "resendCode": "Kirim ulang kode",
+    "resendTimer": "Kirim ulang kode dalam  ",
+    "verifyOtp": "Verifikasi OTP"
+  },
+  "home":{
+    "heroSection": {
+      "discount": "Hingga 30% Diskon",
+      "heading": "Dapatkan Buku Baru Anda <br /> Dengan Harga Terbaik",
+      "shopNow": "Belanja Sekarang"
+    },
+    "featureSection": {
+      "returnRefund": {
+        "title": "Pengembalian & Refund",
+        "description": "Jaminan uang kembali"
+      },
+      "securePayment": {
+        "title": "Pembayaran Aman",
+        "description": "Diskon 30% dengan berlangganan"
+      },
+      "qualitySupport": {
+        "title": "Dukungan Berkualitas",
+        "description": "Selalu online 24/7"
+      },
+      "dailyOffers": {
+        "title": "Penawaran Harian",
+        "description": "Diskon 20% dengan berlangganan"
+      }
+    },
+     "sectionTitle": "Buku Unggulan",
+  "exploreMore": "Jelajahi Lebih Lanjut",
+  "top_books":{
+    "khazanaTopBooks": "Buku Terbaik Khazana",
+    "exploreMore": "Jelajahi Lebih Lanjut",
+    "findYourNextBooks": "Temukan Buku Berikutnya!",
+    "discountOffer": "Dan dapatkan diskon 25% sekarang!",
+    "shopNow": "Belanja Sekarang"
+  }
+  },
+  "cta":{
+    "ctaTitle": "Dapatkan diskon 25% untuk <br /> semua jenis buku terlaris",
+    "ctaButton": "Belanja Sekarang"
+  },
+  "contact":{
+    "contactUs": "Hubungi Kami",
+    "home": "Beranda",
+    "callUs": "Hubungi Kami 24/7",
+    "makeAQuote": "Minta Penawaran",
+    "location": "Lokasi",
+    "address": "4517 Washington Ave.",
+    "readyToStart": "Siap untuk Memulai?",
+    "contactDescription": "Kami di sini untuk membantu Anda, hubungi kami...",
+    "yourName": "Nama Anda",
+    "yourEmail": "Email Anda",
+    "writeMessage": "Tulis Pesan",
+    "sendMessage": "Kirim Pesan",
+    "yourNamePlaceholder": "Nama Anda",
+    "yourEmailPlaceholder": "Email Anda",
+    "messagePlaceholder": "Tulis Pesan"
+  },
+  "footer":{
+    "footerCall": "Hubungi Kami 7/24",
+    "footerPhone": "+966506300345",
+    "footerEmail": "example@gmail.com",
+    "footerHours": "Minggu - Jumat: 9 Pagi - 6 Sore",
+    "footerLocation": "4517 Washington ave.",
+    "footerCustomerSupport": "Dukungan Pelanggan",
+    "footerStoreList": "Daftar Toko",
+    "footerOpeningHours": "Jam Buka",
+    "footerContactUs": "Hubungi Kami",
+    "footerReturnPolicy": "Kebijakan Pengembalian",
+    "footerCategories": "Kategori",
+    "footerNovelBooks": "Buku Novel",
+    "footerPoetryBooks": "Buku Puisi",
+    "footerPoliticalBooks": "Buku Politik",
+    "footerHistoryBooks": "Buku Sejarah",
+    "footerNewsletter": "Newsletter",
+    "footerNewsletterText": "Daftar untuk menerima buletin mingguan kami untuk mendapatkan pembaruan terbaru.",
+    "footerEmailPlaceholder": "Masukkan Alamat Email",
+    "footerAllRights": "© Semua Hak Dilindungi 2024 oleh",
+    "footerBrandLogos": "Logo Merek"
+  }
+}

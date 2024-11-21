@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "backToTop": "Back to Top",
+    "contactInfo": "Contact Info",
+    "address": "Main Street, Melbourne, Australia",
+    "email": "info@example.com",
+    "workingHours": "Mon-Friday, 09am - 05pm",
+    "phone": "+966506300345",
+    "getAQuote": "Get A Quote",
+    "home": "Home",
+    "shop": "Shop",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "searchPlaceholder": "Search",
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "profile": "Profile",
+    "login": "Login",
+    "liveChat": "Live Chat",
+    "supportEmail": "Support Email",
+    "supportPhone": "Support Phone",
+    "languages": {
+      "en": "English",
+      "ar": "Arabic",
+      "zh": "Chinese",
+      "id": "Indonesian"
+    }
+  },
+  "forgetpass":{
+    "recoverPassword": "Recover password",
+    "description": "Enter the mobile number associated with your account and we will send you a code to reset your password.",
+    "phoneNumber": "Phone Number",
+    "submit": "Submit"
+  },
+  "resetpass":{
+    "recoverPassword": "Recover password",
+  "description": "Add the new password to your account",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "enterPassword": "Enter Password",
+  "enterConfirmPassword": "Enter Confirm Password",
+  "submit": "Submit"
+  },
+  "login":{
+    "welcomeBack": "Welcome back!",
+    "phoneNumber": "Phone Number",
+    "enterPassword": "Enter Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot Your password?",
+    "login": "Log in",
+    "createAccount": "Create Account",
+    "or": "Or",
+    "continueWithGoogle": "Continue With Google",
+    "continueWithFacebook": "Continue With Facebook",
+    "acceptTerms": "I Accept Your Terms & Conditions"
+  },
+  "register":{
+    "createAccount": "Create account!",
+    "userName": "User Name",
+    "dateOfBirth": "Date Of Birth",
+    "categories": "Categories interested in",
+    "city": "City",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot Your password?",
+    "createAccountBtn": "Create Account",
+    "loginBtn": "Log in",
+    "or": "Or",
+    "continueWithGoogle": "Continue With Google",
+    "continueWithFacebook": "Continue With Facebook",
+    "acceptTerms": "I Accept Your Terms & Conditions"
+  },
+  "otp":{
+    "verifyPhone": "Verify Phone",
+    "enterOtpCode": "Enter the 4-digit code we sent to your WhatsApp number to complete the order",
+    "didntReceiveCode": "Didn't receive the verification code?",
+    "resendCode": "Resend code",
+    "resendTimer": "Resend code in ",
+    "verifyOtp": "Verify OTP"
+  },
+  "home":{
+    "heroSection": {
+      "discount": "Up to 30% Off",
+      "heading": "Get Your New Book <br /> With The Best Price",
+      "shopNow": "Shop Now"
+    },
+    "featureSection": {
+      "returnRefund": {
+        "title": "Return & Refund",
+        "description": "Money back guarantee"
+      },
+      "securePayment": {
+        "title": "Secure Payment",
+        "description": "30% off by subscribing"
+      },
+      "qualitySupport": {
+        "title": "Quality Support",
+        "description": "Always online 24/7"
+      },
+      "dailyOffers": {
+        "title": "Daily Offers",
+        "description": "20% off by subscribing"
+      }
+    },
+    "sectionTitle": "Featured Books",
+  "exploreMore": "Explore More",
+  "top_books":{
+    "khazanaTopBooks": "Khazana Top Books",
+    "exploreMore": "Explore More",
+    "findYourNextBooks": "Find Your Next Books!",
+    "discountOffer": "And get your 25% discount now!",
+    "shopNow": "Shop Now"
+  }
+  },
+  "cta":{
+    "ctaTitle": "Get 25% discount in all <br />  kinds of super Selling",
+    "ctaButton": "Shop Now"
+  },
+  "contact":{
+    "contactUs": "Contact Us",
+    "home": "Home",
+    "callUs": "Call Us 7/24",
+    "makeAQuote": "Make a Quote",
+    "location": "Location",
+    "address": "4517 Washington ave.",
+    "readyToStart": "Ready to Get Started?",
+    "contactDescription": "Nunc tincidunt cursus lectus ac semper...",
+    "yourName": "Your Name",
+    "yourEmail": "Your Email",
+    "writeMessage": "Write Message",
+    "sendMessage": "Send Message",
+    "yourNamePlaceholder": "Your Name",
+    "yourEmailPlaceholder": "Your Email",
+    "messagePlaceholder": "Write Message"
+  },
+  "footer":{
+    "footerCall": "Call Us 7/24",
+    "footerPhone": "+966506300345",
+    "footerEmail": "example@gmail.com",
+    "footerHours": "Sunday - Fri: 9 AM - 6 PM",
+    "footerLocation": "4517 Washington ave.",
+    "footerCustomerSupport": "Customer Support",
+    "footerStoreList": "Store List",
+    "footerOpeningHours": "Opening Hours",
+    "footerContactUs": "Contact Us",
+    "footerReturnPolicy": "Return Policy",
+    "footerCategories": "Categories",
+    "footerNovelBooks": "Novel Books",
+    "footerPoetryBooks": "Poetry Books",
+    "footerPoliticalBooks": "Political Books",
+    "footerHistoryBooks": "History Books",
+    "footerNewsletter": "Newsletter",
+    "footerNewsletterText": "Sign up to receive our weekly newsletter to get the latest updates.",
+    "footerEmailPlaceholder": "Enter Email Address",
+    "footerAllRights": "© All Rights Reserved 2024 by",
+    "footerBrandLogos": "Brand Logos"
+  }
+}

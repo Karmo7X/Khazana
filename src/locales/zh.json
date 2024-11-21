@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "backToTop": "返回顶部",
+    "contactInfo": "联系信息",
+    "address": "墨尔本主街, 澳大利亚",
+    "email": "info@example.com",
+    "workingHours": "周一至周五, 早上9点到下午5点",
+    "phone": "+966506300345",
+    "getAQuote": "获取报价",
+    "home": "主页",
+    "shop": "商店",
+    "aboutUs": "关于我们",
+    "contact": "联系我们",
+    "searchPlaceholder": "搜索",
+    "wishlist": "心愿单",
+    "cart": "购物车",
+    "profile": "个人资料",
+    "login": "登录",
+    "liveChat": "在线聊天",
+    "supportEmail": "支持邮箱",
+    "supportPhone": "支持电话",
+    "languages": {
+      "en": "英语",
+      "ar": "阿拉伯语",
+      "zh": "中文",
+      "id": "印尼语"
+    }
+  },
+  "forgetpass":{
+    "recoverPassword": "恢复密码",
+  "description": "请输入与您的账户关联的手机号码，我们将向您发送一个代码来重置您的密码。",
+  "phoneNumber": "电话号码",
+  "submit": "提交"
+  },
+  "resetpass":{
+    "recoverPassword": "恢复密码",
+  "description": "将新密码添加到您的帐户",
+  "password": "密码",
+  "confirmPassword": "确认密码",
+  "enterPassword": "请输入密码",
+  "enterConfirmPassword": "请输入确认密码",
+  "submit": "提交"
+  },
+  "login":{
+    "welcomeBack": "欢迎回来!",
+    "phoneNumber": "电话号码",
+    "enterPassword": "请输入密码",
+    "rememberMe": "记住我",
+    "forgotPassword": "忘记密码?",
+    "login": "登录",
+    "createAccount": "创建账户",
+    "or": "或者",
+    "continueWithGoogle": "使用谷歌继续",
+    "continueWithFacebook": "使用Facebook继续",
+    "acceptTerms": "我接受您的条款和条件"
+  },
+  "register":{
+   "createAccount": "创建账户!",
+  "userName": "用户名",
+  "dateOfBirth": "出生日期",
+  "categories": "感兴趣的类别",
+  "city": "城市",
+  "rememberMe": "记住我",
+  "forgotPassword": "忘记密码?",
+  "createAccountBtn": "创建账户",
+  "loginBtn": "登录",
+  "or": "或者",
+  "continueWithGoogle": "使用谷歌继续",
+  "continueWithFacebook": "使用Facebook继续",
+  "acceptTerms": "我接受您的条款和条件"
+  },
+  "otp":{
+    "verifyPhone": "验证手机",
+    "enterOtpCode": "请输入我们发送到您的WhatsApp号码的4位数字验证码以完成订单",
+    "didntReceiveCode": "没有收到验证码？",
+    "resendCode": "重新发送验证码",
+    "resendTimer": "  秒内重新发送验证码",
+    "verifyOtp": "验证OTP"
+  },
+  "home":{
+    "heroSection": {
+      "discount": "最高30%折扣",
+      "heading": "以最优惠的价格获得您的新书",
+      "shopNow": "立即购物"
+    },
+    "featureSection": {
+      "returnRefund": {
+        "title": "退货与退款",
+        "description": "退款保证"
+      },
+      "securePayment": {
+        "title": "安全支付",
+        "description": "订阅可享30%折扣"
+      },
+      "qualitySupport": {
+        "title": "优质支持",
+        "description": "全天候在线，24/7支持"
+      },
+      "dailyOffers": {
+        "title": "每日优惠",
+        "description": "订阅可享20%折扣"
+      }
+    },
+    "sectionTitle": "精选书籍",
+  "exploreMore": "查看更多",
+  "top_books":{
+    "khazanaTopBooks": "Khazana 热门书籍",
+    "exploreMore": "查看更多",
+    "findYourNextBooks": "找到你的下一本书!",
+    "discountOffer": "现在即可享受25%的折扣!",
+    "shopNow": "立即购买"
+  }
+  },
+  "cta":{
+  "ctaTitle": "在所有超畅销书籍 <br />上获得25%的折扣",
+  "ctaButton": "立即购物"
+},
+"contact":{
+    "contactUs": "联系我们",
+    "home": "首页",
+    "callUs": "24/7联系我们",
+    "makeAQuote": "获取报价",
+    "location": "位置",
+    "address": "4517 华盛顿大街",
+    "readyToStart": "准备好开始了吗？",
+    "contactDescription": "我们随时为您服务，请与我们联系...",
+    "yourName": "你的名字",
+    "yourEmail": "你的邮箱",
+    "writeMessage": "写消息",
+    "sendMessage": "发送消息",
+    "yourNamePlaceholder": "你的名字",
+    "yourEmailPlaceholder": "你的邮箱",
+    "messagePlaceholder": "写消息"
+  },
+"footer":{
+    "footerCall": "全天候联系我们",
+    "footerPhone": "+966506300345",
+    "footerEmail": "example@gmail.com",
+    "footerHours": "周日 - 周五：上午9点 - 下午6点",
+    "footerLocation": "4517华盛顿大街",
+    "footerCustomerSupport": "客户支持",
+    "footerStoreList": "商店列表",
+    "footerOpeningHours": "营业时间",
+    "footerContactUs": "联系我们",
+    "footerReturnPolicy": "退货政策",
+    "footerCategories": "类别",
+    "footerNovelBooks": "小说书籍",
+    "footerPoetryBooks": "诗歌书籍",
+    "footerPoliticalBooks": "政治书籍",
+    "footerHistoryBooks": "历史书籍",
+    "footerNewsletter": "新闻通讯",
+    "footerNewsletterText": "注册接收我们的每周新闻通讯，获取最新更新。",
+    "footerEmailPlaceholder": "请输入电子邮件地址",
+    "footerAllRights": "© 2024年所有权利保留",
+    "footerBrandLogos": "品牌徽标"
+  }
+}

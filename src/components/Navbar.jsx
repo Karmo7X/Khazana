@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import logo from '/assets/img/favicon.png'
 import { Link } from 'react-router-dom'
 import Login from './Modals/Login'
@@ -6,7 +6,35 @@ import Register from './Modals/Register'
 import OTP from './Modals/OTP'
 import Forgetpassword from './Modals/Forgetpasswor'
 import Restpassword from './Modals/Restpassword'
+import { useTranslation } from "react-i18next";
 const Navbar = () => {
+    const { t, i18n } = useTranslation();
+
+    // State to manage selected language
+  const [selectedLanguage, setSelectedLanguage] = useState("ar");
+  const languageMap = {
+    en:t("global.nav.languages.en"),
+    ar: t("global.nav.languages.ar"),
+    zh: t("global.nav.languages.zh"),
+    id: t("global.nav.languages.id"),
+  };
+  // Effect to load language from localStorage on component mount
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    if (storedLanguage) {
+        document.documentElement.lang=storedLanguage;
+        i18n.changeLanguage(storedLanguage);
+      setSelectedLanguage(storedLanguage);
+    }
+
+  }, [selectedLanguage]);
+
+  // Function to handle language selection
+  const handleLanguageChange = (language) => {
+    setSelectedLanguage(language); // Update state
+   
+    localStorage.setItem("selectedLanguage", language); // Store in localStorage
+  };
   return (
     <>
     {/* <!-- Cursor follower --> */}
@@ -53,14 +81,14 @@ const Navbar = () => {
                                     
                                 </div>
                     <div class="offcanvas__contact">
-                        <h4>Contact Info</h4>
+                        <h4>{t("global.nav.contactInfo")}</h4>
                         <ul>
                             <li class="d-flex align-items-center">
                                 <div class="offcanvas__contact-icon">
                                     <i class="fal fa-map-marker-alt"></i>
                                 </div>
                                 <div class="offcanvas__contact-text">
-                                    <a target="_blank" href="index.html">Main Street, Melbourne, Australia</a>
+                                    <a  href="">{t("global.nav.address")}</a>
                                 </div>
                             </li>
                             <li class="d-flex align-items-center">
@@ -69,7 +97,7 @@ const Navbar = () => {
                                 </div>
                                 <div class="offcanvas__contact-text">
                                     <a href="mailto:info@example.com"><span
-                                            class="mailto:info@example.com">info@example.com</span></a>
+                                            class="mailto:info@example.com">{t("global.nav.email")}</span></a>
                                 </div>
                             </li>
                             <li class="d-flex align-items-center">
@@ -77,7 +105,7 @@ const Navbar = () => {
                                     <i class="fal fa-clock"></i>
                                 </div>
                                 <div class="offcanvas__contact-text">
-                                    <a target="_blank" href="index.html">Mod-friday, 09am -05pm</a>
+                                    <a  href="">{t("global.nav.workingHours")}</a>
                                 </div>
                             </li>
                             <li class="d-flex align-items-center">
@@ -85,13 +113,13 @@ const Navbar = () => {
                                     <i class="far fa-phone"></i>
                                 </div>
                                 <div class="offcanvas__contact-text">
-                                    <a href="tel:+11002345909">+11002345909</a>
+                                    <a href="tel:+966506300345">{t("global.nav.phone")}</a>
                                 </div>
                             </li>
                         </ul>
                         <div class="header-button mt-4">
                             <a href="ContactUs" class="theme-btn text-center">
-                                Get A Quote <i class="fa-solid fa-arrow-right-long"></i>
+                            {t("global.nav.getAQuote")} <i class="fa-solid fa-arrow-right-long"></i>
                             </a>
                         </div>
                         <div class="social-icon d-flex align-items-center">
@@ -113,24 +141,77 @@ const Navbar = () => {
                 <ul class="contact-list">
                     <li>
                         <i class="fa-regular fa-phone"></i>
-                        <a href="tel:+966506300345">+966506300345</a>
+                        <a href="tel:+966506300345">{t("global.nav.phone")}</a>
                     </li>
                     <li>
                         <i class="far fa-envelope"></i>
-                        <a href="mailto:info@example.com">info@example.com</a>
+                        <a href="mailto:info@example.com">{t("global.nav.email")}</a>
                     </li>
                     <li>
                         <i class="far fa-clock"></i>
-                        <span>Sunday - Fri: 9 aM - 6 pM</span>
+                        <span>{t("global.nav.workingHours")}</span>
                     </li>
                 </ul>
                 <ul class="list">
                     <li>
                         {/* <i class="fa-light fa-comments"></i><a href="ContactUs">Live Chat</a> */}
+                      
                         </li>
+                        <li
+                  class="list-inline-item dropdown notification-list hide-phone"
+                >
+                  <a
+                    class="nav-link dropdown-toggle arrow-none waves-effect text-white"
+                     data-bs-toggle="dropdown"
+                    href="#"
+                    role="button"
+                    aria-haspopup="false"
+                    aria-expanded="false"
+                  >
+                     {languageMap[selectedLanguage]}
+                    <img
+                      src="assets/images/flags/us_flag.jpg"
+                      class="ml-2"
+                      height="16"
+                      alt=""
+                    />
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-right language-switch"
+                  >
+                     <a class="dropdown-item" href="#" onClick={() => handleLanguageChange("ar")}
+                      ><img
+                        src="assets/images/flags/italy_flag.jpg"
+                        alt=""
+                        height="16"
+                      /><span style={{color:'#000'}} > {t("global.nav.languages.ar")} </span></a>
+                    <a class="dropdown-item" href="#" onClick={() => handleLanguageChange("en")}
+                      ><img
+                        src="assets/images/flags/italy_flag.jpg"
+                        alt=""
+                        height="16"
+                      /><span style={{color:'#000'}} > {t("global.nav.languages.en")} </span></a
+                    >
+                    <a class="dropdown-item" href="#"onClick={() => handleLanguageChange("zh")}
+                      ><img
+                        src="assets/images/flags/french_flag.jpg"
+                        alt=""
+                        height="16"
+                      /><span style={{color:'#000'}} > {t("global.nav.languages.zh")}  </span></a
+                    >
+                    <a class="dropdown-item" href="#" onClick={() => handleLanguageChange("id")}
+                      ><img
+                        src="assets/images/flags/spain_flag.jpg"
+                        alt=""
+                        height="16"
+                      /><span style={{color:'#000'}} > {t("global.nav.languages.id")} </span></a
+                    >
+                  
+                  </div>
+                </li>
                     <li><i class="fa-light fa-user"></i>
                         <button data-bs-toggle="modal" data-bs-target="#loginModal">
-                            Login
+                        {t("global.nav.login")}
                         </button>
                     </li>
                 </ul>
@@ -157,20 +238,19 @@ const Navbar = () => {
                                             <ul>
                                                 <li>
                                                  <Link to={'/'}>
-                                                   Home
+                                                   {t("global.nav.home")}
                                                  </Link>
                                                    
                                                 </li>
                                                 <li>
                                                 <Link to="/Shop">
-                                                        Shop  
+                                                {t("global.nav.shop")}
                                                     </Link>
                                                 </li>
-                                                <li class="has-dropdown">
-                                                    <a href="AboutUs">
-                                                       About US
-                                                       
-                                                    </a>
+                                                <li>
+                                                <Link to="/AboutUs">
+                                                {t("global.nav.aboutUs")}
+                                                    </Link>
                                                     
                                                 </li>
                                                 {/* <li>
@@ -185,7 +265,9 @@ const Navbar = () => {
                                                     </ul>
                                                 </li> */}
                                                 <li>
-                                                    <a href="ContactUs">Contact</a>
+                                                <Link to="/ContactUs">
+                                                {t("global.nav.contact")}
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </nav>
@@ -273,22 +355,21 @@ const Navbar = () => {
                                             <ul>
                                                 <li>
                                                 <Link to={'/'}>
-                                                   Home
+                                                   {t("global.nav.home")}
                                                  </Link>
                                                    
                                                 </li>
                                                 <li>
                                                 <Link to="/Shop">
-                                                        Shop  
+                                                {t("global.nav.shop")}
                                                     </Link>
                                                    
                                                 </li>
-                                                <li class="has-dropdown">
-                                                    <a href="AboutUs">
-                                                       About US
-                                                        
-                                                    </a>
+                                                <li>
                                                    
+                                                    <Link to="/AboutUs">
+                                                {t("global.nav.aboutUs")}
+                                                    </Link>
                                                 </li>
                                                 {/* <li>
                                                     <a href="news.html">
@@ -302,7 +383,10 @@ const Navbar = () => {
                                                     </ul>
                                                 </li> */}
                                                 <li>
-                                                    <a href="ContactUs">Contact</a>
+                                                    
+                                                    <Link to="/ContactUs">
+                                                {t("global.nav.contact")}
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </nav>
@@ -335,7 +419,7 @@ const Navbar = () => {
                                     </select> */}
                                     <form action="#" class="search-toggle-box d-md-block">
                                         <div class="input-area">
-                                            <input type="text" placeholder="search"/>
+                                            <input type="text" placeholder={t("global.nav.searchPlaceholder")}/>
                                             <button class="cmn-btn">
                                                 <i class="far fa-search"></i>
                                             </button>

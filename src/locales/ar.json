@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "backToTop": "العودة إلى الأعلى",
+    "contactInfo": "معلومات الاتصال",
+    "address": "الشارع الرئيسي، ملبورن، أستراليا",
+    "email": "info@example.com",
+    "workingHours": "من الاثنين إلى الجمعة، 9 صباحًا - 5 مساءً",
+    "phone": "+966506300345",
+    "getAQuote": "احصل على عرض سعر",
+    "home": "الرئيسية",
+    "shop": "المتجر",
+    "aboutUs": "معلومات عنا",
+    "contact": "اتصل بنا",
+    "searchPlaceholder": "بحث",
+    "wishlist": "قائمة الرغبات",
+    "cart": "عربة التسوق",
+    "profile": "الملف الشخصي",
+    "login": "تسجيل الدخول",
+    "liveChat": "الدردشة المباشرة",
+    "supportEmail": "البريد الإلكتروني للدعم",
+    "supportPhone": "الهاتف للدعم",
+    "languages": {
+      "en": "الإنجليزية",
+      "ar": "العربية",
+      "zh": "الصينية",
+      "id": "الإندونيسية"
+    }
+  },
+  "forgetpass":{
+    "recoverPassword": "استرجاع كلمة المرور",
+    "description": "أدخل رقم الهاتف المرتبط بحسابك وسوف نرسل لك رمزًا لإعادة تعيين كلمة المرور.",
+    "phoneNumber": "رقم الهاتف",
+    "submit": "إرسال"
+  },
+  "resetpass":{
+    "recoverPassword": "استرجاع كلمة المرور",
+    "description": "أضف كلمة المرور الجديدة إلى حسابك",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "enterPassword": "أدخل كلمة المرور",
+    "enterConfirmPassword": "أدخل تأكيد كلمة المرور",
+    "submit": "إرسال"
+  },
+  "login":{
+    "welcomeBack": "أهلاً وسهلاً مجددًا!",
+    "phoneNumber": "رقم الهاتف",
+    "enterPassword": "أدخل كلمة المرور",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "login": "تسجيل الدخول",
+    "createAccount": "إنشاء حساب",
+    "or": "أو",
+    "continueWithGoogle": "متابعة باستخدام جوجل",
+    "continueWithFacebook": "متابعة باستخدام فيسبوك",
+    "acceptTerms": "أوافق على الشروط والأحكام"
+  },
+  "register":{
+    "createAccount": "إنشاء حساب!",
+  "userName": "اسم المستخدم",
+  "dateOfBirth": "تاريخ الميلاد",
+  "categories": "الفئات المهتم بها",
+  "city": "المدينة",
+  "rememberMe": "تذكرني",
+  "forgotPassword": "هل نسيت كلمة المرور؟",
+  "createAccountBtn": "إنشاء حساب",
+  "loginBtn": "تسجيل الدخول",
+  "or": "أو",
+  "continueWithGoogle": "متابعة باستخدام جوجل",
+  "continueWithFacebook": "متابعة باستخدام فيسبوك",
+  "acceptTerms": "أوافق على الشروط والأحكام"
+  },
+  "otp":{
+    "verifyPhone": "تحقق من الهاتف",
+    "enterOtpCode": "أدخل الرمز المكون من 4 أرقام الذي أرسلناه إلى رقم WhatsApp الخاص بك لإتمام الطلب",
+    "didntReceiveCode": "لم تستلم رمز التحقق؟",
+    "resendCode": "إعادة إرسال الرمز",
+    "resendTimer": "إعادة إرسال الرمز في  ",
+    "verifyOtp": "التحقق من OTP"
+  },
+  "home":{
+    "heroSection": {
+      "discount": "خصم يصل إلى 30%",
+      "heading": "احصل على كتابك الجديد <br /> بأفضل سعر",
+      "shopNow": "تسوق الآن"
+    },
+    "featureSection": {
+      "returnRefund": {
+        "title": "الإرجاع والاسترداد",
+        "description": "ضمان استرجاع الأموال"
+      },
+      "securePayment": {
+        "title": "دفع آمن",
+        "description": "خصم 30% عند الاشتراك"
+      },
+      "qualitySupport": {
+        "title": "دعم الجودة",
+        "description": "دائمًا متاح على مدار الساعة طوال أيام الأسبوع"
+      },
+      "dailyOffers": {
+        "title": "عروض يومية",
+        "description": "خصم 20% عند الاشتراك"
+      }
+    },
+     "sectionTitle": "الكتب المميزة",
+  "exploreMore": "استكشاف المزيد",
+  "top_books":{
+    "khazanaTopBooks": "أفضل كتب خزانه",
+    "exploreMore": "استكشاف المزيد",
+    "findYourNextBooks": "ابحث عن كتبك التالية!",
+    "discountOffer": "واحصل على خصم 25% الآن!",
+    "shopNow": "تسوق الآن"
+  }
+  },
+  "cta":{
+    "ctaTitle": "احصل على خصم 25% على جميع <br /> أنواع الكتب الأكثر مبيعًا",
+    "ctaButton": "تسوق الآن"
+  },
+  "contact":{
+    "contactUs": "اتصل بنا",
+    "home": "الصفحة الرئيسية",
+    "callUs": "اتصل بنا على مدار الساعة",
+    "makeAQuote": "طلب عرض سعر",
+    "location": "الموقع",
+    "address": "4517 شارع واشنطن",
+    "readyToStart": "هل أنت جاهز للبدء؟",
+    "contactDescription": "نحن هنا لمساعدتك. تواصل معنا...",
+    "yourName": "اسمك",
+    "yourEmail": "بريدك الإلكتروني",
+    "writeMessage": "اكتب رسالتك",
+    "sendMessage": "أرسل الرسالة",
+    "yourNamePlaceholder": "اسمك",
+    "yourEmailPlaceholder": "بريدك الإلكتروني",
+    "messagePlaceholder": "اكتب رسالتك"
+  },
+  "footer":{
+    "footerCall": "اتصل بنا على مدار الساعة طوال الأسبوع",
+    "footerPhone": "+966506300345",
+    "footerEmail": "example@gmail.com",
+    "footerHours": "الأحد - الجمعة: 9 صباحًا - 6 مساءً",
+    "footerLocation": "4517 واشنطن أفينيو",
+    "footerCustomerSupport": "دعم العملاء",
+    "footerStoreList": "قائمة المتاجر",
+    "footerOpeningHours": "ساعات العمل",
+    "footerContactUs": "اتصل بنا",
+    "footerReturnPolicy": "سياسة الإرجاع",
+    "footerCategories": "الفئات",
+    "footerNovelBooks": "كتب الروايات",
+    "footerPoetryBooks": "كتب الشعر",
+    "footerPoliticalBooks": "كتب السياسة",
+    "footerHistoryBooks": "كتب التاريخ",
+    "footerNewsletter": "النشرة الإخبارية",
+    "footerNewsletterText": "اشترك لتلقي نشرتنا الأسبوعية للحصول على آخر التحديثات.",
+    "footerEmailPlaceholder": "أدخل عنوان البريد الإلكتروني",
+    "footerAllRights": "© جميع الحقوق محفوظة 2024 بواسطة",
+    "footerBrandLogos": "شعارات العلامات التجارية"
+  }
+  
+
+}

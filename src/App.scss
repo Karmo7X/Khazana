@@ -1,0 +1,13 @@
+[lang="ar"]{
+    *{
+        direction: rtl;
+    }
+
+    .header-1 .header-right .category-oneadjust .search-toggle-box{
+        margin-left: 14px !important;
+    }
+    .nice-select::after ,.nice-select:after{
+        left: 10px  !important;
+        right: 96%;
+    }
+}

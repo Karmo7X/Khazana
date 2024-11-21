@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 const Register = () => {
+  const { t, i18n } = useTranslation();
   return (
     <>
       <div
@@ -23,30 +24,30 @@ const Register = () => {
               </div>
               <div class="identityBox">
                 <div class="form-wrapper w-100">
-                  <h1 id="registrationModalLabel">Create account!</h1>
+                  <h1 id="registrationModalLabel">{t("global.register.createAccount")}</h1>
                   <div className="w-100 mt-2">
-                    <label htmlFor="name">User Name</label>
+                    <label htmlFor="name">{t("global.register.userName")}</label>
                     <input
                       class="inputField"
                       type="text"
                       name="name"
                       id="name"
-                      placeholder="User Name"
+                      placeholder={t("global.register.userName")}
                     />
                   </div>
                   <div className="w-100 mt-2">
-                    <label htmlFor="date">Date Of Birth</label>
+                    <label htmlFor="date">{t("global.register.dateOfBirth")}</label>
                     <input
                       class="inputField"
                       type="date"
                       name="date"
                       id="date"
-                      placeholder="Date Of Birth "
+                      placeholder={t("global.register.dateOfBirth")}
                       style={{ color: "#ffffff" }}
                     />
                   </div>
                   <div className="w-100 mt-2">
-                    <label htmlFor="Category">Categories interested in</label>
+                    <label htmlFor="Category">{t("global.register.categories")}</label>
                     <select name="cate" class=" inputField p-0 mt-3">
                                         <option value="1">
                                             Category
@@ -66,7 +67,7 @@ const Register = () => {
                                     </select>
                   </div>
                   <div className=" w-100 mt-2">
-                    <label htmlFor="City">City</label>
+                    <label htmlFor="City">{t("global.register.city")}</label>
                     <select name="city" class=" inputField p-0 mt-3">
                                         <option value="1">
                                             Gada
@@ -114,24 +115,24 @@ const Register = () => {
                         name="save-for-next"
                         id="rememberMe"
                       />
-                      <label for="rememberMe">Remember me</label>
+                      <label for="rememberMe">{t("global.register.rememberMe")}</label>
                     </div>
-                    <div class="text">
+                    {/* <div class="text">
                       {" "}
-                      <a href="index-2.html">Forgot Your password?</a>{" "}
-                    </div>
+                      <a href="">{t("global.register.forgotPassword")}</a>{" "}
+                    </div> */}
                   </div>
-                  <div class="loginBtn">
-                    <a href="index-2.html" class="theme-btn rounded-0">
-                      {" "}
-                      Log in{" "}
-                    </a>
-                  </div>
-                  <div class="orting-badge">Or</div>
+                 
+                            <button type="button" class="theme-btn rounded-0 w-100 register-btn " data-bs-toggle="modal"
+                                data-bs-target="#registrationModal">{t("global.register.createAccountBtn")}</button> 
+                                <button type="button" className="loginBtn theme-btn rounded-0 mt-3" data-bs-toggle="modal" data-bs-target="#otpModal">
+                                {t("global.register.loginBtn")}
+                            </button>
+                  <div class="orting-badge">{t("global.register.or")}</div>
                   <div>
                     <a class="another-option" href="https://www.google.com/">
                       <img src="/assets/img/google.png" alt="google" />
-                      Continue With Google
+                      {t("global.register.continueWithGoogle")}
                     </a>
                   </div>
                   <div>
@@ -140,7 +141,7 @@ const Register = () => {
                       href="https://www.facebook.com/"
                     >
                       <img src="/assets/img/facebook.png" alt="Facebook" />
-                      Continue With Facebook
+                      {t("global.register.continueWithFacebook")}
                     </a>
                   </div>
                   <div class="form-check-3 d-flex align-items-center from-customradio-2 mt-3">
@@ -150,13 +151,13 @@ const Register = () => {
                       name="flexRadioDefault"
                     />
                     <label class="form-check-label">
-                      I Accept Your Terms & Conditions
+                    {t("global.register.acceptTerms")}
                     </label>
                   </div>
                 </div>
 
                 <div class="banner">
-                  <button
+                  {/* <button
                     type="button"
                     class="rounded-0 login-btn"
                     data-bs-toggle="modal"
@@ -171,7 +172,7 @@ const Register = () => {
                     data-bs-target="#registrationModal"
                   >
                     Create Account
-                  </button>
+                  </button> */}
                   <div class="signUpBg">
                     <img src="/assets/img/registrationbg.jpg" alt="signUpBg" />
                   </div>

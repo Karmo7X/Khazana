@@ -1,6 +1,7 @@
 import React from 'react'
-
+import { useTranslation } from "react-i18next";
 const Contact = () => {
+    const { t, i18n } = useTranslation();
   return (
     <>
       {/* <!-- Breadcumb Section Start --> */}
@@ -13,19 +14,19 @@ const Contact = () => {
         </div>
         <div class="container">
             <div class="page-heading">
-                <h1>Contact Us</h1>
+                <h1>{t("global.contact.contactUs")}</h1>
                 <div class="page-header">
                     <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                         <li>
                             <a href="index.html">
-                                Home
+                            {t("global.contact.home")}
                             </a>
                         </li>
                         <li>
                             <i class="fa-solid fa-chevron-right"></i>
                         </li>
                         <li>
-                            Contact Us
+                        {t("global.contact.contactUs")}
                         </li>
                     </ul>
                 </div>
@@ -46,9 +47,9 @@ const Contact = () => {
                                         <i class="icon-icon-10"></i>
                                     </div>
                                     <div class="content">
-                                        <p>Call Us 7/24</p>
+                                        <p>{t("global.contact.callUs")}</p>
                                         <h3>
-                                            <a href="tel:+2085550112">+208-555-0112</a>
+                                            <a href="tel:+966506300345">+966506300345</a>
                                         </h3>
                                     </div>
                                 </div>
@@ -57,7 +58,7 @@ const Contact = () => {
                                         <i class="icon-icon-11"></i>
                                     </div>
                                     <div class="content">
-                                        <p>Make a Quote</p>
+                                        <p>{t("global.contact.makeAQuote")}</p>
                                         <h3>
                                             <a href="mailto:example@gmail.com">example@gmail.com</a>
                                         </h3>
@@ -68,9 +69,9 @@ const Contact = () => {
                                         <i class="icon-icon-12"></i>
                                     </div>
                                     <div class="content">
-                                        <p>Location</p>
+                                        <p>{t("global.contact.location")}</p>
                                         <h3>
-                                            4517 Washington ave.
+                                        {t("global.contact.address")}
                                         </h3>
                                     </div>
                                 </div>
@@ -88,36 +89,34 @@ const Contact = () => {
                     </div>
                     <div class="col-lg-8">
                         <div class="contact-content">
-                            <h2>Ready to Get Started?</h2>
+                            <h2>{t("global.contact.readyToStart")}</h2>
                             <p>
-                                Nunc tincidunt cursus lectus ac semper. Aenean ullamcorper quis arcu molestie consequat.
-                                Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut nec lobortis elit, eu
-                                ultrices justo. Fusce auctor erat est, non fringilla nibh tempus quis. Aenean dignissim
+                            {t("global.contact.contactDescription")}
                             </p>
                             <form action="contact.php" id="contact-form" method="POST" class="contact-form-items">
                                 <div class="row g-4">
                                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
                                         <div class="form-clt">
-                                            <span>Your name*</span>
-                                            <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                            <span>{t("global.contact.yourName")}*</span>
+                                            <input type="text" name="name" id="name" placeholder={t("global.contact.yourNamePlaceholder")}/>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
                                         <div class="form-clt">
-                                            <span>Your Email*</span>
-                                            <input type="text" name="email" id="email123" placeholder="Your Email"/>
+                                            <span>{t("global.contact.yourEmail")}*</span>
+                                            <input type="text" name="email" id="email123" placeholder={t("global.contact.yourEmailPlaceholder")}/>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 wow fadeInUp" data-wow-delay=".7s">
                                         <div class="form-clt">
-                                            <span>Write Message*</span>
+                                            <span>{t("global.contact.writeMessage")}*</span>
                                             <textarea name="message" id="message"
-                                                placeholder="Write Message"></textarea>
+                                                placeholder={t("global.contact.messagePlaceholder")}></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
                                         <button type="submit" class="theme-btn">
-                                            Send Message <i class="fa-solid fa-arrow-right-long"></i>
+                                        {t("global.contact.sendMessage")}<i class="fa-solid fa-arrow-right-long"></i>
                                         </button>
                                     </div>
                                 </div>

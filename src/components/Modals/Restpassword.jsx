@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 const Restpassword = () => {
+  const { t, i18n } = useTranslation();
   return (
     <>
       <div
@@ -24,35 +25,35 @@ const Restpassword = () => {
               <div class="identityBox">
                 <div class="form-wrapper d-flex align-items-center justify-content-center flex-column gap-5">
                   <div className="d-flex align-items-center justify-content-center flex-column text-center">
-                    <h1 id="loginModalLabel">Recover password</h1>
+                    <h1 id="loginModalLabel">{t("global.resetpass.recoverPassword")}</h1>
                     <p className="w-75">
-                    Add the new password to your account
+                    {t("global.resetpass.description")}
                     </p>
                   </div>
 
                   <div className="w-100 mt-2">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password"> {t("global.resetpass.password")}</label>
                     <input
                       class="inputField"
                       type="password"
                       name="password"
-                      placeholder="Enter Password"
+                      placeholder={t("global.resetpass.enterPassword")}
                       id="password"
                     />
                   </div>
                   <div className="w-100 mt-2">
-                    <label htmlFor="confirmpassword">Confirm Password</label>
+                    <label htmlFor="confirmpassword">{t("global.resetpass.confirmPassword")}</label>
                     <input
                       class="inputField"
                       type="password"
                       name="confirmpassword"
                       id="confirmpassword"
-                      placeholder="Enter Confirm Password"
+                      placeholder={t("global.resetpass.enterConfirmPassword")}
                     />
                   </div>
 
                   <button className="theme-btn rounded-0 w-100  mt-3">
-                    submit
+                  {t("global.resetpass.submit")}
                   </button>
                 </div>
 

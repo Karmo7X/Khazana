@@ -1,8 +1,10 @@
 import React from 'react'
-
+import { useTranslation } from "react-i18next";
 const Footer = () => {
-  return (
-    <footer className="footer-section footer-bg">
+  const { t } = useTranslation();  // Assuming you're using i18next
+
+return (
+  <footer className="footer-section footer-bg">
     <div className="container">
       <div className="contact-info-area">
         <div className="contact-info-items wow fadeInUp" data-wow-delay=".2s">
@@ -10,9 +12,9 @@ const Footer = () => {
             <i className="icon-icon-5"></i>
           </div>
           <div className="content">
-            <p>Call Us 7/24</p>
+            <p>{t('global.footer.footerCall')}</p>
             <h3>
-              <a href="tel:+966506300345">+966506300345</a>
+              <a href="tel:+966506300345">{t('global.footer.footerPhone')}</a>
             </h3>
           </div>
         </div>
@@ -21,7 +23,7 @@ const Footer = () => {
             <i className="icon-icon-6"></i>
           </div>
           <div className="content">
-            <p>Make a Quote</p>
+            <p>{t('global.footer.footerEmail')}</p>
             <h3>
               <a href="mailto:example@gmail.com">example@gmail.com</a>
             </h3>
@@ -32,8 +34,8 @@ const Footer = () => {
             <i className="icon-icon-7"></i>
           </div>
           <div className="content">
-            <p>Opening Hour</p>
-            <h3>Sunday - Fri: 9 AM - 6 PM</h3>
+            <p>{t('global.footer.footerHours')}</p>
+            <h3>{t('global.footer.footerHours')}</h3>
           </div>
         </div>
         <div className="contact-info-items wow fadeInUp" data-wow-delay=".8s">
@@ -41,8 +43,8 @@ const Footer = () => {
             <i className="icon-icon-8"></i>
           </div>
           <div className="content">
-            <p>Location</p>
-            <h3>4517 Washington ave.</h3>
+            <p>{t('global.footer.footerLocation')}</p>
+            <h3>{t('global.footer.footerLocation')}</h3>
           </div>
         </div>
       </div>
@@ -57,13 +59,12 @@ const Footer = () => {
             <div className="single-footer-widget">
               <div className="widget-head">
                 <a href="index.html">
-                  <img src="/assets/img/favicon.png" className='w-25' alt="logo-img" />
+                  <img src="/assets/img/favicon.png" className="w-25" alt="logo-img" />
                 </a>
               </div>
               <div className="footer-content">
                 <p>
-                  Phasellus ultricies aliquam volutpat ullamcorper laoreet neque, a lacinia curabitur
-                  lacinia mollis
+                  Phasellus ultricies aliquam volutpat ullamcorper laoreet neque, a lacinia curabitur lacinia mollis
                 </p>
                 <div className="social-icon d-flex align-items-center">
                   <a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a>
@@ -77,42 +78,39 @@ const Footer = () => {
           <div className="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".4s">
             <div className="single-footer-widget">
               <div className="widget-head">
-                <h3>Customer Support</h3>
+                <h3>{t('global.footer.footerCustomerSupport')}</h3>
               </div>
               <ul className="list-area">
-                <li><a href="Shop"><i className="fa-solid fa-chevron-right"></i> Store List</a></li>
-                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Opening Hours</a></li>
-                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Contact Us</a></li>
-                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Return Policy</a></li>
+                <li><a href="Shop"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerStoreList')}</a></li>
+                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerContactUs')}</a></li>
+                <li><a href="ReturnPolicy"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerReturnPolicy')}</a></li>
               </ul>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".6s">
+          <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
             <div className="single-footer-widget">
               <div className="widget-head">
-                <h3>Categories</h3>
+                <h3>{t('global.footer.footerCategories')}</h3>
               </div>
               <ul className="list-area">
-                <li><a href="Shop"><i className="fa-solid fa-chevron-right"></i> Novel Books</a></li>
-                <li><a href="Shop"><i className="fa-solid fa-chevron-right"></i> Poetry Books</a></li>
-                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> Political Books</a></li>
-                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> History Books</a></li>
+                <li><a href="NovelBooks"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerNovelBooks')}</a></li>
+                <li><a href="PoetryBooks"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerPoetryBooks')}</a></li>
+                <li><a href="PoliticalBooks"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerPoliticalBooks')}</a></li>
+                <li><a href="HistoryBooks"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerHistoryBooks')}</a></li>
               </ul>
             </div>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
             <div className="single-footer-widget">
               <div className="widget-head">
-                <h3>Newsletter</h3>
+                <h3>{t('global.footer.footerNewsletter')}</h3>
               </div>
-              <div className="footer-content">
-                <p>Sign up to receive our weekly newsletter to get the latest updates.</p>
-                <div className="footer-input">
-                  <input type="email" id="email2" placeholder="Enter Email Address" />
-                  <button className="newsletter-btn" type="submit">
-                    <i className="fa-regular fa-paper-plane"></i>
-                  </button>
-                </div>
+              <div className="footer-newsletter">
+                <p>{t('global.footer.footerNewsletterText')}</p>
+                <form action="#">
+                  <input type="email" placeholder={t('global.footer.footerEmailPlaceholder')} />
+                  <button type="submit">Sign Up</button>
+                </form>
               </div>
             </div>
           </div>
@@ -121,21 +119,19 @@ const Footer = () => {
     </div>
     <div className="footer-bottom">
       <div className="container">
-        <div className="footer-wrapper d-flex align-items-center justify-content-between">
-          <p className="wow fadeInLeft" data-wow-delay=".3s">
-            © All Rights Reserved 2024 by <a href="index.html">Bookle</a>
+        <div className="footer-bottom-wrapper w-100 text-center d-flex justify-content-center align-items-center">
+          <p className='text-center'>{t('global.footer.footerAllRights')} 
+            {/* <a href="/">brand-name</a> */}
           </p>
-          <ul className="brand-logo wow fadeInRight" data-wow-delay=".5s">
-            <li><a href="ContactUs"><img src="/assets/img/visa-logo.png" alt="img" /></a></li>
-            <li><a href="ContactUs"><img src="/assets/img/mastercard.png" alt="img" /></a></li>
-            <li><a href="ContactUs"><img src="/assets/img/payoneer.png" alt="img" /></a></li>
-            <li><a href="ContactUs"><img src="/assets/img/affirm.png" alt="img" /></a></li>
-          </ul>
+          {/* <div className="footer-logo">
+            <img src="/assets/img/footer-logo.png" alt="footer-logo" />
+          </div> */}
         </div>
       </div>
     </div>
   </footer>
-  )
+);
+
 }
 
 export default Footer

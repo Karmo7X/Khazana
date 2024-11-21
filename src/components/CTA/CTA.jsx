@@ -1,6 +1,7 @@
 import React from 'react'
-
+import { useTranslation } from "react-i18next";
 const CTA = () => {
+  const { t, i18n } = useTranslation();
   return (
     <>
      <section className="cta-banner-section fix section-padding pt-0">
@@ -24,8 +25,11 @@ const CTA = () => {
                 animationDelay: '0.3s',
                 animationName: 'fadeInUp'
               }}
+              dangerouslySetInnerHTML={{
+                __html: t("global.cta.ctaTitle")
+              }}
             >
-              Get 25% discount in all <br /> kind of super Selling
+              {/* Get 25% discount in all <br /> kind of super Selling */}
             </h2>
             <a
               href="Shop"
@@ -37,7 +41,7 @@ const CTA = () => {
                 animationName: 'fadeInUp'
               }}
             >
-              Shop Now <i className="fa-solid fa-arrow-right-long"></i>
+             {t("global.cta.ctaButton")}<i className="fa-solid fa-arrow-right-long"></i>
             </a>
           </div>
         </div>

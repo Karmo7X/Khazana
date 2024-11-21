@@ -16,7 +16,9 @@ import girlImage from '/assets/img/hero/hero-girl.png';
 import bookimg from '/assets/img/book/01.png'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation ,Autoplay } from 'swiper/modules';
+import { useTranslation } from "react-i18next";
 const Home = () => {
+    const { t, i18n } = useTranslation();
   return (
     <>
     
@@ -48,11 +50,15 @@ const Home = () => {
                         <img src={bgShape2Image} alt="Background Shape 2" />
                     </div>
                     <div className="hero-content">
-                        <h6 className="wow fadeInUp" data-wow-delay=".3s">Up to 30% Off</h6>
-                        <h1 className="wow fadeInUp" data-wow-delay=".5s">Get Your New Book <br /> With The Best Price</h1>
+                        <h6 className="wow fadeInUp" data-wow-delay=".3s">{t("global.home.heroSection.discount")}</h6>
+                        <h1 className="wow fadeInUp" data-wow-delay=".5s"
+                         dangerouslySetInnerHTML={{
+                            __html: t("global.home.heroSection.heading")
+                          }}
+                        ></h1>
                         <div className="form-clt wow fadeInUp" data-wow-delay=".9s">
                             <button type="submit" className="theme-btn">
-                                Shop Now <i className="fa-solid fa-arrow-right-long"></i>
+                            {t("global.home.heroSection.shopNow")} <i className="fa-solid fa-arrow-right-long"></i>
                             </button>
                         </div>
                     </div>
@@ -76,8 +82,8 @@ const Home = () => {
                         <i class="icon-icon-1"></i>
                     </div>
                     <div class="content">
-                        <h3>Return & refund</h3>
-                        <p>Money back guarantee</p>
+                        <h3> {t("global.home.featureSection.returnRefund.title")}</h3>
+                        <p>{t("global.home.featureSection.returnRefund.description")}</p>
                     </div>
                 </div>
                 <div class="feature-box-items wow fadeInUp" data-wow-delay=".4s">
@@ -85,8 +91,8 @@ const Home = () => {
                         <i class="icon-icon-2"></i>
                     </div>
                     <div class="content">
-                        <h3>Secure Payment</h3>
-                        <p>30% off by subscribing</p>
+                        <h3>{t("global.home.featureSection.securePayment.title")}</h3>
+                        <p>{t("global.home.featureSection.securePayment.description")}</p>
                     </div>
                 </div>
                 <div class="feature-box-items wow fadeInUp" data-wow-delay=".6s">
@@ -94,8 +100,8 @@ const Home = () => {
                         <i class="icon-icon-3"></i>
                     </div>
                     <div class="content">
-                        <h3>Quality Support</h3>
-                        <p>Always online 24/7</p>
+                        <h3>{t("global.home.featureSection.qualitySupport.title")}</h3>
+                        <p>{t("global.home.featureSection.qualitySupport.description")}</p>
                     </div>
                 </div>
                 <div class="feature-box-items wow fadeInUp" data-wow-delay=".8s">
@@ -103,8 +109,8 @@ const Home = () => {
                         <i class="icon-icon-4"></i>
                     </div>
                     <div class="content">
-                        <h3>Daily Offers</h3>
-                        <p>20% off by subscribing</p>
+                        <h3>{t("global.home.featureSection.dailyOffers.title")}</h3>
+                        <p>{t("global.home.featureSection.dailyOffers.description")}</p>
                     </div>
                 </div>
             </div>
@@ -121,9 +127,9 @@ const Home = () => {
         <div class="container">
             <div class="section-title-area">
                 <div class="section-title">
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">Featured Books</h2>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">{t("global.home.sectionTitle")}</h2>
                 </div>
-                <a href="shop.html" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">Explore More <i
+                <a href="shop.html" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">{t("global.home.exploreMore")} <i
                         class="fa-solid fa-arrow-right-long"></i></a>
             </div>
             <Swiper

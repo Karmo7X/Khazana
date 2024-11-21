@@ -1,6 +1,7 @@
 import React from 'react'
-
+import { useTranslation } from "react-i18next";
 const Forgetpassword = () => {
+  const { t, i18n } = useTranslation();
   return (
     <>
       <div
@@ -20,16 +21,16 @@ const Forgetpassword = () => {
                     <div class="identityBox">
                         <div class="form-wrapper d-flex align-items-center justify-content-center flex-column gap-5">
                             <div className='d-flex align-items-center justify-content-center flex-column text-center'>
-                            <h1 id="loginModalLabel">Recover password</h1>
-                            <p className='w-75'>Enter the mobile number associated with your account and we will send you a code to reset your password.</p>
+                            <h1 id="loginModalLabel">{t("global.forgetpass.recoverPassword")}</h1>
+                            <p className='w-75'>{t("global.forgetpass.description")}</p>
                             </div>
                            
-                            <input class="inputField" type="phone" name="email" placeholder="Phone Number"/>
+                            <input class="inputField" type="phone" name="email" placeholder={t("global.forgetpass.phoneNumber")}/>
 
              
               <button className="theme-btn rounded-0 w-100  mt-3" data-bs-toggle="modal"
                                 data-bs-target="#resetModal">
-               submit
+              {t("global.forgetpass.submit")}
               </button>
                         </div>
 

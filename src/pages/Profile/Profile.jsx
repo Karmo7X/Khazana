@@ -55,7 +55,7 @@ const Profile = () => {
     </div>
 
     {/* for author */}
-    <Dashboard/>
+    {/* <Dashboard/> */}
     </>
    
   );

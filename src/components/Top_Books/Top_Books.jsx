@@ -1,16 +1,17 @@
 import React from 'react'
-
+import { useTranslation } from "react-i18next";
 const Top_Books = () => {
-  return (
+    const { t, i18n } = useTranslation();
+    return (
     <>
     <section className="shop-section section-padding fix">
     <div className="container">
         <div className="section-title-area">
             <div className="section-title mb- wow fadeInUp" data-wow-delay=".3s">
-                <h2>Khazana Top Books</h2>
+                <h2>{t("global.home.top_books.khazanaTopBooks")}</h2>
             </div>
             <a href="Shop" className="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
-                Explore More <i className="fa-solid fa-arrow-right-long"></i>
+            {t("global.home.top_books.exploreMore")} <i className="fa-solid fa-arrow-right-long"></i>
             </a>
         </div>
         <div className="book-shop-wrapper">
@@ -66,10 +67,10 @@ const Top_Books = () => {
             {/* Repeat similar structure for each book item */}
 
             <div className="cta-shop-box">
-                <h2 className="wow fadeInUp" data-wow-delay=".2s">Find Your Next Books!</h2>
-                <h6 className="wow fadeInUp" data-wow-delay=".4s">And get your 25% discount now!</h6>
+                <h2 className="wow fadeInUp" data-wow-delay=".2s"> {t("global.home.top_books.findYourNextBooks")}</h2>
+                <h6 className="wow fadeInUp" data-wow-delay=".4s">{t("global.home.top_books.discountOffer")}</h6>
                 <a href="Shop" className="theme-btn white-bg wow fadeInUp" data-wow-delay=".6s">
-                    Shop Now <i className="fa-solid fa-arrow-right-long"></i>
+                {t("global.home.top_books.shopNow")} <i className="fa-solid fa-arrow-right-long"></i>
                 </a>
                 <div className="girl-shape">
                     <img src="assets/img/girl-shape.png" className='img-fluid'  alt="Shape Image" />
