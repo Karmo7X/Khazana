@@ -70,7 +70,7 @@ const Navbar = () => {
                     </p>
                     <div class="mobile-menu fix mb-3"></div>
                     <div class="menu-cart d-flex align-items-center gap-2">
-                                    <a href="Wishlist" class="cart-icon profile-icon">
+                                    <a href="/Wishlist" class="cart-icon profile-icon">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
                                     <a href="/Cart" class="cart-icon profile-icon">
@@ -308,7 +308,7 @@ const Navbar = () => {
                                     </form>
                                 </div>
                                 <div class="menu-cart">
-                                    <a href="Wishlist" class="cart-icon">
+                                    <a href="/Wishlist" class="cart-icon">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
                                     <a href="/Cart" class="cart-icon">
@@ -427,7 +427,7 @@ const Navbar = () => {
                                     </form>
                                 </div>
                                 <div class="menu-cart">
-                                    <a href="Wishlist" class="cart-icon">
+                                    <a href="/Wishlist" class="cart-icon">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
                                     <a href="/Cart" class="cart-icon">

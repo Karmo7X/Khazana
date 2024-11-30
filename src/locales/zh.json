@@ -114,7 +114,31 @@
   "featured_authors":"特邀作者们",
   "featured_authors_desc":" 认识那些讲述启发、挑战和娱乐故事的创作者。 我们的特邀作者带来来自心灵的故事，每个作品都拥有独特的声音与视角。",
   "top_rate":"最佳评分书籍",
-   "top_selling_books":"畅销书籍"
+   "top_selling_books":"畅销书籍",
+   "related_products": {
+    "title": "相关产品",
+      "description": "发现更多与您兴趣相关的产品。无论是寻找新产品，还是想要进一步探索，这些精心挑选的商品都非常适合您！"
+    
+      
+    }
+  },
+  "shop_details": {
+    "title": "商店详情",
+    "breadcrumb": [
+      { "text": "主页", "url": "/" },
+      { "text": "商店详情", "url": "/shop-details" }
+    ],
+    "description": "商店详情：深入了解您最喜欢的商店，每一件商品都有一个独特的故事。"
+  },
+  "shop_discovery": {
+    "title": "发现我们的商店",
+    "breadcrumb": "商店",
+  
+    "description": "探索我们精心挑选的广泛产品，为您提供最佳的购物体验。"
+   , "related_products": {
+    "title": "相关产品",
+    "description": "深入探索我们精心挑选的产品，每一款都能完美补充您的品味。每个选择都经过精心策划，专为您而来—探索一下，提升您的体验！"
+  }
   },
   "cta":{
   "ctaTitle": "在所有超畅销书籍 <br />上获得25%的折扣",

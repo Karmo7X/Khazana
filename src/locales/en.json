@@ -114,7 +114,30 @@
   "featured_authors":"Featured Authors",
   "featured_authors_desc":" Meet the minds behind the stories that inspire, challenge, and entertain.  Our featured authors bring you tales from the heart, each with a unique voice and vision.",
   "top_rate":"Top Rating Books",
-  "top_selling_books":"Top Selling Books"  
+  "top_selling_books":"Top Selling Books" ,
+  "related_products": {
+     "title": "Related Products",
+      "description": "Discover more products that complement your interests. Whether you're looking for something new or want to explore further, these hand-picked selections are perfect for you!"
+      
+    }
+},
+
+"shop_details": {
+  "title": "Shop Details",
+  "breadcrumb": [
+    { "text": "Home", "url": "/" },
+    { "text": "Shop Details", "url": "/shop-details" }
+  ],
+  "description": "Shop Details: Dive into the details of your favorite store, where every product tells a unique story."
+},
+"shop_discovery": {
+  "title": "Discover Our Shop",
+  "breadcrumb": "Shop",  
+  "description": "Explore our wide range of products, each selected with care to provide you the best shopping experience."
+  ,"related_products": {
+    "title": "Related Products",
+    "description": "Delve deeper into our collection of handpicked products that perfectly complement your taste. Each selection is curated with care, just for you—explore what catches your eye and elevate your experience!"
+  }
 },
   "cta":{
     "ctaTitle": "Get 25% discount in all <br />  kinds of super Selling",

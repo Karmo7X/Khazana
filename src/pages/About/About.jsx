@@ -1,6 +1,7 @@
 import React from 'react'
-
+import { useTranslation } from "react-i18next";
 const About = () => {
+    const { t, i18n } = useTranslation();
   return (
     <>
       {/* <!-- breadcumb Section Start --> */}
@@ -13,19 +14,19 @@ const About = () => {
         </div>
         <div class="container">
             <div class="page-heading">
-                <h1>About Us</h1>
+                <h1> {t("global.nav.aboutUs")}</h1>
                 <div class="page-header">
                     <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                         <li>
                             <a href="index.html">
-                                Home
+                            {t("global.nav.home")}
                             </a>
                         </li>
                         <li>
                             <i class="fa-solid fa-chevron-right"></i>
                         </li>
                         <li>
-                            About Us
+                        {t("global.nav.aboutUs")}
                         </li>
                     </ul>
                 </div>

@@ -24,4 +24,10 @@
         left: -73%  !important;
         
     }
+    .modal-dialog .close-btn {
+        position: absolute !important;
+        top: 1% !important;
+        right: 94% !important;
+        z-index: 5 !important;
+    }
 }

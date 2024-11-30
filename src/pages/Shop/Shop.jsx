@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Shopdefault from '../../components/Shopdefault/Shopdefault'
 import Shoplist from '../../components/Shoplist/Shoplist'
-
+import { useTranslation } from "react-i18next";
 const Shop = () => {
+    const { t, i18n } = useTranslation();
     const [layout,setLayout]=useState('grid')
     const books = [
         {
@@ -64,20 +65,20 @@ const Shop = () => {
         </div>
         <div className="container">
             <div className="page-heading">
-            <h1>Discover Our Shop </h1>
+            <h1>{t("global.shop_discovery.title")} </h1>
              
                 <div className="page-header">
                     <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                         <li>
                             <Link to="/">
-                                Home
+                            {t("global.nav.home")}
                             </Link>
                         </li>
                         <li>
                             <i className="fa-solid fa-chevron-right"></i>
                         </li>
                         <li>
-                            Shop 
+                        {t("global.shop_discovery.breadcrumb")}
                         </li>
                       
                     </ul>

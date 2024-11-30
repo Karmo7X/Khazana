@@ -114,7 +114,31 @@
   "featured_authors":"Penulis Unggulan",
   "featured_authors_desc":"  Temui para pemikir di balik cerita-cerita yang menginspirasi, menantang, dan menghibur. Penulis unggulan kami menghadirkan kisah-kisah dari hati, masing-masing dengan suara dan visi yang unik.",
   "top_rate":"Buku Dengan Rating Teratas" ,
-   "top_selling_books":"Buku Terlaris"
+   "top_selling_books":"Buku Terlaris",
+   "related_products": {
+    "title": "Produk Terkait",
+      "description": "Temukan produk lain yang melengkapi minat Anda. Apakah Anda mencari sesuatu yang baru atau ingin menjelajah lebih lanjut, pilihan produk ini sangat cocok untuk Anda!"
+    
+      
+    }
+  },
+  "shop_details": {
+    "title": "Detail Toko",
+    "breadcrumb": [
+      { "text": "Beranda", "url": "/" },
+      { "text": "Detail Toko", "url": "/shop-details" }
+    ],
+    "description": "Detail Toko: Jelajahi detail toko favorit Anda, di mana setiap produk menceritakan kisah unik."
+  },
+  "shop_discovery": {
+    "title": "Temukan Toko Kami",
+    "breadcrumb": "Toko",
+    
+    "description": "Jelajahi berbagai produk kami, masing-masing dipilih dengan hati-hati untuk memberikan pengalaman berbelanja terbaik bagi Anda."
+   ,"related_products": {
+    "title": "Produk Terkait",
+    "description": "Jelajahi lebih dalam koleksi produk pilihan kami yang sempurna melengkapi selera Anda. Setiap pilihan dipilih dengan hati-hati, hanya untuk Anda—temukan yang menarik perhatian Anda dan tingkatkan pengalaman Anda!"
+  }
   },
   "cta":{
     "ctaTitle": "Dapatkan diskon 25% untuk <br /> semua jenis buku terlaris",
