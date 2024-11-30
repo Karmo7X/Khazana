@@ -109,7 +109,12 @@
     "findYourNextBooks": "Temukan Buku Berikutnya!",
     "discountOffer": "Dan dapatkan diskon 25% sekarang!",
     "shopNow": "Belanja Sekarang"
-  }
+  },
+  "top_category":"Kategori Terbaik",
+  "featured_authors":"Penulis Unggulan",
+  "featured_authors_desc":"  Temui para pemikir di balik cerita-cerita yang menginspirasi, menantang, dan menghibur. Penulis unggulan kami menghadirkan kisah-kisah dari hati, masing-masing dengan suara dan visi yang unik.",
+  "top_rate":"Buku Dengan Rating Teratas" ,
+   "top_selling_books":"Buku Terlaris"
   },
   "cta":{
     "ctaTitle": "Dapatkan diskon 25% untuk <br /> semua jenis buku terlaris",

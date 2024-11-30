@@ -1,6 +1,16 @@
 import React from 'react'
 
 function Filter() {
+    const bookCategories = [
+        { id: 1, title: 'Literature', count: 50, imgSrc: '/assets/img/book-categori/01.png' },
+        { id: 2, title: 'Scientific Books', count: 30, imgSrc: '/assets/img/book-categori/02.png' },
+        { id: 3, title: 'Religious Books', count: 40, imgSrc: '/assets/img/book-categori/03.png'  },
+        { id: 4, title: 'Novels', count: 100, imgSrc: '/assets/img/book-categori/04.png' },
+        { id: 5, title: 'Adventure Books', count: 4, imgSrc: '/assets/img/book-categori/05.png' },
+        { id: 6, title: 'Design Law Books', count: 6, imgSrc: '/assets/img/book-categori/02.png' },
+        { id: 7, title: 'Safe Home', count: 5, imgSrc: '/assets/img/book-categori/03.png' },
+        { id: 8, title: 'Grow Flowers', count: 7, imgSrc: '/assets/img/book-categori/04.png' },
+    ];
   return (
     <>
      <div className="col-xl-3 col-lg-4 order-2 order-md-1 wow fadeInUp" data-wow-delay=".3s">
@@ -24,42 +34,24 @@ function Filter() {
                                 </div>
                                 <div className="categories-list">
                                     <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                        <li className="nav-item" role="presentation">
-                                            <button className="nav-link active" id="pills-arts-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-arts" type="button" role="tab"
-                                                aria-controls="pills-arts" aria-selected="true">Arts &
-                                                Photography</button>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <button className="nav-link" id="pills-Biographies-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-Biographies" type="button" role="tab"
-                                                aria-controls="pills-Biographies" aria-selected="false">Biographies &
-                                                Memoirs</button>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <button className="nav-link" id="pills-ChristianBooks-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-ChristianBooks" type="button" role="tab"
-                                                aria-controls="pills-ChristianBooks" aria-selected="false">Christian
-                                                Books & Bibles</button>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <button className="nav-link" id="pills-ResearchPublishing-tab"
-                                                data-bs-toggle="pill" data-bs-target="#pills-ResearchPublishing"
-                                                type="button" role="tab" aria-controls="pills-ResearchPublishing"
-                                                aria-selected="false">Research & Publishing Guides</button>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <button className="nav-link" id="pills-SportsOutdoors-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-SportsOutdoors" type="button" role="tab"
-                                                aria-controls="pills-SportsOutdoors" aria-selected="false">Sports &
-                                                Outdoors</button>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <button className="nav-link" id="pills-FoodDrink-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-FoodDrink" type="button" role="tab"
-                                                aria-controls="pills-FoodDrink" aria-selected="false">Food &
-                                                Drink</button>
-                                        </li>
+                                    {bookCategories.map((category) => (
+      <li className="nav-item" role="presentation" key={category.id}>
+        <button
+          className="nav-link"
+          id={`pills-${category.title.toLowerCase().replace(/\s+/g, '-')}-tab`}
+          data-bs-toggle="pill"
+          data-bs-target={`#pills-${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+          type="button"
+          role="tab"
+          aria-controls={`pills-${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+          aria-selected="true"
+        >
+          {category.title}
+        </button>
+      </li>
+    ))}
+                                       
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -126,7 +118,7 @@ function Filter() {
                                     </div>
                                     <div className="range-items">
                                         <div className="price-input">
-                                            <div className="d-flex align-items-center">
+                                            <div className="d-flex align-items-center gap-3">
                                                 <a href="shop-left-sidebar.html" className="filter-btn mt-2 me-3">Filter</a>
                                                 <div className="field">
                                                     <span>Price:</span>

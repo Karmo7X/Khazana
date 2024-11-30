@@ -1,7 +1,9 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation ,Autoplay } from 'swiper/modules';
+import { useTranslation } from "react-i18next";
 const Top_category = () => {
+    const { t, i18n } = useTranslation();
     const bookCategories = [
         { id: 1, title: 'Literature', count: 50, imgSrc: '/assets/img/book-categori/01.png' },
         { id: 2, title: 'Scientific Books', count: 30, imgSrc: '/assets/img/book-categori/02.png' },
@@ -18,7 +20,7 @@ const Top_category = () => {
         <div className="container">
             <div className="book-catagories-wrapper">
                 <div className="section-title text-center">
-                    <h2 className="wow fadeInUp" data-wow-delay=".3s">Top Categories Book</h2>
+                    <h2 className="wow fadeInUp" data-wow-delay=".3s">{t("global.home.top_category")}</h2>
                 </div>
                 <div className="array-button">
                     <button className="array-prev"><i className="fal fa-arrow-left"></i></button>

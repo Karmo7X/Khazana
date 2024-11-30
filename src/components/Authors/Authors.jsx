@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useTranslation } from "react-i18next";
 import { Navigation ,Autoplay} from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,15 +22,15 @@ const authors = [
 
 
 const Authors = () => {
+  const { t, i18n } = useTranslation();
   return (
     <>
     <section className="team-section fix section-padding mt-5 pt-0 mb-30">
       <div className="container">
         <div className="section-title text-center">
-          <h2 className="mb-3">Featured Author</h2>
+          <h2 className="mb-3">{t("global.home.featured_authors")}</h2>
           <p>
-            Interdum et malesuada fames ac ante ipsum primis in faucibus. <br />
-            Donec at nulla nulla. Duis posuere ex lacus
+          {t("global.home.featured_authors_desc")}
           </p>
         </div>
 

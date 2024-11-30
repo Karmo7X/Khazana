@@ -109,7 +109,12 @@
     "findYourNextBooks": "找到你的下一本书!",
     "discountOffer": "现在即可享受25%的折扣!",
     "shopNow": "立即购买"
-  }
+  },
+  "top_category":" 最佳类别",
+  "featured_authors":"特邀作者们",
+  "featured_authors_desc":" 认识那些讲述启发、挑战和娱乐故事的创作者。 我们的特邀作者带来来自心灵的故事，每个作品都拥有独特的声音与视角。",
+  "top_rate":"最佳评分书籍",
+   "top_selling_books":"畅销书籍"
   },
   "cta":{
   "ctaTitle": "在所有超畅销书籍 <br />上获得25%的折扣",

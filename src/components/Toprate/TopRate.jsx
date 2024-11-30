@@ -1,6 +1,8 @@
 import React from 'react'
 import '../../../public/assets/css/main.css'
+import { useTranslation } from "react-i18next";
 const TopRate = () => {
+    const { t, i18n } = useTranslation();
   return (
     <>
     <section class="top-rating-book-section section-padding section-bg">
@@ -8,10 +10,10 @@ const TopRate = () => {
         <div class="top-rating-book-wrapper">
             <div class="section-title-area">
                 <div class="section-title">
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">Top Rating Books</h2>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">{t("global.home.top_rate")}</h2>
                 </div>
                 <a href="Shop" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
-                    View More <i class="fa-solid fa-arrow-right-long"></i>
+                {t("global.home.exploreMore")} <i class="fa-solid fa-arrow-right-long"></i>
                 </a>
             </div>
             <div class="row">

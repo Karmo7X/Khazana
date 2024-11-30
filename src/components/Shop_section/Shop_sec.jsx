@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useTranslation } from "react-i18next";
 import { Navigation ,Autoplay} from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,97 +11,23 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
 
-const books = [
-    {
-        id: 1,
-        image: "assets/img/book/01.png",
-        title: "Simple Things You To Save BOOK",
-        price: "30.00 R.S",
-        discountPrice: "39.99 R.S",
-        authorImage: "assets/img/testimonial/client-1.png",
-        authorName: "Wilson",
-        rating: 4,
-        labels: ["Hot", "-30%"]
-    },
-    {
-        id: 2,
-        image: "assets/img/book/02.png",
-        title: "How Deal With Very Bad BOOK",
-        price: "30.00 R.S",
-        discountPrice: "39.99 R.S",
-        authorImage: "assets/img/testimonial/client-2.png",
-        authorName: "Alexander",
-        rating: 4,
-        labels: ["New"]
-    },
-    {
-        id: 3,
-        image: "assets/img/book/03.png",
-        title: "The Art of Not Giving Up",
-        price: "$25.00",
-        discountPrice: "$29.99",
-        authorImage: "assets/img/testimonial/client-3.png",
-        authorName: "Samantha",
-        rating: 5,
-        labels: ["Best Seller"]
-    },
-    {
-        id: 4,
-        image: "assets/img/book/04.png",
-        title: "Learning React Efficiently",
-        price: "$35.00",
-        discountPrice: "$45.99",
-        authorImage: "assets/img/testimonial/client-4.png",
-        authorName: "David",
-        rating: 3,
-        labels: ["Hot"]
-    },
-    {
-        id: 5,
-        image: "assets/img/book/05.png",
-        title: "Mastering CSS for Beginners",
-        price: "$20.00",
-        discountPrice: "$25.99",
-        authorImage: "assets/img/testimonial/client-5.png",
-        authorName: "Olivia",
-        rating: 4,
-        labels: ["Limited Edition"]
-    },
-    {
-        id: 6,
-        image: "assets/img/book/06.png",
-        title: "JavaScript Essentials",
-        price: "$18.00",
-        discountPrice: "$23.99",
-        authorImage: "assets/img/testimonial/client-6.png",
-        authorName: "Michael",
-        rating: 5,
-        labels: ["New Arrival"]
-    },
-    {
-        id: 7,
-        image: "assets/img/book/07.png",
-        title: "Understanding UX/UI Design",
-        price: "$28.00",
-        discountPrice: "$34.99",
-        authorImage: "assets/img/testimonial/client-7.png",
-        authorName: "Laura",
-        rating: 5,
-        labels: ["Featured"]
-    }
-];
 
-const Shop_sec = () => {
+const Shop_sec = ({data}) => {
+    const { t, i18n } = useTranslation();
+    const [books,setBooks]=useState([])
+    useEffect(()=>{
+      setBooks(data)
+    },[data])
   return (
     <>
     <section class="shop-section section-padding fix">
     <div class="container">
         <div class="section-title-area">
             <div class="section-title wow fadeInUp" data-wow-delay=".3s">
-                <h2>Top Selling Books</h2>
+                <h2> {t("global.home.top_selling_books")}</h2>
             </div>
             <a href="Shop" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
-                Explore More <i class="fa-solid fa-arrow-right-long"></i>
+            {t("global.home.exploreMore")} <i class="fa-solid fa-arrow-right-long"></i>
             </a>
         </div>
         
@@ -141,11 +68,11 @@ const Shop_sec = () => {
                             <a href="Single/:id">
                                 <img src={book.image} alt="Book cover" />
                             </a>
-                            <ul className="post-box">
+                            {/* <ul className="post-box">
                                 {book.labels.map((label, index) => (
                                     <li key={index}>{label}</li>
                                 ))}
-                            </ul>
+                            </ul> */}
                             <ul className="shop-icon d-grid justify-content-center align-items-center">
                                 <li><a href="/Cart"><i className="far fa-heart"></i></a></li>
                                 <li>
@@ -157,7 +84,7 @@ const Shop_sec = () => {
                             </ul>
                         </div>
                         <div className="shop-content">
-                            <h5>Design Low Book</h5>
+                            <h5>{book.category}</h5>
                             <h3><a href="/Single/:id">{book.title}</a></h3>
                             <ul className="price-list">
                                 <li>{book.price}</li>

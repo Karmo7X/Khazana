@@ -109,8 +109,13 @@
     "findYourNextBooks": "Find Your Next Books!",
     "discountOffer": "And get your 25% discount now!",
     "shopNow": "Shop Now"
-  }
   },
+  "top_category":"Best Categories",
+  "featured_authors":"Featured Authors",
+  "featured_authors_desc":" Meet the minds behind the stories that inspire, challenge, and entertain.  Our featured authors bring you tales from the heart, each with a unique voice and vision.",
+  "top_rate":"Top Rating Books",
+  "top_selling_books":"Top Selling Books"  
+},
   "cta":{
     "ctaTitle": "Get 25% discount in all <br />  kinds of super Selling",
     "ctaButton": "Shop Now"

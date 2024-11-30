@@ -111,7 +111,7 @@ const Contact = () => {
                                         <div class="form-clt">
                                             <span>{t("global.contact.writeMessage")}*</span>
                                             <textarea name="message" id="message"
-                                                placeholder={t("global.contact.messagePlaceholder")}></textarea>
+                                                placeholder={t("global.contact.messagePlaceholder-")}></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-7 wow fadeInUp" data-wow-delay=".9s">

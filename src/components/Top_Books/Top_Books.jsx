@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from "react-i18next";
-const Top_Books = () => {
+const Top_Books = ({data}) => {
     const { t, i18n } = useTranslation();
+    const [books,setBooks]=useState([])
+    useEffect(()=>{
+      setBooks(data)
+    },[data])
     return (
     <>
     <section className="shop-section section-padding fix">
@@ -15,10 +19,14 @@ const Top_Books = () => {
             </a>
         </div>
         <div className="book-shop-wrapper">
-            <div className="shop-box-items style-2">
-                <div className="book-thumb center">
+            
+            {books.map((book,idx)=>{
+                    return(<>  <div className="shop-box-items style-2">
+                     <div className="shop-box-items style-2">
+               
+                      <div className="book-thumb center" key={idx}>
                     <a href="shop-details">
-                        <img src="assets/img/book/05.png" alt="Book Thumbnail" />
+                        <img src={book.image} alt={book.title} />
                     </a>
                     <ul className="shop-icon d-grid justify-content-center align-items-center">
                         <li>
@@ -30,23 +38,23 @@ const Top_Books = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="/Single/:id"><i className="far fa-eye"></i></a>
+                            <a href={`/Single/${book.id}`}><i className="far fa-eye"></i></a>
                         </li>
                     </ul>
                 </div>
                 <div className="shop-content">
-                    <h5>Design Low Book</h5>
-                    <h3><a href="/Single/:id">Flovely and Unicom <br /> Erna</a></h3>
+                    <h5>{book.category}</h5>
+                    <h3><a href={`/Single/${book.id}`}>{book.title}</a></h3>
                     <ul className="price-list">
-                        <li>30.00 R.S</li>
-                        <li><del>39.99 R.S</del></li>
+                        <li>{book.price}</li>
+                        <li><del>{book.originalPrice}</del></li>
                     </ul>
                     <ul className="author-post">
                         <li className="authot-list">
                             <span className="thumb">
-                                <img src="assets/img/testimonial/client-1.png" alt="Author Thumbnail" />
+                                {/* <img src={book.image} alt={book.title} /> */}
                             </span>
-                            <span className="content">(Author) Albert</span>
+                            <span className="content">{book.author}</span>
                         </li>
                         <li className="star">
                             <i className="fa-solid fa-star"></i>
@@ -58,15 +66,22 @@ const Top_Books = () => {
                     </ul>
                 </div>
                 <div className="shop-button">
-                    <a href="/Single/:id" className="theme-btn">
+                    <a href={`/Single/${book.id}`} className="theme-btn">
                         <i className="fa-solid fa-basket-shopping"></i> Add To Cart
                     </a>
                 </div>
+                    
+                
+               </div>  
             </div>
+            </>)
+                })}
+               
+          
 
             {/* Repeat similar structure for each book item */}
 
-            <div className="cta-shop-box">
+            <div className="cta-shop-box" style={{height:'510px'}}>
                 <h2 className="wow fadeInUp" data-wow-delay=".2s"> {t("global.home.top_books.findYourNextBooks")}</h2>
                 <h6 className="wow fadeInUp" data-wow-delay=".4s">{t("global.home.top_books.discountOffer")}</h6>
                 <a href="Shop" className="theme-btn white-bg wow fadeInUp" data-wow-delay=".6s">
