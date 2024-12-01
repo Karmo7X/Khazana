@@ -276,7 +276,7 @@ const Home = () => {
           </div>
           <div className="shop-button">
             <a href={`/Single/${book.id}`} className="theme-btn">
-              <i className="fa-solid fa-basket-shopping"></i> Add To Cart
+              <i className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}
             </a>
           </div>
         </div>
@@ -298,7 +298,7 @@ const Home = () => {
     <CTA/>
 
     {/* <!-- Top Ratting Book Section start  --> */}
-     <TopRate/>
+     <TopRate data={books}/>
 
     {/* <!-- Shop Section start  --> */}
      <Shop_sec data={books}/>

@@ -11,15 +11,38 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
 
-const authors = [
-    { name: "Esther Howard", books: "10 Published Books", image: "01.jpg" },
-    { name: "Shikhon Islam", books: "07 Published Books", image: "02.jpg" },
-    { name: "Kawser Ahmed", books: "04 Published Books", image: "03.jpg" },
-    { name: "Brooklyn Simmons", books: "15 Published Books", image: "04.jpg" },
-    { name: "Leslie Alexander", books: "05 Published Books", image: "05.jpg" },
-    { name: "Guy Hawkins", books: "12 Published Books", image: "06.jpg" }
-  ];
+// const authors = [
+//     { name: "Esther Howard", books: "10 Published Books", image: "01.jpg" },
+//     { name: "Shikhon Islam", books: "07 Published Books", image: "02.jpg" },
+//     { name: "Kawser Ahmed", books: "04 Published Books", image: "03.jpg" },
+//     { name: "Brooklyn Simmons", books: "15 Published Books", image: "04.jpg" },
+//     { name: "Leslie Alexander", books: "05 Published Books", image: "05.jpg" },
+//     { name: "Guy Hawkins", books: "12 Published Books", image: "06.jpg" }
+//   ];
 
+  const authors = [
+    {
+      id: 1,
+      name: "عبدالله العجيري",
+      image: "01.png",
+    },
+    {
+      id: 2,
+      name: "غازي القصيبي",
+      image: "02.png",
+    },
+    {
+      id: 3,
+      name: "فهد الأحمدي",
+      image: "03.png",
+    },
+    {
+      id: 4,
+      name: "أحمد العرفج",
+      image: "04.png",
+    },
+    // Add more authors as needed
+  ];
 
 const Authors = () => {
   const { t, i18n } = useTranslation();
@@ -35,12 +58,13 @@ const Authors = () => {
         </div>
 
         <Swiper
+         className="team-slider"
           modules={[Navigation,Autoplay]}
           spaceBetween={20}
           slidesPerView={5}
           navigation={{
-              nextEl: '.array-next',
-              prevEl: '.array-prev',
+              nextEl: '.array-next_btn',
+              prevEl: '.array-prev_btn',
           }}
           autoplay={{ delay: 2000 }}
           breakpoints={{
@@ -64,14 +88,14 @@ const Authors = () => {
             },
             }}
             loop={true}
-          className="team-slider"
+         
         >
           {authors.map((author, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <div className="team-box-items">
                 <div className="team-image">
                   <div className="thumb">
-                    <img src={`assets/img/team/${author.image}`} alt={`Image of ${author.name}`} />
+                    <img src={`assets/img/team/${author.image}`} style={{width:"50%"}} alt={`Image of ${author.name}`} />
                   </div>
                   <div className="shape-img">
                     <img src="assets/img/team/shape-img.png" alt="Decorative Shape" />
@@ -86,10 +110,10 @@ const Authors = () => {
           ))}
         </Swiper>
 
-        <div className="array-button">
-          <button className="array-prev"><i className="fal fa-arrow-left"></i></button>
-          <button className="array-next"><i className="fal fa-arrow-right"></i></button>
-        </div>
+        {/* <div className="array-button">
+          <button className="array-prev array-prev_btn"><i className="fal fa-arrow-left"></i></button>
+          <button className="array-next array-next_btn"><i className="fal fa-arrow-right"></i></button>
+        </div> */}
       </div>
     </section>
     </>

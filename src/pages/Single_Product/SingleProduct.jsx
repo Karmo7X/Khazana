@@ -220,7 +220,7 @@ const SingleProduct = () => {
                                     </div>
                                 </div>
                                 <a href="/Single/:id" class="theme-btn"><i
-                                        class="fa-solid fa-basket-shopping"></i> Add To Cart</a>
+                                        class="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>
                                 <div class="icon-box">
                                     <a href="/Single/:id" class="icon">
                                         <i class="far fa-heart"></i>
@@ -559,7 +559,7 @@ const SingleProduct = () => {
                         </div>
                         <div className="shop-button">
                             <a href="/Single/:id" className="theme-btn">
-                                <i className="fa-solid fa-basket-shopping"></i> Add To Cart
+                                <i className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}
                             </a>
                         </div>
                     </div>

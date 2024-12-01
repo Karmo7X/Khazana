@@ -262,7 +262,7 @@ const Dashboard = () => {
                         </div>
                         {/* <div className="shop-button">
                             <a href="/Single/:id" className="theme-btn">
-                                <i className="fa-solid fa-basket-shopping"></i> Add To Cart
+                                <i className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}
                             </a>
                         </div> */}
                     </div>

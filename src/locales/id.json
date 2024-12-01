@@ -3,8 +3,8 @@
     "backToTop": "Kembali ke Atas",
     "contactInfo": "Info Kontak",
     "address": "Jalan Utama, Melbourne, Australia",
-    "email": "info@example.com",
-    "workingHours": "Senin-Jumat, 09am - 05pm",
+    "email": "fa.kh.rj@khezanatalkutub.com",
+    "workingHours":  "Jam kerja dari jam 7 pagi sampai jam 5 sore",
     "phone": "+966506300345",
     "getAQuote": "Dapatkan Penawaran",
     "home": "Beranda",
@@ -164,8 +164,8 @@
   "footer":{
     "footerCall": "Hubungi Kami 7/24",
     "footerPhone": "+966506300345",
-    "footerEmail": "example@gmail.com",
-    "footerHours": "Minggu - Jumat: 9 Pagi - 6 Sore",
+    "footerEmail": "fa.kh.rj@khezanatalkutub.com",
+    "footerHours":  "Jam kerja dari jam 7 pagi sampai jam 5 sore",
     "footerLocation": "4517 Washington ave.",
     "footerCustomerSupport": "Dukungan Pelanggan",
     "footerStoreList": "Daftar Toko",
@@ -181,6 +181,8 @@
     "footerNewsletterText": "Daftar untuk menerima buletin mingguan kami untuk mendapatkan pembaruan terbaru.",
     "footerEmailPlaceholder": "Masukkan Alamat Email",
     "footerAllRights": "© Semua Hak Dilindungi 2024 oleh",
-    "footerBrandLogos": "Logo Merek"
-  }
+    "footerBrandLogos": "Logo Merek",
+    "footercontent": "Rak Buku adalah aplikasi serbaguna Anda untuk membaca digital, di mana Anda dapat menemukan semua buku yang Anda inginkan di satu tempat. Nikmati pengalaman membaca yang mulus dan nyaman dengan antarmuka yang ramah pengguna dan berbagai alat untuk membantu Anda mengatur perpustakaan digital pribadi Anda. Temukan dunia baru dan perkaya pengetahuan Anda dengan jutaan buku yang tersedia hanya dengan satu sentuhan."
+  },
+  "add_to_cart":"Tambah ke Keranjang"
 }

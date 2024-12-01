@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import '../../../public/assets/css/main.css'
 import { useTranslation } from "react-i18next";
-const TopRate = () => {
+const TopRate = ({data}) => {
     const { t, i18n } = useTranslation();
+    const [books,setBooks]=useState([])
+    useEffect(()=>{
+      setBooks(data)
+    },[data])
   return (
     <>
     <section class="top-rating-book-section section-padding section-bg">
@@ -18,47 +22,50 @@ const TopRate = () => {
             </div>
             <div class="row">
                 {/* <!-- Book Item Template --> */}
-                <div class="col-xl-6 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="top-ratting-box-items ">
-                        <div class="book-thumb">
-                            <a href="/Single/:id">
-                                <img src="assets/img/top-book/01.png" alt="Top book image"/>
-                            </a>
-                        </div>
-                        <div class="book-content">
-                            <div class="title-header">
-                                <div>
-                                    <h5>Design Low Book</h5>
-                                    <h3><a href="/Single/:id">Simple Things You To Save BOOK</a></h3>
-                                </div>
-                                <ul class="shop-icon d-flex justify-content-center align-items-center">
-                                    <li><a href="/Cart"><i class="far fa-heart"></i></a></li>
-                                    <li><a href="/Cart"><img class="icon" src="assets/img/icon/shuffle.svg" alt="Shuffle icon"/></a></li>
-                                    <li><a href="/Single/:id"><i class="far fa-eye"></i></a></li>
-                                </ul>
-                            </div>
-                            <span class="mt-10">30.00 R.S</span>
-                            <ul class="author-post">
-                                <li class="author-list">
-                                    <span class="thumb"><img src="assets/img/testimonial/client-2.png" alt="Author image"/></span>
-                                    <span class="content mt-10">Wilson</span>
-                                </li>
-                            </ul>
-                            <div class="shop-btn">
-                                <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <a href="/Single/:id" class="theme-btn">
-                                    <i class="fa-solid fa-basket-shopping"></i> Add To Cart
-                                </a>
-                            </div>
-                        </div>
+                {books.map((book, index) => (
+              <div className="col-xl-6 wow fadeInUp" data-wow-delay={`${0.3 + index * 0.1}s`} key={book.id}>
+                <div className="top-ratting-box-items">
+                  <div className="book-thumb">
+                    <a href={`/Single/${book.id}`}>
+                      <img src={book.image} alt={`${book.title} image`} />
+                    </a>
+                  </div>
+                  <div className="book-content">
+                    <div className="title-header">
+                      <div>
+                        <h5>{book.subtitle}</h5>
+                        <h3><a href={`/Single/${book.id}`}>{book.title}</a></h3>
+                      </div>
+                      <ul className="shop-icon d-flex justify-content-center align-items-center">
+                        <li><a href="/Cart"><i className="far fa-heart"></i></a></li>
+                        <li><a href="/Cart"><img className="icon" src="assets/img/icon/shuffle.svg" alt="Shuffle icon" /></a></li>
+                        <li><a href={`/Single/${book.id}`}><i className="far fa-eye"></i></a></li>
+                      </ul>
                     </div>
+                    <span className="mt-10">{book.price}</span>
+                    <ul className="author-post">
+                      <li className="author-list">
+                        {/* <span className="thumb"><img src={book.authorImage} alt={`${book.author} image`} /></span> */}
+                        <span className="content mt-10">{book.author}</span>
+                      </li>
+                    </ul>
+                    <div className="shop-btn">
+                      <div className="star">
+                        {Array(5).fill(0).map((_, starIndex) => (
+                          <i
+                            key={starIndex}
+                            className={starIndex < book.rating ? "fa-solid fa-star" : "fa-regular fa-star"}
+                          ></i>
+                        ))}
+                      </div>
+                      <a href={`/Single/${book.id}`} className="theme-btn">
+                        <i className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}
+                      </a>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            ))}
             </div>
         </div>
     </div>

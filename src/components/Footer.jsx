@@ -25,7 +25,7 @@ return (
           <div className="content">
             <p>{t('global.footer.footerEmail')}</p>
             <h3>
-              <a href="mailto:example@gmail.com">example@gmail.com</a>
+              <a href="mailto:fa.kh.rj@khezanatalkutub.com">fa.kh.rj@khezanatalkutub.com</a>
             </h3>
           </div>
         </div>
@@ -38,7 +38,7 @@ return (
             <h3>{t('global.footer.footerHours')}</h3>
           </div>
         </div>
-        <div className="contact-info-items wow fadeInUp" data-wow-delay=".8s">
+        {/* <div className="contact-info-items wow fadeInUp" data-wow-delay=".8s">
           <div className="icon">
             <i className="icon-icon-8"></i>
           </div>
@@ -46,7 +46,7 @@ return (
             <p>{t('global.footer.footerLocation')}</p>
             <h3>{t('global.footer.footerLocation')}</h3>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
     <div className="footer-widgets-wrapper">
@@ -64,13 +64,14 @@ return (
               </div>
               <div className="footer-content">
                 <p>
-                  Phasellus ultricies aliquam volutpat ullamcorper laoreet neque, a lacinia curabitur lacinia mollis
+                {t('global.footer.footercontent')}
                 </p>
                 <div className="social-icon d-flex align-items-center">
-                  <a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                  <a href="https://x.com/"><i className="fab fa-twitter"></i></a>
-                  <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
-                  <a href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.facebook.com/share/19MFqsjLG8/?mibextid=LQQJ4d"><i className="fab fa-facebook-f"></i></a>
+                  <a href="https://x.com/khezanat/status/1863166513001209960?s=12"><i className="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/khezanat.alkutub?igsh=anpsZG1sYnM1MWgy&utm_source=qr"><i className="fab fa-instagram"></i></a>
+                  {/* <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
+                  <a href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a> */}
                 </div>
               </div>
             </div>

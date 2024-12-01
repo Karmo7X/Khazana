@@ -3,8 +3,8 @@
     "backToTop": "Back to Top",
     "contactInfo": "Contact Info",
     "address": "Main Street, Melbourne, Australia",
-    "email": "info@example.com",
-    "workingHours": "Mon-Friday, 09am - 05pm",
+    "email": "fa.kh.rj@khezanatalkutub.com",
+    "workingHours": "Working hours are from 7 AM to 5 PM",
     "phone": "+966506300345",
     "getAQuote": "Get A Quote",
     "home": "Home",
@@ -163,8 +163,8 @@
   "footer":{
     "footerCall": "Call Us 7/24",
     "footerPhone": "+966506300345",
-    "footerEmail": "example@gmail.com",
-    "footerHours": "Sunday - Fri: 9 AM - 6 PM",
+    "footerEmail": "fa.kh.rj@khezanatalkutub.com",
+    "footerHours": "Working hours are from 7 AM to 5 PM",
     "footerLocation": "4517 Washington ave.",
     "footerCustomerSupport": "Customer Support",
     "footerStoreList": "Store List",
@@ -180,6 +180,8 @@
     "footerNewsletterText": "Sign up to receive our weekly newsletter to get the latest updates.",
     "footerEmailPlaceholder": "Enter Email Address",
     "footerAllRights": "© All Rights Reserved 2024 by",
-    "footerBrandLogos": "Brand Logos"
-  }
+    "footerBrandLogos": "Brand Logos",
+    "footercontent":"Bookshelf is your all-in-one app for digital reading, where you can find all the books you desire in one place. Enjoy a seamless and comfortable reading experience with a user-friendly interface and a wide range of tools to help you organize your personal digital library. Discover new worlds and enrich your knowledge with millions of books available at the touch of a button."
+  },
+  "add_to_cart":"Add to Cart"
 }

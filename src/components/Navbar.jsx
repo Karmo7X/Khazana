@@ -34,6 +34,7 @@ const Navbar = () => {
     setSelectedLanguage(language); // Update state
    
     localStorage.setItem("selectedLanguage", language); // Store in localStorage
+    window.location.reload()
   };
   return (
     <>
@@ -65,8 +66,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <p class="text d-none d-xl-block">
-                        Nullam dignissim, ante scelerisque the is euismod fermentum odio sem semper the is erat, a
-                        feugiat leo urna eget eros. Duis Aenean a imperdiet risus.
+                    {t('global.footer.footercontent')}
                     </p>
                     <div class="mobile-menu fix mb-3"></div>
                     <div class="menu-cart d-flex align-items-center gap-2">
@@ -83,21 +83,21 @@ const Navbar = () => {
                     <div class="offcanvas__contact">
                         <h4>{t("global.nav.contactInfo")}</h4>
                         <ul>
-                            <li class="d-flex align-items-center">
+                            {/* <li class="d-flex align-items-center">
                                 <div class="offcanvas__contact-icon">
                                     <i class="fal fa-map-marker-alt"></i>
                                 </div>
                                 <div class="offcanvas__contact-text">
                                     <a  href="">{t("global.nav.address")}</a>
                                 </div>
-                            </li>
+                            </li> */}
                             <li class="d-flex align-items-center">
                                 <div class="offcanvas__contact-icon mr-15">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="offcanvas__contact-text">
-                                    <a href="mailto:info@example.com"><span
-                                            class="mailto:info@example.com">{t("global.nav.email")}</span></a>
+                                    <a href="mailto:fa.kh.rj@khezanatalkutub.com"><span
+                                            >{t("global.nav.email")}</span></a>
                                 </div>
                             </li>
                             <li class="d-flex align-items-center">
@@ -117,16 +117,15 @@ const Navbar = () => {
                                 </div>
                             </li>
                         </ul>
-                        <div class="header-button mt-4">
+                        {/* <div class="header-button mt-4">
                             <a href="ContactUs" class="theme-btn text-center">
                             {t("global.nav.getAQuote")} <i class="fa-solid fa-arrow-right-long"></i>
                             </a>
-                        </div>
+                        </div> */}
                         <div class="social-icon d-flex align-items-center">
-                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/share/19MFqsjLG8/?mibextid=LQQJ4d"><i className="fab fa-facebook-f"></i></a>
+                  <a href="https://x.com/khezanat/status/1863166513001209960?s=12"><i className="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/khezanat.alkutub?igsh=anpsZG1sYnM1MWgy&utm_source=qr"><i className="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -139,17 +138,18 @@ const Navbar = () => {
         <div class="container">
             <div class="header-top-wrapper">
                 <ul class="contact-list">
-                    <li>
-                        <i class="fa-regular fa-phone"></i>
-                        <a href="tel:+966506300345">{t("global.nav.phone")}</a>
-                    </li>
-                    <li>
+                   
+                    <li style={{border:'none'}}>
                         <i class="far fa-envelope"></i>
-                        <a href="mailto:info@example.com">{t("global.nav.email")}</a>
+                        <a href="mailto:fa.kh.rj@khezanatalkutub.com">{t("global.nav.email")}</a>
                     </li>
-                    <li>
+                    <li style={{border:'none'}}>
                         <i class="far fa-clock"></i>
                         <span>{t("global.nav.workingHours")}</span>
+                    </li>
+                     <li>
+                        {/* <i class="fa-regular fa-phone"></i>
+                        <a href="tel:+966506300345">{t("global.nav.phone")}</a> */}
                     </li>
                 </ul>
                 <ul class="list">

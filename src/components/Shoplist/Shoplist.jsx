@@ -32,7 +32,7 @@ const Shoplist = ({data}) => {
                                         </p>
                                         <div class="shop-btn">
                                             <a  href={`/Single/${book.id}`} class="theme-btn"><i
-                                                    class="fa-solid fa-basket-shopping"></i> Add To Cart</a>
+                                                    class="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>
                                             <ul class="shop-icon d-flex justify-content-center align-items-center">
                                                 <li>
                                                     <a href="/Cart"><i class="far fa-heart"></i></a>

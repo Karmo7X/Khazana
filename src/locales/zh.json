@@ -3,8 +3,8 @@
     "backToTop": "返回顶部",
     "contactInfo": "联系信息",
     "address": "墨尔本主街, 澳大利亚",
-    "email": "info@example.com",
-    "workingHours": "周一至周五, 早上9点到下午5点",
+    "email": "fa.kh.rj@khezanatalkutub.com",
+    "workingHours": "工作时间为上午7点至下午5点",
     "phone": "+966506300345",
     "getAQuote": "获取报价",
     "home": "主页",
@@ -164,8 +164,8 @@
 "footer":{
     "footerCall": "全天候联系我们",
     "footerPhone": "+966506300345",
-    "footerEmail": "example@gmail.com",
-    "footerHours": "周日 - 周五：上午9点 - 下午6点",
+    "footerEmail": "fa.kh.rj@khezanatalkutub.com",
+    "footerHours":"工作时间为上午7点至下午5点",
     "footerLocation": "4517华盛顿大街",
     "footerCustomerSupport": "客户支持",
     "footerStoreList": "商店列表",
@@ -181,6 +181,8 @@
     "footerNewsletterText": "注册接收我们的每周新闻通讯，获取最新更新。",
     "footerEmailPlaceholder": "请输入电子邮件地址",
     "footerAllRights": "© 2024年所有权利保留",
-    "footerBrandLogos": "品牌徽标"
-  }
+    "footerBrandLogos": "品牌徽标",
+    "footercontent":"书架是您的一站式数字阅读应用程序，在这里您可以在一个地方找到所有想阅读的书籍。通过用户友好的界面和广泛的工具，享受流畅舒适的阅读体验，并帮助您整理个人数字图书馆。通过轻触按钮，发现新世界，丰富您的知识，获取数百万本书籍。"
+  },
+  "add_to_cart":"加入购物车"
 }

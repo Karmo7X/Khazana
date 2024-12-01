@@ -67,7 +67,7 @@ const Top_Books = ({data}) => {
                 </div>
                 <div className="shop-button">
                     <a href={`/Single/${book.id}`} className="theme-btn">
-                        <i className="fa-solid fa-basket-shopping"></i> Add To Cart
+                        <i className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}
                     </a>
                 </div>
                     
@@ -81,7 +81,7 @@ const Top_Books = ({data}) => {
 
             {/* Repeat similar structure for each book item */}
 
-            <div className="cta-shop-box" style={{height:'510px'}}>
+            {/* <div className="cta-shop-box" style={{height:'510px'}}>
                 <h2 className="wow fadeInUp" data-wow-delay=".2s"> {t("global.home.top_books.findYourNextBooks")}</h2>
                 <h6 className="wow fadeInUp" data-wow-delay=".4s">{t("global.home.top_books.discountOffer")}</h6>
                 <a href="Shop" className="theme-btn white-bg wow fadeInUp" data-wow-delay=".6s">
@@ -93,7 +93,7 @@ const Top_Books = ({data}) => {
                 <div className="circle-shape">
                     <img src="assets/img/circle-shape.png" alt="Shape Image" />
                 </div>
-            </div>
+            </div> */}
         </div>
     </div>
 </section>

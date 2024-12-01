@@ -55,7 +55,7 @@ const Shopdefault = ({data}) => {
                                                 </ul>
                                                 <div className="shop-button">
                                                      <a href="/Cart" className="theme-btn"><i
-                                                            className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
+                                                            className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -109,7 +109,7 @@ const Shopdefault = ({data}) => {
                                                 </ul>
                                                 <div className="shop-button">
                                                      <a href="/Cart" className="theme-btn"><i
-                                                            className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
+                                                            className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -163,7 +163,7 @@ const Shopdefault = ({data}) => {
                                                 </ul>
                                                 <div className="shop-button">
                                                      <a href="/Cart" className="theme-btn"><i
-                                                            className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
+                                                            className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -217,7 +217,7 @@ const Shopdefault = ({data}) => {
                                                 </ul>
                                                 <div className="shop-button">
                                                      <a href="/Cart" className="theme-btn"><i
-                                                            className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
+                                                            className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -271,7 +271,7 @@ const Shopdefault = ({data}) => {
                                                 </ul>
                                                 <div className="shop-button">
                                                      <a href="/Cart" className="theme-btn"><i
-                                                            className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
+                                                            className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -325,7 +325,7 @@ const Shopdefault = ({data}) => {
                                                 </ul>
                                                 <div className="shop-button">
                                                      <a href="/Cart" className="theme-btn"><i
-                                                            className="fa-solid fa-basket-shopping"></i> Add To Cart</a>
+                                                            className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>
                                                 </div>
                                             </div>
                                         </div>

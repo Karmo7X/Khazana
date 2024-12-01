@@ -1469,7 +1469,7 @@ span {
 .header-top-wrapper {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
   gap: 300px;
 }
 @media (max-width: 1600px) {
