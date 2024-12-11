@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { useTranslation } from "react-i18next";
 const Shoplist = ({data}) => {
+    const { t, i18n } = useTranslation();
     const [books,setBooks]=useState([])
     useEffect(()=>{
       setBooks(data)
@@ -17,19 +18,19 @@ const Shoplist = ({data}) => {
                                     <div class="shop-list-content">
                                         <h3><a href={`/Single/${book.id}`}>{book.title}</a></h3>
                                         <h5>{book.price}</h5>
-                                        <div class="star">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-regular fa-star"></i>
-                                        </div>
+                                    
                                         <p>
                                             Vestibulum consectetur fringilla tellus, et pulvinar massa tempus nec. Fusce
                                             nibh nibh, consectetur vitae felis quis, sagittis ullamcorper enim. Nullam
                                             maximus vehicula justo, vel vestibulum turpis dictum at. Nam sed laoreet
                                             sem. Aliquam urna massa,
                                         </p>
+                                        <li className="authot-list">
+                            <span className="thumb">
+                                <img src={book.author_img} alt={book.title} />
+                            </span>
+                            <span className="content fw-bold">{book.author}</span>
+                        </li>
                                         <div class="shop-btn">
                                             <a  href={`/Single/${book.id}`} class="theme-btn"><i
                                                     class="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>

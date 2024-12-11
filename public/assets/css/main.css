@@ -8137,3 +8137,18 @@ span {
 .nice-select .category{
   display: none !important;
 }
+
+
+
+.filter_link{
+  color: var(--theme2);
+}
+
+.filter_link:hover ,.filter_link:focus{
+  color: var(--theme2);
+ 
+}
+.activefilter{
+  color: var(--white) !important;
+  background-color: var(--theme2);
+}

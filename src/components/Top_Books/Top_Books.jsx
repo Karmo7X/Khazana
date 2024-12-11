@@ -52,9 +52,9 @@ const Top_Books = ({data}) => {
                     <ul className="author-post">
                         <li className="authot-list">
                             <span className="thumb">
-                                {/* <img src={book.image} alt={book.title} /> */}
+                                <img src={book.author_img} alt={book.title} />
                             </span>
-                            <span className="content">{book.author}</span>
+                            <span className="content fw-bold">{book.author}</span>
                         </li>
                         <li className="star">
                             <i className="fa-solid fa-star"></i>

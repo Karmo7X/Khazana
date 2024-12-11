@@ -3,6 +3,7 @@ import Filter from '../Filter/Filter'
 import Pagination from '../Pagination/Pagination'
 import { useTranslation } from "react-i18next";
 const Shopdefault = ({data}) => {
+    const { t, i18n } = useTranslation();
     const [books,setBooks]=useState([])
     useEffect(()=>{
       setBooks(data)
@@ -52,7 +53,14 @@ const Shopdefault = ({data}) => {
                                                         <i className="fa-solid fa-star"></i>
                                                         3.4 (25)
                                                     </li>
+                                                    
                                                 </ul>
+                                                <li className="authot-list">
+                            <span className="thumb">
+                                <img src={book.author_img} alt={book.title} />
+                            </span>
+                            <span className="content fw-bold">{book.author}</span>
+                        </li>
                                                 <div className="shop-button">
                                                      <a href="/Cart" className="theme-btn"><i
                                                             className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>

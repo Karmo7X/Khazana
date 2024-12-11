@@ -229,7 +229,7 @@ const Navbar = () => {
                             <div class="header-left">
                                 <div class="logo mb-0">
                                     <Link to="/" class="header-logo d-flex align-items-center justify-content-center">
-                                        <img  src={logo} style={{width:'70px'}} alt="logo-img"/>
+                                        <img  src={logo} style={{width:'90px'}} alt="logo-img"/>
                                     </Link>
                                 </div>
                                 <div class="mean__menu-wrapper">
@@ -346,7 +346,7 @@ const Navbar = () => {
                             <div class="header-left">
                                 <div class="logo mb-0">
                                     <Link to="/" class="header-logo  d-flex align-items-center justify-content-center">
-                                        <img  src={logo} style={{width:'70px'}} alt="logo-img"/>
+                                        <img  src={logo} style={{width:'90px'}} alt="logo-img"/>
                                     </Link>
                                 </div>
                                 <div class="mean__menu-wrapper">

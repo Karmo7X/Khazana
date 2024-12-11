@@ -62,25 +62,23 @@ function Filter() {
                                 <div className="product-status">
                                     <div className="product-status_stock  gap-6 d-flex align-items-center">
                                         <div className="nice-select category" tabindex="0"><span className="current">
-                                                In Stock
+                                            ورقي  
                                             </span>
                                             <ul className="list">
                                                 <li data-value="1" className="option selected">
-                                                    In Stock
+                                                   ورقي
                                                 </li>
                                                 <li data-value="1" className="option">
-                                                    Castle In The Sky
+                                                   مسموع 
                                                 </li>
                                                 <li data-value="1" className="option">
-                                                    The Hidden Mystery Behind
+                                                   PDf
                                                 </li>
-                                                <li data-value="1" className="option">
-                                                    Flovely And Unicom Erna
-                                                </li>
+                                               
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="product-status_sale gap-6 d-flex align-items-center">
+                                    {/* <div className="product-status_sale gap-6 d-flex align-items-center">
                                         <div className="nice-select category" tabindex="0">
                                             <span className="current">
                                                 On Sale
@@ -100,7 +98,7 @@ function Filter() {
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
 
                             </div>
@@ -137,7 +135,7 @@ function Filter() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="single-sidebar-widget mb-0">
+                            {/* <div className="single-sidebar-widget mb-0">
                                 <div className="wid-title">
                                     <h5>By Review</h5>
                                 </div>
@@ -233,7 +231,7 @@ function Filter() {
                                         </span>
                                     </label>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
     </>

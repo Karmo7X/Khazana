@@ -45,8 +45,8 @@ const TopRate = ({data}) => {
                     <span className="mt-10">{book.price}</span>
                     <ul className="author-post">
                       <li className="author-list">
-                        {/* <span className="thumb"><img src={book.authorImage} alt={`${book.author} image`} /></span> */}
-                        <span className="content mt-10">{book.author}</span>
+                        <span className="thumb"><img src={book.author_img} alt={`${book.author} image`} /></span>
+                        <span className="content mt-10 fw-bold">{book.author}</span>
                       </li>
                     </ul>
                     <div className="shop-btn">
