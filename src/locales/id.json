@@ -11,6 +11,7 @@
     "shop": "Toko",
     "aboutUs": "Tentang Kami",
     "contact": "Hubungi Kami",
+    "subscriptions": "Langganan",
     "searchPlaceholder": "Cari",
     "wishlist": "Daftar Keinginan",
     "cart": "Keranjang",
@@ -184,5 +185,19 @@
     "footerBrandLogos": "Logo Merek",
     "footercontent": "Rak Buku adalah aplikasi serbaguna Anda untuk membaca digital, di mana Anda dapat menemukan semua buku yang Anda inginkan di satu tempat. Nikmati pengalaman membaca yang mulus dan nyaman dengan antarmuka yang ramah pengguna dan berbagai alat untuk membantu Anda mengatur perpustakaan digital pribadi Anda. Temukan dunia baru dan perkaya pengetahuan Anda dengan jutaan buku yang tersedia hanya dengan satu sentuhan."
   },
-  "add_to_cart":"Tambah ke Keranjang"
+  "add_to_cart":"Tambah ke Keranjang",
+  "profile": {
+    "book_request": "Minta buku yang tidak tersedia",
+    "author_registration": "Permintaan pendaftaran penulis",
+    "logout": "Keluar",
+    "account_settings": "Pengaturan Akun",
+    "silver_plan": "Anda berada di Paket Silver",
+    "gold_plan": "Anda berada di Paket Gold",
+    "diamond_plan": "Anda berada di Paket Diamond",
+    "upgrade_account": "Tingkatkan Akun Saya",
+     "my_library": "Perpustakaan Saya"
+  },
+  "my_library": {
+    "read": "Membaca"
+  }
 }

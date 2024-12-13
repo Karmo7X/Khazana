@@ -4,15 +4,18 @@ import './App.scss'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import Loader from './components/loader/loader'
-import SingleProduct from './pages/Single_Product/SingleProduct'
-import Cart from './pages/cart/Cart'
-import Wishlist from './pages/Wishlist/Wishlist'
-import Checkout from './pages/Checkout/Checkout'
-import Contact from './pages/Contact/Contact'
-import Profile from './pages/Profile/Profile'
-import About from './pages/About/About'
+
+
 const Home =lazy(() => import("./pages/Home/Home"))
+const SingleProduct =lazy(() => import("./pages/Single_Product/SingleProduct"))
+const Cart =lazy(() => import("./pages/cart/Cart"))
+const Wishlist =lazy(() => import("./pages/Wishlist/Wishlist"))
+const Checkout =lazy(() => import("./pages/Checkout/Checkout"))
+const Contact =lazy(() => import("./pages/Contact/Contact"))
+const Profile =lazy(() => import("./pages/Profile/Profile"))
+const About =lazy(() => import("./pages/About/About"))
 const Shop =lazy(() => import("./pages/Shop/Shop"))
+const Subcription =lazy(() => import("./pages/subcription/Subcription"))
 function App() {
   
 
@@ -73,6 +76,12 @@ function App() {
          <Route path='AboutUs' element={
           <Suspense fallback={<Loader/>}>
             <About/>
+          </Suspense>
+          
+        }/>
+        <Route path='Subscription' element={
+          <Suspense fallback={<Loader/>}>
+            <Subcription/>
           </Suspense>
           
         }/>

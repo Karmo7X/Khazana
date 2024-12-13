@@ -11,6 +11,7 @@
     "shop": "Shop",
     "aboutUs": "About Us",
     "contact": "Contact",
+    "subscriptions": "Subscriptions",
     "searchPlaceholder": "Search",
     "wishlist": "Wishlist",
     "cart": "Cart",
@@ -183,5 +184,20 @@
     "footerBrandLogos": "Brand Logos",
     "footercontent":"Bookshelf is your all-in-one app for digital reading, where you can find all the books you desire in one place. Enjoy a seamless and comfortable reading experience with a user-friendly interface and a wide range of tools to help you organize your personal digital library. Discover new worlds and enrich your knowledge with millions of books available at the touch of a button."
   },
-  "add_to_cart":"Add to Cart"
+  "add_to_cart":"Add to Cart",
+  "profile": {
+    "book_request": "Request a book not available",
+    "author_registration": "Author registration request",
+    "logout": "Logout",
+    "account_settings": "Account Settings",
+    "silver_plan": "You are on the Silver Plan",
+    "gold_plan": "You are on the Gold Plan",
+    "diamond_plan": "You are on the Diamond Plan",
+    "upgrade_account": "Upgrade My Account",
+     "my_library": "My Library"
+  },
+  "my_library": {
+    "read": "Read"
+  }
+  
 }

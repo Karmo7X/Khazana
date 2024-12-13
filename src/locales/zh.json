@@ -11,6 +11,7 @@
     "shop": "商店",
     "aboutUs": "关于我们",
     "contact": "联系我们",
+    "subscriptions": "订阅",
     "searchPlaceholder": "搜索",
     "wishlist": "心愿单",
     "cart": "购物车",
@@ -184,5 +185,20 @@
     "footerBrandLogos": "品牌徽标",
     "footercontent":"书架是您的一站式数字阅读应用程序，在这里您可以在一个地方找到所有想阅读的书籍。通过用户友好的界面和广泛的工具，享受流畅舒适的阅读体验，并帮助您整理个人数字图书馆。通过轻触按钮，发现新世界，丰富您的知识，获取数百万本书籍。"
   },
-  "add_to_cart":"加入购物车"
+  "add_to_cart":"加入购物车",
+  "profile": {
+    "book_request": "请求不可用的书",
+    "author_registration": "作者注册请求",
+    "logout": "退出登录",
+    "account_settings": "账户设置",
+    "silver_plan": "您当前是银色套餐",
+    "gold_plan": "您当前是金色套餐",
+    "diamond_plan": "您当前是钻石套餐",
+    "upgrade_account": "升级我的账户",
+     "my_library": "我的图书馆"
+  },
+  "my_library": {
+   "read": "阅读"
+  }
 }
+

@@ -248,6 +248,11 @@ const Navbar = () => {
                                                     </Link>
                                                 </li>
                                                 <li>
+                                                <Link to="/Subscription">
+                                                {t("global.nav.subscriptions")}
+                                                    </Link>
+                                                </li>
+                                                <li>
                                                 <Link to="/AboutUs">
                                                 {t("global.nav.aboutUs")}
                                                     </Link>
@@ -364,6 +369,11 @@ const Navbar = () => {
                                                 {t("global.nav.shop")}
                                                     </Link>
                                                    
+                                                </li>
+                                                <li>
+                                                <Link to="/Subscription">
+                                                {t("global.nav.subscriptions")}
+                                                    </Link>
                                                 </li>
                                                 <li>
                                                    

@@ -1,0 +1,39 @@
+
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import axios from 'axios'
+import Cookies from 'js-cookie'
+import { baseurl } from '../../global'
+
+const initialState={
+    data:null,
+    status:false,
+    
+}
+
+export const RegisterApi=createAsyncThunk("auth/register",async(data)=>{
+   
+    try{
+        const res=await axios.post(`${baseurl}/userAuth/signup`,data)
+        
+        return res.data
+        
+    }catch(err){
+        console.error(err.response.data)
+    }
+
+
+})
+
+
+const Authslice=createSlice({
+  name:'auth',
+  initialState,
+  reducers:{},
+  extraReducers:(builder)=>{
+     builder
+     .addCase
+  }
+
+})
+
+

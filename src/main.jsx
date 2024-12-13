@@ -7,6 +7,8 @@ import global_en from './locales/en.json';
 import global_ar from './locales/ar.json';
 import global_zh from './locales/zh.json';
 import global_id from './locales/id.json';
+import { Provider } from 'react-redux';
+import Store from './Api/Store.js';
 i18n.use(initReactI18next).init({
   resources: {
     en: {
@@ -43,7 +45,9 @@ i18n.use(initReactI18next).init({
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <I18nextProvider i18n={i18n}>
-    <App />
+      <Provider store={Store}>
+       <App />
+      </Provider>
     </I18nextProvider>
   </StrictMode>,
 )

@@ -1,0 +1,116 @@
+import React from "react";
+
+const Subcription = () => {
+  return (
+    <>
+      <div className="container my-5">
+        <h2 className="text-center mb-4">اختر خطه مناسبه لهدفك</h2>
+        <div className="row mt-5">
+          {/* Silver Card */}
+          <div className="col-md-4 mb-4">
+            <div
+              className="card shadow-sm border-0"
+              style={{
+                borderTop: "4px solid #7e57c2",
+                height: "300px",
+                minHeight: "300px",
+                maxHeight: "300px",
+              }}
+            >
+              <div
+                className="card-header d-flex  align-items-center justify-content-between text-center"
+                style={{ backgroundColor: "#dcdcdc", color: "#000",padding:"15px 30px" }}
+              >
+                <div>
+                  <h5>الفضي</h5>
+                </div>
+                <div>
+                  <h6>11.00 ريال</h6>
+                  <p>اشتراك فضي</p>
+                </div>
+              </div>
+              <div className="card-body">
+                <ul>
+                  <li>قراءة و تحميل الكتب المجانية فقط</li>
+                  <li>لا يلزم دفع رسوم سنوية على الاشتراك</li>
+                  <li>شراء الكتب وتحميلها دون أي تخفيض على السعر</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Gold Card */}
+          <div className="col-md-4 mb-4">
+            <div
+              className="card shadow-sm border-0"
+              style={{
+                borderTop: "4px solid #fdd835",
+                height: "300px",
+                minHeight: "300px",
+                maxHeight: "300px",
+              }}
+            >
+              <div
+                className="card-header d-flex  align-items-center justify-content-between"
+                style={{ backgroundColor: "#ffeb99", color: "#000",padding:"15px 30px" }}
+              >
+                <div>
+                  <h5>الذهبي</h5>
+                </div>
+
+                <div>
+                  <h6>11.00 ريال</h6>
+                  <p>اشتراك ذهبي</p>
+                </div>
+              </div>
+              <div className="card-body">
+                <ul>
+                  <li>قراءة و تحميل الكتب المجانية فقط</li>
+                  <li>لا يلزم دفع رسوم سنوية على الاشتراك</li>
+                  <li>شراء الكتب وتحميلها مع تخفيض قدره 15%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Diamond Card */}
+          <div className="col-md-4 mb-4">
+            <div
+              className="card shadow-sm border-0"
+              style={{
+                borderTop: "4px solid #00acc1",
+                height: "300px",
+                minHeight: "300px",
+                maxHeight: "300px",
+              }}
+            >
+              <div
+                className="card-header  d-flex  align-items-center justify-content-between"
+                style={{ backgroundColor: "#e0f7fa", color: "#000",padding:"15px 30px" }}
+              >
+                <div>
+                  <h5>الماسي</h5>
+                </div>
+
+                <div>
+                  <h6>11.00 ريال</h6>
+                  <p>اشتراك الماسي</p>
+                </div>
+              </div>
+              <div className="card-body">
+                <ul>
+                  <li>قراءة و تحميل الكتب المجانية فقط</li>
+                  <li>لا يلزم دفع رسوم سنوية على الاشتراك</li>
+                  <li>شراء الكتب وتحميلها مع تخفيض قدره 30%</li>
+                  <li>الاستفادة من كل الكتب المسموعة</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Subcription;

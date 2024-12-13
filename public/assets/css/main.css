@@ -8152,3 +8152,10 @@ span {
   color: var(--white) !important;
   background-color: var(--theme2);
 }
+
+.form-control:focus{
+  outline: var(--theme2)!important;
+  border-color: var(--theme2);
+  outline: var(--theme2)!important;
+  box-shadow: var(--theme2)  !important;
+}
