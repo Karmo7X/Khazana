@@ -68,7 +68,9 @@
   "or": "或者",
   "continueWithGoogle": "使用谷歌继续",
   "continueWithFacebook": "使用Facebook继续",
-  "acceptTerms": "我接受您的条款和条件"
+  "acceptTerms": "我接受条款和条件",
+    "password": "密码",
+    "confirmPassword": "确认密码"
   },
   "otp":{
     "verifyPhone": "验证手机",

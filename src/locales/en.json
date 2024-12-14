@@ -68,7 +68,9 @@
     "or": "Or",
     "continueWithGoogle": "Continue With Google",
     "continueWithFacebook": "Continue With Facebook",
-    "acceptTerms": "I Accept Your Terms & Conditions"
+    "acceptTerms": "I accept the Terms & Conditions",
+    "password": "Password",
+    "confirmPassword": "Confirm Password"
   },
   "otp":{
     "verifyPhone": "Verify Phone",

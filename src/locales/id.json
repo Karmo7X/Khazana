@@ -68,7 +68,9 @@
   "or": "Atau",
   "continueWithGoogle": "Lanjutkan dengan Google",
   "continueWithFacebook": "Lanjutkan dengan Facebook",
-  "acceptTerms": "Saya menerima Syarat & Ketentuan Anda"
+  "acceptTerms": "Saya menerima Syarat & Ketentuan",
+  "password": "Kata Sandi",
+  "confirmPassword": "Konfirmasi Kata Sandi"
   },
   "otp":{
     "verifyPhone": "Verifikasi Nomor Telepon",

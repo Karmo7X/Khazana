@@ -9,7 +9,7 @@ import Restpassword from './Modals/Restpassword'
 import { useTranslation } from "react-i18next";
 const Navbar = () => {
     const { t, i18n } = useTranslation();
-
+   const [show,setShow]=useState(false)
     // State to manage selected language
   const [selectedLanguage, setSelectedLanguage] = useState("ar");
   const languageMap = {
@@ -210,7 +210,7 @@ const Navbar = () => {
                   </div>
                 </li>
                     <li><i class="fa-light fa-user"></i>
-                        <button data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <button data-bs-toggle="modal" onClick={()=>{setShow(true)}} data-bs-target="#loginModal">
                         {t("global.nav.login")}
                         </button>
                     </li>
@@ -465,7 +465,8 @@ const Navbar = () => {
     </header>
 
     {/* <!-- Login Modal --> */}
-      <Login/>
+    {show &&(<Login/>)}
+      
     {/* <!-- Registration Modal --> */}
       <Register/>
 

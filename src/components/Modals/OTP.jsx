@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Modal, Button, Form } from 'react-bootstrap';
 import { useTranslation } from "react-i18next";
+
 const OTP = () => {
-  const { t, i18n } = useTranslation();
-    const [otp, setOtp] = useState(new Array(6).fill(""));
+  const { t } = useTranslation();
+  const [otp, setOtp] = useState(new Array(6).fill(""));
   const [timer, setTimer] = useState(30); // Countdown time in seconds
   const [canResend, setCanResend] = useState(false);
   const inputRefs = useRef([]);
@@ -48,23 +50,19 @@ const OTP = () => {
       }
     }
   };
+   const [showOTP, setShowOTP] = useState(true);
   
-    return (
-      <div
-        className="modal fade"
-        id="otpModal"
-        tabIndex="-1"
-        aria-labelledby="otpModalLabel"
-        aria-hidden="true"
-      >
-       
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="close-btn">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="identityBox">
+    const handleClose = () => setShowOTP(false);
+
+  return (
+    <Modal show={showOTP} centered 
+    onHide={handleClose} >
+  
+      <Modal.Body>
+          <div className="close-btn">
+                    <Button variant="close" onClick={handleClose} aria-label="Close" />
+                  </div>
+      <div class="identityBox">
                         <div class="form-wrapper d-flex align-items-center justify-content-center flex-column gap-5">
                             <div className='d-flex align-items-center justify-content-center flex-column text-center'>
                             <h1 id="loginModalLabel">{t("global.otp.verifyPhone")}</h1>
@@ -119,12 +117,10 @@ const OTP = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-      </div>
-    );
+      </Modal.Body>
+     
+    </Modal>
+  );
+};
 
-}
-
-export default OTP
+export default OTP;

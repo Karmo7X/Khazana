@@ -68,7 +68,9 @@
   "or": "أو",
   "continueWithGoogle": "متابعة باستخدام جوجل",
   "continueWithFacebook": "متابعة باستخدام فيسبوك",
-  "acceptTerms": "أوافق على الشروط والأحكام"
+  "acceptTerms": "أوافق على الشروط والأحكام",
+  "password": "الرقم السري",
+  "confirmPassword": "اعد كتابة الرقم السري"
   },
   "otp":{
     "verifyPhone": "تحقق من الهاتف",

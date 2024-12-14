@@ -1,187 +1,154 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { RegisterApi } from "../../Api/Auth/AuthSlice";
+import OTP from "./OTP";
+import {
+  Modal,
+  Button,
+  Form,
+  Alert,
+  InputGroup,
+  Row,
+  Col,
+} from "react-bootstrap";
+
 const Register = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    password: "",
+    passwordConfirm: "",
+    birthday: "",
+    interestedCategory: "",
+    city: "",
+    address: "16.Elbostan Street, Shoubra El-Khema, Qalyubia",
+  });
+  const [error, setError] = useState(null);
+
+  const handleChange = (name, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = () => {
+    dispatch(RegisterApi(formData)).then((res) => {
+      if (res.payload?.code === 201) {
+        setShowModal(true);
+      } else {
+        setShowModal(false);
+        setError(res.payload);
+      }
+    });
+  };
+
   return (
     <>
-      <div
-        class="modal fade"
-        id="registrationModal"
-        tabindex="-1"
-        aria-labelledby="registrationModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-body">
-              <div class="close-btn">
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="identityBox">
-                <div class="form-wrapper w-100">
-                  <h1 id="registrationModalLabel">{t("global.register.createAccount")}</h1>
-                  <div className="w-100 mt-2">
-                    <label htmlFor="name">{t("global.register.userName")}</label>
-                    <input
-                      class="inputField"
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder={t("global.register.userName")}
-                    />
-                  </div>
-                  <div className="w-100 mt-2">
-                    <label htmlFor="date">{t("global.register.dateOfBirth")}</label>
-                    <input
-                      class="inputField"
-                      type="date"
-                      name="date"
-                      id="date"
-                      placeholder={t("global.register.dateOfBirth")}
-                      style={{ color: "#ffffff" }}
-                    />
-                  </div>
-                  <div className="w-100 mt-2">
-                    <label htmlFor="Category">{t("global.register.categories")}</label>
-                    <select name="cate" class=" inputField p-0 mt-3">
-                                        <option value="1">
-                                            Category
-                                        </option>
-                                        <option value="1">
-                                            Web Design
-                                        </option>
-                                        <option value="1">
-                                            Web Development
-                                        </option>
-                                        <option value="1">
-                                            Graphic Design
-                                        </option>
-                                        <option value="1">
-                                            Softwer Eng
-                                        </option>
-                                    </select>
-                  </div>
-                  <div className=" w-100 mt-2">
-                    <label htmlFor="City">{t("global.register.city")}</label>
-                    <select name="city" class=" inputField p-0 mt-3">
-                                        <option value="1">
-                                            Gada
-                                        </option>
-                                        <option value="1">
-                                        Gada
-                                        </option>
-                                        <option value="1">
-                                        Gada
-                                        </option>
-                                        <option value="1">
-                                        Gada
-                                        </option>
-                                        <option value="1">
-                                        Gada
-                                        </option>
-                                    </select>
-                  </div>
+      <Modal show onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>{t("global.register.createAccount")}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>{t("global.register.userName")}</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                placeholder={t("global.register.userName")}
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
+              />
+            </Form.Group>
 
-                  {/* <div className="w-100 mt-2">
-                    <label htmlFor="password">Password</label>
-                    <input
-                      class="inputField"
-                      type="password"
-                      name="password"
-                      placeholder="Enter Password"
-                      id="password"
-                    />
-                  </div>
-                  <div className="w-100 mt-2">
-                    <label htmlFor="confirmpassword">Confirm Password</label>
-                    <input
-                      class="inputField"
-                      type="password"
-                      name="confirmpassword"
-                      id="confirmpassword"
-                      placeholder="Enter Confirm Password"
-                    />
-                  </div> */}
-                  <div class="input-check remember-me">
-                    <div class="checkbox-wrapper">
-                      <input
-                        type="checkbox"
-                        class="form-check-input"
-                        name="save-for-next"
-                        id="rememberMe"
-                      />
-                      <label for="rememberMe">{t("global.register.rememberMe")}</label>
-                    </div>
-                    {/* <div class="text">
-                      {" "}
-                      <a href="">{t("global.register.forgotPassword")}</a>{" "}
-                    </div> */}
-                  </div>
-                 
-                            <button type="button" class="theme-btn rounded-0 w-100 register-btn " data-bs-toggle="modal"
-                                data-bs-target="#registrationModal">{t("global.register.createAccountBtn")}</button> 
-                                <button type="button" className="loginBtn theme-btn rounded-0 mt-3" data-bs-toggle="modal" data-bs-target="#otpModal">
-                                {t("global.register.loginBtn")}
-                            </button>
-                  <div class="orting-badge">{t("global.register.or")}</div>
-                  <div>
-                    <a class="another-option" href="https://www.google.com/">
-                      <img src="/assets/img/google.png" alt="google" />
-                      {t("global.register.continueWithGoogle")}
-                    </a>
-                  </div>
-                  <div>
-                    <a
-                      class="another-option another-option-two"
-                      href="https://www.facebook.com/"
-                    >
-                      <img src="/assets/img/facebook.png" alt="Facebook" />
-                      {t("global.register.continueWithFacebook")}
-                    </a>
-                  </div>
-                  <div class="form-check-3 d-flex align-items-center from-customradio-2 mt-3">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                    />
-                    <label class="form-check-label">
-                    {t("global.register.acceptTerms")}
-                    </label>
-                  </div>
-                </div>
+            <Form.Group className="mb-3">
+              <Form.Label>{t("global.register.dateOfBirth")}</Form.Label>
+              <Form.Control
+                type="date"
+                name="birthday"
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
+              />
+            </Form.Group>
 
-                <div class="banner">
-                  {/* <button
-                    type="button"
-                    class="rounded-0 login-btn"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginModal"
-                  >
-                    Log in
-                  </button>
-                  <button
-                    type="button"
-                    class="theme-btn rounded-0 register-btn"
-                    data-bs-toggle="modal"
-                    data-bs-target="#registrationModal"
-                  >
-                    Create Account
-                  </button> */}
-                  <div class="signUpBg">
-                    <img src="/assets/img/registrationbg.jpg" alt="signUpBg" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            <Form.Group className="mb-3">
+              <Form.Label>{t("global.register.categories")}</Form.Label>
+              <Form.Select
+                name="interestedCategory"
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
+              >
+                <option value="">......</option>
+                <option value="Category">Category</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Software Eng">Software Eng</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>{t("global.register.city")}</Form.Label>
+              <Form.Select
+                name="city"
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
+              >
+                <option value="">......</option>
+                <option value="Gada">Gada</option>
+                <option value="Riyadh">Riyadh</option>
+                <option value="Jeddah">Jeddah</option>
+                <option value="Dammam">Dammam</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>{t("global.register.password")}</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                placeholder={t("global.register.password")}
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>{t("global.register.confirmPassword")}</Form.Label>
+              <Form.Control
+                type="password"
+                name="passwordConfirm"
+                placeholder={t("global.register.confirmPassword")}
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Check
+              type="checkbox"
+              label={t("global.register.rememberMe")}
+              className="mb-3"
+            />
+
+            {error?.message && (
+              <Alert variant="danger">
+                {error.message}
+              </Alert>
+            )}
+
+            <Button variant="primary" onClick={handleSubmit} className="w-100">
+              {t("global.register.createAccountBtn")}
+            </Button>
+          </Form>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            {t("global.register.loginBtn")}
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      {showModal && <OTP />}
     </>
   );
 };

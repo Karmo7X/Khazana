@@ -94,7 +94,7 @@ Description: Bookle - Book Store WooCommerce Html Template
         new WOW().init();
 
         // 07.Nice Select 
-        $('select').niceSelect();
+        // $('select').niceSelect();
 
         //  08.Book Slider 
         if ($('.hero-book-slider').length > 0) {

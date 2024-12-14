@@ -2,7 +2,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import { baseurl } from '../../global'
+import { baseurl, lang } from '../../global'
 
 const initialState={
     data:null,
@@ -13,7 +13,11 @@ const initialState={
 export const RegisterApi=createAsyncThunk("auth/register",async(data)=>{
    
     try{
-        const res=await axios.post(`${baseurl}/userAuth/signup`,data)
+        const res=await axios.post(`${baseurl}/userAuth/signup`,data,{
+            headers:{
+                'lang':lang
+            }
+        })
         
         return res.data
         
