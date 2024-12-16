@@ -10,7 +10,7 @@ const OTP = () => {
   const inputRefs = useRef([]);
 
   useEffect(() => {
-    inputRefs.current[0].focus(); // Auto-focus the first input on load
+    inputRefs.current[0]?.focus(); // Auto-focus the first input on load
   }, []);
 
   // Start countdown timer on component load or when resend is clicked
@@ -50,7 +50,7 @@ const OTP = () => {
       }
     }
   };
-   const [showOTP, setShowOTP] = useState(true);
+   const [showOTP, setShowOTP] = useState(false);
   
     const handleClose = () => setShowOTP(false);
 

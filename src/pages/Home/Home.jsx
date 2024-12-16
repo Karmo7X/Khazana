@@ -12,7 +12,7 @@ import xstarImage from '/assets/img/hero/xstar.png';
 import frameShapeImage from '/assets/img/hero/frame-shape.png';
 import bgShapeImage from '/assets/img/hero/bg-shape.png';
 import bgShape2Image from '/assets/img/hero/bg-shape2.png';
-import girlImage from '/assets/img/hero/hero-girl.png';
+import girlImage from '/assets/img/hero/hero-girl2.png';
 import bookimg from '/assets/img/book/01.png'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation ,Autoplay } from 'swiper/modules';
@@ -83,7 +83,7 @@ const Home = () => {
             <div className="col-sm-12 col-xl-8 col-lg-6">
                 <div className="hero-items">
                     <div className="book-shape">
-                        <img src={bookImage} alt="Book Shape" />
+                        {/* <img src={bookImage} alt="Book Shape" /> */}
                     </div>
                     <div className="frame-shape1 float-bob-x">
                         <img src={frameImage} alt="Frame Shape 1" />

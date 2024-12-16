@@ -17,6 +17,7 @@
     "cart": "Keranjang",
     "profile": "Profil",
     "login": "Masuk",
+    "logout": "Logout",
     "liveChat": "Obrolan Langsung",
     "supportEmail": "Email Dukungan",
     "supportPhone": "Telepon Dukungan",
@@ -201,5 +202,37 @@
   },
   "my_library": {
     "read": "Membaca"
-  }
+  },
+  "validation_message": {
+    "name": {
+      "required": "Nama wajib diisi",
+      "minLength": "Nama harus minimal 3 karakter",
+      "maxLength": "Nama tidak boleh lebih dari 50 karakter"
+    },
+    "password": {
+      "required": "Kata Sandi wajib diisi",
+      "minLength": "Kata Sandi harus minimal 8 karakter",
+      "maxLength": "Kata Sandi tidak boleh lebih dari 20 karakter"
+    },
+    "phone": {
+      "required": "Nomor Telepon wajib diisi",
+      "minLength": "Nomor Telepon harus minimal 10 digit",
+      "maxLength": "Nomor Telepon tidak boleh lebih dari 15 digit",
+      "pattern": "Nomor Telepon hanya boleh berisi angka"
+    },
+    "passwordConfirm": {
+      "required": "Konfirmasi Kata Sandi wajib diisi",
+      "oneOf": "Kata Sandi dan Konfirmasi Kata Sandi harus sama"
+    },
+    "city": {
+      "required": "Kota wajib diisi"
+    },
+    "birthday": {
+      "required": "Tanggal Lahir wajib diisi",
+      "max": "Tanggal Lahir harus di masa lalu"
+    },
+    "interestedCategory": {
+      "required": "Kategori Minat wajib diisi"
+    }
+    }
 }

@@ -17,6 +17,7 @@
     "cart": "购物车",
     "profile": "个人资料",
     "login": "登录",
+    "logout": "登出",
     "liveChat": "在线聊天",
     "supportEmail": "支持邮箱",
     "supportPhone": "支持电话",
@@ -201,6 +202,39 @@
   },
   "my_library": {
    "read": "阅读"
-  }
+  },
+  "validation_message": {
+    "name": {
+      "required": "姓名是必填项",
+      "minLength": "姓名必须至少3个字符",
+      "maxLength": "姓名不能超过50个字符"
+    },
+    "password": {
+      "required": "密码是必填项",
+      "minLength": "密码必须至少8个字符",
+      "maxLength": "密码不能超过20个字符"
+    },
+    "phone": {
+      "required": "电话号码是必填项",
+      "minLength": "电话号码必须至少10位数字",
+      "maxLength": "电话号码不能超过15位数字",
+      "pattern": "电话号码只能包含数字"
+    },
+    "passwordConfirm": {
+      "required": "确认密码是必填项",
+      "oneOf": "密码和确认密码必须匹配"
+    },
+    "city": {
+      "required": "城市是必填项"
+    },
+    "birthday": {
+      "required": "生日是必填项",
+      "max": "生日必须在过去"
+    },
+    "interestedCategory": {
+      "required": "感兴趣的类别是必填项"
+    }
+    }
+
 }
 

@@ -17,6 +17,7 @@
     "cart": "Cart",
     "profile": "Profile",
     "login": "Login",
+    "logout": "Logout",
     "liveChat": "Live Chat",
     "supportEmail": "Support Email",
     "supportPhone": "Support Phone",
@@ -200,6 +201,38 @@
   },
   "my_library": {
     "read": "Read"
-  }
+  },
+  "validation_message": {
+    "name": {
+      "required": "Name is required",
+      "minLength": "Name must be at least 3 characters",
+      "maxLength": "Name must not exceed 50 characters"
+    },
+    "password": {
+      "required": "Password is required",
+      "minLength": "Password must be at least 8 characters",
+      "maxLength": "Password must not exceed 20 characters"
+    },
+    "phone": {
+      "required": "Phone Number is required",
+      "minLength": "Phone Number must be at least 10 digits",
+      "maxLength": "Phone Number must not exceed 15 digits",
+      "pattern": "Phone Number must only contain digits"
+    },
+    "passwordConfirm": {
+      "required": "Confirm Password is required",
+      "oneOf": "Password and Confirm Password must match"
+    },
+    "city": {
+      "required": "City is required"
+    },
+    "birthday": {
+      "required": "Birthday is required",
+      "max": "Birthday must be in the past"
+    },
+    "interestedCategory": {
+      "required": "Interested Categories is required"
+    }
+    }
   
 }

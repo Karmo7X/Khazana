@@ -1,28 +1,93 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Button, Form, Image } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import Register from "./Register";
-
-const Login = () => {
+import { IoIosEye } from "react-icons/io";
+import { IoIosEyeOff } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { LoginApi } from "../../Api/Auth/AuthSlice";
+import Cookies from "js-cookie";
+const Login = ({ showmodal }) => {
   const { t } = useTranslation();
   const [formdata, setFormdata] = useState({
     phone: "",
     password: "",
   });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormdata({ ...formdata, [name]: value });
-  };
-
+  const [showpass, setShowpass] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
+  const [showregister_component, setShowregister_component] = useState(false);
+  const dispatch = useDispatch();
+  const [errorvalid, setErrorvalid] = useState();
+  const [successmessage, setSuccessmessage] = useState();
+
+  useEffect(() => {
+    setShowLogin(showmodal);
+  }, [showmodal]);
 
   const handleClose = () => setShowLogin(false);
   const handleShow = () => setShowLogin(true);
 
+  const handleChange = (name, value) => {
+    setFormdata({ ...formdata, [name]: value });
+  };
+
+  // for show register with button go to register
+
+  const handleShowregister = () => {
+    setShowregister_component(true);
+    setShowLogin(false);
+  };
+
+  const validate = (value) => {
+    const error = {};
+
+    // Phone validation
+    if (!value.phone) {
+      error.phone = t("global.validation_message.phone.required");
+    } else if (!/^\d+$/.test(value.phone)) {
+      error.phone = t("global.validation_message.phone.pattern"); // Must be numeric
+    } else if (value.phone.length < 10) {
+      error.phone = t("global.validation_message.phone.minLength"); // Minimum 10 digits
+    } else if (value.phone.length > 15) {
+      error.phone = t("global.validation_message.phone.maxLength"); // Maximum 15 digits
+    }
+
+    // Password validation
+    if (!value.password) {
+      error.password = t("global.validation_message.password.required");
+    } else if (!/^[^\s]{8,20}$/.test(value.password)) {
+      if (value.password.length < 8) {
+        error.password = t("global.validation_message.password.minLength");
+      } else if (value.password.length > 20) {
+        error.password = t("global.validation_message.password.maxLength");
+      } else {
+        error.password = t("global.validation_message.password.pattern"); // No spaces allowed
+      }
+    }
+
+    return error;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const error_submit = validate(formdata);
+
+    if (Object.keys(error_submit).length === 0) {
+      dispatch(LoginApi(formdata)).then((res) => {
+        if (res.payload?.code === 200) {
+          setSuccessmessage(res.payload?.message);
+          Cookies.set('token',res.payload?.data?.token)
+          setErrorvalid(null);
+
+          window.location.reload()
+        }
+      });
+    } else {
+      setErrorvalid(error_submit);
+    }
+  };
   return (
     <>
-      
       <Modal
         show={showLogin}
         onHide={handleClose}
@@ -38,9 +103,54 @@ const Login = () => {
           <div className="identityBox">
             <div className="form-wrapper w-100">
               <h1 id="loginModalLabel">{t("global.login.welcomeBack")}</h1>
-              <Form>
-              <input class="inputField" type="phone" name="email" placeholder={t("global.login.phoneNumber")}/>
-              <input class="inputField" type="password" name="password" placeholder={t("global.login.enterPassword")}/>
+              <Form className="needs-validation" noValidate>
+                <input
+                  className={` inputField  ${
+                    errorvalid?.phone ? "is-invalid" : "is-valid"
+                  }`}
+                  type="phone"
+                  name="phone"
+                  placeholder={t("global.login.phoneNumber")}
+                  style={{ color: "#000" }}
+                  onChange={(e) => {
+                    handleChange(e.target.name, e.target.value);
+                  }}
+                  required
+                />
+
+                {errorvalid?.phone && (
+                  <>
+                    <div class="invalid-feedback">{errorvalid?.phone}</div>
+                  </>
+                )}
+                <div className="d-flex align-items-center ">
+                  <input
+                    className={` inputField  ${
+                      errorvalid?.password ? "is-invalid" : "is-valid"
+                    }`}
+                    type={showpass === true ? "text" : "password"}
+                    name="password"
+                    placeholder={t("global.login.enterPassword")}
+                    style={{ color: "#000" }}
+                    onChange={(e) => {
+                      handleChange(e.target.name, e.target.value);
+                    }}
+                    required
+                  />
+                  <div>
+                    {showpass === true ? (
+                      <IoIosEye onClick={() => setShowpass(false)} />
+                    ) : (
+                      <IoIosEyeOff onClick={() => setShowpass(true)} />
+                    )}
+                  </div>
+                </div>
+
+                {errorvalid?.password && (
+                  <>
+                    <div class="invalid-feedback">{errorvalid?.password}</div>
+                  </>
+                )}
                 <div className="input-check remember-me mt-3">
                   <div class="checkbox-wrapper">
                     <input
@@ -65,10 +175,18 @@ const Login = () => {
                     </Button>
                   </div>
                 </div>
+                {successmessage && (
+                  <>
+                    <div class="alert alert-success" role="alert">
+                      {successmessage}
+                    </div>
+                  </>
+                )}
+
                 <button
                   type="button"
                   className="loginBtn theme-btn rounded-0 mt-3"
-                  onClick={() => console.log("Login clicked")}
+                  onClick={(e) => handleSubmit(e)}
                 >
                   {t("global.login.login")}
                 </button>
@@ -77,7 +195,7 @@ const Login = () => {
                   className="theme-btn rounded-0 w-100 register-btn mt-3"
                   data-bs-toggle="modal"
                   data-bs-target="#registrationModal"
-                  onClick={handleClose}
+                  onClick={handleShowregister}
                 >
                   {t("global.login.createAccount")}
                 </button>
@@ -118,7 +236,9 @@ const Login = () => {
         </Modal.Body>
       </Modal>
 
-      {showLogin === false &&(<Register/>)}
+      {showregister_component === true && (
+        <Register showmodalregist={showregister_component} />
+      )}
     </>
   );
 };

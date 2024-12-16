@@ -27,6 +27,41 @@ export const RegisterApi=createAsyncThunk("auth/register",async(data)=>{
 
 
 })
+export const LoginApi=createAsyncThunk("auth/register",async(data)=>{
+   
+    try{
+        const res=await axios.post(`${baseurl}/userAuth/login`,data,{
+            headers:{
+                'lang':lang
+            }
+        })
+        
+        return res.data
+        
+    }catch(err){
+        console.error(err.response.data)
+    }
+
+
+})
+
+// export const LogoutApi=createAsyncThunk("auth/register",async(data)=>{
+   
+//     try{
+//         const res=await axios.post(`${baseurl}/userAuth/login`,data,{
+//             headers:{
+//                 'lang':lang
+//             }
+//         })
+        
+//         return res.data
+        
+//     }catch(err){
+//         console.error(err.response.data)
+//     }
+
+
+// })
 
 
 const Authslice=createSlice({
@@ -35,9 +70,12 @@ const Authslice=createSlice({
   reducers:{},
   extraReducers:(builder)=>{
      builder
-     .addCase
+     
   }
 
 })
+
+
+export default Authslice.reducer
 
 

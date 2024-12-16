@@ -7,9 +7,11 @@ import OTP from './Modals/OTP'
 import Forgetpassword from './Modals/Forgetpasswor'
 import Restpassword from './Modals/Restpassword'
 import { useTranslation } from "react-i18next";
+import Cookies from 'js-cookie'
 const Navbar = () => {
     const { t, i18n } = useTranslation();
    const [show,setShow]=useState(false)
+   const token=Cookies.get('token')
     // State to manage selected language
   const [selectedLanguage, setSelectedLanguage] = useState("ar");
   const languageMap = {
@@ -36,6 +38,12 @@ const Navbar = () => {
     localStorage.setItem("selectedLanguage", language); // Store in localStorage
     window.location.reload()
   };
+
+
+  const handlelogout=()=>{
+     Cookies.remove('token')
+     window.location.reload()
+  }
   return (
     <>
     {/* <!-- Cursor follower --> */}
@@ -209,10 +217,17 @@ const Navbar = () => {
                   
                   </div>
                 </li>
-                    <li><i class="fa-light fa-user"></i>
-                        <button data-bs-toggle="modal" onClick={()=>{setShow(true)}} data-bs-target="#loginModal">
-                        {t("global.nav.login")}
+                    <li>
+                        <i class="fa-light fa-user"></i>
+                        {token ?(<>
+                            <button  onClick={handlelogout}>
+                        {t("global.nav.logout")}
                         </button>
+                        </>):(<> <button data-bs-toggle="modal" onClick={()=>{setShow(!show)}} data-bs-target="#loginModal">
+                        {t("global.nav.login")}
+                        </button></>)}
+                       
+
                     </li>
                 </ul>
             </div>
@@ -465,7 +480,7 @@ const Navbar = () => {
     </header>
 
     {/* <!-- Login Modal --> */}
-    {show &&(<Login/>)}
+    {show &&(<Login  showmodal={show}/>)}
       
     {/* <!-- Registration Modal --> */}
       <Register/>
