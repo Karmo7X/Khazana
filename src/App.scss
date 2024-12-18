@@ -34,6 +34,14 @@
 }
 
 
+.form-control.is-invalid, .was-validated .form-control:invalid{
+    background-image: none;
+}
+.form-control.is-valid, .was-validated .form-control:valid{
+    background-image: none;   
+}
+
+
 
 
 

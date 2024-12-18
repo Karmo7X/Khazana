@@ -58,6 +58,7 @@
   },
   "register":{
     "createAccount": "Create account!",
+    "phoneNumber": "Phone Number",
     "userName": "User Name",
     "dateOfBirth": "Date Of Birth",
     "categories": "Categories interested in",
@@ -228,7 +229,8 @@
     },
     "birthday": {
       "required": "Birthday is required",
-      "max": "Birthday must be in the past"
+      "max": "Birthday must be in the past",
+       "minAge":"Age must be at least 12 years."
     },
     "interestedCategory": {
       "required": "Interested Categories is required"

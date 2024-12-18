@@ -7,6 +7,7 @@ import { IoIosEyeOff } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { LoginApi } from "../../Api/Auth/AuthSlice";
 import Cookies from "js-cookie";
+import Forgetpassword from "./Forgetpasswor";
 const Login = ({ showmodal }) => {
   const { t } = useTranslation();
   const [formdata, setFormdata] = useState({
@@ -15,22 +16,22 @@ const Login = ({ showmodal }) => {
   });
   const [showpass, setShowpass] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
+  const [showforget,setShowforget]=useState(false)
   const [showregister_component, setShowregister_component] = useState(false);
   const dispatch = useDispatch();
   const [errorvalid, setErrorvalid] = useState();
   const [successmessage, setSuccessmessage] = useState();
-
-  useEffect(() => {
-    setShowLogin(showmodal);
-  }, [showmodal]);
-
-  const handleClose = () => setShowLogin(false);
+   const showlogin =localStorage.getItem('showlogin') 
+  const handleClose = () => {setShowLogin(false);localStorage.setItem('showlogin',false)};
   const handleShow = () => setShowLogin(true);
-
+  const handleShowforget=() => setShowforget(true);
   const handleChange = (name, value) => {
     setFormdata({ ...formdata, [name]: value });
   };
 
+    useEffect(() => {
+     setShowLogin(showlogin)
+    }, [showlogin]);
   // for show register with button go to register
 
   const handleShowregister = () => {
@@ -100,6 +101,7 @@ const Login = ({ showmodal }) => {
           <div className="close-btn">
             <Button variant="close" onClick={handleClose} aria-label="Close" />
           </div>
+          {showforget === false ?(<>
           <div className="identityBox">
             <div className="form-wrapper w-100">
               <h1 id="loginModalLabel">{t("global.login.welcomeBack")}</h1>
@@ -123,7 +125,7 @@ const Login = ({ showmodal }) => {
                     <div class="invalid-feedback">{errorvalid?.phone}</div>
                   </>
                 )}
-                <div className="d-flex align-items-center ">
+                <div className="d-flex  align-items-center ">
                   <input
                     className={` inputField  ${
                       errorvalid?.password ? "is-invalid" : "is-valid"
@@ -153,7 +155,7 @@ const Login = ({ showmodal }) => {
                 )}
                 <div className="input-check remember-me mt-3">
                   <div class="checkbox-wrapper">
-                    <input
+                    {/* <input
                       type="checkbox"
                       class="form-check-input"
                       name="save-for-next"
@@ -161,15 +163,14 @@ const Login = ({ showmodal }) => {
                     />
                     <label for="saveForNext">
                       {t("global.login.rememberMe")}
-                    </label>
+                    </label> */}
                   </div>
                   <div class="text">
                     <Button
                       type="button"
                       className="text"
                       variant="link"
-                      data-bs-toggle="modal"
-                      data-bs-target="#forgetModal"
+                    onClick={()=>handleShowforget()}
                     >
                       {t("global.login.forgotPassword")}
                     </Button>
@@ -185,7 +186,7 @@ const Login = ({ showmodal }) => {
 
                 <button
                   type="button"
-                  className="loginBtn theme-btn rounded-0 mt-3"
+                  className="loginBtn mt-5 theme-btn rounded-0 mt-3"
                   onClick={(e) => handleSubmit(e)}
                 >
                   {t("global.login.login")}
@@ -233,6 +234,11 @@ const Login = ({ showmodal }) => {
               </div>
             </div>
           </div>
+          
+          </>):(
+            <Forgetpassword/>
+          )}
+          
         </Modal.Body>
       </Modal>
 

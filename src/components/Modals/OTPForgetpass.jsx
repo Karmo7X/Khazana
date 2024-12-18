@@ -2,9 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
-import { ResendCodeApi, VerifyPhoneApi } from "../../Api/Auth/AuthSlice";
+import { ResendCodeApi, VerifyCodeApi, VerifyPhoneApi } from "../../Api/Auth/AuthSlice";
 import Cookies from "js-cookie";
-const OTP = ({ phonenum }) => {
+import ResetPassword from "./Restpassword";
+const OTPForgetpass = ({ phonenum }) => {
   const { t } = useTranslation();
 
   const [otp, setOtp] = useState(new Array(4).fill(""));
@@ -12,6 +13,7 @@ const OTP = ({ phonenum }) => {
   const [canResend, setCanResend] = useState(false);
   const [successmessage, setSuccessmessage] = useState();
   const [error, setError] = useState(null);
+  const [showreset, setShowreset] = useState(false);
   const inputRefs = useRef([]);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -63,21 +65,23 @@ const OTP = ({ phonenum }) => {
     e.preventDefault();
     const data = {
       phone: phonenum,
-      activateCode: otp.join(""),
+      resetCode: otp.join(""),
     };
-    dispatch(VerifyPhoneApi(data)).then((res) => {
+    dispatch(VerifyCodeApi(data)).then((res) => {
       if (res.payload?.code === 200) {
         setSuccessmessage(res.payload?.message);
-        Cookies.set("token", res.payload?.data?.token);
-        window.location.reload();
+        setShowreset(true)
+        
       } else {
         setError(res.payload?.message);
+        setShowreset(false)
       }
     });
   };
   return (
     <>
-      <div class="identityBox">
+      { showreset === false? (<>
+       <div class="identityBox">
         <div class="form-wrapper d-flex align-items-center justify-content-center flex-column gap-5">
           <div className="d-flex align-items-center justify-content-center flex-column text-center">
             <h1 id="loginModalLabel">{t("global.otp.verifyPhone")}</h1>
@@ -156,8 +160,13 @@ const OTP = ({ phonenum }) => {
           </div>
         </div>
       </div>
+      </>):(<>
+      <ResetPassword phonenumber={phonenum}/>
+      
+      </>)}
+     
     </>
   );
 };
 
-export default OTP;
+export default OTPForgetpass;

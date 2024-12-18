@@ -59,6 +59,7 @@
   "register":{
    "createAccount": "创建账户!",
   "userName": "用户名",
+  "phoneNumber": "电话号码",
   "dateOfBirth": "出生日期",
   "categories": "感兴趣的类别",
   "city": "城市",
@@ -229,7 +230,8 @@
     },
     "birthday": {
       "required": "生日是必填项",
-      "max": "生日必须在过去"
+      "max": "生日必须在过去",
+       "minAge":"年龄必须至少12岁。"
     },
     "interestedCategory": {
       "required": "感兴趣的类别是必填项"

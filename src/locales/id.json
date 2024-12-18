@@ -59,6 +59,7 @@
   "register":{
    "createAccount": "Buat Akun!",
   "userName": "Nama Pengguna",
+  "phoneNumber": "Nomor Telepon",
   "dateOfBirth": "Tanggal Lahir",
   "categories": "Kategori yang diminati",
   "city": "Kota",
@@ -229,7 +230,8 @@
     },
     "birthday": {
       "required": "Tanggal Lahir wajib diisi",
-      "max": "Tanggal Lahir harus di masa lalu"
+      "max": "Tanggal Lahir harus di masa lalu",
+       "minAge":"Usia minimal harus 12 tahun."
     },
     "interestedCategory": {
       "required": "Kategori Minat wajib diisi"

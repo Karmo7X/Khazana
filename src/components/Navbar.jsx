@@ -11,6 +11,7 @@ import Cookies from 'js-cookie'
 const Navbar = () => {
     const { t, i18n } = useTranslation();
    const [show,setShow]=useState(false)
+   
    const token=Cookies.get('token')
     // State to manage selected language
   const [selectedLanguage, setSelectedLanguage] = useState("ar");
@@ -38,7 +39,9 @@ const Navbar = () => {
     localStorage.setItem("selectedLanguage", language); // Store in localStorage
     window.location.reload()
   };
-
+  useEffect(() => {
+    localStorage.setItem('showlogin',show)
+  }, [show]);
 
   const handlelogout=()=>{
      Cookies.remove('token')
@@ -88,6 +91,22 @@ const Navbar = () => {
                                    
                                     
                                 </div>
+                                <div className='mt-4 mb-3'>
+                                    <ul>
+                                    <li>
+                        <i class="fa-light fa-user"></i>
+                        {token ?(<>
+                            <button  onClick={handlelogout}>
+                        {t("global.nav.logout")}
+                        </button>
+                        </>):(<> <button data-bs-toggle="modal" onClick={()=>{setShow(!show);localStorage.setItem('showlogin',true)}} data-bs-target="#loginModal">
+                        {t("global.nav.login")}
+                        </button></>)}
+                       
+
+                    </li>
+                                    </ul>
+                                </div>
                     <div class="offcanvas__contact">
                         <h4>{t("global.nav.contactInfo")}</h4>
                         <ul>
@@ -124,6 +143,7 @@ const Navbar = () => {
                                     <a href="tel:+966506300345">{t("global.nav.phone")}</a>
                                 </div>
                             </li>
+                            
                         </ul>
                         {/* <div class="header-button mt-4">
                             <a href="ContactUs" class="theme-btn text-center">
@@ -223,7 +243,7 @@ const Navbar = () => {
                             <button  onClick={handlelogout}>
                         {t("global.nav.logout")}
                         </button>
-                        </>):(<> <button data-bs-toggle="modal" onClick={()=>{setShow(!show)}} data-bs-target="#loginModal">
+                        </>):(<> <button data-bs-toggle="modal" onClick={()=>{setShow(!show);localStorage.setItem('showlogin',true)}} data-bs-target="#loginModal">
                         {t("global.nav.login")}
                         </button></>)}
                        
@@ -480,17 +500,17 @@ const Navbar = () => {
     </header>
 
     {/* <!-- Login Modal --> */}
-    {show &&(<Login  showmodal={show}/>)}
+    {show  &&(<Login  showmodal={show}/>)}
       
     {/* <!-- Registration Modal --> */}
       <Register/>
 
     {/* <!-- OTP Modal --> */}
-         <OTP/>
+         {/* <OTP/> */}
      {/* <!-- forgetpassword Modal --> */}
-       <Forgetpassword/>
+       {/* <Forgetpassword/> */}
        {/* <!-- resetpassword Modal --> */}
-       <Restpassword/>
+       {/* <Restpassword/> */}
     </>
   )
 }

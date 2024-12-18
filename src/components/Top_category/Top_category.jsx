@@ -1,19 +1,21 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation ,Autoplay } from 'swiper/modules';
 import { useTranslation } from "react-i18next";
+import { GetCategoryApi } from '../../Api/Category/CategorySlice';
+import { useDispatch } from "react-redux";
 const Top_category = () => {
     const { t, i18n } = useTranslation();
-    const bookCategories = [
-        { id: 1, title: 'الأدب', count: 50, imgSrc: '/assets/img/book-categori/01.png' },
-        { id: 2, title: 'الكتب العلمية', count: 30, imgSrc: '/assets/img/book-categori/02.png' },
-        { id: 3, title: 'الكتب الدينية', count: 40, imgSrc: '/assets/img/book-categori/03.png' },
-        { id: 4, title: 'الروايات', count: 100, imgSrc: '/assets/img/book-categori/04.png' },
-        // // { id: 5, title: 'كتب المغامرات', count: 4, imgSrc: '/assets/img/book-categori/05.png' },
-        // { id: 6, title: 'كتب قانون التصميم', count: 6, imgSrc: '/assets/img/book-categori/02.png' },
-        // { id: 7, title: 'المنزل الآمن', count: 5, imgSrc: '/assets/img/book-categori/03.png' },
-        // { id: 8, title: 'زراعة الأزهار', count: 7, imgSrc: '/assets/img/book-categori/04.png' },
-    ];
+ const dispatch = useDispatch();
+const [category, setCategory] = useState([]);
+      // get category
+      useEffect(() => {
+        dispatch(GetCategoryApi()).then((res) => {
+          if (res.payload?.code === 200) {
+            setCategory(res.payload?.data?.categories);
+          }
+        });
+      }, []);
     
     return (
         <section className="book-catagories-section fix section-padding">
@@ -57,34 +59,21 @@ const Top_category = () => {
                       }}
                     className="book-catagories-slider"
                 >
-                    {bookCategories.map(({ id, title, count, imgSrc }) => (
+                    {category.map(({ id, title, image }) => (
                         <SwiperSlide key={id}>
                             <div className="book-catagories-items">
                                 <div className="book-thumb">
-                                    <img src={imgSrc} alt={`img-${id}`}  style={{width:'120px',height:'147px'}}/>
+                                    <img src={image} alt={`img-${id}`}  style={{width:'120px',height:'147px'}}/>
                                     <div className="circle-shape">
                                         <img src="/assets/img/book-categori/circle-shape.png" alt="shape-img" />
                                     </div>
                                 </div>
-                                <div className="number">{String(id).padStart(2, '0')}</div>
-                                <h3><a href="/Single/:id">{`${title} (${count})`}</a></h3>
+                                {/* <div className="number">{String(id).padStart(2, '0')}</div> */}
+                                <h3><a href="/Single/:id">{`${title}`}</a></h3>
                             </div>
                         </SwiperSlide>
                     ))}
-                    {bookCategories.map(({ id, title, count, imgSrc }) => (
-                        <SwiperSlide key={id}>
-                            <div className="book-catagories-items">
-                                <div className="book-thumb">
-                                    <img src={imgSrc} alt={`img-${id}`}  style={{width:'120px',height:'147px'}}/>
-                                    <div className="circle-shape">
-                                        <img src="/assets/img/book-categori/circle-shape.png" alt="shape-img" />
-                                    </div>
-                                </div>
-                                <div className="number">{String(id).padStart(2, '0')}</div>
-                                <h3><a href="/Single/:id">{`${title} (${count})`}</a></h3>
-                            </div>
-                        </SwiperSlide>
-                    ))}
+                  
                 </Swiper>
             </div>
         </div>
