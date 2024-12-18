@@ -22,7 +22,7 @@ export const RegisterApi=createAsyncThunk("auth/register",async(data)=>{
         return res.data
         
     }catch(err){
-        console.error(err.response.data)
+        // console.error(err.response.data)
     }
 
 
@@ -39,7 +39,8 @@ export const LoginApi=createAsyncThunk("auth/Login",async(data)=>{
         return res.data
         
     }catch(err){
-        console.error(err.response.data)
+        // console.error(err.response.data)
+        return err.response.data
     }
 
 
@@ -56,7 +57,8 @@ export const VerifyPhoneApi=createAsyncThunk("auth/verifyPhone",async(data)=>{
         return res.data
         
     }catch(err){
-        console.error(err.response.data)
+        // console.error(err.response.data)
+        return err.response.data
     }
 
 
@@ -74,7 +76,8 @@ export const VerifyCodeApi=createAsyncThunk("auth/verifyCode",async(data)=>{
         return res.data
         
     }catch(err){
-        console.error(err.response.data)
+        // console.error(err.response.data)
+        return err.response.data
     }
 
 
@@ -91,7 +94,8 @@ export const ResendCodeApi=createAsyncThunk("auth/resendCode",async(data)=>{
         return res.data
         
     }catch(err){
-        console.error(err.response.data)
+        // console.error(err.response.data)
+        return err.response.data
     }
 
 
@@ -108,7 +112,7 @@ export const ForgotPasswordApi=createAsyncThunk("auth/forgotPassword",async(phon
         return res.data
         
     }catch(err){
-        console.error(err.response.data)
+        // console.error(err.response.data)
         return err.response.data
     }
 
@@ -126,7 +130,7 @@ export const ResetPasswordApi=createAsyncThunk("auth/resetPassword",async(data)=
         return res.data
         
     }catch(err){
-        console.error(err.response.data)
+        // console.error(err.response.data)
         return err.response.data
     }
 
@@ -145,7 +149,7 @@ export const ResetPasswordApi=createAsyncThunk("auth/resetPassword",async(data)=
 //         return res.data
         
 //     }catch(err){
-//         console.error(err.response.data)
+//         // console.error(err.response.data)
 //     }
 
 

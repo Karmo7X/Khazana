@@ -187,6 +187,7 @@
     "footerEmailPlaceholder": "Masukkan Alamat Email",
     "footerAllRights": "© Semua Hak Dilindungi 2024 oleh",
     "footerBrandLogos": "Logo Merek",
+    "terms_and_conditions": "Syarat dan Ketentuan",
     "footercontent": "Rak Buku adalah aplikasi serbaguna Anda untuk membaca digital, di mana Anda dapat menemukan semua buku yang Anda inginkan di satu tempat. Nikmati pengalaman membaca yang mulus dan nyaman dengan antarmuka yang ramah pengguna dan berbagai alat untuk membantu Anda mengatur perpustakaan digital pribadi Anda. Temukan dunia baru dan perkaya pengetahuan Anda dengan jutaan buku yang tersedia hanya dengan satu sentuhan."
   },
   "add_to_cart":"Tambah ke Keranjang",
@@ -236,5 +237,11 @@
     "interestedCategory": {
       "required": "Kategori Minat wajib diisi"
     }
-    }
+    },
+    "privacy_title": {
+    "title": "Kebijakan Privasi"
+  },
+  "currency": {
+   "rs": "Riyal Saudi"
+  }
 }

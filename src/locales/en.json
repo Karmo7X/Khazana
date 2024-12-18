@@ -186,6 +186,7 @@
     "footerEmailPlaceholder": "Enter Email Address",
     "footerAllRights": "© All Rights Reserved 2024 by",
     "footerBrandLogos": "Brand Logos",
+     "terms_and_conditions": "Terms and Conditions",
     "footercontent":"Bookshelf is your all-in-one app for digital reading, where you can find all the books you desire in one place. Enjoy a seamless and comfortable reading experience with a user-friendly interface and a wide range of tools to help you organize your personal digital library. Discover new worlds and enrich your knowledge with millions of books available at the touch of a button."
   },
   "add_to_cart":"Add to Cart",
@@ -235,6 +236,12 @@
     "interestedCategory": {
       "required": "Interested Categories is required"
     }
-    }
+    },
+    "privacy_title": {
+      "title": "Privacy Policy"
+  },
+  "currency": {
+    "rs": "Saudi Riyal"
+  }
   
 }

@@ -1,13 +1,30 @@
-import React from "react";
-
+import React,{useState,useEffect} from 'react'
+import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
+import { GetsubscriptionApi } from '../../Api/Subscription/Subscriptions';
 const Subcription = () => {
+   const { t, i18n } = useTranslation();
+   const dispatch = useDispatch();
+   const [subcription,setSubcription]=useState([])
+
+   useEffect(()=>{
+     dispatch(GetsubscriptionApi()).then((res)=>{
+      if(res.payload?.code === 200){
+        setSubcription(res.payload?.data?.subscriptionPlans)
+      }
+     })
+   },[])
   return (
     <>
       <div className="container my-5">
-        <h2 className="text-center mb-4">اختر خطه مناسبه لهدفك</h2>
+        {subcription.length !==0 ?(<>
+        
+         <h2 className="text-center mb-4">اختر خطه مناسبه لهدفك</h2>
         <div className="row mt-5">
           {/* Silver Card */}
-          <div className="col-md-4 mb-4">
+          {subcription.map((data,index)=>{
+             return(<>
+               <div className="col-md-4 mb-4">
             <div
               className="card shadow-sm border-0"
               style={{
@@ -19,14 +36,14 @@ const Subcription = () => {
             >
               <div
                 className="card-header d-flex  align-items-center justify-content-between text-center"
-                style={{ backgroundColor: "#dcdcdc", color: "#000",padding:"15px 30px" }}
+                style={{  color: "#000",padding:"15px 30px" }}
               >
                 <div>
-                  <h5>الفضي</h5>
+                  <h5>{data?.title}</h5>
                 </div>
                 <div>
-                  <h6>11.00 ريال</h6>
-                  <p>اشتراك فضي</p>
+                  <h6>{data?.price}</h6>
+                  {/* <p>اشتراك فضي</p> */}
                 </div>
               </div>
               <div className="card-body">
@@ -38,9 +55,14 @@ const Subcription = () => {
               </div>
             </div>
           </div>
+             
+             </>)
+
+          })}
+        
 
           {/* Gold Card */}
-          <div className="col-md-4 mb-4">
+          {/* <div className="col-md-4 mb-4">
             <div
               className="card shadow-sm border-0"
               style={{
@@ -71,10 +93,10 @@ const Subcription = () => {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Diamond Card */}
-          <div className="col-md-4 mb-4">
+          {/* <div className="col-md-4 mb-4">
             <div
               className="card shadow-sm border-0"
               style={{
@@ -106,8 +128,14 @@ const Subcription = () => {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
+        
+        </>):(<>
+        
+        
+        </>)}
+       
       </div>
     </>
   );

@@ -187,6 +187,7 @@
     "footerEmailPlaceholder": "请输入电子邮件地址",
     "footerAllRights": "© 2024年所有权利保留",
     "footerBrandLogos": "品牌徽标",
+    "terms_and_conditions": "条款和条件",
     "footercontent":"书架是您的一站式数字阅读应用程序，在这里您可以在一个地方找到所有想阅读的书籍。通过用户友好的界面和广泛的工具，享受流畅舒适的阅读体验，并帮助您整理个人数字图书馆。通过轻触按钮，发现新世界，丰富您的知识，获取数百万本书籍。"
   },
   "add_to_cart":"加入购物车",
@@ -236,7 +237,13 @@
     "interestedCategory": {
       "required": "感兴趣的类别是必填项"
     }
-    }
+    },
+    "privacy_title": {
+  "title": "隐私政策"
+  },
+  "currency": {
+    "rs": "沙特里亚尔"
+  }
 
 }
 

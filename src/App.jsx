@@ -4,6 +4,8 @@ import './App.scss'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import Loader from './components/loader/loader'
+import Privacy from './pages/Privacy/Privacy'
+import Term from './pages/Privacy/Term'
 
 
 const Home =lazy(() => import("./pages/Home/Home"))
@@ -82,6 +84,18 @@ function App() {
         <Route path='Subscription' element={
           <Suspense fallback={<Loader/>}>
             <Subcription/>
+          </Suspense>
+          
+        }/>
+        <Route path='ReturnPolicy' element={
+          <Suspense fallback={<Loader/>}>
+            <Privacy/>
+          </Suspense>
+          
+        }/>
+         <Route path='Term' element={
+          <Suspense fallback={<Loader/>}>
+            <Term/>
           </Suspense>
           
         }/>
