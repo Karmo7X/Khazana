@@ -28,22 +28,22 @@
       "id": "印尼语"
     }
   },
-  "forgetpass":{
+  "forgetpass": {
     "recoverPassword": "恢复密码",
-  "description": "请输入与您的账户关联的手机号码，我们将向您发送一个代码来重置您的密码。",
-  "phoneNumber": "电话号码",
-  "submit": "提交"
+    "description": "请输入与您的账户关联的手机号码，我们将向您发送一个代码来重置您的密码。",
+    "phoneNumber": "电话号码",
+    "submit": "提交"
   },
-  "resetpass":{
+  "resetpass": {
     "recoverPassword": "恢复密码",
-  "description": "将新密码添加到您的帐户",
-  "password": "密码",
-  "confirmPassword": "确认密码",
-  "enterPassword": "请输入密码",
-  "enterConfirmPassword": "请输入确认密码",
-  "submit": "提交"
+    "description": "将新密码添加到您的帐户",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "enterPassword": "请输入密码",
+    "enterConfirmPassword": "请输入确认密码",
+    "submit": "提交"
   },
-  "login":{
+  "login": {
     "welcomeBack": "欢迎回来!",
     "phoneNumber": "电话号码",
     "enterPassword": "请输入密码",
@@ -56,25 +56,25 @@
     "continueWithFacebook": "使用Facebook继续",
     "acceptTerms": "我接受您的条款和条件"
   },
-  "register":{
-   "createAccount": "创建账户!",
-  "userName": "用户名",
-  "phoneNumber": "电话号码",
-  "dateOfBirth": "出生日期",
-  "categories": "感兴趣的类别",
-  "city": "城市",
-  "rememberMe": "记住我",
-  "forgotPassword": "忘记密码?",
-  "createAccountBtn": "创建账户",
-  "loginBtn": "登录",
-  "or": "或者",
-  "continueWithGoogle": "使用谷歌继续",
-  "continueWithFacebook": "使用Facebook继续",
-  "acceptTerms": "我接受条款和条件",
+  "register": {
+    "createAccount": "创建账户!",
+    "userName": "用户名",
+    "phoneNumber": "电话号码",
+    "dateOfBirth": "出生日期",
+    "categories": "感兴趣的类别",
+    "city": "城市",
+    "rememberMe": "记住我",
+    "forgotPassword": "忘记密码?",
+    "createAccountBtn": "创建账户",
+    "loginBtn": "登录",
+    "or": "或者",
+    "continueWithGoogle": "使用谷歌继续",
+    "continueWithFacebook": "使用Facebook继续",
+    "acceptTerms": "我接受条款和条件",
     "password": "密码",
     "confirmPassword": "确认密码"
   },
-  "otp":{
+  "otp": {
     "verifyPhone": "验证手机",
     "enterOtpCode": "请输入我们发送到您的WhatsApp号码的4位数字验证码以完成订单",
     "didntReceiveCode": "没有收到验证码？",
@@ -82,7 +82,7 @@
     "resendTimer": "  秒内重新发送验证码",
     "verifyOtp": "验证OTP"
   },
-  "home":{
+  "home": {
     "heroSection": {
       "discount": "最高30%折扣",
       "heading": "以最优惠的价格获得您的新书",
@@ -107,24 +107,22 @@
       }
     },
     "sectionTitle": "精选书籍",
-  "exploreMore": "查看更多",
-  "top_books":{
-    "khazanaTopBooks": "Khazana 热门书籍",
     "exploreMore": "查看更多",
-    "findYourNextBooks": "找到你的下一本书!",
-    "discountOffer": "现在即可享受25%的折扣!",
-    "shopNow": "立即购买"
-  },
-  "top_category":" 最佳类别",
-  "featured_authors":"特邀作者们",
-  "featured_authors_desc":" 认识那些讲述启发、挑战和娱乐故事的创作者。 我们的特邀作者带来来自心灵的故事，每个作品都拥有独特的声音与视角。",
-  "top_rate":"最佳评分书籍",
-   "top_selling_books":"畅销书籍",
-   "related_products": {
-    "title": "相关产品",
+    "top_books": {
+      "khazanaTopBooks": "Khazana 热门书籍",
+      "exploreMore": "查看更多",
+      "findYourNextBooks": "找到你的下一本书!",
+      "discountOffer": "现在即可享受25%的折扣!",
+      "shopNow": "立即购买"
+    },
+    "top_category": " 最佳类别",
+    "featured_authors": "特邀作者们",
+    "featured_authors_desc": " 认识那些讲述启发、挑战和娱乐故事的创作者。 我们的特邀作者带来来自心灵的故事，每个作品都拥有独特的声音与视角。",
+    "top_rate": "最佳评分书籍",
+    "top_selling_books": "畅销书籍",
+    "related_products": {
+      "title": "相关产品",
       "description": "发现更多与您兴趣相关的产品。无论是寻找新产品，还是想要进一步探索，这些精心挑选的商品都非常适合您！"
-    
-      
     }
   },
   "shop_details": {
@@ -138,18 +136,18 @@
   "shop_discovery": {
     "title": "发现我们的商店",
     "breadcrumb": "商店",
-  
-    "description": "探索我们精心挑选的广泛产品，为您提供最佳的购物体验。"
-   , "related_products": {
-    "title": "相关产品",
-    "description": "深入探索我们精心挑选的产品，每一款都能完美补充您的品味。每个选择都经过精心策划，专为您而来—探索一下，提升您的体验！"
-  }
+
+    "description": "探索我们精心挑选的广泛产品，为您提供最佳的购物体验。",
+    "related_products": {
+      "title": "相关产品",
+      "description": "深入探索我们精心挑选的产品，每一款都能完美补充您的品味。每个选择都经过精心策划，专为您而来—探索一下，提升您的体验！"
+    }
   },
-  "cta":{
-  "ctaTitle": "在所有超畅销书籍 <br />上获得25%的折扣",
-  "ctaButton": "立即购物"
-},
-"contact":{
+  "cta": {
+    "ctaTitle": "在所有超畅销书籍 <br />上获得25%的折扣",
+    "ctaButton": "立即购物"
+  },
+  "contact": {
     "contactUs": "联系我们",
     "home": "首页",
     "callUs": "24/7联系我们",
@@ -166,11 +164,11 @@
     "yourEmailPlaceholder": "你的邮箱",
     "messagePlaceholder": "写消息"
   },
-"footer":{
+  "footer": {
     "footerCall": "全天候联系我们",
     "footerPhone": "+966506300345",
     "footerEmail": "fa.kh.rj@khezanatalkutub.com",
-    "footerHours":"工作时间为上午7点至下午5点",
+    "footerHours": "工作时间为上午7点至下午5点",
     "footerLocation": "4517华盛顿大街",
     "footerCustomerSupport": "客户支持",
     "footerStoreList": "商店列表",
@@ -188,9 +186,9 @@
     "footerAllRights": "© 2024年所有权利保留",
     "footerBrandLogos": "品牌徽标",
     "terms_and_conditions": "条款和条件",
-    "footercontent":"书架是您的一站式数字阅读应用程序，在这里您可以在一个地方找到所有想阅读的书籍。通过用户友好的界面和广泛的工具，享受流畅舒适的阅读体验，并帮助您整理个人数字图书馆。通过轻触按钮，发现新世界，丰富您的知识，获取数百万本书籍。"
+    "footercontent": "书架是您的一站式数字阅读应用程序，在这里您可以在一个地方找到所有想阅读的书籍。通过用户友好的界面和广泛的工具，享受流畅舒适的阅读体验，并帮助您整理个人数字图书馆。通过轻触按钮，发现新世界，丰富您的知识，获取数百万本书籍。"
   },
-  "add_to_cart":"加入购物车",
+  "add_to_cart": "加入购物车",
   "profile": {
     "book_request": "请求不可用的书",
     "author_registration": "作者注册请求",
@@ -200,10 +198,24 @@
     "gold_plan": "您当前是金色套餐",
     "diamond_plan": "您当前是钻石套餐",
     "upgrade_account": "升级我的账户",
-     "my_library": "我的图书馆"
+    "my_library": "我的图书馆",
+    "my_account": "我的账户",
+    "profile": {
+      "upgrade_account": "升级账户",
+      "edit_profile": "编辑个人资料",
+      "on_subscription": "您正在订阅"
+    },
+    "form": {
+      "name": "姓名",
+      "phone_number": "电话号码",
+      "date_of_birth": "出生日期",
+      "city": "城市",
+      "categories": "感兴趣的类别",
+      "placeholder": "......"
+    }
   },
   "my_library": {
-   "read": "阅读"
+    "read": "阅读"
   },
   "validation_message": {
     "name": {
@@ -232,18 +244,29 @@
     "birthday": {
       "required": "生日是必填项",
       "max": "生日必须在过去",
-       "minAge":"年龄必须至少12岁。"
+      "minAge": "年龄必须至少12岁。"
     },
     "interestedCategory": {
       "required": "感兴趣的类别是必填项"
     }
-    },
-    "privacy_title": {
-  "title": "隐私政策"
+  },
+  "privacy_title": {
+    "title": "隐私政策"
   },
   "currency": {
-    "rs": "沙特里亚尔"
+    "rs": "韋斯特"
+  },
+  "duration": {
+    "year": "年",
+    "month": "月",
+    "week": "周",
+    "day": "天",
+    "plural": ""
+  },
+  "subcription_title": {
+     "choosePlan": "选择适合您目标的计划"
+  },
+  "notfoundmessage": {
+   "notFound": "目前没有数据"
   }
-
 }
-

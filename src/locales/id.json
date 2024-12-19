@@ -4,7 +4,7 @@
     "contactInfo": "Info Kontak",
     "address": "Jalan Utama, Melbourne, Australia",
     "email": "fa.kh.rj@khezanatalkutub.com",
-    "workingHours":  "Jam kerja dari jam 7 pagi sampai jam 5 sore",
+    "workingHours": "Jam kerja dari jam 7 pagi sampai jam 5 sore",
     "phone": "+966506300345",
     "getAQuote": "Dapatkan Penawaran",
     "home": "Beranda",
@@ -28,13 +28,13 @@
       "id": "Indonesia"
     }
   },
-  "forgetpass":{
+  "forgetpass": {
     "recoverPassword": "Pulihkan kata sandi",
     "description": "Masukkan nomor ponsel yang terkait dengan akun Anda dan kami akan mengirimkan kode untuk mereset kata sandi Anda.",
     "phoneNumber": "Nomor Telepon",
     "submit": "Kirim"
   },
-  "resetpass":{
+  "resetpass": {
     "recoverPassword": "Pulihkan kata sandi",
     "description": "Tambahkan kata sandi baru ke akun Anda",
     "password": "Kata Sandi",
@@ -43,7 +43,7 @@
     "enterConfirmPassword": "Masukkan Konfirmasi Kata Sandi",
     "submit": "Kirim"
   },
-  "login":{
+  "login": {
     "welcomeBack": "Selamat datang kembali!",
     "phoneNumber": "Nomor Telepon",
     "enterPassword": "Masukkan Kata Sandi",
@@ -56,25 +56,25 @@
     "continueWithFacebook": "Lanjutkan dengan Facebook",
     "acceptTerms": "Saya menerima Syarat & Ketentuan Anda"
   },
-  "register":{
-   "createAccount": "Buat Akun!",
-  "userName": "Nama Pengguna",
-  "phoneNumber": "Nomor Telepon",
-  "dateOfBirth": "Tanggal Lahir",
-  "categories": "Kategori yang diminati",
-  "city": "Kota",
-  "rememberMe": "Ingat saya",
-  "forgotPassword": "Lupa Kata Sandi?",
-  "createAccountBtn": "Buat Akun",
-  "loginBtn": "Masuk",
-  "or": "Atau",
-  "continueWithGoogle": "Lanjutkan dengan Google",
-  "continueWithFacebook": "Lanjutkan dengan Facebook",
-  "acceptTerms": "Saya menerima Syarat & Ketentuan",
-  "password": "Kata Sandi",
-  "confirmPassword": "Konfirmasi Kata Sandi"
+  "register": {
+    "createAccount": "Buat Akun!",
+    "userName": "Nama Pengguna",
+    "phoneNumber": "Nomor Telepon",
+    "dateOfBirth": "Tanggal Lahir",
+    "categories": "Kategori yang diminati",
+    "city": "Kota",
+    "rememberMe": "Ingat saya",
+    "forgotPassword": "Lupa Kata Sandi?",
+    "createAccountBtn": "Buat Akun",
+    "loginBtn": "Masuk",
+    "or": "Atau",
+    "continueWithGoogle": "Lanjutkan dengan Google",
+    "continueWithFacebook": "Lanjutkan dengan Facebook",
+    "acceptTerms": "Saya menerima Syarat & Ketentuan",
+    "password": "Kata Sandi",
+    "confirmPassword": "Konfirmasi Kata Sandi"
   },
-  "otp":{
+  "otp": {
     "verifyPhone": "Verifikasi Nomor Telepon",
     "enterOtpCode": "Masukkan kode 4 digit yang kami kirim ke nomor WhatsApp Anda untuk menyelesaikan pesanan",
     "didntReceiveCode": "Tidak menerima kode verifikasi?",
@@ -82,7 +82,7 @@
     "resendTimer": "Kirim ulang kode dalam  ",
     "verifyOtp": "Verifikasi OTP"
   },
-  "home":{
+  "home": {
     "heroSection": {
       "discount": "Hingga 30% Diskon",
       "heading": "Dapatkan Buku Baru Anda <br /> Dengan Harga Terbaik",
@@ -106,25 +106,23 @@
         "description": "Diskon 20% dengan berlangganan"
       }
     },
-     "sectionTitle": "Buku Unggulan",
-  "exploreMore": "Jelajahi Lebih Lanjut",
-  "top_books":{
-    "khazanaTopBooks": "Buku Terbaik Khazana",
+    "sectionTitle": "Buku Unggulan",
     "exploreMore": "Jelajahi Lebih Lanjut",
-    "findYourNextBooks": "Temukan Buku Berikutnya!",
-    "discountOffer": "Dan dapatkan diskon 25% sekarang!",
-    "shopNow": "Belanja Sekarang"
-  },
-  "top_category":"Kategori Terbaik",
-  "featured_authors":"Penulis Unggulan",
-  "featured_authors_desc":"  Temui para pemikir di balik cerita-cerita yang menginspirasi, menantang, dan menghibur. Penulis unggulan kami menghadirkan kisah-kisah dari hati, masing-masing dengan suara dan visi yang unik.",
-  "top_rate":"Buku Dengan Rating Teratas" ,
-   "top_selling_books":"Buku Terlaris",
-   "related_products": {
-    "title": "Produk Terkait",
+    "top_books": {
+      "khazanaTopBooks": "Buku Terbaik Khazana",
+      "exploreMore": "Jelajahi Lebih Lanjut",
+      "findYourNextBooks": "Temukan Buku Berikutnya!",
+      "discountOffer": "Dan dapatkan diskon 25% sekarang!",
+      "shopNow": "Belanja Sekarang"
+    },
+    "top_category": "Kategori Terbaik",
+    "featured_authors": "Penulis Unggulan",
+    "featured_authors_desc": "  Temui para pemikir di balik cerita-cerita yang menginspirasi, menantang, dan menghibur. Penulis unggulan kami menghadirkan kisah-kisah dari hati, masing-masing dengan suara dan visi yang unik.",
+    "top_rate": "Buku Dengan Rating Teratas",
+    "top_selling_books": "Buku Terlaris",
+    "related_products": {
+      "title": "Produk Terkait",
       "description": "Temukan produk lain yang melengkapi minat Anda. Apakah Anda mencari sesuatu yang baru atau ingin menjelajah lebih lanjut, pilihan produk ini sangat cocok untuk Anda!"
-    
-      
     }
   },
   "shop_details": {
@@ -138,18 +136,18 @@
   "shop_discovery": {
     "title": "Temukan Toko Kami",
     "breadcrumb": "Toko",
-    
-    "description": "Jelajahi berbagai produk kami, masing-masing dipilih dengan hati-hati untuk memberikan pengalaman berbelanja terbaik bagi Anda."
-   ,"related_products": {
-    "title": "Produk Terkait",
-    "description": "Jelajahi lebih dalam koleksi produk pilihan kami yang sempurna melengkapi selera Anda. Setiap pilihan dipilih dengan hati-hati, hanya untuk Anda—temukan yang menarik perhatian Anda dan tingkatkan pengalaman Anda!"
-  }
+
+    "description": "Jelajahi berbagai produk kami, masing-masing dipilih dengan hati-hati untuk memberikan pengalaman berbelanja terbaik bagi Anda.",
+    "related_products": {
+      "title": "Produk Terkait",
+      "description": "Jelajahi lebih dalam koleksi produk pilihan kami yang sempurna melengkapi selera Anda. Setiap pilihan dipilih dengan hati-hati, hanya untuk Anda—temukan yang menarik perhatian Anda dan tingkatkan pengalaman Anda!"
+    }
   },
-  "cta":{
+  "cta": {
     "ctaTitle": "Dapatkan diskon 25% untuk <br /> semua jenis buku terlaris",
     "ctaButton": "Belanja Sekarang"
   },
-  "contact":{
+  "contact": {
     "contactUs": "Hubungi Kami",
     "home": "Beranda",
     "callUs": "Hubungi Kami 24/7",
@@ -166,11 +164,11 @@
     "yourEmailPlaceholder": "Email Anda",
     "messagePlaceholder": "Tulis Pesan"
   },
-  "footer":{
+  "footer": {
     "footerCall": "Hubungi Kami 7/24",
     "footerPhone": "+966506300345",
     "footerEmail": "fa.kh.rj@khezanatalkutub.com",
-    "footerHours":  "Jam kerja dari jam 7 pagi sampai jam 5 sore",
+    "footerHours": "Jam kerja dari jam 7 pagi sampai jam 5 sore",
     "footerLocation": "4517 Washington ave.",
     "footerCustomerSupport": "Dukungan Pelanggan",
     "footerStoreList": "Daftar Toko",
@@ -190,7 +188,7 @@
     "terms_and_conditions": "Syarat dan Ketentuan",
     "footercontent": "Rak Buku adalah aplikasi serbaguna Anda untuk membaca digital, di mana Anda dapat menemukan semua buku yang Anda inginkan di satu tempat. Nikmati pengalaman membaca yang mulus dan nyaman dengan antarmuka yang ramah pengguna dan berbagai alat untuk membantu Anda mengatur perpustakaan digital pribadi Anda. Temukan dunia baru dan perkaya pengetahuan Anda dengan jutaan buku yang tersedia hanya dengan satu sentuhan."
   },
-  "add_to_cart":"Tambah ke Keranjang",
+  "add_to_cart": "Tambah ke Keranjang",
   "profile": {
     "book_request": "Minta buku yang tidak tersedia",
     "author_registration": "Permintaan pendaftaran penulis",
@@ -200,7 +198,21 @@
     "gold_plan": "Anda berada di Paket Gold",
     "diamond_plan": "Anda berada di Paket Diamond",
     "upgrade_account": "Tingkatkan Akun Saya",
-     "my_library": "Perpustakaan Saya"
+    "my_library": "Perpustakaan Saya",
+    "my_account": "Akun Saya",
+    "profile": {
+      "upgrade_account": "Tingkatkan Akun",
+      "edit_profile": "Edit Profil",
+      "on_subscription": "Anda sedang berlangganan"
+    },
+    "form": {
+      "name": "Nama",
+      "phone_number": "Nomor Telepon",
+      "date_of_birth": "Tanggal Lahir",
+      "city": "Kota",
+      "categories": "Kategori yang diminati",
+      "placeholder": "......"
+    }
   },
   "my_library": {
     "read": "Membaca"
@@ -232,16 +244,29 @@
     "birthday": {
       "required": "Tanggal Lahir wajib diisi",
       "max": "Tanggal Lahir harus di masa lalu",
-       "minAge":"Usia minimal harus 12 tahun."
+      "minAge": "Usia minimal harus 12 tahun."
     },
     "interestedCategory": {
       "required": "Kategori Minat wajib diisi"
     }
-    },
-    "privacy_title": {
+  },
+  "privacy_title": {
     "title": "Kebijakan Privasi"
   },
   "currency": {
-   "rs": "Riyal Saudi"
+    "rs": "R.S"
+  },
+  "duration": {
+    "year": "tahun",
+    "month": "bulan",
+    "week": "minggu",
+    "day": "hari",
+    "plural": ""
+  },
+  "subcription_title": {
+     "choosePlan": "Pilih rencana yang sesuai dengan tujuan Anda"
+  },
+  "notfoundmessage": {
+   "notFound": "Saat ini tidak ada data"
   }
 }

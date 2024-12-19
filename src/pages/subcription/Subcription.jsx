@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { GetsubscriptionApi } from '../../Api/Subscription/Subscriptions';
+import Notfound from '../../components/Notfound/Notfound';
 const Subcription = () => {
    const { t, i18n } = useTranslation();
    const dispatch = useDispatch();
@@ -14,17 +15,33 @@ const Subcription = () => {
       }
      })
    },[])
+
+   const formatDuration = (days) => {
+    if (days >= 365) {
+      const years = Math.floor(days / 365); // Convert to years
+      return `${years} ${t('global.duration.year')}${years > 1 ? t('global.duration.plural') : ""}`;
+    } else if (days >= 30) {
+      const months = Math.floor(days / 30); // Convert to months
+      return `${months} ${t('global.duration.month')}${months > 1 ? t('global.duration.plural') : ""}`;
+    } else if (days >= 7) {
+      const weeks = Math.floor(days / 7); // Convert to weeks
+      return `${weeks} ${t('global.duration.week')}${weeks > 1 ? t('global.duration.plural') : ""}`;
+    } else {
+      return `${days} ${t('global.duration.day')}${days > 1 ? t('global.duration.plural') : ""}`; // Fewer than 7 days
+    }
+  };
   return (
     <>
-      <div className="container my-5">
+    <div style={{minHeight:'100vh'}}>
+  <div className="container my-5">
         {subcription.length !==0 ?(<>
         
-         <h2 className="text-center mb-4">اختر خطه مناسبه لهدفك</h2>
+         <h2 className="text-center mb-4"> {t('global.subcription_title.choosePlan')}  </h2>
         <div className="row mt-5">
           {/* Silver Card */}
           {subcription.map((data,index)=>{
              return(<>
-               <div className="col-md-4 mb-4">
+               <div className="col-md-4 mb-4" key={index}>
             <div
               className="card shadow-sm border-0"
               style={{
@@ -39,19 +56,15 @@ const Subcription = () => {
                 style={{  color: "#000",padding:"15px 30px" }}
               >
                 <div>
-                  <h5>{data?.title}</h5>
+                  <h5>{data?.name}</h5>
                 </div>
                 <div>
-                  <h6>{data?.price}</h6>
-                  {/* <p>اشتراك فضي</p> */}
+                  <h6>{data?.price}{t('global.currency.rs')}</h6>
+                  <p>{formatDuration(data?.duration)}</p>
                 </div>
               </div>
               <div className="card-body">
-                <ul>
-                  <li>قراءة و تحميل الكتب المجانية فقط</li>
-                  <li>لا يلزم دفع رسوم سنوية على الاشتراك</li>
-                  <li>شراء الكتب وتحميلها دون أي تخفيض على السعر</li>
-                </ul>
+              <div dangerouslySetInnerHTML={{ __html: data?.description }} />
               </div>
             </div>
           </div>
@@ -132,11 +145,13 @@ const Subcription = () => {
         </div>
         
         </>):(<>
-        
-        
+    
+          <Notfound/>
         </>)}
        
       </div>
+    </div>
+    
     </>
   );
 };

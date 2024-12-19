@@ -340,7 +340,7 @@ const Navbar = () => {
                                     </select> */}
                                     <form action="#" class="search-toggle-box d-md-block">
                                         <div class="input-area">
-                                            <input type="text" placeholder="search"/>
+                                            <input type="text" placeholder={t("global.nav.searchPlaceholder")}/>
                                             <button class="cmn-btn">
                                                 <i class="far fa-search"></i>
                                             </button>

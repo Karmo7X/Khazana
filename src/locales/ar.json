@@ -4,14 +4,14 @@
     "contactInfo": "معلومات الاتصال",
     "address": "الشارع الرئيسي، ملبورن، أستراليا",
     "email": "fa.kh.rj@khezanatalkutub.com",
-    "workingHours":"مواعيد العمل من ٧ صباحاً وحتى ٥ مساءً",
+    "workingHours": "مواعيد العمل من ٧ صباحاً وحتى ٥ مساءً",
     "phone": "+966506300345",
     "getAQuote": "احصل على عرض سعر",
     "home": "الرئيسية",
     "shop": "المتجر",
     "aboutUs": "معلومات عنا",
     "contact": "اتصل بنا",
-     "subscriptions": "الاشتراكات",
+    "subscriptions": "الاشتراكات",
     "searchPlaceholder": "بحث",
     "wishlist": "قائمة الرغبات",
     "cart": "عربة التسوق",
@@ -28,13 +28,13 @@
       "id": "الإندونيسية"
     }
   },
-  "forgetpass":{
+  "forgetpass": {
     "recoverPassword": "استرجاع كلمة المرور",
     "description": "أدخل رقم الهاتف المرتبط بحسابك وسوف نرسل لك رمزًا لإعادة تعيين كلمة المرور.",
     "phoneNumber": "رقم الهاتف",
     "submit": "إرسال"
   },
-  "resetpass":{
+  "resetpass": {
     "recoverPassword": "استرجاع كلمة المرور",
     "description": "أضف كلمة المرور الجديدة إلى حسابك",
     "password": "كلمة المرور",
@@ -43,7 +43,7 @@
     "enterConfirmPassword": "أدخل تأكيد كلمة المرور",
     "submit": "إرسال"
   },
-  "login":{
+  "login": {
     "welcomeBack": "أهلاً وسهلاً مجددًا!",
     "phoneNumber": "رقم الهاتف",
     "enterPassword": "أدخل كلمة المرور",
@@ -56,25 +56,25 @@
     "continueWithFacebook": "متابعة باستخدام فيسبوك",
     "acceptTerms": "أوافق على الشروط والأحكام"
   },
-  "register":{
+  "register": {
     "phoneNumber": "رقم الهاتف",
     "createAccount": "إنشاء حساب!",
-  "userName": "اسم المستخدم",
-  "dateOfBirth": "تاريخ الميلاد",
-  "categories": "الفئات المهتم بها",
-  "city": "المدينة",
-  "rememberMe": "تذكرني",
-  "forgotPassword": "هل نسيت كلمة المرور؟",
-  "createAccountBtn": "إنشاء حساب",
-  "loginBtn": "تسجيل الدخول",
-  "or": "أو",
-  "continueWithGoogle": "متابعة باستخدام جوجل",
-  "continueWithFacebook": "متابعة باستخدام فيسبوك",
-  "acceptTerms": "أوافق على الشروط والأحكام",
-  "password": "الرقم السري",
-  "confirmPassword": "اعد كتابة الرقم السري"
+    "userName": "اسم المستخدم",
+    "dateOfBirth": "تاريخ الميلاد",
+    "categories": "الفئات المهتم بها",
+    "city": "المدينة",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "createAccountBtn": "إنشاء حساب",
+    "loginBtn": "تسجيل الدخول",
+    "or": "أو",
+    "continueWithGoogle": "متابعة باستخدام جوجل",
+    "continueWithFacebook": "متابعة باستخدام فيسبوك",
+    "acceptTerms": "أوافق على الشروط والأحكام",
+    "password": "الرقم السري",
+    "confirmPassword": "اعد كتابة الرقم السري"
   },
-  "otp":{
+  "otp": {
     "verifyPhone": "تحقق من الهاتف",
     "enterOtpCode": "أدخل الرمز المكون من 4 أرقام الذي أرسلناه إلى رقم WhatsApp الخاص بك لإتمام الطلب",
     "didntReceiveCode": "لم تستلم رمز التحقق؟",
@@ -82,7 +82,7 @@
     "resendTimer": "إعادة إرسال الرمز في  ",
     "verifyOtp": "التحقق من OTP"
   },
-  "home":{
+  "home": {
     "heroSection": {
       "discount": "خصم يصل إلى 30%",
       "heading": "احصل على كتابك الجديد <br /> بأفضل سعر",
@@ -106,25 +106,24 @@
         "description": "خصم 20% عند الاشتراك"
       }
     },
-     "sectionTitle": "الكتب المميزة",
-  "exploreMore": "استكشاف المزيد",
-  "top_books":{
-    "khazanaTopBooks": "أفضل كتب خزانه",
+    "sectionTitle": "الكتب المميزة",
     "exploreMore": "استكشاف المزيد",
-    "findYourNextBooks": "ابحث عن كتبك التالية!",
-    "discountOffer": "واحصل على خصم 25% الآن!",
-    "shopNow": "تسوق الآن"
-  },
-  "top_category":"افضل الاقسام",
-  "featured_authors":"الكتاب المميزون",
-  "featured_authors_desc":"تعرف على العقول التي وراء القصص التي تلهم وتثير التحدي والترفيه. يقدم لكم كتابنا المميزون حكايات من القلب، كل واحدة بصوت ورؤية فريدة.",
-  "top_rate":" الكتب الأعلى تقييمًا" ,
-   "top_selling_books":"الكتب الأكثر مبيعًا",
-   "related_products": {
-  "title": "المنتجات ذات الصلة",
+    "top_books": {
+      "khazanaTopBooks": "أفضل كتب خزانه",
+      "exploreMore": "استكشاف المزيد",
+      "findYourNextBooks": "ابحث عن كتبك التالية!",
+      "discountOffer": "واحصل على خصم 25% الآن!",
+      "shopNow": "تسوق الآن"
+    },
+    "top_category": "افضل الاقسام",
+    "featured_authors": "الكتاب المميزون",
+    "featured_authors_desc": "تعرف على العقول التي وراء القصص التي تلهم وتثير التحدي والترفيه. يقدم لكم كتابنا المميزون حكايات من القلب، كل واحدة بصوت ورؤية فريدة.",
+    "top_rate": " الكتب الأعلى تقييمًا",
+    "top_selling_books": "الكتب الأكثر مبيعًا",
+    "related_products": {
+      "title": "المنتجات ذات الصلة",
       "description": "اكتشف المزيد من المنتجات التي تكمل اهتماماتك. سواء كنت تبحث عن شيء جديد أو ترغب في استكشاف المزيد، فإن هذه الاختيارات المختارة بعناية هي الأنسب لك!"
-    
-  }
+    }
   },
   "shop_details": {
     "title": "تفاصيل المتجر",
@@ -132,23 +131,23 @@
       { "text": "الصفحة الرئيسية", "url": "/" },
       { "text": "تفاصيل المتجر", "url": "/shop-details" }
     ],
-    "description": "تفاصيل المتجر: استمتع بالغوص في تفاصيل متجرك المفضل، حيث كل منتج يروي قصة فريدة."
-    ,"related_products": {
-    "title": "المنتجات ذات الصلة",
-    "description": "استمتع باكتشاف مجموعة مختارة من المنتجات التي تكمل ذوقك بشكل مثالي. تم تنسيق كل منتج بعناية خاصة لك—استكشف ما يثير اهتمامك ورفع تجربتك!"
-  }
+    "description": "تفاصيل المتجر: استمتع بالغوص في تفاصيل متجرك المفضل، حيث كل منتج يروي قصة فريدة.",
+    "related_products": {
+      "title": "المنتجات ذات الصلة",
+      "description": "استمتع باكتشاف مجموعة مختارة من المنتجات التي تكمل ذوقك بشكل مثالي. تم تنسيق كل منتج بعناية خاصة لك—استكشف ما يثير اهتمامك ورفع تجربتك!"
+    }
   },
   "shop_discovery": {
     "title": "اكتشف متجرنا",
-    "breadcrumb": "التسوق",  
-    
+    "breadcrumb": "التسوق",
+
     "description": "استكشف مجموعة واسعة من المنتجات التي تم اختيارها بعناية لتوفير أفضل تجربة تسوق لك."
   },
-  "cta":{
+  "cta": {
     "ctaTitle": "احصل على خصم 25% على جميع <br /> أنواع الكتب الأكثر مبيعًا",
     "ctaButton": "تسوق الآن"
   },
-  "contact":{
+  "contact": {
     "contactUs": "اتصل بنا",
     "home": "الصفحة الرئيسية",
     "callUs": "اتصل بنا على مدار الساعة",
@@ -165,11 +164,11 @@
     "yourEmailPlaceholder": "بريدك الإلكتروني",
     "messagePlaceholder": "اكتب رسالتك"
   },
-  "footer":{
+  "footer": {
     "footerCall": "اتصل بنا على مدار الساعة طوال الأسبوع",
     "footerPhone": "+966506300345",
     "footerEmail": "fa.kh.rj@khezanatalkutub.com",
-    "footerHours":"مواعيد العمل من ٧ صباحاً وحتى ٥ مساءً",
+    "footerHours": "مواعيد العمل من ٧ صباحاً وحتى ٥ مساءً",
     "footerLocation": "4517 واشنطن أفينيو",
     "footerCustomerSupport": "دعم العملاء",
     "footerStoreList": "قائمة المتاجر",
@@ -187,12 +186,11 @@
     "footerAllRights": "© جميع الحقوق محفوظة 2024 بواسطة",
     "footerBrandLogos": "شعارات العلامات التجارية",
     "terms_and_conditions": "الشروط والأحكام",
-   
-  
-    "footercontent":"خزانة الكتب هي تطبيقك الشامل للقراءة الرقمية، حيث تجد كل ما تشتهيه من كتب متنوعة في مكان واحد. استمتع بتجربة قراءة سلسة ومريحة مع واجهة سهلة الاستخدام ومجموعة واسعة من الأدوات التي تساعدك على تنظيم مكتبتك الرقمية الخاصة بك. اكتشف عوالم جديدة وأغنِ ثقافتك مع ملايين الكتب المتاحة بضغطة زر."
-    },
-  "add_to_cart":"أضف إلى السلة",
-  
+
+    "footercontent": "خزانة الكتب هي تطبيقك الشامل للقراءة الرقمية، حيث تجد كل ما تشتهيه من كتب متنوعة في مكان واحد. استمتع بتجربة قراءة سلسة ومريحة مع واجهة سهلة الاستخدام ومجموعة واسعة من الأدوات التي تساعدك على تنظيم مكتبتك الرقمية الخاصة بك. اكتشف عوالم جديدة وأغنِ ثقافتك مع ملايين الكتب المتاحة بضغطة زر."
+  },
+  "add_to_cart": "أضف إلى السلة",
+
   "profile": {
     "book_request": "طلب كتاب غير موجود",
     "author_registration": "طلب تسجيل مؤلف",
@@ -202,10 +200,24 @@
     "gold_plan": "انت علي الخطه الذهبي",
     "diamond_plan": "انت علي الخطه الماسي",
     "upgrade_account": "ترقيه حسابي",
-    "my_library": "مكتبتي"
+    "my_library": "مكتبتي",
+    "my_account": "حسابي",
+    "profile": {
+      "upgrade_account": "ترقية الحساب",
+       "edit_profile": "تعديل الحساب",
+      "on_subscription": "انت علي الاشتراك"
+    },
+    "form": {
+      "name": "الاسم",
+      "phone_number": "رقم الهاتف",
+      "date_of_birth": "تاريخ الميلاد",
+      "city": "المدينة",
+      "categories": "الفئات المهتم بها",
+      "placeholder": "......"
+    }
   },
   "my_library": {
-   "read": "قراءة"
+    "read": "قراءة"
   },
   "validation_message": {
     "name": {
@@ -239,12 +251,24 @@
     "interestedCategory": {
       "required": "الفئات المهتم بها مطلوبة"
     }
-    },
-    "privacy_title": {
+  },
+  "privacy_title": {
     "title": "سياسة الخصوصية"
   },
   "currency": {
-    "rs": "الريال السعودي"
+    "rs": "ر.س"
+  },
+  "duration": {
+    "year": "سنة",
+    "month": "شهر",
+    "week": "أسبوع",
+    "day": "يوم",
+    "plural": ""
+  },
+  "subcription_title": {
+   "choosePlan": "اختر خطة مناسبة لهدفك"
+  },
+  "notfoundmessage": {
+   "notFound": "لايوجد بيانات حاليا"
   }
-
 }

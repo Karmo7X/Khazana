@@ -7,9 +7,11 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import Mylibrary from "../../components/Mylibrary/Mylibrary";
-import RegisterBook from "../../components/Top_Books/RegisterBook";
-import RegisterAuthor from "../../components/Authors/RegisterAuthor";
+import Mylibrary from "../../components/Usersections/Mylibrary";
+import RegisterBook from "../../components/Usersections/RegisterBook";
+import RegisterAuthor from "../../components/Usersections/RegisterAuthor";
+import Profile_sec from "../../components/Usersections/profile_sec";
+import Changepass from "../../components/Usersections/Changepass";
 
 const Profile = () => {
   const { t, i18n } = useTranslation();
@@ -46,84 +48,19 @@ const Profile = () => {
               <Tab label={t("global.profile.book_request")} value="2" />
               <Tab label={t("global.profile.author_registration")} value="3" />
               <Tab label={t("global.profile.my_library")} value="4"/>
+              <Tab label={'change password'} value="5"/>
             </TabList>
           </Box>
           <TabPanel value="1">
-            <div className="container my-5">
-              <h1 className="text-muted fs-3">Account Settings</h1>
-
-              <div className="card border-0 mt-3 mx-auto p-4 shadow profile-card">
-                <h2 className="text-center mb-4">My Account</h2>
-
-                <div className="d-flex justify-content-center mb-3">
-                  <img
-                    src="https://via.placeholder.com/150" // Replace with actual profile image URL
-                    alt="Profile"
-                    className="rounded-circle profile-image"
-                  />
-                </div>
-
-                <h3 className="text-center">Ahmed Mohamed</h3>
-                <Link to='/Subscription' className="text-center fs-6">{t("global.profile.upgrade_account")}</Link>
-                <div className="mb-3">
-                  <label className="form-label">Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value="Ahmed Mohamed"
-                    readOnly
-                  />
-                </div>
-
-                <div className="mb-3">
-                  <label className="form-label">Phone Number</label>
-                  <div className="input-group">
-                    <span className="input-group-text">
-                      <img
-                        src="https://via.placeholder.com/24" // Replace with country flag icon URL
-                        alt="Country Flag"
-                        className="flag-icon"
-                      />
-                    </span>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value="05022336544"
-                      readOnly
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-3">
-                  <label className="form-label">Date of Birth</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value="01/09/1992"
-                    readOnly
-                  />
-                </div>
-
-                <div className="mb-3">
-                  <label className="form-label">City</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value="Jeddah"
-                    readOnly
-                  />
-                </div>
-
-                <button className="btn theme-btn rounded-0 w-100 mt-4">
-                  Edit Profile
-                </button>
-              </div>
-            </div>
+           <Profile_sec/>
           </TabPanel>
           <TabPanel value="2"><RegisterBook/></TabPanel>
           <TabPanel value="3"><RegisterAuthor/></TabPanel>
           <TabPanel value="4">
             <Mylibrary/>
+          </TabPanel>
+          <TabPanel value="5">
+            <Changepass/>
           </TabPanel>
         </TabContext>
       </Box>

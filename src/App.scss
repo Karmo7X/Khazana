@@ -42,8 +42,46 @@
 }
 
 
+ // overlay for update image in profile
+ .profile-image {
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: flex
+;
+    align-items: center;
+  }
 
+  .position-relative {
+    position: relative;
+  }
 
+  .overlay {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: transparent;
+    opacity: 0;
+    display: flex;
+   
+    justify-content: center;
+    transition: opacity 0.3s ease;
+  }
+  .upload-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .position-relative:hover .overlay {
+    opacity: 1;
+  }
 
+//   .overlay input {
+//     display: none;
+//   }
 
 
