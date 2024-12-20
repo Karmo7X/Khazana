@@ -200,11 +200,30 @@
     "upgrade_account": "Tingkatkan Akun Saya",
     "my_library": "Perpustakaan Saya",
     "my_account": "Akun Saya",
+    "changePassword":  "Ubah Kata Sandi",
+    "currentPassword": "Kata Sandi Saat Ini",
+    
     "profile": {
       "upgrade_account": "Tingkatkan Akun",
       "edit_profile": "Edit Profil",
       "on_subscription": "Anda sedang berlangganan"
     },
+    "address": {
+    "title": "Alamat",
+    "primaryAddress": "Alamat Utama",
+    "setDefault": "Tetapkan sebagai Alamat Utama",
+    "addNew": "Tambahkan Alamat Baru",
+    "placeholder": "Alamat",
+    "street": "Jalan",
+    "city": "Kota",
+    "buildingNumber": "Nomor Bangunan",
+     "deleteAddress": {
+      "title": "Apakah Anda Yakin?",
+      "description": "Tindakan ini akan menghapus alamat secara permanen. Apakah Anda ingin melanjutkan?",
+      "close": "Tutup",
+      "confirm": "Ya, hapus"
+    }
+  },
     "form": {
       "name": "Nama",
       "phone_number": "Nomor Telepon",
@@ -238,9 +257,22 @@
       "required": "Konfirmasi Kata Sandi wajib diisi",
       "oneOf": "Kata Sandi dan Konfirmasi Kata Sandi harus sama"
     },
-    "city": {
-      "required": "Kota wajib diisi"
-    },
+    "street": {
+        "required": "Jalan harus diisi.",
+        "minLength": "Nama jalan harus memiliki setidaknya 3 karakter.",
+        "maxLength": "Nama jalan tidak boleh melebihi 100 karakter.",
+        "pattern": "Nama jalan mengandung karakter yang tidak valid."
+      },
+      "city": {
+        "required": "Kota harus diisi.",
+        "minLength": "Nama kota harus memiliki setidaknya 2 karakter.",
+        "maxLength": "Nama kota tidak boleh melebihi 50 karakter.",
+        "pattern": "Nama kota mengandung karakter yang tidak valid."
+      },
+      "buildNumber": {
+        "required": "Nomor bangunan harus diisi.",
+        "pattern": "Nomor bangunan hanya boleh berisi angka."
+      },
     "birthday": {
       "required": "Tanggal Lahir wajib diisi",
       "max": "Tanggal Lahir harus di masa lalu",
@@ -254,7 +286,9 @@
     "title": "Kebijakan Privasi"
   },
   "currency": {
-    "rs": "R.S"
+    "rs": "R.S",
+    "pdf": "PDF",
+    "paper": "Kertas"
   },
   "duration": {
     "year": "tahun",

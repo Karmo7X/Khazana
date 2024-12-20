@@ -5,7 +5,11 @@ import { GetCategoryApi } from "../../Api/Category/CategorySlice";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import { useDispatch, useSelector } from "react-redux";
-import { GetUserApi, UpdateUserApi } from "../../Api/User/UserSlice";
+import {
+  GetUserApi,
+  UpdateUserApi,
+  UpdateUserimgeApi,
+} from "../../Api/User/UserSlice";
 import Notfound from "../Notfound/Notfound";
 import Loader from "../loader/loader";
 const Profile_sec = () => {
@@ -19,6 +23,7 @@ const Profile_sec = () => {
   const [errorvalid, setErrorvalid] = useState();
   const [profileImg, setProfileImg] = useState(null);
   const loading = useSelector((state) => state.user.status);
+  const loadingupdate = useSelector((state) => state.user.statusupdate);
   // console.log(userdata)
   // handle data user from inputs
   const handleChange = (name, value) => {
@@ -41,8 +46,8 @@ const Profile_sec = () => {
   const handleImageChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
-      setFile(selectedFile);
-      handleImageUpload(selectedFile);
+      setProfileImg(selectedFile);
+      // handleImageUpload(selectedFile);
     }
   };
 
@@ -137,7 +142,6 @@ const Profile_sec = () => {
     const errorupdate = validate(userdata);
     if (Object.keys(errorupdate).length === 0) {
       dispatch(UpdateUserApi(userdata)).then((res) => {
-        console.log(res);
         if (res.payload?.code === 200) {
           setSuccessmessage(res.payload?.message);
           setErrormessg(null);
@@ -150,6 +154,24 @@ const Profile_sec = () => {
     } else {
       setErrorvalid(errorupdate);
     }
+    if (!profileImg) {
+      setErrormessg("Please select an image first.");
+      return;
+    }
+    
+    const formData = new FormData();
+    formData.append('profileImg', profileImg);
+  
+    dispatch(UpdateUserimgeApi(formData)).then((res) => {
+      if (res.payload?.code === 200) {
+        setSuccessmessage(res.payload?.message);
+        setErrormessg(null);
+        window.location.reload();
+      } else {
+        setSuccessmessage(null);
+        setErrormessg(res.payload?.message);
+      }
+    });
   };
 
   return (
@@ -169,33 +191,46 @@ const Profile_sec = () => {
                   </h2>
 
                   <div className="d-flex justify-content-center mb-3 position-relative">
-                    <img
-                      src={
-                        userdata?.profileImg === null
-                          ? "https://via.placeholder.com/150"
-                          : userdata?.profileImg
-                      }
-                      alt="Profile"
-                      className="rounded-circle profile-image"
-                    />
+                    {profileImg ? (
+                      <>
+                        <img
+                          src={URL.createObjectURL(profileImg)}
+                          alt="Profile"
+                          className="rounded-circle profile-image"
+                        />
+                      </>
+                    ) : (
+                      <>
+                        {" "}
+                        <img
+                          src={
+                            userdata?.profileImg === null
+                              ? "https://via.placeholder.com/150"
+                              : userdata?.profileImg
+                          }
+                          alt="Profile"
+                          className="rounded-circle profile-image"
+                        />
+                      </>
+                    )}
 
                     {/* Hover Overlay */}
                     <div className="overlay text-center d-flex justify-content-center align-items-center">
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          className="form-control-file"
-          id="file-upload"
-          style={{ display: "none" }}
-        />
-        <label
-          htmlFor="file-upload"
-          className="upload-btn rounded-circle d-flex align-items-center justify-content-center text-white"
-        >
-          Upload Image
-        </label>
-      </div>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageChange}
+                        className="form-control-file"
+                        id="file-upload"
+                        style={{ display: "none" }}
+                      />
+                      <label
+                        htmlFor="file-upload"
+                        className="upload-btn rounded-circle d-flex align-items-center justify-content-center text-white"
+                      >
+                        Upload Image
+                      </label>
+                    </div>
                   </div>
 
                   <h3 className="text-center">{userdata?.name}</h3>
@@ -376,7 +411,15 @@ const Profile_sec = () => {
                     onClick={() => handleUpdate()}
                     className="btn theme-btn rounded-0 w-100 mt-4"
                   >
-                    {t("global.profile.profile.edit_profile")}
+                    {loadingupdate === "loading" ? (
+                      <>
+                        <div class="spinner-border text-light" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                      </>
+                    ) : (
+                      t("global.profile.profile.edit_profile")
+                    )}
                   </button>
                 </div>
               </>
@@ -387,7 +430,11 @@ const Profile_sec = () => {
         </>
       ) : (
         <>
-          <Loader />
+          <div className="d-flex align-items-center justify-content-center vh-100">
+            <div className="spinner-border text-secondary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
         </>
       )}
     </>

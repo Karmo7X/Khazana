@@ -8,10 +8,11 @@ import Forgetpassword from './Modals/Forgetpasswor'
 import Restpassword from './Modals/Restpassword'
 import { useTranslation } from "react-i18next";
 import Cookies from 'js-cookie'
+import { useSelector } from 'react-redux'
 const Navbar = () => {
     const { t, i18n } = useTranslation();
    const [show,setShow]=useState(false)
-   
+   const Num_wishlist = useSelector((state) => state.user.data);
    const token=Cookies.get('token')
     // State to manage selected language
   const [selectedLanguage, setSelectedLanguage] = useState("ar");
@@ -349,6 +350,7 @@ const Navbar = () => {
                                 </div>
                                 <div class="menu-cart">
                                     <a href="/Wishlist" class="cart-icon">
+
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
                                     <a href="/Cart" class="cart-icon">

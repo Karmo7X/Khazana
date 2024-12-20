@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RegisterApi } from "../../Api/Auth/AuthSlice";
 import OTP from "./OTP";
 import {
@@ -20,6 +20,7 @@ import { IoIosEyeOff } from "react-icons/io";
 const Register = ({ showmodalregist }) => {
   const animatedComponents = makeAnimated();
   const { t } = useTranslation();
+  const loading = useSelector((state) => state.auth.status);
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -419,7 +420,14 @@ const Register = ({ showmodalregist }) => {
                 class="theme-btn mt-5 rounded-0 w-100 register-btn "
                 onClick={(e) => handleSubmit(e)} // Trigger API call on form submit
               >
-                {t("global.register.createAccountBtn")}
+                {loading === 'loading' ? (<> 
+                      
+                      <div class="spinner-border text-light" role="status">
+<span class="visually-hidden">Loading...</span>
+</div>
+                    </>):t("global.register.createAccountBtn")}
+            
+               
               </button>
               <button
                 type="button"

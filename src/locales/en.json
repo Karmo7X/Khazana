@@ -200,10 +200,28 @@
     "upgrade_account": "Upgrade My Account",
     "my_library": "My Library",
     "my_account": "My Account",
+    "changePassword":  "Change Password",
+    "currentPassword": "Current Password",
     "profile": {
       "upgrade_account": "Upgrade Account",
        "edit_profile": "Edit Profile",
       "on_subscription": "You are on subscription"
+    },
+    "address": {
+      "title": "Addresses",
+      "primaryAddress": "Primary Address",
+      "setDefault": "Set as Default Address",
+      "addNew": "Add New Address",
+      "placeholder": "Address",
+    "street": "Street",
+    "city": "City",
+    "buildingNumber": "Building Number",
+    "deleteAddress": {
+      "title": "Are You Sure?",
+      "description": "This action will permanently delete the address. Do you want to proceed?",
+      "close": "Close",
+      "confirm": "Yes, delete it"
+    }
     },
     "form": {
       "name": "Name",
@@ -238,9 +256,6 @@
       "required": "Confirm Password is required",
       "oneOf": "Password and Confirm Password must match"
     },
-    "city": {
-      "required": "City is required"
-    },
     "birthday": {
       "required": "Birthday is required",
       "max": "Birthday must be in the past",
@@ -248,13 +263,32 @@
     },
     "interestedCategory": {
       "required": "Interested Categories is required"
-    }
+    },
+    "street": {
+        "required": "Street is required.",
+        "minLength": "Street must be at least 3 characters.",
+        "maxLength": "Street cannot exceed 100 characters.",
+        "pattern": "Street contains invalid characters."
+      },
+      "city": {
+        "required": "City is required.",
+        "minLength": "City must be at least 2 characters.",
+        "maxLength": "City cannot exceed 50 characters.",
+        "pattern": "City contains invalid characters."
+      },
+      "buildNumber": {
+        "required": "Building number is required.",
+        "pattern": "Building number must contain only numbers."
+      }
   },
   "privacy_title": {
     "title": "Privacy Policy"
   },
   "currency": {
-    "rs": "R.S"
+    "rs": "R.S",
+    "pdf": "PDF",
+  "paper": "Paper"
+   
   },
   "duration": {
     "year": "year",

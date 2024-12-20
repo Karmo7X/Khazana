@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ResendCodeApi, VerifyCodeApi, VerifyPhoneApi } from "../../Api/Auth/AuthSlice";
 import Cookies from "js-cookie";
 import ResetPassword from "./Restpassword";
 const OTPForgetpass = ({ phonenum }) => {
   const { t } = useTranslation();
-
+  const loading = useSelector((state) => state.auth.status);
   const [otp, setOtp] = useState(new Array(4).fill(""));
   const [timer, setTimer] = useState(30); // Countdown time in seconds
   const [canResend, setCanResend] = useState(false);
@@ -145,7 +145,14 @@ const OTPForgetpass = ({ phonenum }) => {
             className="theme-btn rounded-0 w-100  mt-3"
             onClick={(e) => handleSubmit(e)}
           >
-            {t("global.otp.verifyOtp")}
+            {loading === 'loading' ? (<> 
+                      
+                      <div class="spinner-border text-light" role="status">
+<span class="visually-hidden">Loading...</span>
+</div>
+                    </>):t("global.otp.verifyOtp")}
+            
+           
           </button>
         </div>
 

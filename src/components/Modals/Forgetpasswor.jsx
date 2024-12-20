@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Modal, Button, Form } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ForgotPasswordApi } from "../../Api/Auth/AuthSlice";
 import ResetPassword from "./Restpassword";
 import OTPForgetpass from "./OTPForgetpass";
@@ -14,7 +14,7 @@ const Forgetpassword = () => {
   const [errorvalid, setErrorvalid] = useState();
   const [successmessage, setSuccessmessage] = useState();
   const [errormessg, setErrormessg] = useState(null);
-
+  const loading = useSelector((state) => state.auth.status);
   const dispatch = useDispatch();
 
   const handleChange = (name, value) => {
@@ -116,7 +116,14 @@ const Forgetpassword = () => {
             className="theme-btn rounded-0 w-100 mt-3"
             onClick={(e)=>handleSubmit(e)}
           >
-            {t("global.forgetpass.submit")}
+            {loading === 'loading' ? (<> 
+                      
+                      <div class="spinner-border text-light" role="status">
+<span class="visually-hidden">Loading...</span>
+</div>
+                    </>):t("global.forgetpass.submit")}
+                
+           
           </Button>
         </div>
 

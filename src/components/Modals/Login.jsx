@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import Register from "./Register";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { LoginApi } from "../../Api/Auth/AuthSlice";
 import Cookies from "js-cookie";
 import Forgetpassword from "./Forgetpasswor";
@@ -14,6 +14,7 @@ const Login = ({ showmodal }) => {
     phone: "",
     password: "",
   });
+  const loading = useSelector((state) => state.auth.status);
   const [showpass, setShowpass] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
   const [showforget, setShowforget] = useState(false);
@@ -22,7 +23,6 @@ const Login = ({ showmodal }) => {
   const [errorvalid, setErrorvalid] = useState();
   const [successmessage, setSuccessmessage] = useState();
   const [errormessg, setErrormessg] = useState(null);
-  console.log(errormessg)
   const showlogin = localStorage.getItem("showlogin");
   const handleClose = () => {
     setShowLogin(false);
@@ -206,7 +206,12 @@ const Login = ({ showmodal }) => {
                       className="loginBtn mt-5 theme-btn rounded-0 mt-3"
                       onClick={(e) => handleSubmit(e)}
                     >
-                      {t("global.login.login")}
+                      {loading === 'loading' ? (<> 
+                      
+                        <div class="spinner-border text-light" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+                      </>):t("global.login.login")}
                     </button>
                     <button
                       type="button"
@@ -237,7 +242,7 @@ const Login = ({ showmodal }) => {
                       {t("global.login.continueWithFacebook")}
                     </a>
                   </div>
-                  <div class="form-check-3 d-flex align-items-center from-customradio-2 mt-3">
+                  {/* <div class="form-check-3 d-flex align-items-center from-customradio-2 mt-3">
                     <input
                       class="form-check-input"
                       type="radio"
@@ -246,7 +251,7 @@ const Login = ({ showmodal }) => {
                     <label class="form-check-label">
                       {t("global.login.acceptTerms")}
                     </label>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="banner">
                   <div className="loginBg">

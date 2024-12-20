@@ -1,6 +1,22 @@
-import React from 'react'
 
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next"
+import { useDispatch, useSelector } from "react-redux";
+import { GetUserwishlistApi } from "../../Api/User/UserSlice";
+import Wishlistcomponent from "../../components/wishlist/Wishlistcomponent";
 const Wishlist = () => {
+    const { t } = useTranslation();
+    const dispatch = useDispatch();
+    const loading = useSelector((state) => state.user.status);
+    const [wishlist,setWishlist]=useState([])
+    useEffect(()=>{
+      dispatch(GetUserwishlistApi()).then((res)=>{
+        if(res.payload?.code === 200 ){
+            setWishlist(res.payload?.data?.wishlist)
+        }
+      })
+    },[])
+
   return (
     <>
      {/* <!-- Breadcumb Section Start --> */}
@@ -13,19 +29,19 @@ const Wishlist = () => {
         </div>
         <div class="container">
             <div class="page-heading">
-                <h1>Wishlist</h1>
+                <h1>{t("global.nav.wishlist")}</h1>
                 <div class="page-header">
                     <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                         <li>
                             <a href="index.html">
-                                Home
+                            {t("global.nav.home")}
                             </a>
                         </li>
                         <li>
                             <i class="fa-solid fa-chevron-right"></i>
                         </li>
                         <li>
-                            Wishlist
+                        {t("global.nav.wishlist")}
                         </li>
                     </ul>
                 </div>
@@ -34,108 +50,73 @@ const Wishlist = () => {
     </div>
 
     {/* <!-- Shop Cart Section Start --> */}
-    <div class="cart-section section-padding">
+    {
+        loading === 'loading' ?(<>
+        <div className="d-flex align-items-center justify-content-center vh-100">
+            <div className="spinner-border text-secondary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        
+        </>):(<>
+            <div class="cart-section section-padding">
         <div class="container">
-            <div class="main-cart-wrapper">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Price</th>
-                                        <th>Stock</th>
-                                        <th>Subtotal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <span class="d-flex gap-5 align-items-center">
-                                                <a href="Wishlist" class="remove-icon">
-                                                    <img src="assets/img/icon/icon-9.svg" alt="img"/>
-                                                </a>
-                                                <span class="cart">
-                                                    <img src="assets/img/shop-cart/01.png" alt="img"/>
-                                                </span>
-                                                <span class="cart-title">
-                                                    simple Things You To Save Book
-                                                </span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="cart-price">30.00 R.S</span>
-                                        </td>
-                                        <td>
-                                            <span class="stock-title">
-                                                In Stock
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="subtotal-price">$120.00</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="d-flex gap-5 align-items-center">
-                                                <a href="Wishlist" class="remove-icon">
-                                                    <img src="assets/img/icon/icon-9.svg" alt="img"/>
-                                                </a>
-                                                <span class="cart">
-                                                    <img src="assets/img/shop-cart/02.png" alt="img"/>
-                                                </span>
-                                                <span class="cart-title">
-                                                    Qple GPad With Retina Sisplay
-                                                </span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="cart-price">$39.00</span>
-                                        </td>
-                                        <td>
-                                            <span class="stock-title">
-                                                In Stock
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="subtotal-price">$120.00</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="d-flex gap-5 align-items-center">
-                                                <a href="Wishlist" class="remove-icon">
-                                                    <img src="assets/img/icon/icon-9.svg" alt="img"/>
-                                                </a>
-                                                <span class="cart">
-                                                    <img src="assets/img/shop-cart/03.png" alt="img"/>
-                                                </span>
-                                                <span class="cart-title">
-                                                    Flovely and Unicom Erna
-                                                </span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="cart-price">$19.00</span>
-                                        </td>
-                                        <td>
-                                            <span class="stock-title-two">
-                                                Out Of Stock
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="subtotal-price">$120.00</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+        <div className="row">
+                                {wishlist.map((book,idx)=>{
+            return(<>
+             <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s" key={idx}>
+             <div className="shop-box-items style-2">
+                        <div className="book-thumb center">
+                            <a href="Single/:id">
+                                <img src={book?.coverImage} alt="Book cover" />
+                            </a>
+                            <ul className="post-box">
+                            {book?.isAvailablePdf  === true ?  <li>{t("global.currency.pdf")}</li>: null}
+                            {book?.isAvailablePaper === true ?<li>{t("global.currency.paper")}</li>: null  }
+            </ul>
+                            <Wishlistcomponent bookid={book?.id}/>
+                        </div>
+                        <div className="shop-content">
+                            <h5>{book?.category}</h5>
+                            <h3><a href="/Single/:id">{book?.title}</a></h3>
+                            <ul className="price-list">
+                            <li> {t("global.currency.pdf")} {book?.pricePdf}{t("global.currency.rs")}</li> <br/>
+                            <li>{t("global.currency.paper")} {book.pricePaper}{t("global.currency.rs")} </li>
+                            </ul>
+                            <ul className="author-post">
+                                <li className="authot-list">
+                                    <span className="thumb">
+                                    <img src={book?.author?.img} alt={book?.author?.name} />
+                                    </span>
+                                    <span className="content fw-bold">{book?.author?.name}</span>
+                                </li>
+                                <div className="star">
+                        {Array(5).fill(book?.rate).map((_, starIndex) => (
+                          <i
+                            key={starIndex}
+                            className={starIndex < book?.rate ? "fa-solid fa-star" : "fa-regular fa-star"}
+                          ></i>
+                        ))}
+                      </div>
+                            </ul>
+                        </div>
+                        <div className="shop-button">
+                            <a href={`/Single/${book?.id}`}  className="theme-btn">
+                                <i className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}
+                            </a>
                         </div>
                     </div>
-                </div>
-            </div>
+                                    </div>
+            </>)
+        })}
+                                   
+                                    
+                                </div>
         </div>
-    </div>
+    </div> 
+        </>)
+    }
+   
     </>
   )
 }

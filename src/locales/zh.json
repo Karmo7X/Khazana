@@ -200,11 +200,29 @@
     "upgrade_account": "升级我的账户",
     "my_library": "我的图书馆",
     "my_account": "我的账户",
+    "changePassword":  "更改密码",
+    "currentPassword": "当前密码",
     "profile": {
       "upgrade_account": "升级账户",
       "edit_profile": "编辑个人资料",
       "on_subscription": "您正在订阅"
     },
+    "address": {
+    "title": "地址",
+    "primaryAddress": "主要地址",
+    "setDefault": "设为默认地址",
+    "addNew": "添加新地址",
+    "placeholder":  "地址",
+    "street": "街道",
+    "city": "城市",
+    "buildingNumber": "楼号",
+    "deleteAddress": {
+      "title": "您确定吗？",
+      "description": "此操作将永久删除地址。您想继续吗？",
+      "close": "关闭",
+      "confirm": "是的，删除它"
+    }
+  },
     "form": {
       "name": "姓名",
       "phone_number": "电话号码",
@@ -238,8 +256,21 @@
       "required": "确认密码是必填项",
       "oneOf": "密码和确认密码必须匹配"
     },
+    "street": {
+      "required": "街道名称是必填项。",
+      "minLength": "街道名称至少需要3个字符。",
+      "maxLength": "街道名称不能超过100个字符。",
+      "pattern": "街道名称包含无效字符。"
+    },
     "city": {
-      "required": "城市是必填项"
+      "required": "城市名称是必填项。",
+      "minLength": "城市名称至少需要2个字符。",
+      "maxLength": "城市名称不能超过50个字符。",
+      "pattern": "城市名称包含无效字符。"
+    },
+    "buildNumber": {
+      "required": "建筑编号是必填项。",
+      "pattern": "建筑编号只能包含数字。"
     },
     "birthday": {
       "required": "生日是必填项",
@@ -254,7 +285,9 @@
     "title": "隐私政策"
   },
   "currency": {
-    "rs": "韋斯特"
+    "rs": "韋斯特",
+    "pdf": "PDF",
+   "paper": "纸质"
   },
   "duration": {
     "year": "年",

@@ -12,6 +12,7 @@ import RegisterBook from "../../components/Usersections/RegisterBook";
 import RegisterAuthor from "../../components/Usersections/RegisterAuthor";
 import Profile_sec from "../../components/Usersections/profile_sec";
 import Changepass from "../../components/Usersections/Changepass";
+import Address from "../../components/Usersections/Address";
 
 const Profile = () => {
   const { t, i18n } = useTranslation();
@@ -22,7 +23,7 @@ const Profile = () => {
   };
 
   return (
-    <>
+    <div style={{minHeight:'100vh'}}>
       <Box sx={{ width: "100%", typography: "body1" }}>
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -48,7 +49,8 @@ const Profile = () => {
               <Tab label={t("global.profile.book_request")} value="2" />
               <Tab label={t("global.profile.author_registration")} value="3" />
               <Tab label={t("global.profile.my_library")} value="4"/>
-              <Tab label={'change password'} value="5"/>
+              <Tab label={t("global.profile.address.title")} value="5"/>
+              <Tab label={t("global.profile.changePassword")} value="6"/>
             </TabList>
           </Box>
           <TabPanel value="1">
@@ -60,6 +62,9 @@ const Profile = () => {
             <Mylibrary/>
           </TabPanel>
           <TabPanel value="5">
+           <Address/>
+          </TabPanel>
+          <TabPanel value="6">
             <Changepass/>
           </TabPanel>
         </TabContext>
@@ -67,7 +72,7 @@ const Profile = () => {
 
       {/* for author */}
       {/* <Dashboard/> */}
-    </>
+    </div>
   );
 };
 

@@ -26,35 +26,36 @@ const TopRate = ({data}) => {
               <div className="col-xl-6 wow fadeInUp" data-wow-delay={`${0.3 + index * 0.1}s`} key={book.id}>
                 <div className="top-ratting-box-items">
                   <div className="book-thumb">
-                    <a href={`/Single/${book.id}`}>
-                      <img src={book.image} alt={`${book.title} image`} />
+                    <a href={`/Single/${book?.id}`}>
+                      <img src={book?.coverImage} alt={`${book?.title} image`} />
                     </a>
                   </div>
                   <div className="book-content">
                     <div className="title-header">
                       <div>
-                        <h5>{book.subtitle}</h5>
-                        <h3><a href={`/Single/${book.id}`}>{book.title}</a></h3>
+                        {/* <h5>{book.subtitle}</h5> */}
+                        <h3><a href={`/Single/${book?.id}`}>{book?.title}</a></h3>
                       </div>
                       <ul className="shop-icon d-flex justify-content-center align-items-center">
                         <li><a href="/Cart"><i className="far fa-heart"></i></a></li>
-                        <li><a href="/Cart"><img className="icon" src="assets/img/icon/shuffle.svg" alt="Shuffle icon" /></a></li>
+                        {/* <li><a href="/Cart"><img className="icon" src="assets/img/icon/shuffle.svg" alt="Shuffle icon" /></a></li> */}
                         <li><a href={`/Single/${book.id}`}><i className="far fa-eye"></i></a></li>
                       </ul>
                     </div>
-                    <span className="mt-10">{book.price}</span>
+                    <span className="mt-10">{t("global.currency.pdf")} {book?.pricePdf} {t("global.currency.rs")} </span> <br/>
+                    <span className="mt-10">{t("global.currency.paper")} {book?.pricePaper} {t("global.currency.rs")} </span>
                     <ul className="author-post">
                       <li className="author-list">
-                        <span className="thumb"><img src={book.author_img} alt={`${book.author} image`} /></span>
-                        <span className="content mt-10 fw-bold">{book.author}</span>
+                        <span className="thumb"><img src={book?.author?.profileImg} alt={`${book?.author?.name} image`} /></span>
+                        <span className="content mt-10 fw-bold">{book?.author?.name}</span>
                       </li>
                     </ul>
                     <div className="shop-btn">
-                      <div className="star">
-                        {Array(5).fill(0).map((_, starIndex) => (
+                    <div className="star">
+                        {Array(5).fill(book?.rate).map((_, starIndex) => (
                           <i
                             key={starIndex}
-                            className={starIndex < book.rating ? "fa-solid fa-star" : "fa-regular fa-star"}
+                            className={starIndex < book?.rate ? "fa-solid fa-star" : "fa-regular fa-star"}
                           ></i>
                         ))}
                       </div>

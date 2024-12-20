@@ -4,7 +4,7 @@ import { Modal, Button, Form } from "react-bootstrap";
 import { ResetPasswordApi } from "../../Api/Auth/AuthSlice";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 const ResetPassword = ({ phonenumber }) => {
   const { t } = useTranslation();
  const dispatch = useDispatch();
@@ -14,6 +14,7 @@ const ResetPassword = ({ phonenumber }) => {
     passwordConfirm: "",
     deviceToken: "",
   });
+  const loading = useSelector((state) => state.auth.status);
   const [successmessage, setSuccessmessage] = useState();
   const [showpass, setShowpass] = useState(false);
   const [showpassconfirm, setShowpassconfirm] = useState(false);
@@ -170,7 +171,13 @@ const ResetPassword = ({ phonenumber }) => {
               type="submit"
               className="theme-btn rounded-0 w-100 mt-3"
             >
-              {t("global.resetpass.submit")}
+              {loading === 'loading' ? (<> 
+                      
+                      <div class="spinner-border text-light" role="status">
+<span class="visually-hidden">Loading...</span>
+</div>
+                    </>):t("global.resetpass.submit")}
+              
             </Button>
           </Form>
         </div>

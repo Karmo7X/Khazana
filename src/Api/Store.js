@@ -4,6 +4,7 @@ import CategoryReducer from './Category/CategorySlice'
 import SubscriptionReducer from './Subscription/Subscriptions'
 import TermsReducer from './Term/Term'
 import UserReducer from './User/UserSlice'
+import ProductReducer from './Product/Product'
 const Store=configureStore({
 
     reducer:{
@@ -11,7 +12,8 @@ const Store=configureStore({
         'category':CategoryReducer,
         'subscription':SubscriptionReducer,
         'term':TermsReducer,
-        'user':UserReducer
+        'user':UserReducer,
+        'product':ProductReducer
     }
 })
 
