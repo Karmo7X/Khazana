@@ -96,8 +96,28 @@ export const GetUserApi = createAsyncThunk("User/get", async () => {
       return err.response.data
     }
   });
+   
+  
 
-
+   
+  export const AddmainAddressApi = createAsyncThunk("User/AddmainAddress", async (addressId) => {
+    try {
+      const res = await axios.post(
+        `${baseurl}/user/address/${addressId}`,
+        {}, // Body of the POST request (if needed)
+        {
+          headers: {
+            lang: lang,
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      return res.data;
+    } catch (err) {
+      console.error(err.response.data);
+      return err.response.data
+    }
+  });
   
   export const deleteAddressApi = createAsyncThunk("User/deleteAddress", async (addressId) => {
     try {
@@ -130,7 +150,37 @@ export const GetUserApi = createAsyncThunk("User/get", async () => {
     }
   });
 
-
+  export const AddUserwishlistApi = createAsyncThunk("User/Addwishlist", async (data) => {
+    try {
+      const res = await axios.post(`${baseurl}/userWishlist`,data, {
+        headers: {
+          lang: lang,
+          'Authorization':`Bearer ${token}`
+        },
+      });
+  
+      return res.data;
+    } catch (err) {
+      console.error(err.response.data);
+    }
+  });
+  export const RemoveUserwishlistApi = createAsyncThunk("User/Removewishlist", async (data) => {
+    
+    try {
+      const res = await axios.delete(`${baseurl}/userWishlist`, {
+        headers: {
+          lang: lang,
+          Authorization: `Bearer ${token}`
+        },
+        data: data // Pass `data` here
+      });
+      
+  
+      return res.data;
+    } catch (err) {
+      console.error(err.response.data);
+    }
+  });
 
 const Userslice = createSlice({
   name: "cate",

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next"
 import { useDispatch, useSelector } from "react-redux";
 import { GetUserwishlistApi } from "../../Api/User/UserSlice";
 import Wishlistcomponent from "../../components/wishlist/Wishlistcomponent";
+import Notfound from "../../components/Notfound/Notfound";
 const Wishlist = () => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
@@ -61,7 +62,10 @@ const Wishlist = () => {
         </>):(<>
             <div class="cart-section section-padding">
         <div class="container">
-        <div className="row">
+            {wishlist.length !==0?(
+
+
+ <div className="row">
                                 {wishlist.map((book,idx)=>{
             return(<>
              <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s" key={idx}>
@@ -112,6 +116,13 @@ const Wishlist = () => {
                                    
                                     
                                 </div>
+            ):(
+
+             <Notfound/>
+            )
+
+            }
+       
         </div>
     </div> 
         </>)

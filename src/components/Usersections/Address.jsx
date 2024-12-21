@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
-import { AddAddressApi, deleteAddressApi, GetUserApi } from "../../Api/User/UserSlice";
+import { AddAddressApi, AddmainAddressApi, deleteAddressApi, GetUserApi } from "../../Api/User/UserSlice";
 import { MdDelete } from "react-icons/md";
 import { IoAlertCircle } from "react-icons/io5";
+import Notfound from "../Notfound/Notfound";
 const Address = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -14,23 +15,25 @@ const Address = () => {
     city: "",
     buildNumber: "",
   });
-  console.log(addaddressdata)
   const [show, setShow] = useState(false);
   const [errorvalid, setErrorvalid] = useState();
-  console.log(errorvalid)
   const [errormessg, setErrormessg] = useState(null);
   const [successmessage, setSuccessmessage] = useState();
   const loading = useSelector((state) => state.user.status);
   const addressUser = useSelector((state) => state.user.addresses);
+
   useEffect(() => {
     setAddresses(addressUser);
+  //  const main =addresses.map((address) => address.main === true)?.main
+   
+  //  setmainAdress(main)
   }, [addressUser]);
 
   // handle date from inputs
   const handleChange = (name, value) => {
     setAddaddressdata({ ...addaddressdata, [name]: value });
   };
-
+ 
   const handleClose = () =>{setSuccessmessage(null);setShow(false);setErrormessg(null)};
   const handleShow = () => setShow(true);
   // Validate data
@@ -92,7 +95,24 @@ const Address = () => {
     }
   };
 
+// handle date from main addressid 
+const handleChangemain = (addressId) => {
+  // Update the `main` state for the selected address and reset others
+  setAddresses((prevState) => {
+    return prevState.map((address) =>
+      address.addressId === addressId
+        ? { ...address, main: true } // Set 'main' to true for selected address
+        : { ...address, main: false } // Set 'main' to false for other addresses
+    );
+  });
 
+  dispatch(AddmainAddressApi(addressId)).then((res)=>{
+    if(res.payload?.code === 200){
+      dispatch(GetUserApi());
+    }
+   })
+
+};
   const handleDelete=(addressID)=>{
      dispatch(deleteAddressApi(addressID)).then((res)=>{
       if(res.payload?.code === 200){
@@ -100,6 +120,7 @@ const Address = () => {
       }
      })
   }
+  
 
   return (
     <>
@@ -125,7 +146,10 @@ const Address = () => {
             {t("global.profile.address.addNew")}
           </Button>
         </div>
-        <Row className="gy-3" style={{maxHeight:"650px" ,overflowY:'auto'}}>
+
+        {addresses.length !== 0 ? (<>
+        
+         <Row className="gy-3" style={{maxHeight:"650px" ,overflowY:'auto'}}>
           {addresses.map((address, index) => (
             <Col xs={12} key={index}>
               <Card className="p-3 shadow-sm">
@@ -181,13 +205,16 @@ const Address = () => {
                   <input type="checkbox" />
                 </div> */}
                   <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault1"
-                    />
-                    <label class="form-check-label" va for="flexRadioDefault1">
+                  <input
+        className="form-check-input"
+        type="radio"
+        value={address?.addressId}
+       checked={address?.main} // Ensure it reflects the correct state
+        name="flexRadioDefault"
+        id={`flexRadioDefault${address.addressId}`}
+        onClick={()=>handleChangemain(address?.addressId)} // Update state on change
+      />
+                    <label  class="form-check-label"  htmlFor={`flexRadioDefault${address.addressId}`}>
                       {t("global.profile.address.setDefault")}
                     </label>
                   </div>
@@ -196,6 +223,11 @@ const Address = () => {
             </Col>
           ))}
         </Row>
+        </>):(
+
+          <Notfound/>
+        )}
+       
 
         {/* modal for add adress  */}
         <Modal size="sm" show={show} onHide={handleClose} centered>
