@@ -202,11 +202,11 @@
     "upgrade_account": "ترقيه حسابي",
     "my_library": "مكتبتي",
     "my_account": "حسابي",
-    "changePassword":  "تغيير كلمة المرور",
+    "changePassword": "تغيير كلمة المرور",
     "currentPassword": "كلمة المرور الحالية",
     "profile": {
       "upgrade_account": "ترقية الحساب",
-       "edit_profile": "تعديل الحساب",
+      "edit_profile": "تعديل الحساب",
       "on_subscription": "انت علي الاشتراك"
     },
     "address": {
@@ -215,10 +215,10 @@
       "setDefault": "تحديد كعنوان أساسي",
       "addNew": "إضافة عنوان جديد",
       "placeholder": "العنوان",
-    "street": "الشارع",
-    "city": "المدينة",
-    "buildingNumber": "رقم المبنى",
-    "deleteAddress": {
+      "street": "الشارع",
+      "city": "المدينة",
+      "buildingNumber": "رقم المبنى",
+      "deleteAddress": {
         "title": "هل أنت متأكد؟",
         "description": "سيتم حذف العنوان نهائيًا. هل تريد المتابعة؟",
         "close": "إغلاق",
@@ -232,6 +232,29 @@
       "city": "المدينة",
       "categories": "الفئات المهتم بها",
       "placeholder": "......"
+    },
+    "register_book": {
+      "form_title": "طلب كتاب",
+      "fields": {
+        "book_title": "عنوان الكتاب",
+        "author_name": "اسم المؤلف / المحقق",
+        "publisher": "دار النشر",
+        "library": "دار الكتب",
+        "publication_date": "تاريخ النشر",
+        "upload_image": "تحميل صوره"
+      },
+      "submit_button": "ارسال الطلب"
+    },
+    "register_author": {
+      "form_title": "تسجيل مؤلف جديد",
+      "fields": {
+        "author_name": "اسم المؤلف / المحقق",
+        "gender": "النوع",
+        "birth_date": "الميلاد",
+        "previous_works": "اعمال سابقه",
+        "notes": "ملاحظات"
+      },
+      "submit_button": "ارسال الطلب"
     }
   },
   "my_library": {
@@ -281,15 +304,26 @@
     },
     "interestedCategory": {
       "required": "الفئات المهتم بها مطلوبة"
-    }
+    },
+    "genderRequired": {
+      "required": "النوع مطلوب"
+    },
+    "register_book": {
+    "title_required": "يجب أن يكون عنوان الكتاب 3 أحرف على الأقل.",
+    "author_invalid": "يجب أن يحتوي اسم المؤلف على أحرف ومسافات فقط.",
+    "publisher_invalid": "يجب أن يحتوي اسم الناشر على أحرف ومسافات فقط.",
+    "date_invalid": " التاريخ غير صحيح.  ",
+    "image_invalid": "تنسيق الصورة غير صحيح. استخدم .jpg أو .jpeg أو .png أو .gif.",
+    "image_required": "الصورة الشخصية مطلوبة"
+  }
   },
   "privacy_title": {
     "title": "سياسة الخصوصية"
   },
   "currency": {
     "rs": "ر.س",
-     "pdf": "بي دي إف",
-  "paper": "ورقي"
+    "pdf": "بي دي إف",
+    "paper": "ورقي"
   },
   "duration": {
     "year": "سنة",
@@ -299,9 +333,37 @@
     "plural": ""
   },
   "subcription_title": {
-   "choosePlan": "اختر خطة مناسبة لهدفك"
+    "choosePlan": "اختر خطة مناسبة لهدفك"
   },
   "notfoundmessage": {
-   "notFound": "لايوجد بيانات حاليا"
+    "notFound": "لايوجد بيانات حاليا"
+  },
+  "book_details": {
+    "category": "الفئة",
+    "available_paper": "الورق المتاح",
+    "available_pdf": "الـPDF المتاح",
+    "tabs": {
+      "description": "الوصف",
+      "additional_information": "معلومات إضافية",
+      "reviews": "التعليقات "
+    },
+    "filter": {
+    "read_books": "الكتب المقروءة",
+    "audiobooks": "الكتب المسموعة"
+  },
+  "books": "الكتب"
+  },
+  "cart":{
+    "product": "المنتج",
+    "price": "السعر",
+    "quantity": "الكمية",
+    "subtotal": "المجموع الفرعي",
+    "total": "الإجمالي",
+    "shipping": "الشحن",
+    "proceed_to_checkout": "التوجه إلى الدفع",
+   "clear_cart": "مسح السلة",
+  "pdf_price": "سعر PDF",
+  "paper_price": "سعر الورق"
   }
+  
 }

@@ -35,8 +35,35 @@ export const GetTermApi = createAsyncThunk("Term/get", async () => {
     console.error(err.response.data);
   }
 });
+export const GetAboutApi = createAsyncThunk("About/get", async () => {
+  try {
+    const res = await axios.get(`${baseurl}/app/aboutUs`, {
+      headers: {
+        lang: lang,
+      },
+    });
 
-const Termsslice = createSlice({
+    return res.data;
+  } catch (err) {
+    console.error(err.response.data);
+  }
+});
+
+export const GetCityApi = createAsyncThunk("City/get", async () => {
+  try {
+    const res = await axios.get(`${baseurl}/app/city`, {
+      headers: {
+        lang: lang,
+      },
+    });
+
+    return res.data;
+  } catch (err) {
+    console.error(err.response.data);
+  }
+});
+
+const Appslice = createSlice({
   name: "subscription",
   initialState,
   reducers: {},
@@ -52,7 +79,16 @@ const Termsslice = createSlice({
       .addCase(GetpolicyApi.rejected, (state) => {
         state.status = "failed";
       })
-
+      .addCase(GetAboutApi.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(GetAboutApi.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(GetAboutApi.rejected, (state) => {
+        state.status = "failed";
+      })
       .addCase(GetTermApi.pending, (state) => {
         state.status = "loading";
       })
@@ -66,4 +102,5 @@ const Termsslice = createSlice({
   },
 });
 
-export default Termsslice.reducer;
+export default Appslice.reducer;
+ 

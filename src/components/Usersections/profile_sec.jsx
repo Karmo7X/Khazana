@@ -12,12 +12,14 @@ import {
 } from "../../Api/User/UserSlice";
 import Notfound from "../Notfound/Notfound";
 import Loader from "../loader/loader";
+import { GetCityApi } from "../../Api/App/App";
 const Profile_sec = () => {
   const animatedComponents = makeAnimated();
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
   const [userdata, setUserdata] = useState({});
   const [category, setCategory] = useState([]);
+  const [cities, setCities] = useState([]);
   const [errormessg, setErrormessg] = useState(null);
   const [successmessage, setSuccessmessage] = useState();
   const [errorvalid, setErrorvalid] = useState();
@@ -78,6 +80,12 @@ const Profile_sec = () => {
         setUserdata(res.payload?.data?.user);
       }
     });
+    // fetch data for cities
+      dispatch(GetCityApi()).then((res) => {
+          if (res.payload?.code === 200) {
+            setCities(res.payload?.data?.cities);
+          }
+        });
   }, []);
 
   // validation data function

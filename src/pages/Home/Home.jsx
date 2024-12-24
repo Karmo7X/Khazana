@@ -21,6 +21,7 @@ import Books_section from '../../components/books_Section/Bookslist'
 import Wishlistcomponent from '../../components/wishlist/Wishlistcomponent'
 import { useDispatch } from 'react-redux'
 import { GetProductApi } from '../../Api/Product/Product'
+import bookundefine from '../../../public/assets/img/bookundefine.jpg'
 const Home = () => {
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch();
@@ -182,13 +183,13 @@ const Home = () => {
                  <div className="shop-box-items style-2" key={book?.id}>
           <div className="book-thumb center">
             <a href={`/Single/${book?.id}`}>
-              <img src={book?.coverImage} alt={book?.title} />
+              <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt={book?.title} />
             </a>
             <ul className="post-box">
              {book?.isAvailablePdf  === true ?  <li>{t("global.currency.pdf")}</li>: null}
               {book?.isAvailablePaper === true ?<li>{t("global.currency.paper")}</li>: null  }
             </ul>
-            <Wishlistcomponent bookid={book?.id}/>
+            <Wishlistcomponent bookid={book?.id} wishlist={book?.wishlist}/>
           </div>
           <div className="shop-content">
             <h5>{book?.category}</h5>
@@ -203,7 +204,7 @@ const Home = () => {
               <li className="authot-list">
                 <span className="thumb">
                   <img
-                    src={book?.author?.profileImg}
+                    src={book?.author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}
                     alt="img"
                   />
                 </span>
@@ -241,7 +242,7 @@ const Home = () => {
 
     {/* <!-- Cta Banner Section start  --> */}
     {/* <CTA/> */}
-    <Books_section/>
+    <Books_section data={books}/>
 
     {/* <!-- Top Ratting Book Section start  --> */}
      <TopRate data={books}/>

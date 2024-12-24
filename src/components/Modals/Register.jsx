@@ -17,6 +17,7 @@ import makeAnimated from 'react-select/animated';
 import { GetCategoryApi } from "../../Api/Category/CategorySlice";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
+import { GetCityApi } from "../../Api/App/App";
 const Register = ({ showmodalregist }) => {
   const animatedComponents = makeAnimated();
   const { t } = useTranslation();
@@ -34,6 +35,7 @@ const Register = ({ showmodalregist }) => {
     address: "16.Elbostan Street, Shoubra El-Khema, Qalyubia",
   });
   const [category, setCategory] = useState([]);
+  const [cities, setCities] = useState([]);
   const [error, setError] = useState(null);
   const [successmessage, setSuccessmessage] = useState();
   const [errorvalid, setErrorvalid] = useState();
@@ -165,6 +167,11 @@ const Register = ({ showmodalregist }) => {
     dispatch(GetCategoryApi()).then((res) => {
       if (res.payload?.code === 200) {
         setCategory(res.payload?.data?.categories);
+      }
+    });
+    dispatch(GetCityApi()).then((res) => {
+      if (res.payload?.code === 200) {
+        setCities(res.payload?.data?.cities);
       }
     });
   }, []);
@@ -302,10 +309,16 @@ const Register = ({ showmodalregist }) => {
                   <option selected value="">
                     ......
                   </option>
-                  <option value="Gada">Gada</option>
-                  <option value="Riyadh">Riyadh</option>
-                  <option value="Jeddah">Jeddah</option>
-                  <option value="Dammam">Dammam</option>
+                  {
+                    cities.map((data,idx)=>{
+                       return(<>
+                         <option key={idx} value={data?.id}>{data?.title}</option>
+                       
+                       
+                       </>)
+                    })
+                  }
+                 
                 </select>
                 {errorvalid?.city && (
                   <>

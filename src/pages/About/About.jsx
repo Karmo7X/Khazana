@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from 'react-redux';
+import { GetAboutApi } from '../../Api/App/App';
 const About = () => {
     const { t, i18n } = useTranslation();
+    const dispatch =useDispatch()
+    const loading = useSelector((state)=>state.app.status)
+    const [about,setAbout]=useState()
+    useEffect(()=>{
+       dispatch(GetAboutApi()).then((res)=>{
+        if(res.payload?.code === 200 ){
+            setAbout(res.payload?.data?.aboutUs)
+        }
+       })
+    },[])
   return (
     <>
       {/* <!-- breadcumb Section Start --> */}
@@ -18,7 +30,7 @@ const About = () => {
                 <div class="page-header">
                     <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                         <li>
-                            <a href="index.html">
+                            <a href="/">
                             {t("global.nav.home")}
                             </a>
                         </li>
@@ -34,7 +46,9 @@ const About = () => {
         </div>
     </div>
 
-    {/* <!-- About Section Start --> */}
+    {loading !=='loading' ?(<>
+    
+      {/* <!-- About Section Start --> */}
     <section class="about-section fix section-padding">
         <div class="container">
             <div class="about-wrapper">
@@ -100,7 +114,7 @@ const About = () => {
     </section>
 
     {/* <!-- Testimonial Section Start --> */}
-    <section class="testimonial-section fix section-padding pt-0">
+    {/* <section class="testimonial-section fix section-padding pt-0">
         <div class="container">
             <div class="section-title text-center">
                 <h2 class="mb-3 wow fadeInUp" data-wow-delay=".3s">Customer Feedback</h2>
@@ -255,7 +269,18 @@ const About = () => {
                 </div>
             </div>
         </div>
-    </section>
+    </section> */}
+    </>):(<>
+    
+    
+        <div className="d-flex align-items-center justify-content-center vh-100">
+            <div className="spinner-border text-secondary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+    </>)}
+
+  
 
    
     </>

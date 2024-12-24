@@ -200,11 +200,11 @@
     "upgrade_account": "Upgrade My Account",
     "my_library": "My Library",
     "my_account": "My Account",
-    "changePassword":  "Change Password",
+    "changePassword": "Change Password",
     "currentPassword": "Current Password",
     "profile": {
       "upgrade_account": "Upgrade Account",
-       "edit_profile": "Edit Profile",
+      "edit_profile": "Edit Profile",
       "on_subscription": "You are on subscription"
     },
     "address": {
@@ -213,15 +213,15 @@
       "setDefault": "Set as Default Address",
       "addNew": "Add New Address",
       "placeholder": "Address",
-    "street": "Street",
-    "city": "City",
-    "buildingNumber": "Building Number",
-    "deleteAddress": {
-      "title": "Are You Sure?",
-      "description": "This action will permanently delete the address. Do you want to proceed?",
-      "close": "Close",
-      "confirm": "Yes, delete it"
-    }
+      "street": "Street",
+      "city": "City",
+      "buildingNumber": "Building Number",
+      "deleteAddress": {
+        "title": "Are You Sure?",
+        "description": "This action will permanently delete the address. Do you want to proceed?",
+        "close": "Close",
+        "confirm": "Yes, delete it"
+      }
     },
     "form": {
       "name": "Name",
@@ -230,6 +230,29 @@
       "city": "City",
       "categories": "Categories interested in",
       "placeholder": "......"
+    },
+    "register_book": {
+      "form_title": "Request a Book",
+      "fields": {
+        "book_title": "Book Title",
+        "author_name": "Author/Editor Name",
+        "publisher": "Publisher",
+        "library": "Library",
+        "publication_date": "Publication Date",
+        "upload_image": "Upload Image"
+      },
+      "submit_button": "Submit Request"
+    },
+    "register_author": {
+      "form_title": "Register a New Author",
+      "fields": {
+        "author_name": "Author / Investigator Name",
+        "gender": "Gender",
+        "birth_date": "Birth Date",
+        "previous_works": "Previous Works",
+        "notes": "Notes"
+      },
+      "submit_button": "Submit Request"
     }
   },
   "my_library": {
@@ -265,21 +288,33 @@
       "required": "Interested Categories is required"
     },
     "street": {
-        "required": "Street is required.",
-        "minLength": "Street must be at least 3 characters.",
-        "maxLength": "Street cannot exceed 100 characters.",
-        "pattern": "Street contains invalid characters."
-      },
-      "city": {
-        "required": "City is required.",
-        "minLength": "City must be at least 2 characters.",
-        "maxLength": "City cannot exceed 50 characters.",
-        "pattern": "City contains invalid characters."
-      },
-      "buildNumber": {
-        "required": "Building number is required.",
-        "pattern": "Building number must contain only numbers."
-      }
+      "required": "Street is required.",
+      "minLength": "Street must be at least 3 characters.",
+      "maxLength": "Street cannot exceed 100 characters.",
+      "pattern": "Street contains invalid characters."
+    },
+    "city": {
+      "required": "City is required.",
+      "minLength": "City must be at least 2 characters.",
+      "maxLength": "City cannot exceed 50 characters.",
+      "pattern": "City contains invalid characters."
+    },
+    "buildNumber": {
+      "required": "Building number is required.",
+      "pattern": "Building number must contain only numbers."
+    }, 
+    "genderRequired": {
+      "required": "Gender is required"
+    },
+    "register_book": {
+      "title_required": "The book title must be at least 3 characters long.",
+    "author_invalid": "Author name must contain only letters and spaces.",
+    "publisher_invalid": "Publisher name must contain only letters and spaces.",
+    "date_invalid": "Invalid date format",
+    "image_invalid": "Invalid image format. Use .jpg, .jpeg, .png, or .gif.",
+    "image_required": "Profile Image is required"
+    
+    }
   },
   "privacy_title": {
     "title": "Privacy Policy"
@@ -287,8 +322,7 @@
   "currency": {
     "rs": "R.S",
     "pdf": "PDF",
-  "paper": "Paper"
-   
+    "paper": "Paper"
   },
   "duration": {
     "year": "year",
@@ -298,9 +332,36 @@
     "plural": "s"
   },
   "subcription_title": {
-   "choosePlan": "Choose a plan that suits your goal"
+    "choosePlan": "Choose a plan that suits your goal"
   },
   "notfoundmessage": {
     "notFound": "No data available currently"
-  }
+  },
+  "book_details": {
+    "category": "Category",
+    "available_paper": "Available Paper",
+    "available_pdf": "Available PDF",
+    "tabs": {
+    "description": "Description",
+    "additional_information": "Additional Information",
+    "reviews": "Reviews"
+  },
+  "filter": {
+    "read_books": "Read Books",
+    "audiobooks": "Audiobooks"
+  },
+  "books": "Books"
+},
+"cart":{
+  "product": "Product",
+  "price": "Price",
+  "quantity": "Quantity",
+  "subtotal": "Subtotal",
+  "total": "Total",
+  "shipping": "Shipping",
+  "proceed_to_checkout": "Proceed to Checkout",
+  "clear_cart": "Clear Cart",
+  "pdf_price": "PDF Price",
+  "paper_price": "Paper Price"
+}
 }

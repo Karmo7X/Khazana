@@ -1,5 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import { useTranslation } from "react-i18next";
+import Wishlistcomponent from '../wishlist/Wishlistcomponent';
+import Filter from '../Filter/Filter';
+import bookundefine from '../../../public/assets/img/bookundefine.jpg'
 const Shoplist = ({data}) => {
     const { t, i18n } = useTranslation();
     const [books,setBooks]=useState([])
@@ -8,46 +11,35 @@ const Shoplist = ({data}) => {
     },[data])
   return (
     <>
-      <div class="col-lg-12 wow fadeInUp" data-wow-delay=".3s">
+      <Filter/>
+    
+      <div class="col-xl-9 col-lg-8 mb-4 order-1 order-md-2 wow fadeInUp" data-wow-delay=".3s">
         {books.map((book,idx)=>{
             return(<>
             <div class="shop-list-items" key={idx}>
                                     <div class="shop-list-thumb">
-                                        <img  src={book.image} alt={book.title}/>
+                                        <img  src={book?.coverImage  ? book?.coverImage:bookundefine} alt={book?.title}/>
                                     </div>
                                     <div class="shop-list-content">
-                                        <h3><a href={`/Single/${book.id}`}>{book.title}</a></h3>
-                                        <h5>{book.price}</h5>
+                                        <h3><a href={`/Single/${book?.id}`}>{book?.title}</a></h3>
+                                        <ul className="price-list">
+                            <li> {t("global.currency.pdf")} {book?.pricePdf}{t("global.currency.rs")}</li> <br/>
+                            <li>{t("global.currency.paper")} {book.pricePaper}{t("global.currency.rs")} </li>
+                            </ul>
                                     
                                         <p>
-                                            Vestibulum consectetur fringilla tellus, et pulvinar massa tempus nec. Fusce
-                                            nibh nibh, consectetur vitae felis quis, sagittis ullamcorper enim. Nullam
-                                            maximus vehicula justo, vel vestibulum turpis dictum at. Nam sed laoreet
-                                            sem. Aliquam urna massa,
+                                        {book?.description}
                                         </p>
                                         <li className="authot-list">
                             <span className="thumb">
-                                <img src={book.author_img} alt={book.title} />
+                                <img src={book?.author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} />
                             </span>
-                            <span className="content fw-bold">{book.author}</span>
+                            <span className="content fw-bold">{book?.author?.name}</span>
                         </li>
                                         <div class="shop-btn">
-                                            <a  href={`/Single/${book.id}`} class="theme-btn"><i
+                                            <a  href={`/Single/${book?.id}`} class="theme-btn"><i
                                                     class="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}</a>
-                                            <ul class="shop-icon d-flex justify-content-center align-items-center">
-                                                <li>
-                                                    <a href="/Cart"><i class="far fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="/Cart">
-                                                        <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                            alt="svg-icon"/>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a  href={`/Single/${book.id}`}><i class="far fa-eye"></i></a>
-                                                </li>
-                                            </ul>
+                                         <Wishlistcomponent bookid={book?.id} wishlist={book?.wishlist} grid={false}/>
                                         </div>
                                     </div>
                                 </div></>)

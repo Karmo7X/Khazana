@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom'
 import Shopdefault from '../../components/Shopdefault/Shopdefault'
 import Shoplist from '../../components/Shoplist/Shoplist'
 import { useTranslation } from "react-i18next";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { GetProductApi } from '../../Api/Product/Product';
+import Notfound from '../../components/Notfound/Notfound'
 const Shop = () => {
     const { t, i18n } = useTranslation();
     const [layout,setLayout]=useState('grid')
     const dispatch = useDispatch();
-   
+    const loading = useSelector((state) => state.product.status);
+
     const [books ,setBooks]=useState([])
     useEffect(()=>{
        dispatch(GetProductApi()).then((res)=>{
@@ -51,8 +53,14 @@ const Shop = () => {
             </div>
         </div>
     </div>
-
-    {/* <!-- Shop Section Start --> */}
+{ loading === 'loading' ? (<>
+    <div className="d-flex align-items-center justify-content-center vh-100">
+            <div className="spinner-border text-secondary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+</>):(<>
+ {/* <!-- Shop Section Start --> */}
        <section className="shop-section fix section-padding">
         <div className="container">
         <div className="shop-default-wrapper">
@@ -92,12 +100,22 @@ const Shop = () => {
                     
                    
                 </div>
-                <div className="row">
+
+                {books.length === 0 ?(<>
+                <Notfound/>
+                </>):(<>
+                  <div className="row">
                     {layout === "grid" ? (<><Shopdefault data={books}/></>):(<><Shoplist data={books}/></>)}
                 </div>
+                
+                </>)}
+              
             </div>
         </div>
        </section>
+
+</>)}
+   
     </>
   )
 }

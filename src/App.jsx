@@ -18,8 +18,8 @@ const Profile = lazy(() => import("./pages/Profile/Profile"));
 const About = lazy(() => import("./pages/About/About"));
 const Shop = lazy(() => import("./pages/Shop/Shop"));
 const Subcription = lazy(() => import("./pages/subcription/Subcription"));
-const Privacy = lazy(() => import("./pages/Privacy/Privacy"));
-const Term = lazy(() => import("./pages/Privacy/Term"));
+const Privacy = lazy(() => import("./pages/App/Privacy"));
+const Term = lazy(() => import("./pages/App/Term"));
 
 
 const ProtectedRoute = ({ children }) => {
@@ -66,9 +66,13 @@ function App() {
             <Route
               path="Single/:id"
               element={
-                <Suspense fallback={<Loader />}>
+                <ProtectedRoute>
+
+                   <Suspense fallback={<Loader />}>
                   <SingleProduct />
                 </Suspense>
+                </ProtectedRoute>
+               
               }
             />
             <Route

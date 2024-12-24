@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from "react-i18next";
 import { Navigation ,Autoplay} from 'swiper/modules';
 
@@ -9,6 +9,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import { useDispatch } from 'react-redux';
+import { GetAuthorApi } from '../../Api/Authors/AuthorsSlice';
 
 
 // const authors = [
@@ -20,32 +22,42 @@ import 'swiper/css/autoplay';
 //     { name: "Guy Hawkins", books: "12 Published Books", image: "06.jpg" }
 //   ];
 
-  const authors = [
-    {
-      id: 1,
-      name: "عبدالله العجيري",
-      image: "01.png",
-    },
-    {
-      id: 2,
-      name: "غازي القصيبي",
-      image: "02.png",
-    },
-    {
-      id: 3,
-      name: "فهد الأحمدي",
-      image: "03.png",
-    },
-    {
-      id: 4,
-      name: "أحمد العرفج",
-      image: "04.png",
-    },
-    // Add more authors as needed
-  ];
+  // const authors = [
+  //   {
+  //     id: 1,
+  //     name: "عبدالله العجيري",
+  //     image: "01.png",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "غازي القصيبي",
+  //     image: "02.png",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "فهد الأحمدي",
+  //     image: "03.png",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "أحمد العرفج",
+  //     image: "04.png",
+  //   },
+  //   // Add more authors as needed
+  // ];
 
 const Authors = () => {
   const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
+   
+  const [authors ,setAuthors]=useState([])
+  useEffect(()=>{
+     dispatch(GetAuthorApi()).then((res)=>{
+      if(res.payload?.code === 200){
+        setAuthors(res.payload?.data?.authors)
+      }
+     })
+  },[])
   return (
     <>
     <section className="team-section fix section-padding mt-5 pt-0 mb-30">
@@ -95,15 +107,15 @@ const Authors = () => {
               <div className="team-box-items">
                 <div className="team-image">
                   <div className="thumb">
-                    <img src={`assets/img/team/${author.image}`} style={{width:"50%"}} alt={`Image of ${author.name}`} />
+                    <img src={`assets/img/team/${author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}`} style={{width:"50%"}} alt={`Image of ${author?.name}`} />
                   </div>
                   <div className="shape-img">
                     <img src="assets/img/team/shape-img.png" alt="Decorative Shape" />
                   </div>
                 </div>
                 <div className="team-content text-center">
-                  <h6><a href="team-details.html">{author.name}</a></h6>
-                  <p>{author.books}</p>
+                  <h6><a href="team-details.html">{author?.name}</a></h6>
+                  {/* <p>{author.books}</p> */}
                 </div>
               </div>
             </SwiperSlide>

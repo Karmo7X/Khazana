@@ -349,16 +349,19 @@ const Navbar = () => {
                                     </form>
                                 </div>
                                 <div class="menu-cart">
-                                    <a href="/Wishlist" class="cart-icon">
-
+                                {token && (<>
+                                      <a href="/Wishlist" class="cart-icon">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
                                     <a href="/Cart" class="cart-icon">
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </a>
-                                    <a href="/Profile" class="profile-icon ">
+                                     <a href="/Profile" class="profile-icon ">
                                     <i class="fa-light fa-user"></i>
                                     </a>
+                                    
+                                    </>)}
+                                  
                                    
                                     <div class="header-humbager ml-30">
                                         <a class="sidebar__toggle" href="javascript:void(0)">
@@ -474,15 +477,19 @@ const Navbar = () => {
                                     </form>
                                 </div>
                                 <div class="menu-cart">
-                                    <a href="/Wishlist" class="cart-icon">
+                                  
+                                    {token && (<>
+                                      <a href="/Wishlist" class="cart-icon">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
                                     <a href="/Cart" class="cart-icon">
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </a>
-                                    <a href="/Profile" class="profile-icon ">
+                                     <a href="/Profile" class="profile-icon ">
                                     <i class="fa-light fa-user"></i>
                                     </a>
+                                    
+                                    </>)}
                                     <div class="header-humbager ml-30">
                                         <a class="sidebar__toggle" href="javascript:void(0)">
                                             <div class="bar-icon-2">

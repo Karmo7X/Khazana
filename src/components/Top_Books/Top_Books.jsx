@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from "react-i18next";
 import Wishlistcomponent from '../wishlist/Wishlistcomponent';
+import bookundefine from '../../../public/assets/img/bookundefine.jpg'
 const Top_Books = ({data}) => {
     const { t, i18n } = useTranslation();
     const [books,setBooks]=useState([])
@@ -26,14 +27,14 @@ const Top_Books = ({data}) => {
                      <div className="shop-box-items style-2">
                
                       <div className="book-thumb center" key={idx}>
-                    <a href="shop-details">
-                        <img src={book?.coverImage} alt={book?.title} />
+                    <a href={`/Single/${book?.id}`}>
+                        <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt={book?.title} />
                     </a>
                     <ul className="post-box">
                     {book?.isAvailablePdf  === true ?  <li>{t("global.currency.pdf")}</li>: null}
                     {book?.isAvailablePaper === true ?<li>{t("global.currency.paper")}</li>: null  }
             </ul>
-                    <Wishlistcomponent bookid={book?.id}/>
+                    <Wishlistcomponent bookid={book?.id} wishlist={book?.wishlist}/>
                 </div>
 
                 <div className="shop-content">
@@ -46,7 +47,7 @@ const Top_Books = ({data}) => {
                     <ul className="author-post">
                         <li className="authot-list">
                             <span className="thumb">
-                                <img src={book?.author?.img} alt={book?.author?.name} />
+                                <img src={book?.author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} alt={book?.author?.name} />
                             </span>
                             <span className="content fw-bold">{book?.author?.name}</span>
                         </li>

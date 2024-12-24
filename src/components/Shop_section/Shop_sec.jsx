@@ -73,7 +73,7 @@ const Shop_sec = ({data}) => {
                             {book?.isAvailablePdf  === true ?  <li>{t("global.currency.pdf")}</li>: null}
                             {book?.isAvailablePaper === true ?<li>{t("global.currency.paper")}</li>: null  }
             </ul>
-                            <Wishlistcomponent bookid={book?.id}/>
+                            <Wishlistcomponent bookid={book?.id} wishlist={book?.wishlist}/>
                         </div>
                         <div className="shop-content">
                             <h5>{book?.category}</h5>

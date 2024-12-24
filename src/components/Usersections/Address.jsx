@@ -10,6 +10,7 @@ const Address = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [addresses, setAddresses] = useState([]);
+  
   const [addaddressdata, setAddaddressdata] = useState({
     street: "",
     city: "",

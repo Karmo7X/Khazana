@@ -1,6 +1,52 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from 'react-redux'
+import { DeleteCartApi, DeleteCartItemApi, GetCartApi } from '../../Api/Cart/CartSlice';
+import bookundefine from '../../../public/assets/img/bookundefine.jpg'
+import Notfound from '../../components/Notfound/Notfound';
 const Cart = () => {
+    const { t, i18n } = useTranslation();
+    const dispatch = useDispatch();
+    const loading =useSelector((state)=>state.cart.status)
+    const [cart,setCart]=useState()
+    const [cartItems,setCartItems]=useState([])
+    console.log(cart)
+    useEffect(()=>{
+      dispatch(GetCartApi()).then((res)=>{
+        if(res.payload?.code === 200){
+            setCart(res.payload?.data?.cart)
+            setCartItems(res.payload?.data?.cart?.cartItems)
+        }
+      })
+    },[])
+     
+
+    const handleDeleteItem=(productId)=>{
+     
+        dispatch(DeleteCartItemApi(productId)).then((res)=>{
+            if(res.payload?.code === 200){
+                dispatch(GetCartApi()).then((res)=>{
+                    if(res.payload?.code === 200){
+                        setCart(res.payload?.data?.cart)
+                        setCartItems(res.payload?.data?.cart?.cartItems)
+                    }
+                  })
+            }
+        })
+    }
+    const handleEmptyCart=()=>{
+       
+        dispatch(DeleteCartApi()).then((res)=>{
+            if(res.payload?.code === 200){
+                dispatch(GetCartApi()).then((res)=>{
+                    if(res.payload?.code === 200){
+                        setCart(res.payload?.data?.cart)
+                        setCartItems(res.payload?.data?.cart?.cartItems)
+                    }
+                  })
+            }
+        })
+    }
   return (
     <>
 
@@ -14,19 +60,19 @@ const Cart = () => {
         </div>
         <div class="container">
             <div class="page-heading">
-                <h1>Cart</h1>
+                <h1> {t("global.nav.cart")}</h1>
                 <div class="page-header">
                     <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                         <li>
-                            <a href="index.html">
-                                Home
+                            <a href="/">
+                            {t("global.nav.home")}
                             </a>
                         </li>
                         <li>
                             <i class="fa-solid fa-chevron-right"></i>
                         </li>
                         <li>
-                            Cart
+                        {t("global.nav.cart")}
                         </li>
                     </ul>
                 </div>
@@ -39,36 +85,57 @@ const Cart = () => {
         <div class="container">
             <div class="main-cart-wrapper">
                 <div class="row g-5">
-                    <div class="col-xl-9">
+                    {loading === 'loading' ?(<>
+                        <div className="d-flex align-items-center justify-content-center vh-100">
+          <div className="spinner-border text-secondary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+                    </>):(<>
+                    
+                    {cart === null ||  cartItems?.length === 0 ?(<>
+                      <div className='col-xl-9'>
+                        <Notfound/>
+                    </div>
+                    </>):(<>
+                        <div class="col-xl-9">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Product</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Subtotal</th>
+                                        <th> {t("global.cart.product")}</th>
+                                        <th>{t("global.cart.pdf_price")}</th>
+                                        <th>{t("global.cart.paper_price")}</th>
+                                        {/* <th>{t("global.cart.quantity")}</th> */}
+                                        <th>{t("global.cart.subtotal")}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    {cartItems.map((book,idx)=>{
+                                        
+                                        return(<>
+                                        
+                                        <tr key={idx}>
                                         <td>
                                             <span class="d-flex gap-5 align-items-center">
-                                                <a href="/Cart" class="remove-icon">
+                                                <a  href="#" class="remove-icon" onClick={()=>handleDeleteItem(book?.product?.id)}>
                                                     <img src="/assets/img/icon/icon-9.svg" alt="img"/>
                                                 </a>
-                                                <span class="cart">
-                                                    <img src="/assets/img/shop-cart/01.png" alt="img"/>
+                                                <span class="cart w-25">
+                                                    <img src={book?.product?.coverImage  ? book?.product?.coverImage : bookundefine} style={{width:'60%'}} alt={book?.product?.title}/>
                                                 </span>
                                                 <span class="cart-title">
-                                                    simple Things You To Save Book
+                                                    {book?.product?.title}
                                                 </span>
                                             </span>
                                         </td>
                                         <td>
-                                            <span class="cart-price">30.00 R.S</span>
+                                            <span class="cart-price">{book?.product?.pricePdf} {t("global.currency.rs")}</span>
                                         </td>
                                         <td>
+                                            <span class="cart-price">{book?.product?.pricePaper} {t("global.currency.rs")}</span>
+                                        </td>
+                                        {/* <td>
                                             <span class="quantity-basket">
                                                 <span class="qty">
                                                     <button class="qtyminus" aria-hidden="true">−</button>
@@ -77,128 +144,75 @@ const Cart = () => {
                                                     <button class="qtyplus" aria-hidden="true">+</button>
                                                 </span>
                                             </span>
-                                        </td>
+                                        </td> */}
                                         <td>
-                                            <span class="subtotal-price">$120.00</span>
+                                            <span class="subtotal-price">{book?.price} {t("global.currency.rs")}</span>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="d-flex gap-5 align-items-center">
-                                                <a href="/Cart" class="remove-icon">
-                                                    <img src="/assets/img/icon/icon-9.svg" alt="img"/>
-                                                </a>
-                                                <span class="cart">
-                                                    <img src="/assets/img/shop-cart/02.png" alt="img"/>
-                                                </span>
-                                                <span class="cart-title">
-                                                    Qple GPad With Retina Sisplay
-                                                </span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="cart-price">30.00 R.S</span>
-                                        </td>
-                                        <td>
-                                            <span class="quantity-basket">
-                                                <span class="qty">
-                                                    <button class="qtyminus" aria-hidden="true">−</button>
-                                                    <input type="number" name="qty" id="qty3" min="1" max="10" step="1"
-                                                        value="1"/>
-                                                    <button class="qtyplus" aria-hidden="true">+</button>
-                                                </span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="subtotal-price">$120.00</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="d-flex gap-5 align-items-center">
-                                                <a href="/Cart" class="remove-icon">
-                                                    <img src="/assets/img/icon/icon-9.svg" alt="img"/>
-                                                </a>
-                                                <span class="cart">
-                                                    <img src="/assets/img/shop-cart/03.png" alt="img"/>
-                                                </span>
-                                                <span class="cart-title">
-                                                    Flovely and Unicom Erna
-                                                </span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="cart-price">30.00 R.S</span>
-                                        </td>
-                                        <td>
-                                            <span class="quantity-basket">
-                                                <span class="qty">
-                                                    <button class="qtyminus" aria-hidden="true">−</button>
-                                                    <input type="number" name="qty" id="qty" min="1" max="10" step="1"
-                                                        value="1"/>
-                                                    <button class="qtyplus" aria-hidden="true">+</button>
-                                                </span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="subtotal-price">$120.00</span>
-                                        </td>
-                                    </tr>
+                                        </>)
+                                    })}
+                                    
+                                   
                                 </tbody>
                             </table>
                         </div>
                         <div class="cart-wrapper-footer">
-                            <form action="/Cart">
+                            {/* <form action="/Cart">
                                 <div class="input-area">
                                     <input type="text" name="Coupon Code" id="CouponCode" placeholder="Coupon Code"/>
                                     <button type="submit" class="theme-btn">
                                         Apply
                                     </button> 
                                 </div>
-                            </form>
-                            <a href="/Cart" class="theme-btn">
-                                Update Cart
+                            </form> */}
+                            <a href="#" onClick={()=>handleEmptyCart()} class="theme-btn">
+                            {t("global.cart.clear_cart")}
                             </a>
                         </div>
                     </div>
+                    
+                    </>)}
+                    </>)}
+                    
+                   
                     <div class="col-xl-3">
                         <div class="table-responsive cart-total">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Cart Total</th>
+                                        <th> {t("global.cart.total")} {t("global.nav.cart")} </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    {/* <tr>
                                         <td>
                                             <span class="d-flex gap-5 align-items-center justify-content-between">
-                                                <span class="sub-title">Subtotal:</span>
-                                                <span class="sub-price">$84.00</span>
+                                                <span class="sub-title">{t("global.cart.subtotal")}:</span>
+                                                <span class="sub-price">{}</span>
                                             </span>
                                         </td>
-                                    </tr>
-                                    <tr>
+                                    </tr> */}
+                                    {/* <tr>
                                         <td>
                                             <span class="d-flex gap-5 align-items-center  justify-content-between">
-                                                <span class="sub-title">Shipping:</span>
+                                                <span class="sub-title">{t("global.cart.shipping")}:</span>
                                                 <span class="sub-text">
                                                     Free
                                                 </span>
                                             </span>
                                         </td>
-                                    </tr>
+                                    </tr> */}
                                     <tr>
                                         <td>
                                             <span class="d-flex gap-5 align-items-center  justify-content-between">
-                                                <span class="sub-title">Total:  </span>
-                                                <span class="sub-price sub-price-total">$84.00</span>
+                                                <span class="sub-title">{t("global.cart.total")}:  </span>
+                                                <span class="sub-price sub-price-total">{cart?.totalCartPrice || '0'} {t("global.currency.rs")}</span>
                                             </span>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="Checkout" class="theme-btn">Proceed to checkout</a>
+                            <a href="Checkout" class="theme-btn">{t("global.cart.proceed_to_checkout")}</a>
                         </div>
                     </div>
                 </div>

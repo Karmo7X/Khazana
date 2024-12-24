@@ -5020,14 +5020,14 @@ span {
   background-color: transparent;
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(92, 112, 126, 0.3);
+  border: 1px solid #505050 !important;
   border-radius: 50%;
   text-align: center;
   line-height: 37px;
 }
 .shop-box-items .book-thumb .shop-icon li a i,
 .shop-box-items .book-thumb .shop-icon li a .icon {
-  color: var(--text);
+  color: #505050 !important;
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
@@ -5800,6 +5800,10 @@ span {
 .shop-box-items.style-2 .shop-content .author-post .authot-list .content {
   font-weight: 500;
   font-size: 14px;
+}
+
+.authot-list .thumb img{
+  width: 30px !important;
 }
 .shop-box-items.style-2 .shop-content .author-post li {
   font-weight: 600;

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { GetUserwishlistApi } from "../../Api/User/UserSlice";
 import Wishlistcomponent from "../../components/wishlist/Wishlistcomponent";
 import Notfound from "../../components/Notfound/Notfound";
+import bookundefine from '../../../public/assets/img/bookundefine.jpg'
 const Wishlist = () => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
@@ -71,14 +72,14 @@ const Wishlist = () => {
              <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s" key={idx}>
              <div className="shop-box-items style-2">
                         <div className="book-thumb center">
-                            <a href="Single/:id">
-                                <img src={book?.coverImage} alt="Book cover" />
+                            <a href={`/Single/${book?.id}`}>
+                                <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt="Book cover" />
                             </a>
                             <ul className="post-box">
                             {book?.isAvailablePdf  === true ?  <li>{t("global.currency.pdf")}</li>: null}
                             {book?.isAvailablePaper === true ?<li>{t("global.currency.paper")}</li>: null  }
             </ul>
-                            <Wishlistcomponent bookid={book?.id}/>
+                            <Wishlistcomponent bookid={book?.id} wishlist={true}/>
                         </div>
                         <div className="shop-content">
                             <h5>{book?.category}</h5>

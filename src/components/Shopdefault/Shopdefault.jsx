@@ -2,6 +2,9 @@ import React,{useState,useEffect} from 'react'
 import Filter from '../Filter/Filter'
 import Pagination from '../Pagination/Pagination'
 import { useTranslation } from "react-i18next";
+import Wishlistcomponent from '../wishlist/Wishlistcomponent';
+import bookundefine from '../../../public/assets/img/bookundefine.jpg'
+import AddCart from '../Buttons/AddCart';
 const Shopdefault = ({data}) => {
     const { t, i18n } = useTranslation();
     const [books,setBooks]=useState([])
@@ -18,21 +21,21 @@ const Shopdefault = ({data}) => {
                                 <div className="row">
                                 {books.map((book,idx)=>{
             return(<>
-             <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s" key={idx}>
-             <div className="shop-box-items style-2">
+             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".2s" key={idx}>
+             <div className="shop-box-items ">
                         <div className="book-thumb center">
-                            <a href="Single/:id">
-                                <img src={book?.coverImage} alt="Book cover" />
+                            <a href={`/Single/${book?.id}`}>
+                                <img src={book?.coverImage  ? book?.coverImage:bookundefine}  alt="Book cover" />
                             </a>
                             <ul className="post-box">
                             {book?.isAvailablePdf  === true ?  <li>{t("global.currency.pdf")}</li>: null}
                             {book?.isAvailablePaper === true ?<li>{t("global.currency.paper")}</li>: null  }
             </ul>
-                            <Wishlistcomponent bookid={book?.id}/>
+                         <Wishlistcomponent bookid={book?.id} wishlist={book?.wishlist}/>
                         </div>
                         <div className="shop-content">
                             <h5>{book?.category}</h5>
-                            <h3><a href="/Single/:id">{book?.title}</a></h3>
+                            <h3><a href={`/Single/${book?.id}`}>{book?.title}</a></h3>
                             <ul className="price-list">
                             <li> {t("global.currency.pdf")} {book?.pricePdf}{t("global.currency.rs")}</li> <br/>
                             <li>{t("global.currency.paper")} {book.pricePaper}{t("global.currency.rs")} </li>
@@ -40,7 +43,7 @@ const Shopdefault = ({data}) => {
                             <ul className="author-post">
                                 <li className="authot-list">
                                     <span className="thumb">
-                                    <img src={book?.author?.img} alt={book?.author?.name} />
+                                    <img src={book?.author?.profileImg|| "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" } alt={book?.author?.name} />
                                     </span>
                                     <span className="content fw-bold">{book?.author?.name}</span>
                                 </li>

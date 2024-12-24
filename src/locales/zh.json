@@ -200,7 +200,7 @@
     "upgrade_account": "升级我的账户",
     "my_library": "我的图书馆",
     "my_account": "我的账户",
-    "changePassword":  "更改密码",
+    "changePassword": "更改密码",
     "currentPassword": "当前密码",
     "profile": {
       "upgrade_account": "升级账户",
@@ -208,21 +208,21 @@
       "on_subscription": "您正在订阅"
     },
     "address": {
-    "title": "地址",
-    "primaryAddress": "主要地址",
-    "setDefault": "设为默认地址",
-    "addNew": "添加新地址",
-    "placeholder":  "地址",
-    "street": "街道",
-    "city": "城市",
-    "buildingNumber": "楼号",
-    "deleteAddress": {
-      "title": "您确定吗？",
-      "description": "此操作将永久删除地址。您想继续吗？",
-      "close": "关闭",
-      "confirm": "是的，删除它"
-    }
-  },
+      "title": "地址",
+      "primaryAddress": "主要地址",
+      "setDefault": "设为默认地址",
+      "addNew": "添加新地址",
+      "placeholder": "地址",
+      "street": "街道",
+      "city": "城市",
+      "buildingNumber": "楼号",
+      "deleteAddress": {
+        "title": "您确定吗？",
+        "description": "此操作将永久删除地址。您想继续吗？",
+        "close": "关闭",
+        "confirm": "是的，删除它"
+      }
+    },
     "form": {
       "name": "姓名",
       "phone_number": "电话号码",
@@ -230,7 +230,30 @@
       "city": "城市",
       "categories": "感兴趣的类别",
       "placeholder": "......"
-    }
+    },
+    "register_book": {
+      "form_title": "请求书籍",
+      "fields": {
+        "book_title": "书名",
+        "author_name": "作者/编辑名称",
+        "publisher": "出版社",
+        "library": "图书馆",
+        "publication_date": "出版日期",
+        "upload_image": "上传图片"
+      },
+      "submit_button": "提交请求"
+    },
+    "register_author": {
+    "form_title": "注册新作者",
+    "fields": {
+      "author_name": "作者/调查员姓名",
+      "gender": "性别",
+      "birth_date": "出生日期",
+      "previous_works": "过往作品",
+      "notes": "备注"
+    },
+    "submit_button": "提交请求"
+  }
   },
   "my_library": {
     "read": "阅读"
@@ -279,6 +302,17 @@
     },
     "interestedCategory": {
       "required": "感兴趣的类别是必填项"
+    }, 
+    "genderRequired": {
+      "required": "性别是必需的"
+    },
+    "register_book": {
+      "title_required": "书名必须至少包含 3 个字符。",
+      "author_invalid": "作者姓名只能包含字母和空格。",
+      "publisher_invalid": "出版社名称只能包含字母和空格。",
+      "date_invalid": "日期格式无效。",
+      "image_invalid": "图片格式无效。请使用 .jpg、.jpeg、.png 或 .gif。",
+      "image_required": "个人头像是必需的"
     }
   },
   "privacy_title": {
@@ -287,7 +321,7 @@
   "currency": {
     "rs": "韋斯特",
     "pdf": "PDF",
-   "paper": "纸质"
+    "paper": "纸质"
   },
   "duration": {
     "year": "年",
@@ -297,9 +331,36 @@
     "plural": ""
   },
   "subcription_title": {
-     "choosePlan": "选择适合您目标的计划"
+    "choosePlan": "选择适合您目标的计划"
   },
   "notfoundmessage": {
-   "notFound": "目前没有数据"
-  }
+    "notFound": "目前没有数据"
+  },
+  "book_details": {
+    "category": "类别",
+    "available_paper": "可用纸张",
+    "available_pdf": "可用PDF",
+    "tabs": {
+    "description": "描述",
+    "additional_information": "附加信息",
+    "reviews": "评论 "
+  },
+  "filter": {
+    "read_books": "已读书籍",
+    "audiobooks": "有声书"
+  },
+  "books": "书籍"
+},
+"cart":{
+  "product": "产品",
+  "price": "价格",
+  "quantity": "数量",
+  "subtotal": "小计",
+  "total": "总计",
+  "shipping": "运输",
+  "proceed_to_checkout": "前往结账",
+  "clear_cart": "清空购物车",
+  "pdf_price": "PDF价格",
+  "paper_price": "纸质价格"
+}
 }

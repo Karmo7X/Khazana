@@ -97,9 +97,6 @@ export const GetUserApi = createAsyncThunk("User/get", async () => {
     }
   });
    
-  
-
-   
   export const AddmainAddressApi = createAsyncThunk("User/AddmainAddress", async (addressId) => {
     try {
       const res = await axios.post(
@@ -181,6 +178,22 @@ export const GetUserApi = createAsyncThunk("User/get", async () => {
       console.error(err.response.data);
     }
   });
+
+  export const GetUserLibraryApi = createAsyncThunk("User/My-Library/get", async () => {
+    try {
+      const res = await axios.get(`${baseurl}/order/my?isDelivered=true&orderState=confirmed&isPaid=true`, {
+        headers: {
+          lang: lang,
+          'Authorization':`Bearer ${token}`
+        },
+      });
+  
+      return res.data;
+    } catch (err) {
+      console.error(err.response.data);
+    }
+  });
+
 
 const Userslice = createSlice({
   name: "cate",

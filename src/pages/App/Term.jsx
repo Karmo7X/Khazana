@@ -1,17 +1,17 @@
 import React,{useState,useEffect} from 'react'
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { GetpolicyApi } from '../../Api/Term/Term';
+import { GetTermApi } from '../../Api/App/App';
 
-const Privacy = () => {
+const Term = () => {
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch();
-    const [privacydata, setPrivacydata] = useState(null);
-          // get category
+    const [Termsdata, setTermsdata] = useState(null);
+          // get Terms
           useEffect(() => {
-            dispatch(GetpolicyApi()).then((res) => {
+            dispatch(GetTermApi()).then((res) => {
               if (res.payload?.code === 200) {
-                setPrivacydata(res.payload?.data?.privacyPolicy);
+                setTermsdata(res.payload?.data?.termsAndConditions);
               }
             });
           }, []);
@@ -20,10 +20,10 @@ const Privacy = () => {
      <div className="container mt-5">
       
         <div className="text-white mt-5 mb-5">
-          <h1 className="mt-5 mb-5">{t("global.privacy_title.title")}</h1>
+          <h1 className="mt-5 mb-5">{t('global.footer.terms_and_conditions')}</h1>
         </div>
         <div className="privacy_data fs-5 mt-5 mb-5">
-         {privacydata}
+         {Termsdata}
         </div>
       </div>
    
@@ -31,4 +31,4 @@ const Privacy = () => {
   )
 }
 
-export default Privacy
+export default Term
