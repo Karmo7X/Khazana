@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { baseurl, lang } from "../../global";
+import { baseurl, lang, token } from "../../global";
 
 const initialState = {
   data: null,
@@ -25,6 +25,50 @@ export const GetsubscriptionApi = createAsyncThunk(
   }
 );
 
+export const AddsubscriptionApi = createAsyncThunk(
+  "subscription/Add",
+  async (subscriptionID) => {
+    try {
+      const res = await axios.post(
+        `${baseurl}/user/subscribe/${subscriptionID}`,
+        {},
+        {
+          headers: {
+            lang: lang,
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      return res.data;
+    } catch (err) {
+      console.error(err.response.data);
+      return err.response.data;
+    }
+  }
+);
+export const UnsubscriptionApi = createAsyncThunk(
+  "subscription/delete",
+  async (subscriptionID) => {
+    try {
+      const res = await axios.delete(
+        `${baseurl}/user/subscribe/${subscriptionID}`,
+        {},
+        {
+          headers: {
+            lang: lang,
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      return res.data;
+    } catch (err) {
+      console.error(err.response.data);
+      return err.response.data;
+    }
+  }
+);
 const Subscriptionslice = createSlice({
   name: "subscription",
   initialState,
@@ -39,6 +83,26 @@ const Subscriptionslice = createSlice({
         state.data = action.payload;
       })
       .addCase(GetsubscriptionApi.rejected, (state) => {
+        state.status = "failed";
+      })
+      .addCase(AddsubscriptionApi.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(AddsubscriptionApi.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(AddsubscriptionApi.rejected, (state) => {
+        state.status = "failed";
+      })
+      .addCase(UnsubscriptionApi.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(UnsubscriptionApi.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(UnsubscriptionApi.rejected, (state) => {
         state.status = "failed";
       });
   },

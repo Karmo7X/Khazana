@@ -63,7 +63,7 @@ const Wishlist = () => {
         </>):(<>
             <div class="cart-section section-padding">
         <div class="container">
-            {wishlist.length !==0?(
+            {loading !== "failed" && wishlist.length !==0?(
 
 
  <div className="row">

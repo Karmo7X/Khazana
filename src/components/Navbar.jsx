@@ -8,11 +8,13 @@ import Forgetpassword from './Modals/Forgetpasswor'
 import Restpassword from './Modals/Restpassword'
 import { useTranslation } from "react-i18next";
 import Cookies from 'js-cookie'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
+import { GetCartApi } from '../Api/Cart/CartSlice'
 const Navbar = () => {
     const { t, i18n } = useTranslation();
    const [show,setShow]=useState(false)
-   const Num_wishlist = useSelector((state) => state.user.data);
+   const dispatch = useDispatch();
+//    const Num_wishlist = useSelector((state) => state.user.data);
    const token=Cookies.get('token')
     // State to manage selected language
   const [selectedLanguage, setSelectedLanguage] = useState("ar");
@@ -48,6 +50,19 @@ const Navbar = () => {
      Cookies.remove('token')
      window.location.reload()
   }
+
+
+   const [cartItems, setCartItems] = useState([]);
+   const Num_cartItems = useSelector((state) => state.cart.data?.data?.cart?.itemCount);
+   
+    useEffect(() => {
+       dispatch(GetCartApi()).then((res) => {
+         if (res.payload?.code === 200) {
+       
+           setCartItems(res.payload?.data?.cart?.cartItems);
+         }
+       });
+     }, []);
   return (
     <>
     {/* <!-- Cursor follower --> */}
@@ -85,7 +100,7 @@ const Navbar = () => {
                                     <a href="/Wishlist" class="cart-icon profile-icon">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
-                                    <a href="/Cart" class="cart-icon profile-icon">
+                                    <a href="/Cart" class="cart-icon cart_number profile-icon" data-num={Num_cartItems}>
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </a>
                                    
@@ -353,7 +368,7 @@ const Navbar = () => {
                                       <a href="/Wishlist" class="cart-icon">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
-                                    <a href="/Cart" class="cart-icon">
+                                    <a href="/Cart" class="cart-icon cart_number" data-num={Num_cartItems}>
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </a>
                                      <a href="/Profile" class="profile-icon ">
@@ -482,7 +497,7 @@ const Navbar = () => {
                                       <a href="/Wishlist" class="cart-icon">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
-                                    <a href="/Cart" class="cart-icon">
+                                    <a href="/Cart" class="cart-icon cart_number" data-num={Num_cartItems}>
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </a>
                                      <a href="/Profile" class="profile-icon ">

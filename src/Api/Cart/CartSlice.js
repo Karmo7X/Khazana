@@ -67,6 +67,7 @@ const initialState = {
       return res.data;
     } catch (err) {
       console.error(err.response.data);
+      return err.response.data
     }
   });
 
@@ -108,6 +109,16 @@ const Cartslice = createSlice({
         state.data = action.payload;
       })
       .addCase(DeleteCartApi.rejected, (state) => {
+        state.status = "failed";
+      })
+      .addCase(AddCartItemApi.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(AddCartItemApi.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(AddCartItemApi.rejected, (state) => {
         state.status = "failed";
       })
       ;

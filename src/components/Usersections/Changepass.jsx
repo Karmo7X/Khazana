@@ -16,8 +16,6 @@ const Changepass = () => {
      confirmPassword: "",
    
    });
-
-   console.log(formData)
     const [successmessage, setSuccessmessage] = useState();
     const [showpasscurrent, setShowpasscurrent] = useState(false);
      const [showpass, setShowpass] = useState(false);

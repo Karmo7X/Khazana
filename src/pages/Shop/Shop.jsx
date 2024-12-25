@@ -101,7 +101,7 @@ const Shop = () => {
                    
                 </div>
 
-                {books.length === 0 ?(<>
+                {loading === "failed" && books.length === 0 ?(<>
                 <Notfound/>
                 </>):(<>
                   <div className="row">

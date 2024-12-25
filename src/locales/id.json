@@ -254,7 +254,19 @@
         "notes": "Catatan"
       },
       "submit_button": "Kirim Permintaan"
+    },
+    "subscription": {
+    "creative_title": "Langganan Saya",
+    "title": "Paket Saya",
+    "cancel_subscription": {
+      "title": "Batalkan Langganan",
+      "description": "Apakah Anda yakin ingin membatalkan langganan Anda? Anda akan kehilangan akses ke fitur premium.",
+      "confirm_button": "Ya, Batalkan",
+      "cancel_button": "Tidak, Pertahankan Langganan",
+      "success_message": "Langganan Anda berhasil dibatalkan.",
+      "error_message": "Terjadi kesalahan saat membatalkan langganan Anda. Silakan coba lagi."
     }
+  }
   },
   "my_library": {
     "read": "Membaca"
@@ -352,7 +364,9 @@
       "read_books": "Buku Dibaca",
       "audiobooks": "Buku Audio"
     },
-    "books": "Buku"
+    "books": "Buku",
+     "buyPhysicalBook": "Beli Buku Fisik",
+  "buyPdf": "Beli PDF"
   },
   "cart":{
     "product": "Produk",

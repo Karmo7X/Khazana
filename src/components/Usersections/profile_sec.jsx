@@ -26,7 +26,7 @@ const Profile_sec = () => {
   const [profileImg, setProfileImg] = useState(null);
   const loading = useSelector((state) => state.user.status);
   const loadingupdate = useSelector((state) => state.user.statusupdate);
-  // console.log(userdata)
+
   // handle data user from inputs
   const handleChange = (name, value) => {
     // If the field is "birthday", format the date
@@ -162,12 +162,10 @@ const Profile_sec = () => {
     } else {
       setErrorvalid(errorupdate);
     }
-    if (!profileImg) {
-      setErrormessg("Please select an image first.");
-      return;
-    }
     
-    const formData = new FormData();
+    if(profileImg){
+
+       const formData = new FormData();
     formData.append('profileImg', profileImg);
   
     dispatch(UpdateUserimgeApi(formData)).then((res) => {
@@ -180,6 +178,8 @@ const Profile_sec = () => {
         setErrormessg(res.payload?.message);
       }
     });
+    }
+   
   };
 
   return (
@@ -368,7 +368,17 @@ const Profile_sec = () => {
                           closeMenuOnSelect={false}
                           components={animatedComponents}
                           isMulti
-                          //value={categoryoption.filter(option => userdata?.interestedCategory?.id && option.value === userdata?.interestedCategory?.id)} // Filter selected option based on userdata
+                          value={
+                            Array.isArray(userdata?.interestedCategory)
+                              ? categoryoption.filter(option =>
+                                  userdata.interestedCategory.some(data =>
+                                    typeof data === "object" && data?.id // Check if `data` is an object with an `id` property
+                                      ? data.id === option.value // Match the `id` with `option.value`
+                                      : data === option.value // If not an object, check directly for string match
+                                  )
+                                )
+                              : []
+                          }// Filter selected option based on userdata
                           name="interestedCategory"
                           options={categoryoption}
                           onChange={(selectedOptions) => {
@@ -394,7 +404,7 @@ const Profile_sec = () => {
                         {errorvalid?.interestedCategory && (
                           <>
                             <div class="invalid-feedback">
-                              {errorvalid?.name}
+                              {errorvalid?.interestedCategory}
                             </div>
                           </>
                         )}

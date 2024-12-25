@@ -49,7 +49,7 @@ const Mylibrary = () => {
       </div>
       {loading !== 'loading' ?(<>
       
-      {orders.length !== 0 ?(<>
+      {loading !== 'failed' && orders.length !== 0 ?(<>
       
       <div className="row">
       {orders?.map((data) => 
@@ -103,11 +103,7 @@ const Mylibrary = () => {
       </div>
       </>):(<>
         
-        <div className="d-flex align-items-center justify-content-center vh-100">
-            <div className="spinner-border text-secondary" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-          </div>
+        <Notfound/>
       </>)}
       
       

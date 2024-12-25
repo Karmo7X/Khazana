@@ -36,7 +36,7 @@ const Categoryslice = createSlice({
         state.data = action.payload;
       })
       .addCase(GetCategoryApi.rejected, (state) => {
-        state.status = "failed";
+        state.status = "";
       });
   },
 });

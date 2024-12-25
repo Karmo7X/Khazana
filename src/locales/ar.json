@@ -255,6 +255,10 @@
         "notes": "ملاحظات"
       },
       "submit_button": "ارسال الطلب"
+    },
+    "subscription": {
+      "creative_title": "خطة الاشتراك الحصرية",
+      "title": "باقتي"
     }
   },
   "my_library": {
@@ -333,7 +337,15 @@
     "plural": ""
   },
   "subcription_title": {
-    "choosePlan": "اختر خطة مناسبة لهدفك"
+    "choosePlan": "اختر خطة مناسبة لهدفك",
+    "cancel_subscription": {
+      "title": "إلغاء الاشتراك",
+      "description": "هل أنت متأكد أنك تريد إلغاء اشتراكك؟ ستفقد الوصول إلى الميزات المميزة.",
+      "confirm_button": "نعم، إلغاء",
+      "cancel_button": "لا، الاحتفاظ بالاشتراك",
+      "success_message": "تم إلغاء اشتراكك بنجاح.",
+      "error_message": "حدث خطأ أثناء إلغاء اشتراكك. يرجى المحاولة مرة أخرى."
+    }
   },
   "notfoundmessage": {
     "notFound": "لايوجد بيانات حاليا"
@@ -351,7 +363,9 @@
     "read_books": "الكتب المقروءة",
     "audiobooks": "الكتب المسموعة"
   },
-  "books": "الكتب"
+  "books": "الكتب",
+  "buyPhysicalBook": "شراء كتاب ورقي",
+  "buyPdf": "شراء PDF"
   },
   "cart":{
     "product": "المنتج",

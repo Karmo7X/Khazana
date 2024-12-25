@@ -13,6 +13,7 @@ import RegisterAuthor from "../../components/Usersections/RegisterAuthor";
 import Profile_sec from "../../components/Usersections/profile_sec";
 import Changepass from "../../components/Usersections/Changepass";
 import Address from "../../components/Usersections/Address";
+import Usersubscriptions from "../../components/Usersections/usersubscriptions";
 
 const Profile = () => {
   const { t, i18n } = useTranslation();
@@ -51,6 +52,7 @@ const Profile = () => {
               <Tab label={t("global.profile.my_library")} value="4"/>
               <Tab label={t("global.profile.address.title")} value="5"/>
               <Tab label={t("global.profile.changePassword")} value="6"/>
+              <Tab label={t("global.profile.subscription.title")} value="7"/>
             </TabList>
           </Box>
           <TabPanel value="1">
@@ -66,6 +68,9 @@ const Profile = () => {
           </TabPanel>
           <TabPanel value="6">
             <Changepass/>
+          </TabPanel>
+          <TabPanel value="7">
+            <Usersubscriptions/>
           </TabPanel>
         </TabContext>
       </Box>

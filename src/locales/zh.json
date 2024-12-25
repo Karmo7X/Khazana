@@ -244,16 +244,20 @@
       "submit_button": "提交请求"
     },
     "register_author": {
-    "form_title": "注册新作者",
-    "fields": {
-      "author_name": "作者/调查员姓名",
-      "gender": "性别",
-      "birth_date": "出生日期",
-      "previous_works": "过往作品",
-      "notes": "备注"
+      "form_title": "注册新作者",
+      "fields": {
+        "author_name": "作者/调查员姓名",
+        "gender": "性别",
+        "birth_date": "出生日期",
+        "previous_works": "过往作品",
+        "notes": "备注"
+      },
+      "submit_button": "提交请求"
     },
-    "submit_button": "提交请求"
-  }
+    "subscription": {
+      "creative_title": "我的订阅",
+      "title": "我的计划"
+    }
   },
   "my_library": {
     "read": "阅读"
@@ -302,7 +306,7 @@
     },
     "interestedCategory": {
       "required": "感兴趣的类别是必填项"
-    }, 
+    },
     "genderRequired": {
       "required": "性别是必需的"
     },
@@ -331,7 +335,15 @@
     "plural": ""
   },
   "subcription_title": {
-    "choosePlan": "选择适合您目标的计划"
+    "choosePlan": "选择适合您目标的计划",
+    "cancel_subscription": {
+    "title": "取消订阅",
+    "description": "您确定要取消订阅吗？您将失去对高级功能的访问权限。",
+    "confirm_button": "是的，取消",
+    "cancel_button": "不，保留订阅",
+    "success_message": "您的订阅已成功取消。",
+    "error_message": "取消订阅时发生错误。请再试一次。"
+  }
   },
   "notfoundmessage": {
     "notFound": "目前没有数据"
@@ -341,26 +353,28 @@
     "available_paper": "可用纸张",
     "available_pdf": "可用PDF",
     "tabs": {
-    "description": "描述",
-    "additional_information": "附加信息",
-    "reviews": "评论 "
+      "description": "描述",
+      "additional_information": "附加信息",
+      "reviews": "评论 "
+    },
+    "filter": {
+      "read_books": "已读书籍",
+      "audiobooks": "有声书"
+    },
+    "books": "书籍",
+    "buyPhysicalBook": "购买纸质书",
+    "buyPdf": "购买PDF"
   },
-  "filter": {
-    "read_books": "已读书籍",
-    "audiobooks": "有声书"
-  },
-  "books": "书籍"
-},
-"cart":{
-  "product": "产品",
-  "price": "价格",
-  "quantity": "数量",
-  "subtotal": "小计",
-  "total": "总计",
-  "shipping": "运输",
-  "proceed_to_checkout": "前往结账",
-  "clear_cart": "清空购物车",
-  "pdf_price": "PDF价格",
-  "paper_price": "纸质价格"
-}
+  "cart": {
+    "product": "产品",
+    "price": "价格",
+    "quantity": "数量",
+    "subtotal": "小计",
+    "total": "总计",
+    "shipping": "运输",
+    "proceed_to_checkout": "前往结账",
+    "clear_cart": "清空购物车",
+    "pdf_price": "PDF价格",
+    "paper_price": "纸质价格"
+  }
 }

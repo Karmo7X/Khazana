@@ -14,29 +14,75 @@ import { useDispatch, useSelector } from "react-redux";
 import { GetProductApi, GetProductdetailsApi } from "../../Api/Product/Product";
 import Notfound from "../../components/Notfound/Notfound";
 import Wishlistcomponent from "../../components/wishlist/Wishlistcomponent";
-import bookundefine from '../../../public/assets/img/bookundefine.jpg'
+import bookundefine from "../../../public/assets/img/bookundefine.jpg";
+import { AddCartItemApi, GetCartApi } from "../../Api/Cart/CartSlice";
 const SingleProduct = () => {
   const { t, i18n } = useTranslation();
- 
+
   const { id } = useParams();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.product.status);
   const [book, setbook] = useState([]);
-  const [books ,setBooks]=useState([])
-  
+  const [books, setBooks] = useState([]);
+  const [buybookdata, setBuybookdata] = useState({
+    productId: id,
+    isAvailablePdf: false,
+    isAvailablePaper: false,
+  });
+  const [errormessg, setErrormessg] = useState(null);
+  const [successmessage, setSuccessmessage] = useState(null);
+  const handleChange = (e) => {
+    const { name, checked } = e.target;
+
+    setBuybookdata((prevState) => {
+      if (name === "isAvailablePdf" && checked) {
+        // If PDF is checked, uncheck the paper version
+        return {
+          ...prevState,
+          isAvailablePdf: true,
+          isAvailablePaper: false, // Ensure paper is false
+        };
+      } else if (name === "isAvailablePaper" && checked) {
+        // If paper is checked, uncheck the PDF version
+        return {
+          ...prevState,
+          isAvailablePdf: false, // Ensure PDF is false
+          isAvailablePaper: true,
+        };
+      }
+      return prevState;
+    });
+
+    dispatch(AddCartItemApi(buybookdata)).then((res) => {
+      if (res.payload?.code === 201) {
+        setSuccessmessage(res.payload?.message);
+        setErrormessg(null);
+        setTimeout(() => {
+          setSuccessmessage(null);
+        }, 2000);
+        dispatch(GetCartApi())
+      } else {
+        setSuccessmessage(null);
+        setErrormessg(res.payload?.message);
+        setTimeout(() => {
+          setErrormessg(null);
+        }, 2000);
+      }
+    });
+  };
   useEffect(() => {
     dispatch(GetProductdetailsApi(id)).then((res) => {
       if (res.payload?.code === 200) {
         setbook(res.payload?.data?.product);
       }
     });
-    dispatch(GetProductApi()).then((res)=>{
-        if(res.payload?.code === 200){
-          setBooks(res.payload?.data?.products)
-        }
-       })
+    dispatch(GetProductApi()).then((res) => {
+      if (res.payload?.code === 200) {
+        setBooks(res.payload?.data?.products);
+      }
+    });
   }, [id]);
-
+  
   return (
     <div>
       {/* <!-- breadcumb Section Start --> */}
@@ -64,7 +110,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
-      {loading === "loading" ? (
+      {loading === "loading"  ? (
         <div className="d-flex align-items-center justify-content-center vh-100">
           <div className="spinner-border text-secondary" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -72,12 +118,14 @@ const SingleProduct = () => {
         </div>
       ) : (
         <>
-          {book.length === 0 ? (
+          {loading === "failed"   ? (
             <>
               <Notfound />
             </>
           ) : (
             <>
+           
+             
               {/* <!-- Shop Details Section Start --> */}
               <section class="shop-details-section fix section-padding">
                 <div class="container">
@@ -88,7 +136,14 @@ const SingleProduct = () => {
                           <div class="tab-content">
                             <div id="thumb1" class="tab-pane fade show active">
                               <div class="shop-details-thumb">
-                                <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt="img" />
+                                <img
+                                  src={
+                                    book?.coverImage
+                                      ? book?.coverImage
+                                      : bookundefine
+                                  }
+                                  alt="img"
+                                />
                               </div>
                             </div>
                           </div>
@@ -96,10 +151,38 @@ const SingleProduct = () => {
                       </div>
                       <div class="col-lg-7">
                         <div class="shop-details-content">
-                          <div class="title-wrapper">
+                          <div class="title-wrapper d-flex ">
                             <h2>{book?.title}</h2>
                             {/* <h5>Stock availability.</h5> */}
+                            <div>
+                          <div className=" mt-3 d-flex align-items-center justify-content-end ">
+              {successmessage && (
+                <>
+                  <div
+                className={`alert alert-success d-flex align-items-center gap-3  `}
+                    role="alert"
+                  >
+                       <i class="fas fa-check-circle message-icon"></i>
+                    <div>{successmessage}</div>
+                  </div>
+                </>
+              )}
+
+              {errormessg && (
+                <>
+                  <div
+                    className={`alert alert-danger d-flex align-items-center gap-3 `}
+                    role="alert"
+                  >
+                    <i class="fas fa-times-circle message-icon"></i>
+                    <div>{errormessg}</div>
+                  </div>
+                </>
+              )} 
                           </div>
+                          </div>
+                          </div>
+                          
                           <ul className="post-box d-flex gap-2 ">
                             {book?.isAvailablePdf === true ? (
                               <li className="fw-bold mt-3">
@@ -126,7 +209,7 @@ const SingleProduct = () => {
                                 ></i>
                               ))}
                           </div>
-                          <p>{book?.description.slice(0,100)}...</p>
+                          <p>{book?.description.slice(0, 100)}...</p>
                           <div class="price-list d-flex gap-3">
                             <h3 className="fs-6">
                               {t("global.currency.pdf")} {book?.pricePdf}
@@ -242,10 +325,56 @@ const SingleProduct = () => {
                                 </div>
                               </div>
                             </div>
-                            <a href="/Cart" class="theme-btn">
-                              <i class="fa-solid fa-basket-shopping"></i>{" "}
-                              {t("global.add_to_cart")}
-                            </a>
+                            {book?.isAvailablePdf === true ? (
+                              <div className="form-check ">
+                                <input
+                                  className="form-check-input radio-button"
+                                  type="checkbox"
+                                  name="isAvailablePdf"
+                                  id="flexRadioDefault1"
+                                  checked={buybookdata.isAvailablePdf}
+                                  onChange={handleChange}
+                                />
+                                <label
+                                  htmlFor="flexRadioDefault1"
+                                  className="form-check-label theme-btn"
+                                  style={{
+                                    background: buybookdata.isAvailablePdf
+                                      ? "#ffc900"
+                                      : "",
+                                  }}
+                                >
+                                  <i className="fa-solid fa-file-pdf"></i>{" "}
+                                  {t("global.book_details.buyPdf")}
+                                </label>
+                              </div>
+                            ) : null}
+
+                            {book?.isAvailablePaper === true ? (
+                              <div className="form-check ">
+                                <input
+                                  className="form-check-input radio-button"
+                                  type="checkbox"
+                                  name="isAvailablePaper"
+                                  id="flexRadioDefault2"
+                                  checked={buybookdata.isAvailablePaper}
+                                  onChange={handleChange}
+                                />
+                                <label
+                                  htmlFor="flexRadioDefault2"
+                                  className="form-check-label theme-btn"
+                                  style={{
+                                    background: buybookdata.isAvailablePaper
+                                      ? "#ffc900"
+                                      : "",
+                                  }}
+                                >
+                                  <i className="fa-solid fa-book-open"></i>{" "}
+                                  {t("global.book_details.buyPhysicalBook")}
+                                </label>
+                              </div>
+                            ) : null}
+
                             <Wishlistcomponent
                               bookid={book?.id}
                               wishlist={book?.wishlist}
@@ -256,15 +385,24 @@ const SingleProduct = () => {
                             <div class="category-list">
                               <ul>
                                 <li>
-                                  <span>{t("global.book_details.category")}:</span> {book?.category}
+                                  <span>
+                                    {t("global.book_details.category")}:
+                                  </span>{" "}
+                                  {book?.category}
                                 </li>
                                 <li>
-                                  <span>{t("global.book_details.available_paper")}:</span>{" "}
-                                  {book?.isAvailablePaper}{t("global.book_details.available_paper")}
+                                  <span>
+                                    {t("global.book_details.available_paper")}:
+                                  </span>{" "}
+                                  {book?.isAvailablePaper}
+                                  {t("global.book_details.available_paper")}
                                 </li>
                                 <li>
-                                  <span>{t("global.book_details.available_pdf")}:</span>{" "}
-                                  {book?.isAvailablePdf}{t("global.book_details.available_pdf")}
+                                  <span>
+                                    {t("global.book_details.available_pdf")}:
+                                  </span>{" "}
+                                  {book?.isAvailablePdf}
+                                  {t("global.book_details.available_pdf")}
                                 </li>
                               </ul>
                               {/* <ul>
@@ -363,7 +501,7 @@ const SingleProduct = () => {
                             <h6>Additional Information </h6>
                           </a>
                         </li> */}
-                        <li class="nav-item" role="presentation">
+                        {/* <li class="nav-item" role="presentation">
                           <a
                             href="#review"
                             data-bs-toggle="tab"
@@ -374,7 +512,7 @@ const SingleProduct = () => {
                           >
                             <h6>{t("global.book_details.tabs.reviews")} (3)</h6>
                           </a>
-                        </li>
+                        </li> */}
                       </ul>
                       <div class="tab-content">
                         <div
@@ -383,9 +521,7 @@ const SingleProduct = () => {
                           role="tabpanel"
                         >
                           <div class="description-items">
-                            <p>
-                            {book?.description}
-                            </p>
+                            <p>{book?.description}</p>
                           </div>
                         </div>
                         <div
@@ -598,56 +734,100 @@ const SingleProduct = () => {
                       },
                     }}
                   >
-                    {books.filter(book => book?.category && book.category.trim() !== "").map((book,idx) => (
-                   <SwiperSlide key={idx}>
-                   <div className="shop-box-items style-2" key={book?.id}>
-            <div className="book-thumb center">
-              <a href={`/Single/${book?.id}`}>
-                <img src={book?.coverImage  ? book?.coverImage : bookundefine} alt={book?.title} />
-              </a>
-              <ul className="post-box">
-               {book?.isAvailablePdf  === true ?  <li>{t("global.currency.pdf")}</li>: null}
-                {book?.isAvailablePaper === true ?<li>{t("global.currency.paper")}</li>: null  }
-              </ul>
-              <Wishlistcomponent bookid={book?.id} wishlist={book?.wishlist}/>
-            </div>
-            <div className="shop-content">
-              <h5>{book?.category}</h5>
-              <h3>
-                <a href={`/Single/${book.id}`}>{book.title}</a>
-              </h3>
-              <ul className="price-list">
-              <li> {t("global.currency.pdf")} {book?.pricePdf}{t("global.currency.rs")}</li> <br/>
-              <li>{t("global.currency.paper")} {book.pricePaper}{t("global.currency.rs")} </li>
-              </ul>
-              <ul className="author-post">
-                <li className="authot-list">
-                  <span className="thumb">
-                    <img
-                      src={book?.author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}
-                      alt="img"
-                    />
-                  </span>
-                  <span className="content">{book?.author?.name}</span>
-                </li>
-                <div className="star">
-                          {Array(5).fill(book?.rate).map((_, starIndex) => (
-                            <i
-                              key={starIndex}
-                              className={starIndex < book?.rate ? "fa-solid fa-star" : "fa-regular fa-star"}
-                            ></i>
-                          ))}
-                        </div>
-              </ul>
-            </div>
-            <div className="shop-button">
-              <a href={`/Single/${book?.id}`} className="theme-btn">
-                <i className="fa-solid fa-basket-shopping"></i> {t("global.add_to_cart")}
-              </a>
-            </div>
-          </div>
-                 </SwiperSlide>
-                    ))}
+                    {books
+                      .filter(
+                        (book) => book?.category && book.category.trim() !== ""
+                      )
+                      .map((book, idx) => (
+                        <SwiperSlide key={idx}>
+                          <div
+                            className="shop-box-items style-2"
+                            key={book?.id}
+                          >
+                            <div className="book-thumb center">
+                              <a href={`/Single/${book?.id}`}>
+                                <img
+                                  src={
+                                    book?.coverImage
+                                      ? book?.coverImage
+                                      : bookundefine
+                                  }
+                                  alt={book?.title}
+                                />
+                              </a>
+                              <ul className="post-box">
+                                {book?.isAvailablePdf === true ? (
+                                  <li>{t("global.currency.pdf")}</li>
+                                ) : null}
+                                {book?.isAvailablePaper === true ? (
+                                  <li>{t("global.currency.paper")}</li>
+                                ) : null}
+                              </ul>
+                              <Wishlistcomponent
+                                bookid={book?.id}
+                                wishlist={book?.wishlist}
+                              />
+                            </div>
+                            <div className="shop-content">
+                              <h5>{book?.category}</h5>
+                              <h3>
+                                <a href={`/Single/${book.id}`}>{book.title}</a>
+                              </h3>
+                              <ul className="price-list">
+                                <li>
+                                  {" "}
+                                  {t("global.currency.pdf")} {book?.pricePdf}
+                                  {t("global.currency.rs")}
+                                </li>{" "}
+                                <br />
+                                <li>
+                                  {t("global.currency.paper")} {book.pricePaper}
+                                  {t("global.currency.rs")}{" "}
+                                </li>
+                              </ul>
+                              <ul className="author-post">
+                                <li className="authot-list">
+                                  <span className="thumb">
+                                    <img
+                                      src={
+                                        book?.author?.profileImg ||
+                                        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                                      }
+                                      alt="img"
+                                    />
+                                  </span>
+                                  <span className="content">
+                                    {book?.author?.name}
+                                  </span>
+                                </li>
+                                <div className="star">
+                                  {Array(5)
+                                    .fill(book?.rate)
+                                    .map((_, starIndex) => (
+                                      <i
+                                        key={starIndex}
+                                        className={
+                                          starIndex < book?.rate
+                                            ? "fa-solid fa-star"
+                                            : "fa-regular fa-star"
+                                        }
+                                      ></i>
+                                    ))}
+                                </div>
+                              </ul>
+                            </div>
+                            <div className="shop-button">
+                              <a
+                                href={`/Single/${book?.id}`}
+                                className="theme-btn"
+                              >
+                                <i className="fa-solid fa-basket-shopping"></i>{" "}
+                                {t("global.add_to_cart")}
+                              </a>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      ))}
                   </Swiper>
                 </div>
               </section>

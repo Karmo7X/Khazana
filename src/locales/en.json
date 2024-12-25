@@ -253,6 +253,10 @@
         "notes": "Notes"
       },
       "submit_button": "Submit Request"
+    },
+    "subscription": {
+      "creative_title": "My Subscription",
+      "title": "My Plan"
     }
   },
   "my_library": {
@@ -332,7 +336,15 @@
     "plural": "s"
   },
   "subcription_title": {
-    "choosePlan": "Choose a plan that suits your goal"
+    "choosePlan": "Choose a plan that suits your goal",
+    "cancel_subscription": {
+    "title": "Cancel Subscription",
+    "description": "Are you sure you want to cancel your subscription? You will lose access to premium features.",
+    "confirm_button": "Yes, Cancel",
+    "cancel_button": "No, Keep Subscription",
+    "success_message": "Your subscription has been successfully canceled.",
+    "error_message": "An error occurred while canceling your subscription. Please try again."
+  }
   },
   "notfoundmessage": {
     "notFound": "No data available currently"
@@ -350,7 +362,10 @@
     "read_books": "Read Books",
     "audiobooks": "Audiobooks"
   },
-  "books": "Books"
+  "books": "Books",
+  "buyPhysicalBook": "Buy a Physical Book",
+  "buyPdf": "Buy PDF"
+  
 },
 "cart":{
   "product": "Product",
