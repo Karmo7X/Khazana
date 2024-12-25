@@ -95,7 +95,7 @@ const Cart = () => {
                 </>
               ) : (
                 <>
-                  {loading === "failed" && cartItems?.length === 0 ? (
+                  {loading === "failed" && cartItems.length === 0 ? (
                     <>
                       <div className="col-xl-9">
                         <Notfound />
@@ -117,7 +117,7 @@ const Cart = () => {
                               </tr>
                             </thead>
                             <tbody>
-                              {cartItems.map((book, idx) => {
+                              {cartItems?.map((book, idx) => {
                                 return (
                                   <>
                                     <tr key={idx}>

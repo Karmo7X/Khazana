@@ -194,6 +194,20 @@ export const GetUserApi = createAsyncThunk("User/get", async () => {
     }
   });
 
+  export const GetUserOrderApi = createAsyncThunk("User/My-Library/get", async () => {
+    try {
+      const res = await axios.get(`${baseurl}/order/my`, {
+        headers: {
+          lang: lang,
+          'Authorization':`Bearer ${token}`
+        },
+      });
+  
+      return res.data;
+    } catch (err) {
+      console.error(err.response.data);
+    }
+  });
 
 const Userslice = createSlice({
   name: "cate",
