@@ -7,6 +7,7 @@ import { baseurl, lang ,token} from "../../global";
 const initialState = {
     data: null,
     status: false,
+    checkoutstatus: false
   };
   
 
@@ -72,7 +73,22 @@ const initialState = {
   });
 
 
-
+  export const CheckoutApi = createAsyncThunk("Cart/checkout", async (data) => {
+    try {
+      const res = await axios.post(`${baseurl}/order/cash/${data?.cartId}`,data, {
+        headers: {
+          lang: lang,
+         'Authorization':`Bearer ${token}`,
+        },
+        
+      });
+  
+      return res.data;
+    } catch (err) {
+      console.error(err.response.data);
+      return err.response.data
+    }
+  });
 
 
 const Cartslice = createSlice({
@@ -120,6 +136,16 @@ const Cartslice = createSlice({
       })
       .addCase(AddCartItemApi.rejected, (state) => {
         state.status = "failed";
+      })
+      .addCase(CheckoutApi.pending, (state) => {
+        state.checkoutstatus = "loading";
+      })
+      .addCase(CheckoutApi.fulfilled, (state, action) => {
+        state.checkoutstatus = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(CheckoutApi.rejected, (state) => {
+        state.checkoutstatus = "failed";
       })
       ;
   },

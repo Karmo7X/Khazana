@@ -257,6 +257,18 @@
     "subscription": {
       "creative_title": "My Subscription",
       "title": "My Plan"
+    },
+    "order": {
+      "title": "My Order", 
+      "total": "Total Amount",
+      "amount": "400.00 SAR",
+      "date": "August 31, 2023",
+      "orderId": "Order Number",
+      "orderNumber": "898522",
+      "product": "Medicine and Medicine for Ibn Qayyim",
+      "coupon": "Coupon",
+      "delivery": "Delivery",
+      "more": "More"
     }
   },
   "my_library": {
@@ -378,5 +390,61 @@
   "clear_cart": "Clear Cart",
   "pdf_price": "PDF Price",
   "paper_price": "Paper Price"
+},
+"filter": {
+    "label": "Filter By",
+     "result": "Showing 1-3 Of 34 Results",
+     "search": "Search Word",
+    "category": "Category",
+    "status": "Product Status",
+    "price": "Filter By Price",
+    "min": "min",
+    "max": "max",
+    "options": {
+      "default": "-- Select Filter --",
+      "recently_featured": "Recently or Featured",
+      "top_sales_pdf": "Top Sales: PDF",
+      "top_sales_paper": "Top Sales: Paper",
+      "top_rating": "Top Rating"
+    }
+  },
+  "author_details":{
+   "header": "About the Author",
+  "authorInfo": {
+    "phone": "Phone",
+    "birthday": "Birthday"
+  },
+  "featuredWorks": "Featured Works",
+  "previousWorks": "Previous Works"
+},
+"rate":{
+ "rate_product": "Rate the product",
+  "please_rate": "Please rate the product",
+  "write_comment": "Write a comment",
+  "submit_rating": "Submit Rating"
+},
+"checkout":{
+  "breadcrumb": {
+    "heading": "Checkout",
+    "home": "Home",
+    "current": "Checkout"
+  },
+  "checkoutSection": {
+    "orderTitle": "Your Order",
+    "product": "Product",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "freeShipping": "Free Shipping",
+    "chooseAsShippingAddress": "Choose as Shipping Address",
+    "localShipping": "Local: ",
+    "flatRate": "Flat rate: ",
+    "total": "Total",
+    "paymentMethods": {
+      "bankTransfer": "Direct bank transfer",
+      "cashOnDelivery": "Cash on delivery",
+     "visaOrCard": "Visa or Card"
+    },
+    "paymentNote": "Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account."
+  }
 }
 }

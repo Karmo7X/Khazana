@@ -21,7 +21,7 @@ const Subcription = () => {
   const handleAddSubcription=(subId)=>{
     setsubcriptionid(subId)
   dispatch(AddsubscriptionApi(subId)).then((res)=>{
-    if (res.payload?.code === 201) {
+    if (res.payload?.code === 200) {
       setSuccessmessage(res.payload?.message);
       setErrormessg(null);
       setTimeout(() => {

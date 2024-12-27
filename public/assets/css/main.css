@@ -2928,6 +2928,7 @@ span {
   -moz-transform: translateY(-120%);
   -ms-transform: translateY(-120%);
   -o-transform: translateY(-120%);
+  z-index: 999;
 }
 .sticky-header .header-left .logo {
   margin-bottom: 0px;
@@ -6697,6 +6698,7 @@ span {
   display: flex;
   align-items: center;
   gap: 45px;
+  padding: 25px;
 }
 @media (max-width: 1399px) {
   .shop-default-wrapper .shop-list-items {
@@ -6711,9 +6713,11 @@ span {
   padding: 50px 95px;
   margin: 10px;
   position: relative;
+  max-width: 30%;
 }
 .shop-default-wrapper .shop-list-items .shop-list-thumb img {
   object-fit: cover;
+  width: 100%;
 }
 .shop-default-wrapper .shop-list-items .shop-list-thumb .post-box {
   position: absolute;

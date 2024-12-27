@@ -10,6 +10,9 @@ const Home = lazy(() => import("./pages/Home/Home"));
 const SingleProduct = lazy(() =>
   import("./pages/Single_Product/SingleProduct")
 );
+const SignleAuthor = lazy(() =>
+  import("./pages/SingleAuthor/SignleAuthor")
+);
 const Cart = lazy(() => import("./pages/cart/Cart"));
 const Wishlist = lazy(() => import("./pages/Wishlist/Wishlist"));
 const Checkout = lazy(() => import("./pages/Checkout/Checkout"));
@@ -75,6 +78,17 @@ function App() {
                
               }
             />
+             <Route
+              path="SingleAuthor/:id"
+              element={
+                
+                   <Suspense fallback={<Loader />}>
+                  <SignleAuthor />
+                </Suspense>
+                
+               
+              }
+            />
             <Route
               path="Profile"
               element={
@@ -107,7 +121,7 @@ function App() {
               }
             />
             <Route
-              path="Checkout"
+              path="Checkout/:id"
               element={
                 <ProtectedRoute>
                   {" "}

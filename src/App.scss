@@ -34,7 +34,9 @@
       float: right !important;
       margin-right: -1.5em !important;
   }
-  
+  // .cmn-btn{
+  //   left: -76% !important;
+  // }
 }
 
 
@@ -44,7 +46,12 @@
 .form-control.is-valid, .was-validated .form-control:valid{
     background-image: none;   
 }
+.cmn-btn{
+  right: 10px !important;
+  }
 
+
+ 
 
  // overlay for update image in profile
  .profile-image {
@@ -100,3 +107,10 @@
 .fade-message.show {
   opacity: 1;
 }
+
+.nice-select::after ,.nice-select:after{
+  left: 10px  !important;
+  right: 96%;
+  display: none !important;
+}
+

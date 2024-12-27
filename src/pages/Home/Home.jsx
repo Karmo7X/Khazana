@@ -136,7 +136,7 @@ const Home = () => {
     {/* <!-- Authors Section start  --> */}
     <Authors/>
 {/* <!-- Shop Section start  --> */}
-<Top_Books data={books}/>
+<Top_Books data={books.slice(0,20)}/>
      {/* <!-- Shop Section start  --> */}
     <section class="shop-section section-padding fix pt-0">
         <div class="container">
@@ -177,7 +177,7 @@ const Home = () => {
               }}
         >
             {/* Slide 1 */}
-            {books.map((book,idx)=>{
+            {books.slice(0,20).map((book,idx)=>{
                 return(<>
                  <SwiperSlide key={idx}>
                  <div className="shop-box-items style-2" key={book?.id}>
@@ -242,10 +242,10 @@ const Home = () => {
 
     {/* <!-- Cta Banner Section start  --> */}
     {/* <CTA/> */}
-    <Books_section data={books}/>
+    <Books_section data={books.slice(0,20)}/>
 
     {/* <!-- Top Ratting Book Section start  --> */}
-     <TopRate data={books}/>
+     <TopRate data={books.slice(0,20)}/>
 
     
     

@@ -39,7 +39,7 @@ const Contact = () => {
         <div class="container">
             <div class="contact-wrapper">
                 <div class="row g-4 align-items-center">
-                    <div class="col-lg-4">
+                    {/* <div class="col-lg-4">
                         <div class="contact-left-items">
                             <div class="contact-info-area-2">
                                 <div class="contact-info-items mb-4">
@@ -86,8 +86,8 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-8">
+                    </div> */}
+                    <div class="col-lg-12">
                         <div class="contact-content">
                             <h2>{t("global.contact.readyToStart")}</h2>
                             <p>
@@ -129,7 +129,7 @@ const Contact = () => {
     </section>
 
     {/* <!--<< Map Section Start >>--> */}
-    <div class="map-section">
+    {/* <div class="map-section">
         <div class="map-items">
             <div class="googpemap">
                 <iframe
@@ -137,7 +137,7 @@ const Contact = () => {
                     style={{border:'0'}} allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
-    </div>
+    </div> */}
     </>
   )
 }

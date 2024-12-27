@@ -258,14 +258,19 @@
     "subscription": {
     "creative_title": "Langganan Saya",
     "title": "Paket Saya",
-    "cancel_subscription": {
-      "title": "Batalkan Langganan",
-      "description": "Apakah Anda yakin ingin membatalkan langganan Anda? Anda akan kehilangan akses ke fitur premium.",
-      "confirm_button": "Ya, Batalkan",
-      "cancel_button": "Tidak, Pertahankan Langganan",
-      "success_message": "Langganan Anda berhasil dibatalkan.",
-      "error_message": "Terjadi kesalahan saat membatalkan langganan Anda. Silakan coba lagi."
-    }
+    
+    "order": {
+      "title": "Pesanan Saya", 
+    "total": "Total Pesanan",
+    "amount": "400.00 SAR",
+    "date": "31 Agustus 2023",
+    "orderId": "Nomor Pesanan",
+    "orderNumber": "898522",
+    "product": "Obat dan Obat untuk Ibn Qayyim",
+    "coupon": "Kupon",
+    "delivery": "Pengiriman",
+    "more": "Lebih"
+  }
   }
   },
   "my_library": {
@@ -347,7 +352,15 @@
   },
   "subcription_title": {
     "choosePlan": "Pilih rencana yang sesuai dengan tujuan Anda"
-  },
+  
+ , "cancel_subscription": {
+      "title": "Batalkan Langganan",
+      "description": "Apakah Anda yakin ingin membatalkan langganan Anda? Anda akan kehilangan akses ke fitur premium.",
+      "confirm_button": "Ya, Batalkan",
+      "cancel_button": "Tidak, Pertahankan Langganan",
+      "success_message": "Langganan Anda berhasil dibatalkan.",
+      "error_message": "Terjadi kesalahan saat membatalkan langganan Anda. Silakan coba lagi."
+    }},
   "notfoundmessage": {
     "notFound": "Saat ini tidak ada data"
   }, 
@@ -379,5 +392,61 @@
     "clear_cart": "Hapus Keranjang",
     "pdf_price": "Harga PDF",
     "paper_price": "Harga Kertas"
+  },
+  "filter": {
+    "label": "Filter Berdasarkan",
+    "result": "Menampilkan 1-3 Dari 34 Hasil",
+    "search": "Kata Kunci Pencarian",
+    "category": "Kategori",
+    "status": "Status Produk",
+    "price": "Filter Berdasarkan Harga",
+    "min": "min",
+    "max": "max",
+    "options": {
+      "default": "-- Pilih Filter --",
+      "recently_featured": "Terbaru atau Unggulan",
+      "top_sales_pdf": "Penjualan Terbaik: PDF",
+      "top_sales_paper": "Penjualan Terbaik: Kertas",
+      "top_rating": "Peringkat Teratas"
+    }
+  },
+  "author_details":{
+   "header": "Tentang Penulis",
+  "authorInfo": {
+    "phone": "Telepon",
+    "birthday": "Tanggal Lahir"
+  },
+  "featuredWorks": "Karya Unggulan",
+  "previousWorks": "Karya Sebelumnya"
+},
+"rate":{
+  "rate_product": "Beri peringkat produk ",
+  "please_rate": "Silakan beri peringkat produk",
+  "write_comment": "Tulis komentar",
+  "submit_rating": "Kirim Penilaian"
+},
+"checkout":{
+ "breadcrumb": {
+    "heading": "Pembayaran",
+    "home": "Beranda",
+    "current": "Pembayaran"
+  },
+  "checkoutSection": {
+    "orderTitle": "Pesanan Anda",
+    "product": "Produk",
+    "subtotal": "Subtotal",
+    "shipping": "Pengiriman",
+    "chooseAsShippingAddress": "Pilih sebagai Alamat Pengiriman",
+    "freeShipping": "Pengiriman Gratis",
+    "localShipping": "Lokal",
+    "flatRate": "Tarif tetap",
+    "total": "Total",
+    "paymentMethods": {
+      "bankTransfer": "Transfer bank langsung",
+      "cashOnDelivery": "Bayar di tempat",
+"visaOrCard": "Visa atau Kartu"
+    },
+    "paymentNote": "Lakukan pembayaran Anda langsung ke rekening bank kami. Gunakan ID Pesanan Anda sebagai referensi pembayaran. Pesanan Anda tidak akan dikirim sampai dana telah masuk ke rekening kami."
   }
+}
 }

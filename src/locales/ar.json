@@ -259,6 +259,18 @@
     "subscription": {
       "creative_title": "خطة الاشتراك الحصرية",
       "title": "باقتي"
+    },
+    "order": {
+      "title": "طلباتي", 
+      "total": "إجمالي الطلب",
+      "amount": "400.00 ريال",
+      "date": "31 أغسطس 2023",
+      "orderId": "رقم الطلب",
+      "orderNumber": "898522",
+      "product": "الدواء والدواء لابن القيم",
+      "coupon": "كوبون",
+      "delivery": "توصيل",
+      "more": "المزيد"
     }
   },
   "my_library": {
@@ -378,6 +390,62 @@
    "clear_cart": "مسح السلة",
   "pdf_price": "سعر PDF",
   "paper_price": "سعر الورق"
+  },
+  "filter": {
+    "label": "تصفية حسب",
+    "result": "عرض 1-3 من 34 نتيجة",
+    "search": "كلمة البحث",
+    "category": "الفئة",
+    "status": "حالة المنتج",
+    "min": "الحد الأدنى",
+    "max": "الحد الأقصى",
+    "price": "تصفية حسب السعر",
+    "options": {
+      "default": "-- اختر التصفية --",
+      "recently_featured": "الأحدث أو المميزة",
+      "top_sales_pdf": "الأكثر مبيعًا: PDF",
+      "top_sales_paper": "الأكثر مبيعًا: ورقي",
+      "top_rating": "أعلى تقييم"
+    }
+  },
+  "author_details":{
+    "header": "نبذة عن المؤلف",
+    "authorInfo": {
+      "phone": "الهاتف",
+      "birthday": "تاريخ الميلاد"
+    },
+    "featuredWorks": "أبرز الأعمال",
+    "previousWorks": "أعمال سابقة"
+  },
+  "rate":{
+    "rate_product": "تقييم المنتج",
+    "please_rate": "يرجى تقييم المنتج",
+    "write_comment": "كتابة تعليق",
+    "submit_rating": "ارسل التقييم"
+  },
+  "checkout":{
+ "breadcrumb": {
+    "heading": "الدفع",
+    "home": "الرئيسية",
+    "current": "الدفع"
+  },
+  "checkoutSection": {
+    "orderTitle": "طلبك",
+    "product": "المنتج",
+    "subtotal": "المجموع الفرعي",
+    "shipping": "الشحن",
+    "chooseAsShippingAddress": "اختيار كعنوان شحن",
+    "freeShipping": "شحن مجاني",
+    "localShipping": "محلي:  ",
+    "flatRate": "سعر ثابت:  ",
+    "total": "الإجمالي",
+    "paymentMethods": {
+      "bankTransfer": "التحويل البنكي المباشر",
+      "cashOnDelivery": "الدفع عند الاستلام",
+    "visaOrCard": "فيزا أو بطاقة"
+    },
+    "paymentNote": "قم بالدفع مباشرة إلى حسابنا المصرفي. يرجى استخدام رقم الطلب كمرجع للدفع. لن يتم شحن طلبك حتى يتم تسوية الأموال في حسابنا."
   }
+}
   
 }

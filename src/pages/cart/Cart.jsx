@@ -268,7 +268,7 @@ const Cart = () => {
                       </tr>
                     </tbody>
                   </table>
-                  <a href="Checkout" class="theme-btn">
+                  <a href={`Checkout/${cart?.id}`} class="theme-btn">
                     {t("global.cart.proceed_to_checkout")}
                   </a>
                 </div>

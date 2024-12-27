@@ -43,7 +43,58 @@ export const AddAuthorApi = createAsyncThunk("Author/AddAuthor", async (authorda
     return err.response.data
   }
 });
+export const GetAuthordetailsApi = createAsyncThunk("Author/getdetails", async (authorId) => {
+  try {
+    const res = await axios.get(`${baseurl}/author/${authorId}`, {
+      headers: {
+        lang: lang,
+      },
+    });
 
+    return res.data;
+  } catch (err) {
+    console.error(err.response.data);
+  }
+});
+export const GetAuthorproductsApi = createAsyncThunk("Author/getdetails", async (data) => {
+  try {
+   
+    let res;
+    const queryParams = [];
+  if(data){
+  // Add parameters only if they are defined
+    if (data?.pagenum) {
+      queryParams.push(`page=${data.pagenum}`);
+    }
+    queryParams.push(`limit=10`); // Always include limit
+
+   
+  }
+  
+
+    const queryString = queryParams.length > 0 ? `?${queryParams.join('&')}` : '';
+
+    if (token) {
+      res = await axios.get(`${baseurl}/product/authorProducts/${data?.id}${queryString}`, {
+        headers: {
+          lang: lang,
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    } else {
+      res = await axios.get(`${baseurl}/product/authorProducts/${data?.id}${queryString}`, {
+        headers: {
+          lang: lang,
+        },
+      });
+    }
+
+    
+    return res.data;
+  } catch (err) {
+    console.error(err.response.data);
+  }
+});
 
 
 const AuthorsSlice = createSlice({
@@ -70,6 +121,16 @@ const AuthorsSlice = createSlice({
         state.data = action.payload;
       })
       .addCase(AddAuthorApi.rejected, (state) => {
+        state.status = "failed";
+      })
+      .addCase(GetAuthordetailsApi.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(GetAuthordetailsApi.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(GetAuthordetailsApi.rejected, (state) => {
         state.status = "failed";
       });
   },

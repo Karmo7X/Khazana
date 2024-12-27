@@ -11,7 +11,11 @@ import "swiper/css/autoplay";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { GetProductApi, GetProductdetailsApi } from "../../Api/Product/Product";
+import {
+  GetProductApi,
+  GetProductdetailsApi,
+  RateProductApi,
+} from "../../Api/Product/Product";
 import Notfound from "../../components/Notfound/Notfound";
 import Wishlistcomponent from "../../components/wishlist/Wishlistcomponent";
 import bookundefine from "../../../public/assets/img/bookundefine.jpg";
@@ -22,6 +26,8 @@ const SingleProduct = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.product.status);
+  const loadingrate = useSelector((state) => state.product.statusrate);
+
   const [book, setbook] = useState([]);
   const [books, setBooks] = useState([]);
   const [buybookdata, setBuybookdata] = useState({
@@ -31,6 +37,57 @@ const SingleProduct = () => {
   });
   const [errormessg, setErrormessg] = useState(null);
   const [successmessage, setSuccessmessage] = useState(null);
+  const [errormessgrate, setErrormessgrate] = useState(null);
+  const [successmessagerate, setSuccessmessagerate] = useState(null);
+
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
+  const [comment, setComment] = useState("");
+
+  const handleRating = (index) => {
+    setRating(index);
+  };
+
+  const handleHover = (index) => {
+    setHover(index);
+  };
+
+  const handleSubmit = (e) => {
+    e.prevetDefault
+    const data = {
+      productId: id,
+      rating: rating,
+      comment: comment,
+    };
+
+    dispatch(RateProductApi(data)).then((res) => {
+      if (res.payload?.code === 200) {
+        setSuccessmessagerate(res.payload?.message);
+        setErrormessgrate(null);
+        dispatch(GetProductdetailsApi(id)).then((res) => {
+          if (res.payload?.code === 200) {
+            setbook(res.payload?.data?.product);
+          }
+        });
+        setRating(0)
+        setHover(0)
+        setComment('')
+        setTimeout(() => {
+          setSuccessmessagerate(null);
+        }, 2000);
+      } else {
+        setErrormessgrate(res.payload?.message);
+        setSuccessmessagerate(null);
+        setRating(0)
+        setHover(0)
+        setComment('')
+        setTimeout(() => {
+          setErrormessgrate(null);
+        }, 2000);
+      }
+    });
+  };
+
   const handleChange = (e) => {
     const { name, checked } = e.target;
 
@@ -57,10 +114,11 @@ const SingleProduct = () => {
       if (res.payload?.code === 201) {
         setSuccessmessage(res.payload?.message);
         setErrormessg(null);
+        
         setTimeout(() => {
           setSuccessmessage(null);
         }, 2000);
-        dispatch(GetCartApi())
+        dispatch(GetCartApi());
       } else {
         setSuccessmessage(null);
         setErrormessg(res.payload?.message);
@@ -82,7 +140,7 @@ const SingleProduct = () => {
       }
     });
   }, [id]);
-  
+
   return (
     <div>
       {/* <!-- breadcumb Section Start --> */}
@@ -110,7 +168,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
-      {loading === "loading"  ? (
+      {loading === "loading" ? (
         <div className="d-flex align-items-center justify-content-center vh-100">
           <div className="spinner-border text-secondary" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -118,14 +176,12 @@ const SingleProduct = () => {
         </div>
       ) : (
         <>
-          {loading === "failed"   ? (
+          {loading === "failed" ? (
             <>
               <Notfound />
             </>
           ) : (
             <>
-           
-             
               {/* <!-- Shop Details Section Start --> */}
               <section class="shop-details-section fix section-padding">
                 <div class="container">
@@ -143,6 +199,7 @@ const SingleProduct = () => {
                                       : bookundefine
                                   }
                                   alt="img"
+                                  style={{ width: "-webkit-fill-available" }}
                                 />
                               </div>
                             </div>
@@ -155,34 +212,34 @@ const SingleProduct = () => {
                             <h2>{book?.title}</h2>
                             {/* <h5>Stock availability.</h5> */}
                             <div>
-                          <div className=" mt-3 d-flex align-items-center justify-content-end ">
-              {successmessage && (
-                <>
-                  <div
-                className={`alert alert-success d-flex align-items-center gap-3  `}
-                    role="alert"
-                  >
-                       <i class="fas fa-check-circle message-icon"></i>
-                    <div>{successmessage}</div>
-                  </div>
-                </>
-              )}
+                              <div className=" mt-3 d-flex align-items-center justify-content-end ">
+                                {successmessage && (
+                                  <>
+                                    <div
+                                      className={`alert alert-success d-flex align-items-center gap-3  `}
+                                      role="alert"
+                                    >
+                                      <i class="fas fa-check-circle message-icon"></i>
+                                      <div>{successmessage}</div>
+                                    </div>
+                                  </>
+                                )}
 
-              {errormessg && (
-                <>
-                  <div
-                    className={`alert alert-danger d-flex align-items-center gap-3 `}
-                    role="alert"
-                  >
-                    <i class="fas fa-times-circle message-icon"></i>
-                    <div>{errormessg}</div>
-                  </div>
-                </>
-              )} 
+                                {errormessg && (
+                                  <>
+                                    <div
+                                      className={`alert alert-danger d-flex align-items-center gap-3 `}
+                                      role="alert"
+                                    >
+                                      <i class="fas fa-times-circle message-icon"></i>
+                                      <div>{errormessg}</div>
+                                    </div>
+                                  </>
+                                )}
+                              </div>
+                            </div>
                           </div>
-                          </div>
-                          </div>
-                          
+
                           <ul className="post-box d-flex gap-2 ">
                             {book?.isAvailablePdf === true ? (
                               <li className="fw-bold mt-3">
@@ -209,7 +266,7 @@ const SingleProduct = () => {
                                 ></i>
                               ))}
                           </div>
-                          <p>{book?.description.slice(0, 100)}...</p>
+                          <p>{book?.description?.slice(0, 100)}...</p>
                           <div class="price-list d-flex gap-3">
                             <h3 className="fs-6">
                               {t("global.currency.pdf")} {book?.pricePdf}
@@ -501,18 +558,26 @@ const SingleProduct = () => {
                             <h6>Additional Information </h6>
                           </a>
                         </li> */}
-                        {/* <li class="nav-item" role="presentation">
-                          <a
-                            href="#review"
-                            data-bs-toggle="tab"
-                            class="nav-link"
-                            aria-selected="false"
-                            tabindex="-1"
-                            role="tab"
-                          >
-                            <h6>{t("global.book_details.tabs.reviews")} (3)</h6>
-                          </a>
-                        </li> */}
+                        {Array.isArray(book?.comments) &&
+                          book?.comments.length > 0 && (
+                            <li class="nav-item" role="presentation">
+                              <a
+                                href="#review"
+                                data-bs-toggle="tab"
+                                class="nav-link"
+                                aria-selected="false"
+                                tabindex="-1"
+                                role="tab"
+                              >
+                                <h6>
+                                  {t("global.book_details.tabs.reviews")} (
+                                  {Array.isArray(book?.comments) &&
+                                    book?.comments.length}
+                                  )
+                                </h6>
+                              </a>
+                            </li>
+                          )}
                       </ul>
                       <div class="tab-content">
                         <div
@@ -573,117 +638,161 @@ const SingleProduct = () => {
                           </div>
                         </div>
                         <div id="review" class="tab-pane fade" role="tabpanel">
-                          <div class="review-items">
-                            <div class="review-wrap-area d-flex gap-4">
-                              <div class="review-thumb">
-                                <img
-                                  src="/assets/img/shop-details/review.png"
-                                  alt="img"
-                                />
-                              </div>
-                              <div class="review-content">
-                                <div class="head-area d-flex flex-wrap gap-2 align-items-center justify-content-between">
-                                  <div class="cont">
-                                    <h5>
-                                      <a href="news-details.html">
-                                        Leslie Alexander
-                                      </a>
-                                    </h5>
-                                    <span>Febr/uary 10, 2024 at 2:37 pm</span>
-                                  </div>
-                                  <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                  </div>
-                                </div>
-                                <p class="mt-30 mb-4">
-                                  Neque porro est qui dolorem ipsum quia quaed
-                                  inventor veritatis et quasi architecto var sed
-                                  efficitur turpis gilla sed sit amet finibus
-                                  eros. Lorem Ipsum is <br /> simply dummy
-                                </p>
-                              </div>
-                            </div>
-                            <div class="review-title mt-5 py-15 mb-30">
-                              <h4>Your Rating*</h4>
-                              <div class="rate-now d-flex align-items-center">
-                                <p>Your Rating*</p>
-                                <div class="star">
-                                  <i class="fa-light fa-star"></i>
-                                  <i class="fa-light fa-star"></i>
-                                  <i class="fa-light fa-star"></i>
-                                  <i class="fa-light fa-star"></i>
-                                  <i class="fa-light fa-star"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="review-form">
-                              <form action="#" id="contact-form" method="POST">
-                                <div class="row g-4">
-                                  <div class="col-lg-6">
-                                    <div class="form-clt">
-                                      <span>Your Name*</span>
-                                      <input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                        placeholder="Your Name"
-                                      />
+                          <div class="review-items " style={{
+                                        height:'400px',
+                                         padding:"10px 20px",
+                                        overflowY: "auto",
+                                      }}>
+                            {Array.isArray(book?.comments) &&
+                              book?.comments?.slice().reverse().map((data, idx) => {
+                                return (
+                                  <>
+                                    <div
+                                    key={idx}
+                                      class="review-wrap-area mt-4 d-flex gap-4"
+                                     
+                                    >
+                                      <div class="review-thumb">
+                                        <img
+                                          src={data?.user?.profileImg}
+                                          style={{
+                                            width: "96px",
+                                            height: "96px",
+                                          }}
+                                          alt="img"
+                                        />
+                                      </div>
+                                      <div class="review-content">
+                                        <div class="head-area d-flex flex-wrap gap-2 align-items-center justify-content-between">
+                                          <div class="cont">
+                                            <h5>
+                                              <a href="news-details.html">
+                                                {data?.user?.name}
+                                              </a>
+                                            </h5>
+                                            <span>
+                                              {" "}
+                                              {data?.date.split("T")[0]}
+                                            </span>
+                                          </div>
+                                          <div className="star">
+                                            {Array(5)
+                                              .fill(data?.rate)
+                                              .map((_, starIndex) => (
+                                                <i
+                                                  key={starIndex}
+                                                  className={
+                                                    starIndex < data?.rate
+                                                      ? "fa-solid fa-star"
+                                                      : "fa-regular fa-star"
+                                                  }
+                                                ></i>
+                                              ))}
+                                          </div>
+                                        </div>
+                                        <p class="mt-30 mb-4">
+                                          {data?.comment}
+                                        </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div class="col-lg-6">
-                                    <div class="form-clt">
-                                      <span>Your Email*</span>
-                                      <input
-                                        type="text"
-                                        name="email"
-                                        id="email"
-                                        placeholder="Your Email"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="col-lg-12 wow fadeInUp animated"
-                                    data-wow-delay=".8"
-                                  >
-                                    <div class="form-clt">
-                                      <span>Message*</span>
-                                      <textarea
-                                        name="message"
-                                        id="message"
-                                        placeholder="Write Message"
-                                      ></textarea>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="col-lg-12 wow fadeInUp animated"
-                                    data-wow-delay=".9"
-                                  >
-                                    <div class="form-check d-flex gap-2 from-customradio">
-                                      <input
-                                        type="checkbox"
-                                        class="form-check-input"
-                                        name="flexRadioDefault"
-                                        id="flexRadioDefault12"
-                                      />
-                                      <label
-                                        class="form-check-label"
-                                        for="flexRadioDefault12"
-                                      >
-                                        i accept your terms & conditions
-                                      </label>
-                                    </div>
-                                    <button type="submit" class="theme-btn">
-                                      Submit now
-                                    </button>
-                                  </div>
-                                </div>
-                              </form>
-                            </div>
+                                  </>
+                                );
+                              })}
+
+                           
                           </div>
+                          <div className="container text-center mt-3 my-4">
+                              <h4 className="fw-bold mb-3">
+                                {t("global.rate.rate_product")} ({book?.title})
+                              </h4>
+                              <h5 className="text-muted d-flex justify-content-start mb-5">
+                                {t("global.rate.please_rate")}{" "}
+                              </h5>
+
+                              {/* Star Rating */}
+                              <div className="d-flex justify-content-start mb-3">
+                                {[...Array(5)].map((_, index) => {
+                                  const starIndex = index + 1;
+                                  return (
+                                    <span
+                                      key={index}
+                                      className={`fa fa-star ${
+                                        starIndex <= (hover || rating)
+                                          ? "text-warning"
+                                          : "text-muted"
+                                      }`}
+                                      style={{
+                                        cursor: "pointer",
+                                        fontSize: "24px",
+                                      }}
+                                      onClick={() => handleRating(starIndex)}
+                                      onMouseEnter={() =>
+                                        handleHover(starIndex)
+                                      }
+                                      onMouseLeave={() => setHover(0)}
+                                    ></span>
+                                  );
+                                })}
+                              </div>
+
+                              {/* Comment Box */}
+                              <textarea
+                                className="form-control mb-3"
+                                style={{
+                                  height: "200px",
+                                  backgroundColor: "#FFF3E0",
+                                  resize: "none",
+                                }}
+                                placeholder={t("global.rate.write_comment")}
+                                rows={7}
+                                value={comment}
+                                onChange={(e) => setComment(e.target.value)}
+                              ></textarea>
+                              {successmessagerate && (
+                                <>
+                                  <div
+                                    className={`alert alert-success d-flex align-items-center gap-3  `}
+                                    role="alert"
+                                  >
+                                    <i class="fas fa-check-circle message-icon"></i>
+                                    <div>{successmessagerate}</div>
+                                  </div>
+                                </>
+                              )}
+
+                              {errormessgrate && (
+                                <>
+                                  <div
+                                    className={`alert alert-danger d-flex align-items-center gap-3 `}
+                                    role="alert"
+                                  >
+                                    <i class="fas fa-times-circle message-icon"></i>
+                                    <div>{errormessgrate}</div>
+                                  </div>
+                                </>
+                              )}
+                              {/* Submit Button */}
+                              <button
+                                className="btn theme-btn w-100"
+                                onClick={(e)=>handleSubmit(e)}
+                                style={{ borderRadius: "8px" }}
+                              >
+                                {loadingrate === "loading" ? (
+                                  <>
+                                    <div
+                                      class="spinner-border text-light"
+                                      role="status"
+                                    >
+                                      <span class="visually-hidden">
+                                        Loading...
+                                      </span>
+                                    </div>
+                                  </>
+                                ) : (
+                                  t("global.rate.submit_rating")
+                                )}
+                              </button>
+                            </div>
                         </div>
                       </div>
                     </div>

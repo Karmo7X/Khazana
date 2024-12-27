@@ -25,14 +25,17 @@ const Usersubscriptions = () => {
   useEffect(() => {
     setSubcription(subscrptionUser);
   }, [subscrptionUser]);
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return new Intl.DateTimeFormat("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }).format(date);
-  };
+  function formatDate(dateString) {
+    const parts = dateString.split(":");
+    const day = parseInt(parts[0]);
+    const month = parseInt(parts[1]);
+    const year = parseInt(parts[2]);
+  
+    const date = new Date(year, month - 1, day); 
+  
+    const formattedDate = date.toISOString().split('T')[0]; 
+    return formattedDate;
+  }
 
   const formatDuration = (days) => {
     if (days >= 365) {
@@ -89,7 +92,7 @@ const Usersubscriptions = () => {
             </>
           ) : (
             <>
-              {Object.keys(subcription).length !== 0 ? (
+              {subcription && Object.keys(subcription).length !== 0 ? (
                 <>
                   <h2 className="text-center mb-4">
                     {" "}
@@ -202,6 +205,22 @@ const Usersubscriptions = () => {
                             </p>
                           </div>
 
+                          {successmessage && (
+              <>
+                <div class="alert alert-success" role="alert">
+                  {successmessage}
+                </div>
+              </>
+            )}
+
+            {errormessg && (
+              <>
+                <div class="alert alert-danger" role="alert">
+                  {errormessg}
+                </div>
+              </>
+            )}
+
                           <div className="d-flex align-items-center justify-content-center gap-4">
                             <button
                               type="button"
@@ -216,7 +235,7 @@ const Usersubscriptions = () => {
                               type="button"
                               onClick={() => handleDeletesubcription(subcription?.subscriptionId)}
                               
-                              data-bs-dismiss={loading === "succeeded" ?"modal":""}
+                              {...(successmessage ? { "data-bs-dismiss": "modal" } : {})}
                               class="btn btn-danger"
                             >
                               {t(

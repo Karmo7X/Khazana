@@ -138,9 +138,9 @@ const Profile_sec = () => {
       );
     }
     // City validation
-    // if (!value.city) {
-    //   error.city = t("global.validation_message.city.required");
-    // }
+    if (!value.city) {
+      error.city = t("global.validation_message.city.required");
+    }
     return error;
   };
 
@@ -266,9 +266,7 @@ const Profile_sec = () => {
                         </label>
                         <input
                           type="text"
-                          className={` form-control  ${
-                            errorvalid?.name ? "is-invalid" : "is-valid"
-                          }`}
+                          className={`form-control `}
                           name="name"
                           value={userdata?.name}
                           onChange={(e) => {
@@ -319,9 +317,7 @@ const Profile_sec = () => {
                         <input
                           type="date"
                           name="birthday"
-                          className={` form-control  ${
-                            errorvalid?.birthday ? "is-invalid" : "is-valid"
-                          }`}
+                          className={` form-control`}
                           value={
                             userdata?.birthday
                               ? formatToYYYYMMDD(userdata.birthday)
@@ -342,21 +338,36 @@ const Profile_sec = () => {
                     </div>
                     <div className="col-lg-4 col-md-6 col-sm-12">
                       <div className="mb-3">
-                        <label className="form-label">
-                          {t("global.profile.form.city")}
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          // value={userdata?.city}
-                          name="city"
-                          value={"Jada"}
-                          readOnly
-                          onChange={(e) => {
-                            handleChange(e.target.name, e.target.value);
-                          }}
-                        />
-                      </div>
+                <label htmlFor="City" className="form-label"> {t("global.profile.form.city")}</label>
+                <select
+                  name="city"
+                  value={userdata?.city?.id}
+                  className={` form-select `}
+                  onChange={(e) => {
+                    handleChange(e.target.name, e.target.value);
+                  }}
+                  style={{ outline: "none", boxShadow: "none" }}
+                >
+                  <option selected value="">
+                    ......
+                  </option>
+                  {
+                    cities.map((data,idx)=>{
+                       return(<>
+                         <option key={idx} value={data?.id}>{data?.title}</option>
+                       
+                       
+                       </>)
+                    })
+                  }
+                 
+                </select>
+                {errorvalid?.city && (
+                  <>
+                    <div class="invalid-feedback">{errorvalid?.city}</div>
+                  </>
+                )}
+              </div>
                     </div>
                     <div className="col-lg-4 col-md-6 col-sm-12">
                       <div className="mb-3">

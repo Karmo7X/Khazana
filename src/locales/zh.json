@@ -257,7 +257,19 @@
     "subscription": {
       "creative_title": "我的订阅",
       "title": "我的计划"
-    }
+    },
+    "order": {
+    "title": "我的订单", 
+    "total": "订单总额",
+    "amount": "400.00 沙特里亚尔",
+    "date": "2023年8月31日",
+    "orderId": "订单号",
+    "orderNumber": "898522",
+    "product": "伊本·盖伊姆的药物和药物",
+    "coupon": "优惠券",
+    "delivery": "配送",
+    "more": "更多"
+  }
   },
   "my_library": {
     "read": "阅读"
@@ -376,5 +388,61 @@
     "clear_cart": "清空购物车",
     "pdf_price": "PDF价格",
     "paper_price": "纸质价格"
+  },
+  "filter": {
+    "label": "筛选依据",
+    "result": "显示 1-3 个结果，共 34 条",
+    "search": "搜索词",
+    "category": "类别",
+    "status": "产品状态",
+    "price": "按价格筛选",
+    "min": "最小值",
+    "max": "最大值",
+    "options": {
+      "default": "-- 选择筛选 --",
+      "recently_featured": "最近或精选",
+      "top_sales_pdf": "最畅销: PDF",
+      "top_sales_paper": "最畅销: 纸质",
+      "top_rating": "最高评分"
+    }
+  },
+  "author_details":{
+    "header": "关于作者",
+  "authorInfo": {
+    "phone": "电话",
+    "birthday": "生日"
+  },
+  "featuredWorks": "特色作品",
+  "previousWorks": "以往作品"
+},
+"rate":{
+  "rate_product": "评价产品",
+  "please_rate": "请评价产品",
+  "write_comment": "写评论",
+  "submit_rating": "提交评价"
+},
+"checkout":{
+  "breadcrumb": {
+    "heading": "结账",
+    "home": "首页",
+    "current": "结账"
+  },
+  "checkoutSection": {
+    "orderTitle": "您的订单",
+    "product": "产品",
+    "subtotal": "小计",
+    "shipping": "运费",
+    "chooseAsShippingAddress": "选择为送货地址",
+    "freeShipping": "免费送货",
+    "localShipping": "本地: ",
+    "flatRate": "固定费率: ",
+    "total": "总计",
+    "paymentMethods": {
+      "bankTransfer": "直接银行转账",
+      "cashOnDelivery": "货到付款",
+      "visaOrCard": "Visa 或卡"
+    },
+    "paymentNote": "请直接付款到我们的银行账户。请使用您的订单编号作为付款参考。您的订单将在资金入账后发货。"
   }
+}
 }

@@ -14,6 +14,7 @@ import Profile_sec from "../../components/Usersections/profile_sec";
 import Changepass from "../../components/Usersections/Changepass";
 import Address from "../../components/Usersections/Address";
 import Usersubscriptions from "../../components/Usersections/usersubscriptions";
+import Myorder from "../../components/Usersections/Myorder";
 
 const Profile = () => {
   const { t, i18n } = useTranslation();
@@ -53,6 +54,7 @@ const Profile = () => {
               <Tab label={t("global.profile.address.title")} value="5"/>
               <Tab label={t("global.profile.changePassword")} value="6"/>
               <Tab label={t("global.profile.subscription.title")} value="7"/>
+              <Tab label={t("global.profile.order.title")} value="8"/>
             </TabList>
           </Box>
           <TabPanel value="1">
@@ -71,6 +73,9 @@ const Profile = () => {
           </TabPanel>
           <TabPanel value="7">
             <Usersubscriptions/>
+          </TabPanel>
+          <TabPanel value="8">
+            <Myorder/>
           </TabPanel>
         </TabContext>
       </Box>

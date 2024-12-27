@@ -63,7 +63,7 @@ Description: Bookle - Book Store WooCommerce Html Template
         $(window).on('scroll', function () {
             const mainHeaderHeight = $('.header-main').outerHeight();
 
-            if ($(window).scrollTop() > mainHeaderHeight) {
+            if ($(window).scrollTop() >= 300) {
                 $('.sticky-header').css('transform', 'translateY(0)');
             } else {
                 $('.sticky-header').css('transform', 'translateY(-180%)');

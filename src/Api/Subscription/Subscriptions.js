@@ -53,7 +53,6 @@ export const UnsubscriptionApi = createAsyncThunk(
     try {
       const res = await axios.delete(
         `${baseurl}/user/subscribe/${subscriptionID}`,
-        {},
         {
           headers: {
             lang: lang,
