@@ -177,7 +177,7 @@ const Home = () => {
               }}
         >
             {/* Slide 1 */}
-            {books.slice(0,20).map((book,idx)=>{
+            {books.slice(0,8).map((book,idx)=>{
                 return(<>
                  <SwiperSlide key={idx}>
                  <div className="shop-box-items style-2" key={book?.id}>

@@ -34,9 +34,9 @@ const Login = ({ showmodal }) => {
     setFormdata({ ...formdata, [name]: value });
   };
 
-  useEffect(() => {
-    setShowLogin(showlogin);
-  }, [showlogin]);
+  // useEffect(() => {
+  //     (showlogin);
+  // }, [showlogin]);
   // for show register with button go to register
 
   const handleShowregister = () => {

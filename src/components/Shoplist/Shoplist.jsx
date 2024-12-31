@@ -31,10 +31,11 @@ const Shoplist = ({ data,onFilter }) => {
                     <img
                       src={book?.coverImage ? book?.coverImage : bookundefine}
                       alt={book?.title}
+                      style={{width:'200px',height:'300px',objectFit:'cover'}}
                     />
                   </div>
                   <div class="shop-list-content">
-                    <h3>
+                    <h3 style={{height:'50px'}}>
                       <a href={`/Single/${book?.id}`}>{book?.title}</a>
                     </h3>
                     <ul

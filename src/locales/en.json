@@ -406,7 +406,9 @@
       "top_sales_pdf": "Top Sales: PDF",
       "top_sales_paper": "Top Sales: Paper",
       "top_rating": "Top Rating"
-    }
+    },
+    "show_less":"Show less",
+    "show_more":"Show More"
   },
   "author_details":{
    "header": "About the Author",

@@ -31,7 +31,8 @@ Version: 1.0.0
 *** Testimonial   
 
 /*CSS Table Of Content Ends Here*/
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Moon+Dance&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
 :root {
   --body: #fff;
   --black: #000;
@@ -145,7 +146,7 @@ Version: 1.0.0
     Template Default Fonts & Fonts Styles
  ---------------------------------------------- */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "cairo", sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 28px;
@@ -6090,7 +6091,7 @@ span {
 }
  .top-ratting-box-items .book-thumb {
   background-color: var(--bg2);
-  max-width: 104px;
+  max-width: 300px;
   padding: 15px 20px;
   text-align: center;
   border-radius: 6px;

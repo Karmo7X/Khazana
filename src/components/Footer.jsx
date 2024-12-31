@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { GetCategoryApi } from '../Api/Category/CategorySlice';
+import { GetAboutApi } from '../Api/App/App';
 const Footer = () => {
   const { t } = useTranslation();  // Assuming you're using i18next
-
+  const dispatch = useDispatch();
+  const [category, setCategory] = useState([]);
+  const [about,setAbout]=useState()
+        // get category
+        useEffect(() => {
+          dispatch(GetCategoryApi()).then((res) => {
+            if (res.payload?.code === 200) {
+              setCategory(res.payload?.data?.categories);
+            }
+          });
+          dispatch(GetAboutApi()).then((res)=>{
+            if(res.payload?.code === 200 ){
+                setAbout(res.payload?.data?.aboutUs)
+            }
+           })
+        }, []);
+       
+          
 return (
   <footer className="footer-section footer-bg">
     <div className="container">
@@ -14,7 +34,7 @@ return (
           <div className="content">
             <p>{t('global.footer.footerCall')}</p>
             <h3>
-              <a href="tel:+966506300345">{t('global.footer.footerPhone')}</a>
+              <a href={`tel:${about?.phone}`}> {about?.phone}</a>
             </h3>
           </div>
         </div>
@@ -25,7 +45,7 @@ return (
           <div className="content">
             <p>{t('global.footer.footerEmail')}</p>
             <h3>
-              <a href="mailto:fa.kh.rj@khezanatalkutub.com">fa.kh.rj@khezanatalkutub.com</a>
+              <a  href={`mailto:${about?.email}`}>{about?.email}</a>
             </h3>
           </div>
         </div>
@@ -55,16 +75,16 @@ return (
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+          <div className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
             <div className="single-footer-widget">
               <div className="widget-head">
-                <a href="index.html">
+                <a href="/">
                   <img src="/assets/img/favicon.png" className="w-25" alt="logo-img" />
                 </a>
               </div>
               <div className="footer-content">
                 <p>
-                {t('global.footer.footercontent')}
+              {about?.footerDescription}
                 </p>
                 <div className="social-icon d-flex align-items-center">
                   <a href="https://www.facebook.com/share/19MFqsjLG8/?mibextid=LQQJ4d"><i className="fab fa-facebook-f"></i></a>
@@ -76,7 +96,7 @@ return (
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".4s">
+          <div className="col-xl-4 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".4s">
             <div className="single-footer-widget">
               <div className="widget-head">
                 <h3>{t('global.footer.footerCustomerSupport')}</h3>
@@ -89,20 +109,26 @@ return (
               </ul>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+          <div className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
             <div className="single-footer-widget">
               <div className="widget-head">
                 <h3>{t('global.footer.footerCategories')}</h3>
               </div>
               <ul className="list-area">
-                <li><a href="NovelBooks"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerNovelBooks')}</a></li>
-                <li><a href="PoetryBooks"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerPoetryBooks')}</a></li>
-                <li><a href="PoliticalBooks"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerPoliticalBooks')}</a></li>
-                <li><a href="HistoryBooks"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerHistoryBooks')}</a></li>
+                {category.length !== 0 && category.slice(0,4).map((cate)=>{
+                  return(<>
+                              <li key={cate?.id}><a href="/Shop"><i className="fa-solid fa-chevron-right"></i> {cate?.title}</a></li>
+  
+                  
+                  </>)
+                })
+                
+                }
+              
               </ul>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+          {/* <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
             <div className="single-footer-widget">
               <div className="widget-head">
                 <h3>{t('global.footer.footerNewsletter')}</h3>
@@ -115,7 +141,7 @@ return (
                 </form>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

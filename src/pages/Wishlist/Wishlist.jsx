@@ -73,7 +73,7 @@ const Wishlist = () => {
              <div className="shop-box-items style-2">
                         <div className="book-thumb center">
                             <a href={`/Single/${book?.id}`}>
-                                <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt="Book cover" />
+                                <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt="Book cover" style={{width:'200px',height:'300px',objectFit:'cover'}} />
                             </a>
                             <ul className="post-box">
                             {book?.isAvailablePdf  === true ?  <li>{t("global.currency.pdf")}</li>: null}
@@ -83,7 +83,7 @@ const Wishlist = () => {
                         </div>
                         <div className="shop-content">
                             <h5>{book?.category}</h5>
-                            <h3><a href="/Single/:id">{book?.title}</a></h3>
+                            <h3 style={{height:'50px'}}><a href="/Single/:id">{book?.title}</a></h3>
                             <ul className="price-list">
                             <li> {t("global.currency.pdf")} {book?.pricePdf}{t("global.currency.rs")}</li> <br/>
                             <li>{t("global.currency.paper")} {book.pricePaper}{t("global.currency.rs")} </li>
@@ -91,7 +91,7 @@ const Wishlist = () => {
                             <ul className="author-post">
                                 <li className="authot-list">
                                     <span className="thumb">
-                                    <img src={book?.author?.img} alt={book?.author?.name} />
+                                    <img style={{width:'30px'}} src={book?.author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} />
                                     </span>
                                     <span className="content fw-bold">{book?.author?.name}</span>
                                 </li>

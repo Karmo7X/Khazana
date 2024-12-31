@@ -22,7 +22,7 @@ const Top_Books = ({data}) => {
         </div>
         <div className="book-shop-wrapper">
             
-            {books.map((book,idx)=>{
+            {books.reverse().slice(0,5).map((book,idx)=>{
                     return(<>
                       <div className="shop-box-items style-2">
                      <div className="shop-box-items style-2">

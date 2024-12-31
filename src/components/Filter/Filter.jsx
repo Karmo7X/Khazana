@@ -101,6 +101,14 @@ function Filter({ onFilterchange }) {
       }    
     })
   }
+  const [visibleCount, setVisibleCount] = useState(4); // Number of items to show initially
+
+  const showMoreCategories = () => {
+    setVisibleCount((prevCount) => prevCount + 4); // Show 4 more items
+  };
+  const showlessCategories = () => {
+    setVisibleCount(4); // Show 4 more items
+  };
   return (
     <>
       <div
@@ -134,34 +142,33 @@ function Filter({ onFilterchange }) {
               <h5>{t("global.filter.category")}</h5>
             </div>
             <div className="categories-list">
-            <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  {category.map((category) => (
-    <li
-      className="nav-item"
-      role="presentation"
-      key={category?.id}
-    >
-      <input
-        type="radio"
-        className="radio-button"
-        id={`pills-${category?.title.toLowerCase().replace(/\s+/g, "-")}-tab`}
-        data-bs-toggle="pill"
-        data-bs-target={`#pills-${category?.title.toLowerCase().replace(/\s+/g, "-")}`}
-        name="category"
-        value={category?.id}
-        checked={formData.category === category?.id}
-        onChange={(e) => handleChange(e)}
-        style={{ background: formData.category === category?.id ? "#FFC900" : "" }}
-      />
-      <label
-        className="nav-link"
-        htmlFor={`pills-${category?.title.toLowerCase().replace(/\s+/g, "-")}-tab`}
-      >
-        {category?.title}
-      </label>
-    </li>
-  ))}
-</ul>
+              <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              {category.slice(0, visibleCount).map((cat) => (
+                <li className="nav-item" role="presentation" key={cat?.id}>
+                  <input
+                    type="radio"
+                    className="radio-button"
+                    id={`pills-${cat?.title.toLowerCase().replace(/\s+/g, "-")}-tab`}
+                    name="category"
+                    value={cat?.id}
+                    onChange={(e) => onFilterchange(e.target.value)}
+                  />
+                  <label
+                    className="nav-link"
+                    htmlFor={`pills-${cat?.title.toLowerCase().replace(/\s+/g, "-")}-tab`}
+                  >
+                    {cat?.title}
+                  </label>
+                </li>
+              ))}
+            </ul>
+            {visibleCount < category.length ? (
+              <button onClick={showMoreCategories} className="btn theme-btn" style={{padding:'10px 10px'}}>
+                {t("global.filter.show_more")}
+              </button>
+            ):( <button onClick={showlessCategories} className="btn theme-btn" style={{padding:'10px 10px'}}>
+              {t("global.filter.show_less")}
+            </button>)}
             </div>
           </div>
           <div className="single-sidebar-widget">

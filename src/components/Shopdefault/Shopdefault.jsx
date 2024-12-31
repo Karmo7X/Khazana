@@ -45,6 +45,7 @@ const Shopdefault = ({ data ,onFilter }) => {
                                     : bookundefine
                                 }
                                 alt="Book cover"
+                                style={{width:'200px',height:'300px',objectFit:'cover'}}
                               />
                             </a>
                             <ul className="post-box">
@@ -62,7 +63,7 @@ const Shopdefault = ({ data ,onFilter }) => {
                           </div>
                           <div className="shop-content">
                             <h5>{book?.category}</h5>
-                            <h3>
+                            <h3 style={{height:'50px'}} >
                               <a href={`/Single/${book?.id}`}>{book?.title}</a>
                             </h3>
                             <ul className="price-list">

@@ -142,6 +142,86 @@ const Navbar = () => {
               </div>
               <div className="mt-4 mb-3">
                 <ul>
+                <li class="list-inline-item text-dark dropdown notification-list hide-phone">
+                <a
+                  class="nav-link dropdown-toggle arrow-none waves-effect text-dark"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-haspopup="false"
+                  aria-expanded="false"
+                >
+                  {languageMap[selectedLanguage]}
+                  <img
+                    src="assets/images/flags/us_flag.jpg"
+                    class="ml-2"
+                    height="16"
+                    alt=""
+                  />
+                </a>
+                <div class="dropdown-menu text-dark dropdown-menu-right language-switch">
+                  <a
+                    class="dropdown-item text-dark"
+                    href="#"
+                    onClick={() => handleLanguageChange("ar")}
+                  >
+                    <img
+                      src="assets/images/flags/italy_flag.jpg"
+                      alt=""
+                      height="16"
+                    />
+                    <span style={{ color: "#000" }}>
+                      {" "}
+                      {t("global.nav.languages.ar")}{" "}
+                    </span>
+                  </a>
+                  <a
+                    class="dropdown-item text-dark"
+                    href="#"
+                    onClick={() => handleLanguageChange("en")}
+                  >
+                    <img
+                      src="assets/images/flags/italy_flag.jpg"
+                      alt=""
+                      height="16"
+                    />
+                    <span style={{ color: "#000" }}>
+                      {" "}
+                      {t("global.nav.languages.en")}{" "}
+                    </span>
+                  </a>
+                  <a
+                    class="dropdown-item text-dark"
+                    href="#"
+                    onClick={() => handleLanguageChange("zh")}
+                  >
+                    <img
+                      src="assets/images/flags/french_flag.jpg"
+                      alt=""
+                      height="16"
+                    />
+                    <span style={{ color: "#000" }}>
+                      {" "}
+                      {t("global.nav.languages.zh")}{" "}
+                    </span>
+                  </a>
+                  <a
+                    class="dropdown-item text-dark"
+                    href="#"
+                    onClick={() => handleLanguageChange("id")}
+                  >
+                    <img
+                      src="assets/images/flags/spain_flag.jpg"
+                      alt=""
+                      height="16"
+                    />
+                    <span style={{ color: "#000" }}>
+                      {" "}
+                      {t("global.nav.languages.id")}{" "}
+                    </span>
+                  </a>
+                </div>
+              </li>
                   <li>
                     <i class="fa-light fa-user"></i>
                     {token ? (
@@ -159,7 +239,7 @@ const Navbar = () => {
                             setShow(!show);
                             localStorage.setItem("showlogin", true);
                           }}
-                          data-bs-target="#loginModal"
+                          // data-bs-target="#loginModal"
                         >
                           {t("global.nav.login")}
                         </button>
@@ -349,7 +429,7 @@ const Navbar = () => {
                         setShow(!show);
                         localStorage.setItem("showlogin", true);
                       }}
-                      data-bs-target="#loginModal"
+                      // data-bs-target="#loginModal"
                     >
                       {t("global.nav.login")}
                     </button>
@@ -458,6 +538,7 @@ const Navbar = () => {
             transform: "translateY(-50%)",
             background: "none",
             border: "none",
+            margin:'0px -16px'
           }}
         >
           <i className="far fa-search"></i>
@@ -651,6 +732,7 @@ const Navbar = () => {
             transform: "translateY(-50%)",
             background: "none",
             border: "none",
+             margin:'0px -16px'
           }}
         >
           <i className="far fa-search"></i>

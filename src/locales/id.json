@@ -408,7 +408,9 @@
       "top_sales_pdf": "Penjualan Terbaik: PDF",
       "top_sales_paper": "Penjualan Terbaik: Kertas",
       "top_rating": "Peringkat Teratas"
-    }
+    },
+    "show_less": "Tampilkan lebih sedikit",
+      "show_more": "Tampilkan lebih banyak"
   },
   "author_details":{
    "header": "Tentang Penulis",

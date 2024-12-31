@@ -406,7 +406,9 @@
       "top_sales_pdf": "الأكثر مبيعًا: PDF",
       "top_sales_paper": "الأكثر مبيعًا: ورقي",
       "top_rating": "أعلى تقييم"
-    }
+    },
+    "show_less": "عرض أقل",
+      "show_more": "عرض المزيد"
   },
   "author_details":{
     "header": "نبذة عن المؤلف",
