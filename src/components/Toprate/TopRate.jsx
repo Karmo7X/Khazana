@@ -32,7 +32,7 @@ const TopRate = ({data}) => {
                 <div className="top-ratting-box-items">
                   <div className="book-thumb">
                     <a href={`/Single/${book?.id}`}>
-                      <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt={`${book?.title} image`} />
+                      <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt={`${book?.title} image`} style={{width:'200px',height:'200px',objectFit:'cover'}} />
                     </a>
                   </div>
                   <div className="book-content">
@@ -47,7 +47,7 @@ const TopRate = ({data}) => {
                     <span className="mt-10">{t("global.currency.paper")} {book?.pricePaper} {t("global.currency.rs")} </span>
                     <ul className="author-post">
                       <li className="author-list">
-                        <span className="thumb"><img src={book?.author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} /></span>
+                        <span className="thumb"><img style={{width:'30px'}} src={book?.author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} /></span>
                         <span className="content mt-10 fw-bold">{book?.author?.name}</span>
                       </li>
                     </ul>

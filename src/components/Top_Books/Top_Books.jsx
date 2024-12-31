@@ -23,12 +23,13 @@ const Top_Books = ({data}) => {
         <div className="book-shop-wrapper">
             
             {books.map((book,idx)=>{
-                    return(<>  <div className="shop-box-items style-2">
+                    return(<>
+                      <div className="shop-box-items style-2">
                      <div className="shop-box-items style-2">
                
                       <div className="book-thumb center" key={idx}>
                     <a href={`/Single/${book?.id}`}>
-                        <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt={book?.title} />
+                        <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt={book?.title} style={{width:'200px',height:'300px',objectFit:'cover'}} />
                     </a>
                     <ul className="post-box">
                     {book?.isAvailablePdf  === true ?  <li>{t("global.currency.pdf")}</li>: null}
@@ -39,7 +40,7 @@ const Top_Books = ({data}) => {
 
                 <div className="shop-content">
                     <h5>{book?.category}</h5>
-                    <h3><a href={`/Single/${book?.id}`}>{book?.title}</a></h3>
+                    <h3 style={{height:'50px'}}><a href={`/Single/${book?.id}`}>{book?.title}</a></h3>
                     <ul className="price-list">
                     <li> {t("global.currency.pdf")} {book?.pricePdf}{t("global.currency.rs")}</li> <br/>
                     <li>{t("global.currency.paper")} {book.pricePaper}{t("global.currency.rs")} </li>

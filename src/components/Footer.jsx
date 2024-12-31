@@ -83,7 +83,7 @@ return (
               </div>
               <ul className="list-area">
                 <li><a href="Shop"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerStoreList')}</a></li>
-                <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerContactUs')}</a></li>
+                {/* <li><a href="ContactUs"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerContactUs')}</a></li> */}
                 <li><a href="ReturnPolicy"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.footerReturnPolicy')}</a></li>
                 <li><a href="Term"><i className="fa-solid fa-chevron-right"></i> {t('global.footer.terms_and_conditions')}</a></li>
               </ul>

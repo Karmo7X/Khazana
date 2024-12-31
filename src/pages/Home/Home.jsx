@@ -183,7 +183,7 @@ const Home = () => {
                  <div className="shop-box-items style-2" key={book?.id}>
           <div className="book-thumb center">
             <a href={`/Single/${book?.id}`}>
-              <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt={book?.title} />
+              <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt={book?.title} style={{width:'200px',height:'300px',objectFit:'cover'}} />
             </a>
             <ul className="post-box">
              {book?.isAvailablePdf  === true ?  <li>{t("global.currency.pdf")}</li>: null}
@@ -193,7 +193,7 @@ const Home = () => {
           </div>
           <div className="shop-content">
             <h5>{book?.category}</h5>
-            <h3>
+            <h3 style={{height:'50px'}}>
               <a href={`/Single/${book.id}`}>{book.title}</a>
             </h3>
             <ul className="price-list">
