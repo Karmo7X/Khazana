@@ -558,9 +558,7 @@ const SingleProduct = () => {
                             <h6>Additional Information </h6>
                           </a>
                         </li> */}
-                        {Array.isArray(book?.comments) &&
-                          book?.comments.length > 0 && (
-                            <li class="nav-item" role="presentation">
+                        <li class="nav-item" role="presentation">
                               <a
                                 href="#review"
                                 data-bs-toggle="tab"
@@ -577,7 +575,6 @@ const SingleProduct = () => {
                                 </h6>
                               </a>
                             </li>
-                          )}
                       </ul>
                       <div class="tab-content">
                         <div
