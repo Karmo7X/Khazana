@@ -34,9 +34,10 @@ const Navbar = () => {
       setSelectedLanguage(storedLanguage);
     }
   }, [selectedLanguage]);
-  useEffect(()=>{
-    localStorage.setItem("selectedLanguage", selectedLanguage);
-  },[selectedLanguage])
+  
+  // useEffect(()=>{
+  //   localStorage.setItem("selectedLanguage", selectedLanguage);
+  // },[selectedLanguage])
 
   // Function to handle language selection
   const handleLanguageChange = (language) => {
@@ -48,6 +49,8 @@ const Navbar = () => {
   useEffect(() => {
     localStorage.setItem("showlogin", show);
   }, [show]);
+
+
 
   const handlelogout = () => {
     Cookies.remove("token");
