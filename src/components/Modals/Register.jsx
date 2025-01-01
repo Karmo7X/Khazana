@@ -452,7 +452,7 @@ const Register = ({ showmodalregist }) => {
               >
                 {t("global.register.loginBtn")}
               </button>
-              <div class="orting-badge">{t("global.register.or")}</div>
+              {/* <div class="orting-badge">{t("global.register.or")}</div>
               <div>
                 <a class="another-option" href="https://www.google.com/">
                   <img src="/assets/img/google.png" alt="google" />
@@ -477,7 +477,7 @@ const Register = ({ showmodalregist }) => {
                 <label class="form-check-label">
                   {t("global.register.acceptTerms")}
                 </label>
-              </div>
+              </div> */}
             </form>
 
             <div class="banner">

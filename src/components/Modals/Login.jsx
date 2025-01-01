@@ -223,7 +223,7 @@ const Login = ({ showmodal }) => {
                       {t("global.login.createAccount")}
                     </button>
                   </Form>
-                  <div className="orting-badge">{t("global.login.or")}</div>
+                  {/* <div className="orting-badge">{t("global.login.or")}</div>
                   <div>
                     <a
                       className="another-option"
@@ -241,7 +241,7 @@ const Login = ({ showmodal }) => {
                       <Image src="/assets/img/facebook.png" alt="facebook" />
                       {t("global.login.continueWithFacebook")}
                     </a>
-                  </div>
+                  </div> */}
                   {/* <div class="form-check-3 d-flex align-items-center from-customradio-2 mt-3">
                     <input
                       class="form-check-input"
