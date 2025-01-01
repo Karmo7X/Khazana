@@ -280,7 +280,7 @@ const Home = () => {
                                         <div className="row w-100">
                                       {books.slice(0,5).map((book) => (
                                         <div key={book.id} className="col-12 mb-4">
-                                          <div className="card p-3 shadow-sm h-100">
+                                          <a href={`/Single/${book?.id}`} className="card p-3 shadow-sm h-100">
                                             <div className="row g-0">
                                               <div className="col-lg-8 col-md-6 col-sm-12">
                                                 <div className="card-body">
@@ -315,7 +315,7 @@ const Home = () => {
                                               </div>
                                               
                                             </div>
-                                          </div>
+                                          </a>
                                         </div>
                                       ))}
                                     </div>

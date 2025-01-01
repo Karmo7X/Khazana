@@ -12,17 +12,12 @@ const Shop = () => {
   const [layout, setLayout] = useState("grid");
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.product.status);
+ 
 //   const [filtersort,setFiltersort]=useState()
-const [formData, setFormData] = useState({
-    pricePapermax: '',
-    pricePapermin: '',
-    category: '',
-    isAvailablePdf: false,
-    isAvailablePaper: false,
-    sort: '', // Add sort to the formData
-  });
+
   const [books, setBooks] = useState([]);
   useEffect(() => {
+   
     dispatch(GetProductApi()).then((res) => {
       if (res.payload?.code === 200) {
         setBooks(res.payload?.data?.products);
@@ -37,7 +32,7 @@ const [formData, setFormData] = useState({
      }
      if(data.sort){
          dispatch(GetProductApi(data)).then((res)=>{
-        console.log(res)
+       
         if (res.payload?.code === 200) {
             setBooks(res.payload?.data?.products);
           }
@@ -49,6 +44,8 @@ const [formData, setFormData] = useState({
     
    
     }
+
+   
   return (
     <>
       {/* <!-- Breadcumb Section Start --> */}

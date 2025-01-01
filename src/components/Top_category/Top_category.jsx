@@ -61,7 +61,17 @@ const [category, setCategory] = useState([]);
                 >
                     {category.map(({ id, title, image }) => (
                         <SwiperSlide key={id}>
-                            <div className="book-catagories-items">
+                            {/* <a href={`/ShopCategory/${id}`} className="book-catagories-items">
+                                <div className="book-thumb">
+                                    <img src={image} alt={`img-${id}`}  style={{width:'120px',height:'147px'}}/>
+                                    <div className="circle-shape">
+                                        <img src="/assets/img/book-categori/circle-shape.png" alt="shape-img" />
+                                    </div>
+                                </div>
+                              
+                                <h3><a href={`/ShopCategory/${id}`}>{`${title}`}</a></h3>
+                            </a> */}
+                            <div  className="book-catagories-items">
                                 <div className="book-thumb">
                                     <img src={image} alt={`img-${id}`}  style={{width:'120px',height:'147px'}}/>
                                     <div className="circle-shape">
@@ -69,7 +79,7 @@ const [category, setCategory] = useState([]);
                                     </div>
                                 </div>
                                 {/* <div className="number">{String(id).padStart(2, '0')}</div> */}
-                                <h3><a href="/Single/:id">{`${title}`}</a></h3>
+                                <h3><a>{`${title}`}</a></h3>
                             </div>
                         </SwiperSlide>
                     ))}

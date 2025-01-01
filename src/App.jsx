@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import Loader from "./components/loader/loader";
 import Login from "./components/Modals/Login";
 import Cookies from 'js-cookie'
+import ShopWithCategory from "./pages/Shop/ShopWithCategory";
 const Home = lazy(() => import("./pages/Home/Home"));
 const SingleProduct = lazy(() =>
   import("./pages/Single_Product/SingleProduct")
@@ -63,6 +64,14 @@ function App() {
               element={
                 <Suspense fallback={<Loader />}>
                   <Shop />
+                </Suspense>
+              }
+            />
+            <Route
+              path="ShopCategory/:categoryid"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <ShopWithCategory />
                 </Suspense>
               }
             />

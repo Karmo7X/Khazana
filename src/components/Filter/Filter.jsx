@@ -4,11 +4,12 @@ import { GetCategoryApi } from "../../Api/Category/CategorySlice";
 import { useDispatch } from "react-redux";
 import { GetProductApi, SearchProductApi } from "../../Api/Product/Product";
 
-function Filter({ onFilterchange }) {
+function Filter({onFilterchange }) {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const [category, setCategory] = useState([]);
   const [categoryId,setCategoryId]=useState()
+  
   const [formData, setFormData] = useState({
     pricePapermax: null,
     pricePapermin: null,
@@ -17,7 +18,8 @@ function Filter({ onFilterchange }) {
     isAvailablePaper: false,
   });
 
-  
+    
+
   // get category
   useEffect(() => {
     dispatch(GetCategoryApi()).then((res) => {
@@ -145,7 +147,7 @@ function Filter({ onFilterchange }) {
             </div>
             <div className="categories-list">
               <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li className="nav-item" style={{background:setCategoryId ==="" ? "#FFC900":""}} role="presentation" >
+              <li className="nav-item" style={{background:categoryId ==="" ? "#FFC900":""}} role="presentation" >
                   <input
                     type="radio"
                     className="radio-button"
@@ -162,7 +164,7 @@ function Filter({ onFilterchange }) {
                   </label>
                 </li>
               {category.slice(0, visibleCount).map((cat) => (
-                <li className="nav-item" style={{background:setCategoryId ===cat?.id ? "#FFC900":""}} role="presentation" key={cat?.id}>
+                <li className="nav-item" style={{background:formData?.category === cat?.id ? "#FFC900":""}} role="presentation" key={cat?.id}>
                   <input
                     type="radio"
                     className="radio-button"
