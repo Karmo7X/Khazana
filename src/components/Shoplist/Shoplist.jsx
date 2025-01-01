@@ -36,7 +36,7 @@ const Shoplist = ({ data,onFilter }) => {
                   </div>
                   <div class="shop-list-content">
                     <h3 style={{height:'50px'}}>
-                      <a href={`/Single/${book?.id}`}>{book?.title}</a>
+                      <a href={`/Single/${book?.id}`}>{book?.title.slice(0,45)}</a>
                     </h3>
                     <ul
                       className="price-list d-flex gap-4"

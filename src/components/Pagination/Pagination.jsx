@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { createTheme } from "@mui/material/styles";
@@ -14,23 +14,26 @@ const Paginationcomponent = ({onFilterChange}) => {
   const handleChange = (event, value) => {
     setPage(value);
     if(localStorage.getItem('pagenum')){
-      // console.log('ddffdfsd')
-    }else{
-      
-     const data = {
-      pagenum: value,
-    };
-    console.log(data)
-    dispatch(GetProductApi(data)).then((res) => {
-      if (res.payload?.code === 200) {
-        onFilterChange(null, res.payload?.data?.products);
-      }
-    });
-
+      const data = {
+        pagenum: value,
+      };
+      console.log(data)
+      dispatch(GetProductApi(data)).then((res) => {
+        if (res.payload?.code === 200) {
+          onFilterChange(null, res.payload?.data?.products);
+        }
+      });
+  
     }
    
   };
+
+  // useEffect(()=>{
+  // const pagenumber = localStorage.getItem('pagenum')
+  // setPage(pagenumber)
+  // },[page])
   
+ 
   
   const theme = createTheme({
     direction: document.documentElement.lang === "ar" ? "rtl" : "ltr",

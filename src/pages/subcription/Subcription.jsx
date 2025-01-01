@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { AddsubscriptionApi, GetsubscriptionApi } from "../../Api/Subscription/Subscriptions";
 import Notfound from "../../components/Notfound/Notfound";
 const Subcription = () => {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
+  const loading = useSelector((state) => state.subscription.status);
   const [subcription, setSubcription] = useState([]);
   const [subcriptionid,setsubcriptionid]=useState()
     const [errormessg, setErrormessg] = useState(null);
@@ -73,7 +74,7 @@ const Subcription = () => {
                 {subcription.map((data, index) => {
                   return (
                     <>
-                      <div className="col-md-4 mb-4" style={{cursor:'pointer'}} onClick={()=>handleAddSubcription(data?.id)} key={index}>
+                      <div className="col-md-4 mb-4" style={{cursor:'pointer'}} onClick={()=>setsubcriptionid(data?.id)} key={index}>
                         <div
                           className="card shadow-sm "
                           style={{
@@ -209,7 +210,22 @@ const Subcription = () => {
                   </div>
                 </>
               )} 
+             
                           </div>
+                          <button
+                    onClick={()=>handleAddSubcription(subcriptionid)}
+                    className="btn theme-btn rounded-0 w-100 mt-4"
+                  >
+                    {loading === "loading" ? (
+                      <>
+                        <div class="spinner-border text-light" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                      </>
+                    ) : (
+                      t("global.subcription_title.subscription")
+                    )}
+                  </button>
             </>
           ) : (
             <>

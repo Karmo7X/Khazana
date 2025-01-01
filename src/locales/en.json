@@ -356,7 +356,8 @@
     "cancel_button": "No, Keep Subscription",
     "success_message": "Your subscription has been successfully canceled.",
     "error_message": "An error occurred while canceling your subscription. Please try again."
-  }
+  },
+  "subscription":"subscription"
   },
   "notfoundmessage": {
     "notFound": "No data available currently"

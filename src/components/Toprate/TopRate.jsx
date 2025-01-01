@@ -39,7 +39,7 @@ const TopRate = ({data}) => {
                     <div className="title-header">
                       <div>
                         {/* <h5>{book.subtitle}</h5> */}
-                        <h3><a href={`/Single/${book?.id}`}>{book?.title}</a></h3>
+                        <h3><a href={`/Single/${book?.id}`}>{book?.title.slice(0,49)}</a></h3>
                       </div>
                       <Wishlistcomponent bookid={book?.id} wishlist={book?.wishlist} grid={false}/>
                     </div>

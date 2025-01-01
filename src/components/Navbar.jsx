@@ -34,6 +34,9 @@ const Navbar = () => {
       setSelectedLanguage(storedLanguage);
     }
   }, [selectedLanguage]);
+  useEffect(()=>{
+    localStorage.setItem("selectedLanguage", selectedLanguage);
+  },[selectedLanguage])
 
   // Function to handle language selection
   const handleLanguageChange = (language) => {

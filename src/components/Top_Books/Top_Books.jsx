@@ -40,7 +40,7 @@ const Top_Books = ({data}) => {
 
                 <div className="shop-content">
                     <h5>{book?.category}</h5>
-                    <h3 style={{height:'50px'}}><a href={`/Single/${book?.id}`}>{book?.title}</a></h3>
+                    <h3 style={{height:'50px'}}><a href={`/Single/${book?.id}`}>{book?.title.slice(0,49)}</a></h3>
                     <ul className="price-list">
                     <li> {t("global.currency.pdf")} {book?.pricePdf}{t("global.currency.rs")}</li> <br/>
                     <li>{t("global.currency.paper")} {book.pricePaper}{t("global.currency.rs")} </li>

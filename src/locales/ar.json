@@ -357,7 +357,8 @@
       "cancel_button": "لا، الاحتفاظ بالاشتراك",
       "success_message": "تم إلغاء اشتراكك بنجاح.",
       "error_message": "حدث خطأ أثناء إلغاء اشتراكك. يرجى المحاولة مرة أخرى."
-    }
+    },
+    "subscription":"اشتراك"
   },
   "notfoundmessage": {
     "notFound": "لايوجد بيانات حاليا"

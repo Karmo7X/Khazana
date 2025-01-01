@@ -862,6 +862,7 @@ const SingleProduct = () => {
                                       : bookundefine
                                   }
                                   alt={book?.title}
+                                  style={{width:'200px',height:'300px',objectFit:'cover'}}
                                 />
                               </a>
                               <ul className="post-box">
@@ -880,7 +881,7 @@ const SingleProduct = () => {
                             <div className="shop-content">
                               <h5>{book?.category}</h5>
                               <h3>
-                                <a href={`/Single/${book.id}`}>{book.title}</a>
+                                <a href={`/Single/${book.id}`}>{book.title.slice(0,30)}</a>
                               </h3>
                               <ul className="price-list">
                                 <li>

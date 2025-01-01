@@ -75,12 +75,27 @@ export const GetProductdetailsApi = createAsyncThunk(
   "Product/getProductdetails",
   async (productId) => {
     try {
-      const res = await axios.get(`${baseurl}/product/${productId}`, {
-        headers: {
-          lang: lang,
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      // const res = await axios.get(`${baseurl}/product/${productId}`, {
+      //   headers: {
+      //     lang: lang,
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      // });
+      let res;
+      if (token) {
+        res = await axios.get(`${baseurl}/product/withWishlist/${productId}`, {
+          headers: {
+            lang: lang,
+            Authorization: `Bearer ${token}`,
+          },
+        });
+      } else {
+        res = await axios.get(`${baseurl}/product/${productId}`, {
+          headers: {
+            lang: lang,
+          },
+        });
+      }
 
       return res.data;
     } catch (err) {

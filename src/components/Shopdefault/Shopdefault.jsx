@@ -15,7 +15,7 @@ const Shopdefault = ({ data ,onFilter }) => {
     <>
      
       <div className="col-xl-9 col-lg-8 mb-4 order-1 order-md-2">
-        <div className="tab-content h-100 " id="pills-tabContent">
+        <div className="tab-content h-100 " id="pills-tabContent" >
           <div
             className="tab-pane fade show active"
             id="pills-arts"
@@ -26,7 +26,7 @@ const Shopdefault = ({ data ,onFilter }) => {
             {books.length === 0 ? (
               <Notfound />
             ) : (<>
-              <div className="row">
+              <div className="row" style={{minHeight:'100vh'}}>
                 {books.map((book, idx) => {
                   return (
                     <>
@@ -64,7 +64,7 @@ const Shopdefault = ({ data ,onFilter }) => {
                           <div className="shop-content">
                             <h5>{book?.category}</h5>
                             <h3 style={{height:'50px'}} >
-                              <a href={`/Single/${book?.id}`}>{book?.title}</a>
+                              <a href={`/Single/${book?.id}`}>{book?.title.slice(0,45)}</a>
                             </h3>
                             <ul className="price-list">
                               <li>

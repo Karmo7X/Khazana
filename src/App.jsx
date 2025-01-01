@@ -69,12 +69,12 @@ function App() {
             <Route
               path="Single/:id"
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
 
                    <Suspense fallback={<Loader />}>
                   <SingleProduct />
                 </Suspense>
-                </ProtectedRoute>
+                // </ProtectedRoute>
                
               }
             />
@@ -151,11 +151,11 @@ function App() {
             <Route
               path="Subscription"
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
                   <Suspense fallback={<Loader />}>
                     <Subcription />
                   </Suspense>
-                </ProtectedRoute>
+               // </ProtectedRoute> 
               }
             />
             <Route
