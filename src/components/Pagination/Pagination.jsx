@@ -13,10 +13,16 @@ const Paginationcomponent = ({onFilterChange}) => {
   const numpages =useSelector((state)=>state.product?.data?.data?.pagination?.numbersOfPages)
   const handleChange = (event, value) => {
     setPage(value);
+     // Scroll to top of the page
+     window.scrollTo({
+      top: 70,
+      behavior: "smooth", // For a smooth scrolling effect
+    });
     if(localStorage.getItem('pagenum')){
       const data = {
         pagenum: value,
       };
+      
       console.log(data)
       dispatch(GetProductApi(data)).then((res) => {
         if (res.payload?.code === 200) {

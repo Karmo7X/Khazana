@@ -8,6 +8,7 @@ function Filter({ onFilterchange }) {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const [category, setCategory] = useState([]);
+  const [categoryId,setCategoryId]=useState()
   const [formData, setFormData] = useState({
     pricePapermax: null,
     pricePapermin: null,
@@ -15,8 +16,8 @@ function Filter({ onFilterchange }) {
     isAvailablePdf: false,
     isAvailablePaper: false,
   });
+
   
-   
   // get category
   useEffect(() => {
     dispatch(GetCategoryApi()).then((res) => {
@@ -49,12 +50,13 @@ function Filter({ onFilterchange }) {
       [name]: value,
     })); 
     }
-   
-    dispatch(GetProductApi(formData)).then((res)=>{
-        if (res.payload?.code === 200) {
-            onFilterchange(null,res.payload?.data?.products);
-          }
-     }) 
+   // Dispatch the action with the updated form data
+   const updatedData = { ...formData, [name]: value }; // Capture updated data
+   dispatch(GetProductApi(updatedData)).then((res) => {
+     if (res.payload?.code === 200) {
+       onFilterchange(null, res.payload?.data?.products);
+     }
+   });
    
 
      
@@ -143,15 +145,31 @@ function Filter({ onFilterchange }) {
             </div>
             <div className="categories-list">
               <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li className="nav-item" style={{background:setCategoryId ==="" ? "#FFC900":""}} role="presentation" >
+                  <input
+                    type="radio"
+                    className="radio-button"
+                    id={`pills-null-tab`}
+                    name="category"
+                    value={""}
+                    onChange={(e) => handleChange(e)}
+                  />
+                  <label
+                    className="nav-link"
+                    htmlFor={`pills-null-tab`}
+                  >
+                   {t("global.filter.allcategories")}
+                  </label>
+                </li>
               {category.slice(0, visibleCount).map((cat) => (
-                <li className="nav-item" role="presentation" key={cat?.id}>
+                <li className="nav-item" style={{background:setCategoryId ===cat?.id ? "#FFC900":""}} role="presentation" key={cat?.id}>
                   <input
                     type="radio"
                     className="radio-button"
                     id={`pills-${cat?.title.toLowerCase().replace(/\s+/g, "-")}-tab`}
                     name="category"
                     value={cat?.id}
-                    onChange={(e) => onFilterchange(e.target.value)}
+                    onChange={(e) => handleChange(e)}
                   />
                   <label
                     className="nav-link"

@@ -3,15 +3,27 @@ import '../../../public/assets/css/main.css'
 import { useTranslation } from "react-i18next";
 import Wishlistcomponent from '../wishlist/Wishlistcomponent';
 import bookundefine from '../../../public/assets/img/bookundefine.jpg'
+import { useDispatch } from 'react-redux';
+import { GetProductApi } from '../../Api/Product/Product';
+import Notfound from "../Notfound/Notfound";
 const TopRate = ({data}) => {
     const { t, i18n } = useTranslation();
-    const [books,setBooks]=useState([])
+    const dispatch = useDispatch();
+  
+    const [books ,setBooks]=useState([])
     useEffect(()=>{
-      setBooks(data)
-    },[data])
+      const data = {
+        sort: "-rate",
+      };
+       dispatch(GetProductApi(data)).then((res)=>{
+        if(res.payload?.code === 200){
+          setBooks(res.payload?.data?.products)
+        }
+       })
+    },[])
   return (
     <>
-    {books.filter(book => book?.rate && book.rate === 5).length !== 0 &&
+    {[...books].slice(0,10).length !== 0 &&
     (<>
     
     <section class="top-rating-book-section section-padding section-bg">
@@ -26,7 +38,7 @@ const TopRate = ({data}) => {
                 </a>
             </div>
             <div class="row">
-                {/* <!-- Book Item Template --> */}
+              
                 {books.filter(book => book?.rate && book.rate === 5).map((book, index) => (
               <div className="col-xl-6 wow fadeInUp" data-wow-delay={`${0.3 + index * 0.1}s`} key={book.id}>
                 <div className="top-ratting-box-items">
@@ -38,7 +50,7 @@ const TopRate = ({data}) => {
                   <div className="book-content">
                     <div className="title-header">
                       <div>
-                        {/* <h5>{book.subtitle}</h5> */}
+                        
                         <h3><a href={`/Single/${book?.id}`}>{book?.title.slice(0,49)}</a></h3>
                       </div>
                       <Wishlistcomponent bookid={book?.id} wishlist={book?.wishlist} grid={false}/>
@@ -69,6 +81,7 @@ const TopRate = ({data}) => {
               </div>
             ))}
             </div>
+           
         </div>
     </div>
 </section>

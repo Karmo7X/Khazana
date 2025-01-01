@@ -181,7 +181,7 @@ export const GetUserApi = createAsyncThunk("User/get", async () => {
 
   export const GetUserLibraryApi = createAsyncThunk("User/My-Library/get", async () => {
     try {
-      const res = await axios.get(`${baseurl}/order/my?isDelivered=true&orderState=confirmed&isPaid=true`, {
+      const res = await axios.get(`${baseurl}/order/my?isDelivered=true&orderState=completed&isPaid=true`, {
         headers: {
           lang: lang,
           'Authorization':`Bearer ${token}`

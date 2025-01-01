@@ -106,10 +106,10 @@
         "description": "20% off by subscribing"
       }
     },
-    "sectionTitle": "Featured Books",
+    "sectionTitle": "Latest Books",
     "exploreMore": "Explore More",
     "top_books": {
-      "khazanaTopBooks": "Khazana Top Books",
+      "khazanaTopBooks":"The Best-Selling Books",
       "exploreMore": "Explore More",
       "findYourNextBooks": "Find Your Next Books!",
       "discountOffer": "And get your 25% discount now!",
@@ -127,7 +127,7 @@
   },
 
   "shop_details": {
-    "title": "Shop Details",
+    "title": "Product Details",
     "breadcrumb": [
       { "text": "Home", "url": "/" },
       { "text": "Shop Details", "url": "/shop-details" }
@@ -399,6 +399,7 @@
     "category": "Category",
     "status": "Product Status",
     "price": "Filter By Price",
+    "allcategories":"All Categories",
     "min": "min",
     "max": "max",
     "options": {
@@ -448,6 +449,13 @@
      "visaOrCard": "Visa or Card"
     },
     "paymentNote": "Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account."
+  },
+  "payment": "Pay"
+},
+"modal": {
+    "thanks": "Thank You!",
+    "purchaseMessage": "Success! You've just unlocked a world of knowledge 📚✨. Enjoy your new adventure with this book, and don't forget to share the joy of reading!",
+    "close": "Close",
+    "saveChanges": "Go to Home"
   }
-}
 }

@@ -28,8 +28,8 @@ const Mylibrary = () => {
   return (
     <div className="container-fluid">
       {" "}
-      <div className="d-flex justify-content-end">
-        {/* Upload button */}
+      {/* <div className="d-flex justify-content-end">
+       
         <a
           href="#"
           className="theme-btn transparent-btn wow fadeInUp"
@@ -39,14 +39,14 @@ const Mylibrary = () => {
         >
           <TbFileUpload className="fs-2" />
         </a>
-        {/* Hidden file input */}
+       
         <input
           ref={fileInputRef}
           type="file"
           className="d-none"  // Hide the file input
           onChange={(e) => console.log("File uploaded:", e.target.files[0])}  // Handle file change
         />
-      </div>
+      </div> */}
       {loading !== 'loading' ?(<>
       
       {loading !== 'failed' && orders.length !== 0 ?(<>

@@ -106,10 +106,10 @@
         "description": "Diskon 20% dengan berlangganan"
       }
     },
-    "sectionTitle": "Buku Unggulan",
+    "sectionTitle": "Buku Terbaru",
     "exploreMore": "Jelajahi Lebih Lanjut",
     "top_books": {
-      "khazanaTopBooks": "Buku Terbaik Khazana",
+      "khazanaTopBooks": "Buku Terlaris",
       "exploreMore": "Jelajahi Lebih Lanjut",
       "findYourNextBooks": "Temukan Buku Berikutnya!",
       "discountOffer": "Dan dapatkan diskon 25% sekarang!",
@@ -126,7 +126,7 @@
     }
   },
   "shop_details": {
-    "title": "Detail Toko",
+    "title": "Detail Produk",
     "breadcrumb": [
       { "text": "Beranda", "url": "/" },
       { "text": "Detail Toko", "url": "/shop-details" }
@@ -399,6 +399,7 @@
     "search": "Kata Kunci Pencarian",
     "category": "Kategori",
     "status": "Status Produk",
+    "allcategories":"Semua Kategori",
     "price": "Filter Berdasarkan Harga",
     "min": "min",
     "max": "max",
@@ -449,6 +450,13 @@
         "visaOrCard": "Visa atau Kartu"
       },
       "paymentNote": "Lakukan pembayaran Anda langsung ke rekening bank kami. Gunakan ID Pesanan Anda sebagai referensi pembayaran. Pesanan Anda tidak akan dikirim sampai dana telah masuk ke rekening kami."
-    }
+    },
+    "payment": "Bayar"
+  },
+  "modal": {
+    "thanks": "Terima Kasih!",
+    "purchaseMessage": "Sukses! Kamu baru saja membuka dunia pengetahuan 📚✨. Nikmati petualangan baru dengan buku ini, dan jangan lupa berbagi kegembiraan membaca!",
+    "close": "Tutup",
+    "saveChanges": "Pergi ke Beranda"
   }
 }

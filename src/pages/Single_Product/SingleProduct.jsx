@@ -35,6 +35,7 @@ const SingleProduct = () => {
     isAvailablePdf: false,
     isAvailablePaper: false,
   });
+  console.log(buybookdata)
   const [errormessg, setErrormessg] = useState(null);
   const [successmessage, setSuccessmessage] = useState(null);
   const [errormessgrate, setErrormessgrate] = useState(null);
@@ -90,44 +91,47 @@ const SingleProduct = () => {
 
   const handleChange = (e) => {
     const { name, checked } = e.target;
-
-    setBuybookdata((prevState) => {
-      if (name === "isAvailablePdf" && checked) {
-        // If PDF is checked, uncheck the paper version
-        return {
-          ...prevState,
-          isAvailablePdf: true,
-          isAvailablePaper: false, // Ensure paper is false
-        };
-      } else if (name === "isAvailablePaper" && checked) {
-        // If paper is checked, uncheck the PDF version
-        return {
-          ...prevState,
-          isAvailablePdf: false, // Ensure PDF is false
-          isAvailablePaper: true,
-        };
-      }
-      return prevState;
-    });
-
-    dispatch(AddCartItemApi(buybookdata)).then((res) => {
-      if (res.payload?.code === 201) {
-        setSuccessmessage(res.payload?.message);
-        setErrormessg(null);
-        
-        setTimeout(() => {
-          setSuccessmessage(null);
-        }, 2000);
-        dispatch(GetCartApi());
-      } else {
-        setSuccessmessage(null);
-        setErrormessg(res.payload?.message);
-        setTimeout(() => {
-          setErrormessg(null);
-        }, 2000);
-      }
-    });
+  
+    // Update the state based on which checkbox is toggled
+    if (name === "isAvailablePdf") {
+      setBuybookdata((prevData) => ({
+        ...prevData,
+        isAvailablePdf: checked, // Use 'checked' instead of 'true'
+        isAvailablePaper: false,
+      }));
+    }
+  
+    if (name === "isAvailablePaper") {
+      setBuybookdata((prevData) => ({
+        ...prevData,
+        isAvailablePdf: false,
+        isAvailablePaper: checked, // Use 'checked' instead of 'true'
+      }));
+    }
   };
+  
+  useEffect(() => {
+    if (buybookdata.isAvailablePdf || buybookdata.isAvailablePaper) {
+      dispatch(AddCartItemApi(buybookdata)).then((res) => {
+        if (res.payload?.code === 201) {
+          setSuccessmessage(res.payload?.message);
+          setErrormessg(null);
+          setTimeout(() => {
+            setSuccessmessage(null);
+          }, 2000);
+          dispatch(GetCartApi());
+        } else {
+          setSuccessmessage(null);
+          setErrormessg(res.payload?.message);
+          setTimeout(() => {
+            setErrormessg(null);
+          }, 2000);
+        }
+      });
+    }
+  }, [buybookdata]);
+
+  
   useEffect(() => {
     dispatch(GetProductdetailsApi(id)).then((res) => {
       if (res.payload?.code === 200) {
@@ -199,7 +203,7 @@ const SingleProduct = () => {
                                       : bookundefine
                                   }
                                   alt="img"
-                                  style={{ width: "-webkit-fill-available" }}
+                                  style={{ width: "311px",maxHeight:'482px'  }}
                                 />
                               </div>
                             </div>
@@ -389,6 +393,7 @@ const SingleProduct = () => {
                                   type="checkbox"
                                   name="isAvailablePdf"
                                   id="flexRadioDefault1"
+                                  value={buybookdata.isAvailablePdf}
                                   checked={buybookdata.isAvailablePdf}
                                   onChange={handleChange}
                                 />
@@ -414,6 +419,7 @@ const SingleProduct = () => {
                                   type="checkbox"
                                   name="isAvailablePaper"
                                   id="flexRadioDefault2"
+                                  value={buybookdata.isAvailablePdf}
                                   checked={buybookdata.isAvailablePaper}
                                   onChange={handleChange}
                                 />

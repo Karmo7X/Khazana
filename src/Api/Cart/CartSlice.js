@@ -56,6 +56,7 @@ const initialState = {
   });
 
   export const AddCartItemApi = createAsyncThunk("Cart/AddCartItem", async (data) => {
+      console.log(data)
     try {
       const res = await axios.post(`${baseurl}/cart`,data, {
         headers: {

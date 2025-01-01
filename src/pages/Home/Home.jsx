@@ -22,18 +22,23 @@ import Wishlistcomponent from '../../components/wishlist/Wishlistcomponent'
 import { useDispatch } from 'react-redux'
 import { GetProductApi } from '../../Api/Product/Product'
 import bookundefine from '../../../public/assets/img/bookundefine.jpg'
+import Notfound from '../../components/Notfound/Notfound'
 const Home = () => {
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch();
-   
+    const [filter, setFilter] = useState('الكتب المقروءة');
       const [books ,setBooks]=useState([])
       useEffect(()=>{
-         dispatch(GetProductApi()).then((res)=>{
+        const data = {
+          sort: "-createdAt",
+        };
+         dispatch(GetProductApi(data)).then((res)=>{
           if(res.payload?.code === 200){
             setBooks(res.payload?.data?.products)
           }
          })
       },[])
+     
   return (
     <>
     
@@ -136,7 +141,7 @@ const Home = () => {
     {/* <!-- Authors Section start  --> */}
     <Authors/>
 {/* <!-- Shop Section start  --> */}
-<Top_Books data={books.slice(0,20)}/>
+<Top_Books />
      {/* <!-- Shop Section start  --> */}
     <section class="shop-section section-padding fix pt-0">
         <div class="container">
@@ -144,10 +149,10 @@ const Home = () => {
                 <div class="section-title">
                     <h2 class="wow fadeInUp" data-wow-delay=".3s">{t("global.home.sectionTitle")}</h2>
                 </div>
-                <a href="shop.html" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">{t("global.home.exploreMore")} <i
+                <a href="/Shop" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">{t("global.home.exploreMore")} <i
                         class="fa-solid fa-arrow-right-long"></i></a>
             </div>
-            <Swiper
+            {/* <Swiper
              modules={[Navigation,Autoplay]}
             loop={false}
             spaceBetween={10} // Space between slides
@@ -176,8 +181,8 @@ const Home = () => {
                 },
               }}
         >
-            {/* Slide 1 */}
-            {books.slice(0,8).map((book,idx)=>{
+            
+            {[...books].reverse().slice(0, 8).map((book,idx)=>{
                 return(<>
                  <SwiperSlide key={idx}>
                  <div className="shop-box-items style-2" key={book?.id}>
@@ -232,7 +237,101 @@ const Home = () => {
            
            
             
-        </Swiper>
+        </Swiper> */}
+            <div className="container my-5 text-right">
+                                    {/* <div className='d-flex align-items-center justify-content-between mb-5'>
+                                    <div className=''>
+                                    <h2 className="text-center">{t("global.book_details.books")} </h2>
+                                      </div> 
+                                      <a href="Shop" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">
+                                              {t("global.home.exploreMore")} <i class="fa-solid fa-arrow-right-long"></i>
+                                              </a>
+                                    </div> */}
+                                      
+                                    {/* Filter Tabs */}
+                                    
+                                <ul className="nav nav-tabs justify-content-end mb-4">
+                                      <li className="nav-item">
+                                        <button
+                                          className={`nav-link filter_link ${filter === 'الكتب المقروءة' ? 'activefilter' : ''}`}
+                                          onClick={() => setFilter('الكتب المقروءة')}
+                                        >
+                                         {t("global.book_details.filter.read_books")}
+                                        </button>
+                                      </li>
+                                      <li className="nav-item">
+                                        <button
+                                          className={`nav-link filter_link ${filter === 'الكتب المسموعة' ? 'activefilter' : ''}`}
+                                          onClick={() => setFilter('الكتب المسموعة')}
+                                        >
+                                          {t("global.book_details.filter.audiobooks")}
+                                        </button>
+                                      </li>
+                                    </ul>
+                              
+                                    
+                                  
+                               
+                                   
+                                    
+                                    {/* Book Cards */}
+                                    {filter === 'الكتب المقروءة' &&(
+                                       <>
+                                        <div className="row w-100">
+                                      {books.slice(0,5).map((book) => (
+                                        <div key={book.id} className="col-12 mb-4">
+                                          <div className="card p-3 shadow-sm h-100">
+                                            <div className="row g-0">
+                                              <div className="col-lg-8 col-md-6 col-sm-12">
+                                                <div className="card-body">
+                                                  <h5 className="card-title mb-3 text-truncate">{book?.title.slice(0,49)}</h5>
+                                                  <p className='mb-3'>{book?.description?.slice(0, 300)}...</p>
+                                                  <ul className="author-post">
+                                                    <li className="author-list">
+                                                      <span className="thumb"><img style={{width:'30px'}} src={book?.author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} alt={`${book.author} image`} /></span>
+                                                      <span className="content mt-10 fw-bold">{book?.author?.name}</span>
+                                                    </li>
+                                                  </ul>
+                                                  {/* <div className="d-flex align-items-center text-muted">
+                                                    <FaEye className="me-2 " style={{color:'#FFC900'}} />
+                                                    {book.views}
+                                                  </div> */}
+                                                </div>
+                                              </div>
+                                              <div className='col-lg-2 col-md-6 col-sm-12 '>
+                                                <div className='d-flex  flex-column'>
+                                                   <p className="card-text text-muted mb-1">
+                                                   {t("global.book_details.category")}
+                                                    
+                                                  </p>
+                                                  <span className="card-text text-muted fw-bold mb-1">
+                                                  {book?.category}
+                                                  </span> 
+                                                </div>
+                                            
+                                              </div>
+                                              <div className="col-lg-2 col-md-6 col-sm-12">
+                                                 <img src={book?.coverImage  ? book?.coverImage:bookundefine} alt={`${book?.title} image`} style={{width:'200px',height:'200px',objectFit:'cover'}} />
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
+                                      ))}
+                                    </div>
+                                       
+                                       </>
+                  
+                                    )}
+                                       {filter === 'الكتب المسموعة' &&(
+                                       <>
+                                        <Notfound/>
+                                       
+                                       </>
+                  
+                                    )}
+                                   
+                                  </div>
         </div>
     </section>
 
@@ -242,7 +341,7 @@ const Home = () => {
 
     {/* <!-- Cta Banner Section start  --> */}
     {/* <CTA/> */}
-    <Books_section data={books.slice(0,20)}/>
+    {/* <Books_section data={books.slice(0,20)}/> */}
 
     {/* <!-- Top Ratting Book Section start  --> */}
      <TopRate data={books.slice(0,20)}/>
