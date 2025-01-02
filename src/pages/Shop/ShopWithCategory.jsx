@@ -16,9 +16,9 @@ const ShopWithCategory = () => {
 
  
   const [books, setBooks] = useState([]);
+
   useEffect(() => {
-    if(categoryid){
-        const data={
+    const data={
       category:categoryid
     }
     dispatch(GetProductApi(data)).then((res) => {
@@ -26,7 +26,6 @@ const ShopWithCategory = () => {
         setBooks(res.payload?.data?.products);
       }
     });
-    }
   
   }, [categoryid]);
 
@@ -148,8 +147,8 @@ const ShopWithCategory = () => {
               </>
             ) : (
               <>
-                <div className="row">
-                  <Filter categoryID={categoryid} onFilterchange={handleFilterChange} />
+                <div className="row w-100 align-items-center justify-content-center">
+                  {/* <Filter categoryID={categoryid} onFilterchange={handleFilterChange} /> */}
                   {layout === "grid" ? (
                     <>
                       <Shopdefault data={books} onFilter={handleFilterChange} />

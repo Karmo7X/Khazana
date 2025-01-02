@@ -156,7 +156,7 @@ const About = () => {
 
  
 
-   <div class="map-section">
+   {/* <div class="map-section">
         <div class="map-items">
             <div class="googpemap">
                 <iframe
@@ -164,7 +164,7 @@ const About = () => {
                     style={{border:'0'}} allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
-    </div>
+    </div> */}
     </>):(<>
     
     

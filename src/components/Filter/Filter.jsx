@@ -4,7 +4,7 @@ import { GetCategoryApi } from "../../Api/Category/CategorySlice";
 import { useDispatch } from "react-redux";
 import { GetProductApi, SearchProductApi } from "../../Api/Product/Product";
 
-function Filter({onFilterchange }) {
+function Filter({categoryID ,onFilterchange }) {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const [category, setCategory] = useState([]);
@@ -13,12 +13,12 @@ function Filter({onFilterchange }) {
   const [formData, setFormData] = useState({
     pricePapermax: null,
     pricePapermin: null,
-    category: "",
+    category:"",
     isAvailablePdf: false,
     isAvailablePaper: false,
   });
 
-    
+   
 
   // get category
   useEffect(() => {
@@ -28,7 +28,6 @@ function Filter({onFilterchange }) {
       }
     });
   }, []);
-
 
 
   // Handle input changes
