@@ -330,7 +330,7 @@ const Profile_sec = () => {
                         {errorvalid?.birthday && (
                           <>
                             <div class="invalid-feedback">
-                              {errorvalid?.name}
+                              {errorvalid?.birthday}
                             </div>
                           </>
                         )}
