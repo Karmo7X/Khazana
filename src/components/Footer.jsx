@@ -83,8 +83,8 @@ return (
                 </a>
               </div>
               <div className="footer-content">
-                <p>
-              {about?.footerDescription}
+                <p className=''style={{wordWrap:"break-word",wordBreak:'break-word',whiteSpace:'normal',overflowWrap:'anywhere'}}>
+              {about?.footerDescription.slice(0,250)}
                 </p>
                 <div className="social-icon d-flex align-items-center">
                   <a href="https://www.facebook.com/share/19MFqsjLG8/?mibextid=LQQJ4d"><i className="fab fa-facebook-f"></i></a>
