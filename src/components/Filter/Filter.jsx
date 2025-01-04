@@ -18,7 +18,6 @@ function Filter({categoryID ,onFilterchange }) {
     isAvailablePaper: false,
   });
 
-   
 
   // get category
   useEffect(() => {

@@ -45,7 +45,7 @@ export const AddAuthorApi = createAsyncThunk("Author/AddAuthor", async (authorda
 });
 export const GetAuthordetailsApi = createAsyncThunk("Author/getdetails", async (authorId) => {
   try {
-    const res = await axios.get(`${baseurl}/author/${authorId}`, {
+    const res = await axios.get(`${baseurl}/author/getAuthor/${authorId}`, {
       headers: {
         lang: lang,
       },

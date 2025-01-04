@@ -90,7 +90,7 @@ export const GetProductdetailsApi = createAsyncThunk(
           },
         });
       } else {
-        res = await axios.get(`${baseurl}/product/${productId}`, {
+        res = await axios.get(`${baseurl}/product/productDetails/${productId}`, {
           headers: {
             lang: lang,
           },
