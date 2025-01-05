@@ -63,6 +63,32 @@ export const GetCityApi = createAsyncThunk("City/get", async () => {
   }
 });
 
+export const GetbannerApi = createAsyncThunk("banner/get", async () => {
+  try {
+    const res = await axios.get(`${baseurl}/app/homeBanner`, {
+      headers: {
+        lang: lang,
+      },
+    });
+
+    return res.data;
+  } catch (err) {
+    console.error(err.response.data);
+  }
+});
+export const GetfeaturesApi = createAsyncThunk("features/get", async () => {
+  try {
+    const res = await axios.get(`${baseurl}/app/featureItem`, {
+      headers: {
+        lang: lang,
+      },
+    });
+
+    return res.data;
+  } catch (err) {
+    console.error(err.response.data);
+  }
+});
 const Appslice = createSlice({
   name: "subscription",
   initialState,
