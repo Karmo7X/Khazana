@@ -18,6 +18,9 @@ import { GetCategoryApi } from "../../Api/Category/CategorySlice";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { GetCityApi } from "../../Api/App/App";
+import 'react-phone-number-input/style.css'
+import PhoneInput from "react-phone-number-input";
+
 const Register = ({ showmodalregist }) => {
   const animatedComponents = makeAnimated();
   const { t } = useTranslation();
@@ -198,19 +201,19 @@ const Register = ({ showmodalregist }) => {
                 <label htmlFor="phone">
                   {t("global.register.phoneNumber")}
                 </label>
-                <input
-                  className={` inputField  ${
-                    errorvalid?.phone ? "is-invalid" : "is-valid"
-                  }`}
-                  type="phone"
-                  name="phone"
-                  placeholder={t("global.login.phoneNumber")}
-                  style={{ color: "#000" }}
-                  onChange={(e) => {
-                    handleChange(e.target.name, e.target.value);
-                  }}
-                  required
-                />
+                <PhoneInput
+                      className={` inputField  ${
+                        errorvalid?.phone ? "is-invalid" : "is-valid"
+                      }`}
+                      placeholder={t("global.login.phoneNumber")}
+                      style={{ color: "#000" }}
+                      name="phone"
+                      value={formData.phone}
+                      onChange={(value) => {
+                        handleChange("phone", value); // Pass the name of the field and its new value
+                      }}
+                      required
+                    />
 
                 {errorvalid?.phone && (
                   <>

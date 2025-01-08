@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { ForgotPasswordApi } from "../../Api/Auth/AuthSlice";
 import ResetPassword from "./Restpassword";
 import OTPForgetpass from "./OTPForgetpass";
+import 'react-phone-number-input/style.css'
+import PhoneInput from "react-phone-number-input";
+
 const Forgetpassword = () => {
   const { t, i18n } = useTranslation();
   const [formdata, setformdata] = useState({
@@ -27,9 +30,11 @@ const Forgetpassword = () => {
     // Phone validation
     if (!value.phone) {
       error.phone = t("global.validation_message.phone.required");
-    } else if (!/^\d+$/.test(value.phone)) {
-      error.phone = t("global.validation_message.phone.pattern"); // Must be numeric
-    } else if (value.phone.length < 10) {
+    } 
+    // else if (!/^\+?\d$/.test(value.phone)) {
+    //   error.phone = t("global.validation_message.phone.pattern"); // Must be numeric
+    // } 
+    else if (value.phone.length < 10) {
       error.phone = t("global.validation_message.phone.minLength"); // Minimum 10 digits
     } else if (value.phone.length > 15) {
       error.phone = t("global.validation_message.phone.maxLength"); // Maximum 15 digits
@@ -76,19 +81,19 @@ const Forgetpassword = () => {
           </div>
 
           {/* Phone Input */}
-          <Form.Control
-            className={` inputField   ${
-              errorvalid?.phone ? "is-invalid" : "is-valid"
-            }`}
-            type="text"
-            name="phone"
-            placeholder={t("global.forgetpass.phoneNumber")}
-           
-            onChange={(e) => {
-              handleChange(e.target.name, e.target.value);
-            }}
-            required
-          />
+          <PhoneInput
+                      className={` inputField  ${
+                        errorvalid?.phone ? "is-invalid" : "is-valid"
+                      }`}
+                      placeholder={t("global.login.phoneNumber")}
+                      style={{ color: "#000" }}
+                      name="phone"
+                      value={formdata.phone}
+                      onChange={(value) => {
+                        handleChange("phone", value); // Pass the name of the field and its new value
+                      }}
+                      required
+                    />
 
           {errorvalid?.phone && (
             <>

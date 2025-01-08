@@ -8,6 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { LoginApi } from "../../Api/Auth/AuthSlice";
 import Cookies from "js-cookie";
 import Forgetpassword from "./Forgetpasswor";
+import 'react-phone-number-input/style.css'
+import PhoneInput from "react-phone-number-input";
+
 const Login = ({ showmodal }) => {
   const { t } = useTranslation();
   const [formdata, setFormdata] = useState({
@@ -24,6 +27,7 @@ const Login = ({ showmodal }) => {
   const [successmessage, setSuccessmessage] = useState();
   const [errormessg, setErrormessg] = useState(null);
   const showlogin = localStorage.getItem("showlogin");
+
   const handleClose = () => {
     setShowLogin(false);
     localStorage.setItem("showlogin", false);
@@ -50,9 +54,11 @@ const Login = ({ showmodal }) => {
     // Phone validation
     if (!value.phone) {
       error.phone = t("global.validation_message.phone.required");
-    } else if (!/^\d+$/.test(value.phone)) {
-      error.phone = t("global.validation_message.phone.pattern"); // Must be numeric
-    } else if (value.phone.length < 10) {
+    } 
+    // else if (!/^\+?\d$/.test(value.phone)) {
+    //   error.phone = t("global.validation_message.phone.pattern"); // Must be numeric
+    // } 
+    else if (value.phone.length < 10) {
       error.phone = t("global.validation_message.phone.minLength"); // Minimum 10 digits
     } else if (value.phone.length > 15) {
       error.phone = t("global.validation_message.phone.maxLength"); // Maximum 15 digits
@@ -75,7 +81,6 @@ const Login = ({ showmodal }) => {
   };
 
   const handleSubmit = async (e) => {
-   
     const error_submit = validate(formdata);
 
     if (Object.keys(error_submit).length === 0) {
@@ -115,20 +120,31 @@ const Login = ({ showmodal }) => {
                 <div className="form-wrapper w-100">
                   <h1 id="loginModalLabel">{t("global.login.welcomeBack")}</h1>
                   <Form className="needs-validation" noValidate>
-                    <input
+                    {/* <input
                       className={` inputField  ${
                         errorvalid?.phone ? "is-invalid" : "is-valid"
                       }`}
                       type="phone"
                       name="phone"
-                      placeholder={t("global.login.phoneNumber")}
                       style={{ color: "#000" }}
                       onChange={(e) => {
                         handleChange(e.target.name, e.target.value);
                       }}
                       required
+                    /> */}
+                    <PhoneInput
+                      className={` inputField  ${
+                        errorvalid?.phone ? "is-invalid" : "is-valid"
+                      }`}
+                      placeholder={t("global.login.phoneNumber")}
+                      style={{ color: "#000" }}
+                      name="phone"
+                      value={formdata.phone}
+                      onChange={(value) => {
+                        handleChange("phone", value); // Pass the name of the field and its new value
+                      }}
+                      required
                     />
-
                     {errorvalid?.phone && (
                       <>
                         <div class="invalid-feedback">{errorvalid?.phone}</div>
@@ -206,12 +222,15 @@ const Login = ({ showmodal }) => {
                       className="loginBtn mt-5 theme-btn rounded-0 mt-3"
                       onClick={(e) => handleSubmit(e)}
                     >
-                      {loading === 'loading' ? (<> 
-                      
-                        <div class="spinner-border text-light" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-                      </>):t("global.login.login")}
+                      {loading === "loading" ? (
+                        <>
+                          <div class="spinner-border text-light" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                          </div>
+                        </>
+                      ) : (
+                        t("global.login.login")
+                      )}
                     </button>
                     <button
                       type="button"
