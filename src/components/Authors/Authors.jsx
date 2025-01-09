@@ -114,7 +114,7 @@ const Authors = () => {
                   </div>
                 </div>
                 <div className="team-content text-center">
-                  <h6><a href="team-details.html">{author?.name}</a></h6>
+                  <h6><a href={`SingleAuthor/${author?.id}`}>{author?.name}</a></h6>
                   {/* <p>{author.books}</p> */}
                 </div>
               </div>

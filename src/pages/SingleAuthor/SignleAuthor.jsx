@@ -85,7 +85,7 @@ const SignleAuthor = () => {
                 <ul className="author-post">
                   <li className="authot-list">
                     <span className="thumb">
-                      <img src={data?.author?.img} alt={data?.author?.name} />
+                      <img src={data?.author?.profileImg} alt={data?.author?.name} />
                     </span>
                     <span className="content fw-bold">{data?.author?.name}</span>
                   </li>
@@ -141,7 +141,7 @@ const SignleAuthor = () => {
                 <ul className="author-post">
                   <li className="authot-list">
                     <span className="thumb">
-                      <img src={data?.author?.img} alt={data?.author?.name} />
+                      <img src={data?.author?.profileImg} alt={data?.author?.name} />
                     </span>
                     <span className="content fw-bold">{data?.author?.name}</span>
                   </li>
