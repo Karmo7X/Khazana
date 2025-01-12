@@ -78,9 +78,11 @@ const Register = ({ showmodalregist }) => {
     // Phone validation
     if (!value.phone) {
       error.phone = t("global.validation_message.phone.required");
-    } else if (!/^\d+$/.test(value.phone)) {
-      error.phone = t("global.validation_message.phone.pattern"); // Must be numeric
-    } else if (value.phone.length < 10) {
+    } 
+    // else if (!/^\d+$/.test(value.phone)) {
+    //   error.phone = t("global.validation_message.phone.pattern"); // Must be numeric
+    // } 
+    else if (value.phone.length < 10) {
       error.phone = t("global.validation_message.phone.minLength"); // Minimum 10 digits
     } else if (value.phone.length > 15) {
       error.phone = t("global.validation_message.phone.maxLength"); // Maximum 15 digits
