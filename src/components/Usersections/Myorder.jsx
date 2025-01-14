@@ -18,8 +18,9 @@ const Myorder = () => {
       })
     
     }, []);
-    console.log(orders)
+
     function formatDate(dateString) {
+       if (!dateString) return ""
       const parts = dateString.split(":");
       const day = parseInt(parts[0]);
       const month = parseInt(parts[1]);
@@ -35,7 +36,7 @@ const Myorder = () => {
     <>
          {loading !== 'loading' ?(<>
       
-      {loading !== 'failed'  ?(<>
+      {loading !== 'failed' && orders.length !== 0  ?(<>
        <div className="container">
       <div className="row">
       {orders.map((data)=>{

@@ -8,8 +8,8 @@ import TabPanel from "@mui/lab/TabPanel";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Mylibrary from "../../components/Usersections/Mylibrary";
-import RegisterBook from "../../components/Usersections/RegisterBook";
-import RegisterAuthor from "../../components/Usersections/RegisterAuthor";
+import RegisterBook from "../RegisterAuthor_or_book/RegisterBook";
+import RegisterAuthor from "../RegisterAuthor_or_book/RegisterAuthor";
 import Profile_sec from "../../components/Usersections/profile_sec";
 import Changepass from "../../components/Usersections/Changepass";
 import Address from "../../components/Usersections/Address";
@@ -48,8 +48,7 @@ const Profile = () => {
             
             >
               <Tab label={t("global.profile.account_settings")} value="1" />
-              <Tab label={t("global.profile.book_request")} value="2" />
-              <Tab label={t("global.profile.author_registration")} value="3" />
+              
               <Tab label={t("global.profile.my_library")} value="4"/>
               <Tab label={t("global.profile.address.title")} value="5"/>
               <Tab label={t("global.profile.changePassword")} value="6"/>
@@ -60,8 +59,7 @@ const Profile = () => {
           <TabPanel value="1">
            <Profile_sec/>
           </TabPanel>
-          <TabPanel value="2"><RegisterBook/></TabPanel>
-          <TabPanel value="3"><RegisterAuthor/></TabPanel>
+         
           <TabPanel value="4">
             <Mylibrary/>
           </TabPanel>

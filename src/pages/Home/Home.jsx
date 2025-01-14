@@ -30,7 +30,7 @@ const Home = () => {
   const [filter, setFilter] = useState("الكتب المقروءة");
   const [books, setBooks] = useState([]);
   const [banner, setBanner] = useState();
-  console.log(banner);
+
   const [features, setFeatures] = useState([]);
   useEffect(() => {
     const data = {

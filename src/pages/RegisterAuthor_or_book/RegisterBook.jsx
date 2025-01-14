@@ -108,9 +108,9 @@ const RegisterBook = () => {
   };
   return (
     <>
-      <div className="container mt-5">
-        <div className="mt-4">
-          <h2 className="text-center">
+      <div className="container d-flex justify-content-center align-items-center vh-100">
+  <div className=" p-4 shadow w-100" style={{ maxWidth: '700px' }}>
+  <h2 className="text-center">
             {" "}
             {t("global.profile.register_book.form_title")}
           </h2>
@@ -245,8 +245,10 @@ const RegisterBook = () => {
               )}{" "}
             </button>
           </form>
-        </div>
-      </div>
+  </div>
+</div>
+
+      
     </>
   );
 };

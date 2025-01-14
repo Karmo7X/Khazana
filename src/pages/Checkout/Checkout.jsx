@@ -87,7 +87,7 @@ const Checkout = () => {
             <div class="page-header">
               <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                 <li>
-                  <a href="index.html">
+                  <a href="/">
                     {t("global.checkout.breadcrumb.home")}
                   </a>
                 </li>
@@ -122,7 +122,12 @@ const Checkout = () => {
                       </div>
                     </>
                   )}
-
+                    <h2 className="mb-4">
+              {t("global.profile.address.title")}
+            </h2>
+            <p className="mb-4 fs-4">
+              {t("global.profile.address.setDefault")}
+            </p>
                   {addresses.length !== 0 ? (
                     <>
                       <Row

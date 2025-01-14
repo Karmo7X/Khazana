@@ -348,12 +348,12 @@ const Navbar = () => {
                   aria-expanded="false"
                 >
                   {languageMap[selectedLanguage]}
-                  <img
+                  {/* <img
                     src="assets/images/flags/us_flag.jpg"
                     class="ml-2"
                     height="16"
                     alt=""
-                  />
+                  /> */}
                 </a>
                 <div class="dropdown-menu dropdown-menu-right language-switch">
                   <a
@@ -361,11 +361,11 @@ const Navbar = () => {
                     href="#"
                     onClick={() => handleLanguageChange("ar")}
                   >
-                    <img
+                    {/* <img
                       src="assets/images/flags/italy_flag.jpg"
                       alt=""
                       height="16"
-                    />
+                    /> */}
                     <span style={{ color: "#000" }}>
                       {" "}
                       {t("global.nav.languages.ar")}{" "}
@@ -376,11 +376,11 @@ const Navbar = () => {
                     href="#"
                     onClick={() => handleLanguageChange("en")}
                   >
-                    <img
+                    {/* <img
                       src="assets/images/flags/italy_flag.jpg"
                       alt=""
                       height="16"
-                    />
+                    /> */}
                     <span style={{ color: "#000" }}>
                       {" "}
                       {t("global.nav.languages.en")}{" "}
@@ -391,11 +391,11 @@ const Navbar = () => {
                     href="#"
                     onClick={() => handleLanguageChange("zh")}
                   >
-                    <img
+                    {/* <img
                       src="assets/images/flags/french_flag.jpg"
                       alt=""
                       height="16"
-                    />
+                    /> */}
                     <span style={{ color: "#000" }}>
                       {" "}
                       {t("global.nav.languages.zh")}{" "}
@@ -406,11 +406,11 @@ const Navbar = () => {
                     href="#"
                     onClick={() => handleLanguageChange("id")}
                   >
-                    <img
+                    {/* <img
                       src="assets/images/flags/spain_flag.jpg"
                       alt=""
                       height="16"
-                    />
+                    /> */}
                     <span style={{ color: "#000" }}>
                       {" "}
                       {t("global.nav.languages.id")}{" "}
@@ -485,6 +485,16 @@ const Navbar = () => {
                             <li>
                               <Link to="/AboutUs">
                                 {t("global.nav.aboutUs")}
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/RegisterAuthor">
+                              {t("global.profile.author_registration")}
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/Registerbook">
+                              {t("global.profile.book_request")}
                               </Link>
                             </li>
                             {/* <li>
@@ -664,6 +674,16 @@ const Navbar = () => {
                             <li>
                               <Link to="/AboutUs">
                                 {t("global.nav.aboutUs")}
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/RegisterAuthor">
+                              {t("global.profile.author_registration")}
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/Registerbook">
+                              {t("global.profile.book_request")}
                               </Link>
                             </li>
                             {/* <li>

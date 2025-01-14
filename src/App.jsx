@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 import Loader from "./components/loader/loader";
 import Login from "./components/Modals/Login";
 import Cookies from 'js-cookie'
-import ShopWithCategory from "./pages/Shop/ShopWithCategory";
+
 const Home = lazy(() => import("./pages/Home/Home"));
 const SingleProduct = lazy(() =>
   import("./pages/Single_Product/SingleProduct")
@@ -24,7 +24,9 @@ const Shop = lazy(() => import("./pages/Shop/Shop"));
 const Subcription = lazy(() => import("./pages/subcription/Subcription"));
 const Privacy = lazy(() => import("./pages/App/Privacy"));
 const Term = lazy(() => import("./pages/App/Term"));
-
+const ShopWithCategory = lazy(() => import("./pages/Shop/ShopWithCategory"));
+const RegisterAuthor = lazy(() => import("./pages/RegisterAuthor_or_book/RegisterAuthor"));
+const RegisterBook = lazy(() => import("./pages/RegisterAuthor_or_book/RegisterBook"));
 
 const ProtectedRoute = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
@@ -64,6 +66,22 @@ function App() {
               element={
                 <Suspense fallback={<Loader />}>
                   <Shop />
+                </Suspense>
+              }
+            />
+             <Route
+              path="RegisterAuthor"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <RegisterAuthor />
+                </Suspense>
+              }
+            />
+             <Route
+              path="Registerbook"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <RegisterBook />
                 </Suspense>
               }
             />

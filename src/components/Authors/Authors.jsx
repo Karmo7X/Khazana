@@ -107,7 +107,7 @@ const Authors = () => {
               <div className="team-box-items">
                 <div className="team-image">
                   <div className="thumb">
-                    <img src={`${author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}`} style={{width:"50%"}} alt={`Image of ${author?.name}`} />
+                    <img src={`${author?.profileImg || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}`} style={{width:"89px",height:'89px'}} alt={`Image of ${author?.name}`} />
                   </div>
                   <div className="shape-img">
                     <img src="assets/img/team/shape-img.png" alt="Decorative Shape" />

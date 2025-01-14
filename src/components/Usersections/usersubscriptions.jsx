@@ -26,6 +26,7 @@ const Usersubscriptions = () => {
     setSubcription(subscrptionUser);
   }, [subscrptionUser]);
   function formatDate(dateString) {
+    if (!dateString) return "";
     const parts = dateString.split(":");
     const day = parseInt(parts[0]);
     const month = parseInt(parts[1]);
@@ -130,7 +131,8 @@ const Usersubscriptions = () => {
                               {subcription?.subscriptionPrice}
                               {t("global.currency.rs")}
                             </h6>
-                            <div className="d-flex align-items-center gap-2">
+                            {subscrptionstart && subscrptionstart ?(<>
+                             <div className="d-flex align-items-center gap-2">
                               <div>
                                 <p>{formatDate(subscrptionstart)}</p>
                               </div>
@@ -145,6 +147,9 @@ const Usersubscriptions = () => {
                                 </p>
                               </div>
                             </div>
+                            
+                            </>):null}
+                           
                           </div>
                         </div>
                         <div className="card-body">

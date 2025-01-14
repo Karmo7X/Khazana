@@ -11,6 +11,7 @@ import {
 import { MdDelete } from "react-icons/md";
 import { IoAlertCircle } from "react-icons/io5";
 import Notfound from "../Notfound/Notfound";
+import { GetCityApi } from "../../Api/App/App";
 const Address = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const Address = () => {
   const [successmessage, setSuccessmessage] = useState();
   const loading = useSelector((state) => state.user.status);
   const addressUser = useSelector((state) => state.user.addresses);
-
+ const [cities, setCities] = useState([]);
   useEffect(() => {
     setAddresses(addressUser);
     //  const main =addresses.map((address) => address.main === true)?.main
@@ -129,6 +130,16 @@ const Address = () => {
       }
     });
   };
+
+
+  useEffect(()=>{
+ // fetch data for cities
+       dispatch(GetCityApi()).then((res) => {
+           if (res.payload?.code === 200) {
+             setCities(res.payload?.data?.cities);
+           }
+         });
+  },[])
 
   return (
     <>
@@ -315,15 +326,29 @@ const Address = () => {
                     <label for="inputCity" class="form-label">
                       {t("global.profile.address.city")}
                     </label>
-                    <input
-                      type="text"
-                      className={` form-control `}
-                      id="inputCity"
-                      name="city"
-                      onChange={(e) => {
-                        handleChange(e.target.name, e.target.value);
-                      }}
-                    />
+                    <select
+                  name="city"
+                  value={addaddressdata.city}
+                  className={` form-select `}
+                  onChange={(e) => {
+                    handleChange(e.target.name, e.target.value);
+                  }}
+                  style={{ outline: "none", boxShadow: "none" }}
+                >
+                  <option selected value="">
+                    ......
+                  </option>
+                  {
+                    cities.map((data,idx)=>{
+                       return(<>
+                         <option key={idx} value={data?.id}>{data?.title}</option>
+                       
+                       
+                       </>)
+                    })
+                  }
+                 
+                </select>
                     {errorvalid?.city && (
                       <>
                         <div class="text-danger">{errorvalid?.city}</div>
@@ -360,7 +385,7 @@ const Address = () => {
                 </div>
                 {successmessage && (
                   <>
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-success mt-3" role="alert">
                       {successmessage}
                     </div>
                   </>
@@ -368,7 +393,7 @@ const Address = () => {
 
                 {errormessg && (
                   <>
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger mt-3" role="alert">
                       {errormessg}
                     </div>
                   </>
