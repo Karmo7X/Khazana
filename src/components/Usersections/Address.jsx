@@ -328,7 +328,7 @@ const Address = () => {
                     </label>
                     <select
                   name="city"
-                  value={addaddressdata.city}
+                  value={addaddressdata?.city}
                   className={` form-select `}
                   onChange={(e) => {
                     handleChange(e.target.name, e.target.value);
