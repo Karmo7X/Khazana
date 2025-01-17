@@ -90,7 +90,22 @@ const initialState = {
       return err.response.data
     }
   });
-
+  export const CheckoutpaymentApi = createAsyncThunk("Cart/checkout", async (data) => {
+    try {
+      const res = await axios.post(`${baseurl}/order/checkout/${data?.cartId}`,data, {
+        headers: {
+          lang: lang,
+         'Authorization':`Bearer ${token}`,
+        },
+        
+      });
+  
+      return res.data;
+    } catch (err) {
+      console.error(err.response.data);
+      return err.response.data
+    }
+  });
 
 const Cartslice = createSlice({
   name: "cate",

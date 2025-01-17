@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
-import { CheckoutApi, GetCartApi } from "../../Api/Cart/CartSlice";
+import { CheckoutApi, CheckoutpaymentApi, GetCartApi } from "../../Api/Cart/CartSlice";
 import { GetUserApi } from "../../Api/User/UserSlice";
 import Notfound from "../../components/Notfound/Notfound";
 import { FaCheckDouble } from "react-icons/fa";
@@ -20,7 +20,7 @@ const Checkout = () => {
   const [shippingAddress, setShippingAddress] = useState();
   const [selectedPayment, setSelectedPayment] = useState("");
   const [show, setShow] = useState(false);
-
+  const [paymenturl,setPaymenturl]=useState()
   const handleClose = () => {setShow(false);navigate('/')};
   const handleShow = () => setShow(true);
   const navigate = useNavigate();
@@ -37,8 +37,8 @@ const Checkout = () => {
       cartId: id,
       shippingAddress: shippingAddress,
     };
-
-    dispatch(CheckoutApi(data)).then((res) => {
+     if(selectedPayment === 'cashOnDelivery'){
+       dispatch(CheckoutApi(data)).then((res) => {
       if (res.payload?.code === 201) {
         setSuccessmessage(res.payload?.message);
 
@@ -56,7 +56,33 @@ const Checkout = () => {
         }, 2000);
       }
     });
+     }else if(selectedPayment === 'visaOrCard'){
+      dispatch(CheckoutpaymentApi(data)).then((res) => {
+        if (res.payload?.code === 200) {
+          setSuccessmessage(res.payload?.message);
+  
+          const invoiceURL = res.payload?.data?.checkout?.InvoiceURL;
+          if (invoiceURL) {
+            window.open(`${invoiceURL}`, '_blank');
+          }
+          setErrormessg(null);
+          setTimeout(() => {
+            setSuccessmessage(null);
+          }, 2000);
+        } else {
+          setErrormessg(res.payload?.message);
+          setSuccessmessage(null);
+  
+          setTimeout(() => {
+            setErrormessg(null);
+          }, 2000);
+        }
+      });
+     }
+   
   };
+
+
   useEffect(() => {
     dispatch(GetCartApi()).then((res) => {
       if (res.payload?.code === 200) {
