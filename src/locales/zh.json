@@ -356,6 +356,7 @@
     "success_message": "您的订阅已成功取消。",
     "error_message": "取消订阅时发生错误。请再试一次。"
   },
+  "upgrade_subscription":"升级订阅",
   "subscription":"订阅"
   },
   "notfoundmessage": {

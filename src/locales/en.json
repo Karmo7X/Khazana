@@ -357,6 +357,7 @@
     "success_message": "Your subscription has been successfully canceled.",
     "error_message": "An error occurred while canceling your subscription. Please try again."
   },
+  "upgrade_subscription":"Upgrade Subscription",
   "subscription":"subscription"
   },
   "notfoundmessage": {

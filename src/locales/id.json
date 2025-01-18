@@ -359,6 +359,7 @@
       "success_message": "Langganan Anda berhasil dibatalkan.",
       "error_message": "Terjadi kesalahan saat membatalkan langganan Anda. Silakan coba lagi."
     },
+    "upgrade_subscription":"Tingkatkan Langganan",
      "subscription":"berlangganan"
   },
   "notfoundmessage": {

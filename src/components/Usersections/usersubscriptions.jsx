@@ -20,8 +20,8 @@ const Usersubscriptions = () => {
     (state) => state.user?.data?.data?.user?.subscriptionEnd
   );
   const [subcription, setSubcription] = useState({});
-   const [errormessg, setErrormessg] = useState(null);
-    const [successmessage, setSuccessmessage] = useState(null);
+  const [errormessg, setErrormessg] = useState(null);
+  const [successmessage, setSuccessmessage] = useState(null);
   useEffect(() => {
     setSubcription(subscrptionUser);
   }, [subscrptionUser]);
@@ -31,10 +31,10 @@ const Usersubscriptions = () => {
     const day = parseInt(parts[0]);
     const month = parseInt(parts[1]);
     const year = parseInt(parts[2]);
-  
-    const date = new Date(year, month - 1, day); 
-  
-    const formattedDate = date.toISOString().split('T')[0]; 
+
+    const date = new Date(year, month - 1, day);
+
+    const formattedDate = date.toISOString().split("T")[0];
     return formattedDate;
   }
 
@@ -61,24 +61,23 @@ const Usersubscriptions = () => {
     }
   };
 
-
-  const handleDeletesubcription=(subID)=>{
-     dispatch(UnsubscriptionApi(subID)).then((res)=>{
-        if (res.payload?.code === 200) {
-          setSuccessmessage(res.payload?.message);
-          setErrormessg(null);
-          setTimeout(() => {
-            setSuccessmessage(null);
-          }, 2000);
-        } else {
+  const handleDeletesubcription = (subID) => {
+    dispatch(UnsubscriptionApi(subID)).then((res) => {
+      if (res.payload?.code === 200) {
+        setSuccessmessage(res.payload?.message);
+        setErrormessg(null);
+        setTimeout(() => {
           setSuccessmessage(null);
-          setErrormessg(res.payload?.message);
-          setTimeout(() => {
-            setErrormessg(null);
-          }, 2000);
-        }
-      })
-  }
+        }, 2000);
+      } else {
+        setSuccessmessage(null);
+        setErrormessg(res.payload?.message);
+        setTimeout(() => {
+          setErrormessg(null);
+        }, 2000);
+      }
+    });
+  };
   return (
     <>
       <div style={{ minHeight: "100vh" }}>
@@ -131,25 +130,25 @@ const Usersubscriptions = () => {
                               {subcription?.subscriptionPrice}
                               {t("global.currency.rs")}
                             </h6>
-                            {subscrptionstart && subscrptionstart ?(<>
-                             <div className="d-flex align-items-center gap-2">
-                              <div>
-                                <p>{formatDate(subscrptionstart)}</p>
-                              </div>
-                              <div>
-                                <p>{formatDate(subscrptionend)}</p>
-                              </div>
-                              <div>
-                                <p>
-                                  {formatDuration(
-                                    subcription?.subscriptionDuration
-                                  )}
-                                </p>
-                              </div>
-                            </div>
-                            
-                            </>):null}
-                           
+                            {subscrptionstart && subscrptionstart ? (
+                              <>
+                                <div className="d-flex align-items-center gap-2">
+                                  <div>
+                                    <p>{formatDate(subscrptionstart)}</p>
+                                  </div>
+                                  <div>
+                                    <p>{formatDate(subscrptionend)}</p>
+                                  </div>
+                                  <div>
+                                    <p>
+                                      {formatDuration(
+                                        subcription?.subscriptionDuration
+                                      )}
+                                    </p>
+                                  </div>
+                                </div>
+                              </>
+                            ) : null}
                           </div>
                         </div>
                         <div className="card-body">
@@ -163,7 +162,10 @@ const Usersubscriptions = () => {
                             }}
                           />
                         </div>
-                        <div className="d-flex align-items-center justify-content-end p-2">
+                        <div className="d-flex align-items-center justify-content-end gap-2 p-2">
+                          <a href="/Subscription" className="theme-btn">
+                            {t("global.subcription_title.upgrade_subscription")}
+                          </a>
                           <button
                             className="theme-btn bg-danger"
                             data-bs-toggle="modal"
@@ -199,32 +201,32 @@ const Usersubscriptions = () => {
                               </span>
                             </div>
                             <h2 className="text-center fw-bold">
-                            {t(
-                              "global.subcription_title.cancel_subscription.title"
-                            )}
+                              {t(
+                                "global.subcription_title.cancel_subscription.title"
+                              )}
                             </h2>
                             <p>
-                            {t(
-                              "global.subcription_title.cancel_subscription.description"
-                            )}
+                              {t(
+                                "global.subcription_title.cancel_subscription.description"
+                              )}
                             </p>
                           </div>
 
                           {successmessage && (
-              <>
-                <div class="alert alert-success" role="alert">
-                  {successmessage}
-                </div>
-              </>
-            )}
+                            <>
+                              <div class="alert alert-success" role="alert">
+                                {successmessage}
+                              </div>
+                            </>
+                          )}
 
-            {errormessg && (
-              <>
-                <div class="alert alert-danger" role="alert">
-                  {errormessg}
-                </div>
-              </>
-            )}
+                          {errormessg && (
+                            <>
+                              <div class="alert alert-danger" role="alert">
+                                {errormessg}
+                              </div>
+                            </>
+                          )}
 
                           <div className="d-flex align-items-center justify-content-center gap-4">
                             <button
@@ -233,19 +235,24 @@ const Usersubscriptions = () => {
                               data-bs-dismiss="modal"
                             >
                               {t(
-                              "global.subcription_title.cancel_subscription.cancel_button"
-                            )}
+                                "global.subcription_title.cancel_subscription.cancel_button"
+                              )}
                             </button>
                             <button
                               type="button"
-                              onClick={() => handleDeletesubcription(subcription?.subscriptionId)}
-                              
-                              {...(successmessage ? { "data-bs-dismiss": "modal" } : {})}
+                              onClick={() =>
+                                handleDeletesubcription(
+                                  subcription?.subscriptionId
+                                )
+                              }
+                              {...(successmessage
+                                ? { "data-bs-dismiss": "modal" }
+                                : {})}
                               class="btn btn-danger"
                             >
                               {t(
-                              "global.subcription_title.cancel_subscription.confirm_button"
-                            )}
+                                "global.subcription_title.cancel_subscription.confirm_button"
+                              )}
                             </button>
                           </div>
                         </div>
