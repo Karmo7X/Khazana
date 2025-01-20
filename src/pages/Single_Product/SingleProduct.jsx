@@ -262,6 +262,7 @@ const SingleProduct = () => {
                               .map((_, starIndex) => (
                                 <i
                                   key={starIndex}
+                                  style={{color:'#FFC900'}}
                                   className={
                                     starIndex < book?.rate
                                       ? "fa-solid fa-star"
