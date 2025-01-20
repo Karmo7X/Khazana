@@ -274,7 +274,8 @@
     }
   },
   "my_library": {
-    "read": "قراءة"
+    "read": "قراءة",
+    "listen": "استماع"
   },
   "validation_message": {
     "name": {

@@ -274,7 +274,8 @@
     }
   },
   "my_library": {
-    "read": "Membaca"
+    "read": "Baca",
+    "listen": "Dengarkan"
   },
   "validation_message": {
     "name": {

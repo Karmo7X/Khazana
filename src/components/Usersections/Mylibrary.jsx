@@ -89,11 +89,19 @@ const Mylibrary = () => {
               ))}
             </div>
           </div>
+          <div className="d-flex align-items-center justify-content-center gap-3 w-100">
           <div className="shop-button">
             <a href={data?.product?.pdfFile} target="_blank" className="theme-btn">
               <i className="fa-solid fa-book-open"></i> {t("global.my_library.read")}
             </a>
           </div>
+          <div className="shop-button">
+          <a href={data?.product?.pdfAudio} target="_blank" className="theme-btn">
+              <i className="fa-solid fa-book-open"></i> {t("global.my_library.listen")}
+            </a>
+          </div>
+          </div>
+          
         </div>
       </div>
     );

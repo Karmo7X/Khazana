@@ -441,7 +441,72 @@ const Home = () => {
             )}
             {filter === "الكتب المسموعة" && (
               <>
-                <Notfound />
+            <div className="row w-100">
+  {books && books.length > 0 ? (
+    books
+      .filter((data) => data.pdfAudio === "true") // Adjusted to check for string "true"
+      .slice(0, 5)
+      .map((book) => (
+        <div key={book.id} className="col-12 mb-4">
+          <a href={`/Single/${book?.id}`} className="card p-3 shadow-sm h-100">
+            <div className="row g-0">
+              <div className="col-lg-8 col-md-6 col-sm-12">
+                <div className="card-body">
+                  <h5 className="card-title mb-3 text-truncate">
+                    {book?.title?.slice(0, 49)}
+                  </h5>
+                  <p className="mb-3">
+                    {book?.description?.slice(0, 300)}...
+                  </p>
+                  <ul className="author-post">
+                    <li className="author-list">
+                      <span className="thumb">
+                        <img
+                          style={{ width: "30px" }}
+                          src={
+                            book?.author?.profileImg ||
+                            "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                          }
+                          alt={`${book?.author?.name} image`}
+                        />
+                      </span>
+                      <span className="content mt-10 fw-bold">
+                        {book?.author?.name}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-6 col-sm-12 ">
+                <div className="d-flex  flex-column">
+                  <p className="card-text text-muted mb-1">
+                    {t("global.book_details.category")}
+                  </p>
+                  <span className="card-text text-muted fw-bold mb-1">
+                    {book?.category}
+                  </span>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-6 col-sm-12">
+                <img
+                  src={book?.coverImage || bookundefine}
+                  alt={`${book?.title} image`}
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+            </div>
+          </a>
+        </div>
+      ))
+  ) : (
+    <Notfound />
+  )}
+</div>
+                
               </>
             )}
           </div>

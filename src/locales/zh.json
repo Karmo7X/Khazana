@@ -271,8 +271,9 @@
     "more": "更多"
   }
   },
-  "my_library": {
-    "read": "阅读"
+ "my_library": {
+    "read": "阅读",
+    "listen": "听"
   },
   "validation_message": {
     "name": {

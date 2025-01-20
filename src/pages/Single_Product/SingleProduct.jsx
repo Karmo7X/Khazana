@@ -35,7 +35,7 @@ const SingleProduct = () => {
     isAvailablePdf: false,
     isAvailablePaper: false,
   });
-  console.log(buybookdata)
+  
   const [errormessg, setErrormessg] = useState(null);
   const [successmessage, setSuccessmessage] = useState(null);
   const [errormessgrate, setErrormessgrate] = useState(null);
