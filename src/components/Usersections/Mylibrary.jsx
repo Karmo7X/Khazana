@@ -60,7 +60,7 @@ const Mylibrary = () => {
       <div key={idx} className="col-lg-3 col-md-6 col-sm-12 shop-box-items style-2">
         <div className="shop-box-items style-2">
           <div className="book-thumb center">
-            <a href="shop-details">
+            <a href={`/Single/${data?.product?.id}`}>
               <img src={data?.product?.coverImage} alt={data?.product?.title} />
             </a>
           <Wishlistcomponent bookid={data?.product?.id} wishlist={data?.product?.wishlist} />
