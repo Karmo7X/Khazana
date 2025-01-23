@@ -26,13 +26,14 @@ export const GetAuthorApi = createAsyncThunk("Author/get", async () => {
 
 export const AddAuthorApi = createAsyncThunk("Author/AddAuthor", async (authordata) => {
   try {
+   
+    // console.log("Sending data:", [...authordata.entries()]);
     const res = await axios.post(`${baseurl}/author/formAuthor`,authordata, {
       headers: {
         lang: lang,
-        'Authorization':`Bearer ${token}`,
-        'Accept':'*/*',
-        'Content-Type':'multipar/form-data',
-        'Access-Control-Allow-Origin':'*'
+        Authorization: `Bearer ${token}`,
+        Accept: "*/*",
+        "Content-Type": "multipar/form-data",
 
       },
     });
