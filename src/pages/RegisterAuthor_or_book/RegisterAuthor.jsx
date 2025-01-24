@@ -18,14 +18,32 @@ const RegisterAuthor = () => {
   const [errorvalid, setErrorvalid] = useState({});
   const [errormessg, setErrormessg] = useState(null);
   const [successmessage, setSuccessmessage] = useState(null);
-  
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    if (name === "profileImg") {
-      // Handle file input
-      setAddauthordata({ ...addauthordata, profileImg: files[0] });
+  
+    if (name === "birthday") {
+      // Format the date to "dd-mm-yyyy"
+      const formattedDate = new Date(value)
+        .toLocaleDateString("en-GB") // Formats as "dd/mm/yyyy"
+        .split('/') // Splits into ["dd", "mm", "yyyy"]
+        .join('-'); // Joins into "dd-mm-yyyy"
+  
+      setAddauthordata((prevData) => ({
+        ...prevData,
+        [name]: formattedDate,
+      }));
+    } else if (name === "profileImg") {
+      // Handle file input for profile image
+      setAddauthordata((prevData) => ({
+        ...prevData,
+        profileImg: files[0],
+      }));
     } else {
-      setAddauthordata({ ...addauthordata, [name]: value });
+      // Handle all other inputs
+      setAddauthordata((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
     }
   };
 
@@ -94,7 +112,7 @@ const RegisterAuthor = () => {
       });
 
       dispatch(AddAuthorApi(addauthordata)).then((res) => {
-        if (res.payload?.code === 201) {
+        if (res.payload?.code === 200) {
           setSuccessmessage(res.payload?.message);
           setErrormessg(null);
         } else {
@@ -169,7 +187,7 @@ const RegisterAuthor = () => {
             />
             {errorvalid?.birthday && <div className="text-danger">{errorvalid?.birthday}</div>}
           </div>
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <label className="form-label">
               {t("global.profile.register_book.fields.upload_image")}
             </label>
@@ -180,7 +198,7 @@ const RegisterAuthor = () => {
               onChange={(e)=>handleChange(e)}
             />
             {errorvalid?.profileImg && <div className="text-danger">{errorvalid?.profileImg}</div>}
-          </div>
+          </div> */}
           {successmessage && <div className="alert alert-success">{successmessage}</div>}
           {errormessg && <div className="alert alert-danger">{errormessg}</div>}
           <button

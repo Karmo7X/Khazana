@@ -33,7 +33,7 @@ export const AddAuthorApi = createAsyncThunk("Author/AddAuthor", async (authorda
         lang: lang,
         Authorization: `Bearer ${token}`,
         Accept: "*/*",
-        "Content-Type": "multipar/form-data",
+        // "Content-Type": "multipar/form-data",
 
       },
     });
