@@ -89,20 +89,26 @@ const Mylibrary = () => {
               ))}
             </div>
           </div>
-          <div className="d-flex align-items-center justify-content-center gap-3 w-100">
+          <div className="d-flex align-items-center justify-content-center gap-1 w-100">
           <div className="shop-button">
-            <a href={data?.product?.pdfFile} target="_blank" className="theme-btn">
+            <a href={'data?.product?.pdfFile'} target="_blank" style={{padding:'8px 18px', fontSize:'17px'}} className="theme-btn" >
               <i className="fa-solid fa-book-open"></i> {t("global.my_library.read")}
             </a>
           </div>
           {data?.product?.pdfAudio && (<>
           
-            <div className="shop-button">
-          <a href={data?.product?.pdfAudio} target="_blank" className="theme-btn">
-              <i className="fa-solid fa-book-open"></i> {t("global.my_library.listen")}
+          <div className="shop-button">
+        <a href={data?.product?.pdfAudio} target="_blank" style={{padding:'8px 18px', fontSize:'17px'}} className="theme-btn">
+            <i className="fa-solid fa-book-open"></i> {t("global.my_library.listen")}
+          </a>
+        </div>
+        </>)}
+          <div className="shop-button">
+            <a href={'#'} target="_blank" className="" style={{padding:'8px', width:'40px', fontSize:'25px'}} download={data?.product?.pdfFile?.split('/').pop()}>
+            <i className="fa-solid fa-download"></i>
             </a>
           </div>
-          </>)}
+       
         
           </div>
           
