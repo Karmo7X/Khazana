@@ -91,7 +91,7 @@ const Mylibrary = () => {
           </div>
           <div className="d-flex align-items-center justify-content-center gap-1 w-100">
           <div className="shop-button">
-            <a href={'data?.product?.pdfFile'} target="_blank" style={{padding:'8px 18px', fontSize:'17px'}} className="theme-btn" >
+            <a href={data?.product?.pdfFile} target="_blank" style={{padding:'8px 18px', fontSize:'17px'}} className="theme-btn" >
               <i className="fa-solid fa-book-open"></i> {t("global.my_library.read")}
             </a>
           </div>
