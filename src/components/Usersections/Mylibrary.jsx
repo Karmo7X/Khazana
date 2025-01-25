@@ -95,11 +95,15 @@ const Mylibrary = () => {
               <i className="fa-solid fa-book-open"></i> {t("global.my_library.read")}
             </a>
           </div>
-          <div className="shop-button">
+          {data?.product?.pdfAudio && (<>
+          
+            <div className="shop-button">
           <a href={data?.product?.pdfAudio} target="_blank" className="theme-btn">
               <i className="fa-solid fa-book-open"></i> {t("global.my_library.listen")}
             </a>
           </div>
+          </>)}
+        
           </div>
           
         </div>
