@@ -99,10 +99,10 @@ const Home = () => {
                     }}
                   ></h1>
                   <div className="form-clt wow fadeInUp" data-wow-delay=".9s">
-                    <button type="submit" className="theme-btn">
+                    <a href={`/Shop`} className="theme-btn">
                       {t("global.home.heroSection.shopNow")}{" "}
                       <i className="fa-solid fa-arrow-right-long"></i>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
