@@ -250,6 +250,8 @@
       "fields": {
         "author_name": "اسم المؤلف / المحقق",
         "gender": "النوع",
+        "Male": "ذكر",
+        "Female": "أنثى",
         "birth_date": "الميلاد",
         "previous_works": "اعمال سابقه",
         "notes": "ملاحظات"
@@ -359,7 +361,7 @@
       "success_message": "تم إلغاء اشتراكك بنجاح.",
       "error_message": "حدث خطأ أثناء إلغاء اشتراكك. يرجى المحاولة مرة أخرى."
     },
-    "upgrade_subscription":"ترقية الاشتراك",
+    "upgrade_subscription": "ترقية الاشتراك",
     "subscription": "اشتراك"
   },
   "notfoundmessage": {
@@ -379,8 +381,9 @@
       "audiobooks": "الكتب المسموعة"
     },
     "books": "الكتب",
-    "buyPhysicalBook": "شراء كتاب ورقي",
-    "buyPdf": "شراء PDF"
+    "buyPhysicalBook": "اضافه الي السله كتاب ورقي",
+    "buyPdf": "اضافة الي السله  PDF"
+  
   },
   "cart": {
     "product": "المنتج",

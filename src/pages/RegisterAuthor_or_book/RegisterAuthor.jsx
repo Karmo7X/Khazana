@@ -170,8 +170,8 @@ const RegisterAuthor = () => {
               onChange={(e)=>handleChange(e)}
             >
               <option value="">{t("global.profile.register_author.fields.gender")}</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="male">{t("global.profile.register_author.fields.Male")}</option>
+              <option value="female">{t("global.profile.register_author.fields.Female")}</option>
             </select>
             {errorvalid?.gender && <div className="text-danger">{errorvalid?.gender}</div>}
           </div>

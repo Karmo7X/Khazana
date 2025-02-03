@@ -14,6 +14,7 @@ const RegisterBook = () => {
     DateOfPublication: "",
     image: null,
   });
+  console.log(addbookdata)
   const [errorvalid, setErrorvalid] = useState();
   const [errormessg, setErrormessg] = useState(null);
   const [successmessage, setSuccessmessage] = useState();
@@ -54,7 +55,7 @@ const RegisterBook = () => {
     }
 
     // Publisher: Only alphabetic characters and spaces allowed
-    if (!data.title.trim() || data.title.length < 5) {
+    if (!data.publisher.trim() || data.publisher.length < 5) {
       errors.publisher = t(
         "global.validation_message.register_book.publisher_invalid"
       );

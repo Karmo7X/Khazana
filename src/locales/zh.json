@@ -248,6 +248,8 @@
       "fields": {
         "author_name": "作者/调查员姓名",
         "gender": "性别",
+        "Male": "男",
+        "Female": "女",
         "birth_date": "出生日期",
         "previous_works": "过往作品",
         "notes": "备注"
@@ -259,19 +261,19 @@
       "title": "我的计划"
     },
     "order": {
-    "title": "我的订单", 
-    "total": "订单总额",
-    "amount": "400.00 沙特里亚尔",
-    "date": "2023年8月31日",
-    "orderId": "订单号",
-    "orderNumber": "898522",
-    "product": "伊本·盖伊姆的药物和药物",
-    "coupon": "优惠券",
-    "delivery": "配送",
-    "more": "更多"
-  }
+      "title": "我的订单",
+      "total": "订单总额",
+      "amount": "400.00 沙特里亚尔",
+      "date": "2023年8月31日",
+      "orderId": "订单号",
+      "orderNumber": "898522",
+      "product": "伊本·盖伊姆的药物和药物",
+      "coupon": "优惠券",
+      "delivery": "配送",
+      "more": "更多"
+    }
   },
- "my_library": {
+  "my_library": {
     "read": "阅读",
     "listen": "听"
   },
@@ -350,15 +352,15 @@
   "subcription_title": {
     "choosePlan": "选择适合您目标的计划",
     "cancel_subscription": {
-    "title": "取消订阅",
-    "description": "您确定要取消订阅吗？您将失去对高级功能的访问权限。",
-    "confirm_button": "是的，取消",
-    "cancel_button": "不，保留订阅",
-    "success_message": "您的订阅已成功取消。",
-    "error_message": "取消订阅时发生错误。请再试一次。"
-  },
-  "upgrade_subscription":"升级订阅",
-  "subscription":"订阅"
+      "title": "取消订阅",
+      "description": "您确定要取消订阅吗？您将失去对高级功能的访问权限。",
+      "confirm_button": "是的，取消",
+      "cancel_button": "不，保留订阅",
+      "success_message": "您的订阅已成功取消。",
+      "error_message": "取消订阅时发生错误。请再试一次。"
+    },
+    "upgrade_subscription": "升级订阅",
+    "subscription": "订阅"
   },
   "notfoundmessage": {
     "notFound": "目前没有数据"
@@ -377,8 +379,8 @@
       "audiobooks": "有声书"
     },
     "books": "书籍",
-    "buyPhysicalBook": "购买纸质书",
-    "buyPdf": "购买PDF"
+    "buyPhysicalBook": "加入购物车 - 纸质书",
+    "buyPdf": "加入购物车 - PDF"
   },
   "cart": {
     "product": "产品",
@@ -399,7 +401,7 @@
     "category": "类别",
     "status": "产品状态",
     "price": "按价格筛选",
-    "allcategories":"所有类别",
+    "allcategories": "所有类别",
     "min": "最小值",
     "max": "最大值",
     "options": {
@@ -409,54 +411,53 @@
       "top_sales_paper": "最畅销: 纸质",
       "top_rating": "最高评分"
     },
-     "show_less": "显示较少",
-      "show_more": "显示更多"
+    "show_less": "显示较少",
+    "show_more": "显示更多"
   },
-  "author_details":{
+  "author_details": {
     "header": "关于作者",
-  "authorInfo": {
-    "phone": "电话",
-    "birthday": "生日"
-  },
-  "featuredWorks": "特色作品",
-  "previousWorks": "以往作品"
-},
-"rate":{
-  "rate_product": "评价产品",
-  "please_rate": "请评价产品",
-  "write_comment": "写评论",
-  "submit_rating": "提交评价"
-},
-"checkout":{
-  "breadcrumb": {
-    "heading": "结账",
-    "home": "首页",
-    "current": "结账"
-  },
-  "checkoutSection": {
-    "orderTitle": "您的订单",
-    "product": "产品",
-    "subtotal": "小计",
-    "shipping": "运费",
-    "chooseAsShippingAddress": "选择为送货地址",
-    "freeShipping": "免费送货",
-    "localShipping": "本地: ",
-    "flatRate": "固定费率: ",
-    "total": "总计",
-    "paymentMethods": {
-      "bankTransfer": "直接银行转账",
-      "cashOnDelivery": "货到付款",
-      "visaOrCard": "Visa 或卡"
+    "authorInfo": {
+      "phone": "电话",
+      "birthday": "生日"
     },
-    "paymentNote": "请直接付款到我们的银行账户。请使用您的订单编号作为付款参考。您的订单将在资金入账后发货。"
+    "featuredWorks": "特色作品",
+    "previousWorks": "以往作品"
   },
-   "payment": "支付"
-  
-},
-"modal": {
-  "thanks": "谢谢!",
-  "purchaseMessage": "成功了！你刚刚开启了知识的世界 📚✨。享受这本书带来的新冒险，别忘了与他人分享阅读的喜悦！",
-  "close": "关闭",
- "saveChanges": "返回首页"
-}
+  "rate": {
+    "rate_product": "评价产品",
+    "please_rate": "请评价产品",
+    "write_comment": "写评论",
+    "submit_rating": "提交评价"
+  },
+  "checkout": {
+    "breadcrumb": {
+      "heading": "结账",
+      "home": "首页",
+      "current": "结账"
+    },
+    "checkoutSection": {
+      "orderTitle": "您的订单",
+      "product": "产品",
+      "subtotal": "小计",
+      "shipping": "运费",
+      "chooseAsShippingAddress": "选择为送货地址",
+      "freeShipping": "免费送货",
+      "localShipping": "本地: ",
+      "flatRate": "固定费率: ",
+      "total": "总计",
+      "paymentMethods": {
+        "bankTransfer": "直接银行转账",
+        "cashOnDelivery": "货到付款",
+        "visaOrCard": "Visa 或卡"
+      },
+      "paymentNote": "请直接付款到我们的银行账户。请使用您的订单编号作为付款参考。您的订单将在资金入账后发货。"
+    },
+    "payment": "支付"
+  },
+  "modal": {
+    "thanks": "谢谢!",
+    "purchaseMessage": "成功了！你刚刚开启了知识的世界 📚✨。享受这本书带来的新冒险，别忘了与他人分享阅读的喜悦！",
+    "close": "关闭",
+    "saveChanges": "返回首页"
+  }
 }

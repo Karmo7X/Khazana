@@ -388,7 +388,7 @@ const Home = () => {
                                 <li className="author-list">
                                   <span className="thumb">
                                     <img
-                                      style={{ width: "30px" }}
+                                      style={{ width: "30px" ,margin:"10px" }}
                                       src={
                                         book?.author?.profileImg ||
                                         "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
@@ -462,7 +462,7 @@ const Home = () => {
                     <li className="author-list">
                       <span className="thumb">
                         <img
-                          style={{ width: "30px" }}
+                          style={{ width: "40px",height:"40px" }}
                           src={
                             book?.author?.profileImg ||
                             "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"

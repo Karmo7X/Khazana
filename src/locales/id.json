@@ -249,6 +249,8 @@
       "fields": {
         "author_name": "Nama Penulis / Penyelidik",
         "gender": "Jenis Kelamin",
+        "Male": "Laki-laki",
+        "Female": "Perempuan",
         "birth_date": "Tanggal Lahir",
         "previous_works": "Karya Sebelumnya",
         "notes": "Catatan"
@@ -360,8 +362,8 @@
       "success_message": "Langganan Anda berhasil dibatalkan.",
       "error_message": "Terjadi kesalahan saat membatalkan langganan Anda. Silakan coba lagi."
     },
-    "upgrade_subscription":"Tingkatkan Langganan",
-     "subscription":"berlangganan"
+    "upgrade_subscription": "Tingkatkan Langganan",
+    "subscription": "berlangganan"
   },
   "notfoundmessage": {
     "notFound": "Saat ini tidak ada data"
@@ -380,8 +382,8 @@
       "audiobooks": "Buku Audio"
     },
     "books": "Buku",
-    "buyPhysicalBook": "Beli Buku Fisik",
-    "buyPdf": "Beli PDF"
+     "buyPhysicalBook": "Tambahkan ke keranjang - Buku Fisik",
+  "buyPdf": "Tambahkan ke keranjang - PDF"
   },
   "cart": {
     "product": "Produk",
@@ -401,7 +403,7 @@
     "search": "Kata Kunci Pencarian",
     "category": "Kategori",
     "status": "Status Produk",
-    "allcategories":"Semua Kategori",
+    "allcategories": "Semua Kategori",
     "price": "Filter Berdasarkan Harga",
     "min": "min",
     "max": "max",

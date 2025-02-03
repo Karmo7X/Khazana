@@ -109,7 +109,7 @@
     "sectionTitle": "Latest Books",
     "exploreMore": "Explore More",
     "top_books": {
-      "khazanaTopBooks":"The Best-Selling Books",
+      "khazanaTopBooks": "The Best-Selling Books",
       "exploreMore": "Explore More",
       "findYourNextBooks": "Find Your Next Books!",
       "discountOffer": "And get your 25% discount now!",
@@ -133,15 +133,16 @@
       { "text": "Shop Details", "url": "/shop-details" }
     ],
     "description": "Shop Details: Dive into the details of your favorite store, where every product tells a unique story."
+    ,"related_products": {
+      "title": "Related Products",
+      "description": "Delve deeper into our collection of handpicked products that perfectly complement your taste. Each selection is curated with care, just for you—explore what catches your eye and elevate your experience!"
+    }
   },
   "shop_discovery": {
     "title": "Discover Our Shop",
     "breadcrumb": "Shop",
-    "description": "Explore our wide range of products, each selected with care to provide you the best shopping experience.",
-    "related_products": {
-      "title": "Related Products",
-      "description": "Delve deeper into our collection of handpicked products that perfectly complement your taste. Each selection is curated with care, just for you—explore what catches your eye and elevate your experience!"
-    }
+    "description": "Explore our wide range of products, each selected with care to provide you the best shopping experience."
+   
   },
   "cta": {
     "ctaTitle": "Get 25% discount in all <br />  kinds of super Selling",
@@ -248,6 +249,8 @@
       "fields": {
         "author_name": "Author / Investigator Name",
         "gender": "Gender",
+        "Male": "Male",
+        "Female": "Female",
         "birth_date": "Birth Date",
         "previous_works": "Previous Works",
         "notes": "Notes"
@@ -259,7 +262,7 @@
       "title": "My Plan"
     },
     "order": {
-      "title": "My Order", 
+      "title": "My Order",
       "total": "Total Amount",
       "amount": "400.00 SAR",
       "date": "August 31, 2023",
@@ -319,18 +322,17 @@
     "buildNumber": {
       "required": "Building number is required.",
       "pattern": "Building number must contain only numbers."
-    }, 
+    },
     "genderRequired": {
       "required": "Gender is required"
     },
     "register_book": {
       "title_required": "The book title must be at least 3 characters long.",
-    "author_invalid": "Author name must contain only letters and spaces.",
-    "publisher_invalid": "Publisher name must contain only letters and spaces.",
-    "date_invalid": "Invalid date format",
-    "image_invalid": "Invalid image format. Use .jpg, .jpeg, .png, or .gif.",
-    "image_required": "Profile Image is required"
-    
+      "author_invalid": "Author name must contain only letters and spaces.",
+      "publisher_invalid": "Publisher name must contain only letters and spaces.",
+      "date_invalid": "Invalid date format",
+      "image_invalid": "Invalid image format. Use .jpg, .jpeg, .png, or .gif.",
+      "image_required": "Profile Image is required"
     }
   },
   "privacy_title": {
@@ -351,15 +353,15 @@
   "subcription_title": {
     "choosePlan": "Choose a plan that suits your goal",
     "cancel_subscription": {
-    "title": "Cancel Subscription",
-    "description": "Are you sure you want to cancel your subscription? You will lose access to premium features.",
-    "confirm_button": "Yes, Cancel",
-    "cancel_button": "No, Keep Subscription",
-    "success_message": "Your subscription has been successfully canceled.",
-    "error_message": "An error occurred while canceling your subscription. Please try again."
-  },
-  "upgrade_subscription":"Upgrade Subscription",
-  "subscription":"subscription"
+      "title": "Cancel Subscription",
+      "description": "Are you sure you want to cancel your subscription? You will lose access to premium features.",
+      "confirm_button": "Yes, Cancel",
+      "cancel_button": "No, Keep Subscription",
+      "success_message": "Your subscription has been successfully canceled.",
+      "error_message": "An error occurred while canceling your subscription. Please try again."
+    },
+    "upgrade_subscription": "Upgrade Subscription",
+    "subscription": "subscription"
   },
   "notfoundmessage": {
     "notFound": "No data available currently"
@@ -369,39 +371,38 @@
     "available_paper": "Available Paper",
     "available_pdf": "Available PDF",
     "tabs": {
-    "description": "Description",
-    "additional_information": "Additional Information",
-    "reviews": "Reviews"
+      "description": "Description",
+      "additional_information": "Additional Information",
+      "reviews": "Reviews"
+    },
+    "filter": {
+      "read_books": "Read Books",
+      "audiobooks": "Audiobooks"
+    },
+    "books": "Books",
+     "buyPhysicalBook": "Add to cart - Physical Book",
+  "buyPdf": "Add to cart - PDF"
+  },
+  "cart": {
+    "product": "Product",
+    "price": "Price",
+    "quantity": "Quantity",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "shipping": "Shipping",
+    "proceed_to_checkout": "Proceed to Checkout",
+    "clear_cart": "Clear Cart",
+    "pdf_price": "PDF Price",
+    "paper_price": "Paper Price"
   },
   "filter": {
-    "read_books": "Read Books",
-    "audiobooks": "Audiobooks"
-  },
-  "books": "Books",
-  "buyPhysicalBook": "Buy a Physical Book",
-  "buyPdf": "Buy PDF"
-  
-},
-"cart":{
-  "product": "Product",
-  "price": "Price",
-  "quantity": "Quantity",
-  "subtotal": "Subtotal",
-  "total": "Total",
-  "shipping": "Shipping",
-  "proceed_to_checkout": "Proceed to Checkout",
-  "clear_cart": "Clear Cart",
-  "pdf_price": "PDF Price",
-  "paper_price": "Paper Price"
-},
-"filter": {
     "label": "Filter By",
-     "result": "Showing 1-3 Of 34 Results",
-     "search": "Search Word",
+    "result": "Showing 1-3 Of 34 Results",
+    "search": "Search Word",
     "category": "Category",
     "status": "Product Status",
     "price": "Filter By Price",
-    "allcategories":"All Categories",
+    "allcategories": "All Categories",
     "min": "min",
     "max": "max",
     "options": {
@@ -411,50 +412,50 @@
       "top_sales_paper": "Top Sales: Paper",
       "top_rating": "Top Rating"
     },
-    "show_less":"Show less",
-    "show_more":"Show More"
+    "show_less": "Show less",
+    "show_more": "Show More"
   },
-  "author_details":{
-   "header": "About the Author",
-  "authorInfo": {
-    "phone": "Phone",
-    "birthday": "Birthday"
-  },
-  "featuredWorks": "Featured Works",
-  "previousWorks": "Previous Works"
-},
-"rate":{
- "rate_product": "Rate the product",
-  "please_rate": "Please rate the product",
-  "write_comment": "Write a comment",
-  "submit_rating": "Submit Rating"
-},
-"checkout":{
-  "breadcrumb": {
-    "heading": "Checkout",
-    "home": "Home",
-    "current": "Checkout"
-  },
-  "checkoutSection": {
-    "orderTitle": "Your Order",
-    "product": "Product",
-    "subtotal": "Subtotal",
-    "shipping": "Shipping",
-    "freeShipping": "Free Shipping",
-    "chooseAsShippingAddress": "Choose as Shipping Address",
-    "localShipping": "Local: ",
-    "flatRate": "Flat rate: ",
-    "total": "Total",
-    "paymentMethods": {
-      "bankTransfer": "Direct bank transfer",
-      "cashOnDelivery": "Cash on delivery",
-     "visaOrCard": "Visa or Card"
+  "author_details": {
+    "header": "About the Author",
+    "authorInfo": {
+      "phone": "Phone",
+      "birthday": "Birthday"
     },
-    "paymentNote": "Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account."
+    "featuredWorks": "Featured Works",
+    "previousWorks": "Previous Works"
   },
-  "payment": "Pay"
-},
-"modal": {
+  "rate": {
+    "rate_product": "Rate the product",
+    "please_rate": "Please rate the product",
+    "write_comment": "Write a comment",
+    "submit_rating": "Submit Rating"
+  },
+  "checkout": {
+    "breadcrumb": {
+      "heading": "Checkout",
+      "home": "Home",
+      "current": "Checkout"
+    },
+    "checkoutSection": {
+      "orderTitle": "Your Order",
+      "product": "Product",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "freeShipping": "Free Shipping",
+      "chooseAsShippingAddress": "Choose as Shipping Address",
+      "localShipping": "Local: ",
+      "flatRate": "Flat rate: ",
+      "total": "Total",
+      "paymentMethods": {
+        "bankTransfer": "Direct bank transfer",
+        "cashOnDelivery": "Cash on delivery",
+        "visaOrCard": "Visa or Card"
+      },
+      "paymentNote": "Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account."
+    },
+    "payment": "Pay"
+  },
+  "modal": {
     "thanks": "Thank You!",
     "purchaseMessage": "Success! You've just unlocked a world of knowledge 📚✨. Enjoy your new adventure with this book, and don't forget to share the joy of reading!",
     "close": "Close",
