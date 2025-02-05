@@ -55,7 +55,9 @@ const Home = () => {
 
   return (
     <>
-      {/* <!-- Hero Section start  --> */}
+    <div style={{minHeight:'100vh'}}>
+
+       {/* <!-- Hero Section start  --> */}
       <div class="hero-section hero-1 fix">
         <div class="container">
           <div className="row">
@@ -519,6 +521,8 @@ const Home = () => {
 
       {/* <!-- Top Ratting Book Section start  --> */}
       <TopRate data={books.slice(0, 20)} />
+    </div>
+     
     </>
   );
 };

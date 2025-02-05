@@ -6,7 +6,7 @@ import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 const ResetPassword = ({ phonenumber }) => {
-  const { t } = useTranslation();
+  const { t , i18n} = useTranslation();
  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     phone: phonenumber,

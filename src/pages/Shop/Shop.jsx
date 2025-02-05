@@ -69,7 +69,7 @@ const Shop = () => {
                   <Link to="/">{t("global.nav.home")}</Link>
                 </li>
                 <li>
-                  <i className="fa-solid fa-chevron-right"></i>
+                  <i className={`fa-solid ${i18n.language === "ar" ? "fa-chevron-left":"fa-chevron-right"}`}></i>
                 </li>
                 <li>{t("global.shop_discovery.breadcrumb")}</li>
               </ul>

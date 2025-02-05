@@ -12,7 +12,7 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from "react-phone-number-input";
 
 const Login = ({ showmodal }) => {
-  const { t } = useTranslation();
+  const { t , i18n} = useTranslation();
   const [formdata, setFormdata] = useState({
     phone: "",
     password: "",

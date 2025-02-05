@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AddProductApi } from "../../Api/Product/Product";
 
 const RegisterBook = () => {
-  const { t } = useTranslation();
+  const { t , i18n} = useTranslation();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.product.status);
   const [addbookdata, setAddbookdata] = useState({

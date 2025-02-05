@@ -23,7 +23,7 @@ import PhoneInput from "react-phone-number-input";
 
 const Register = ({ showmodalregist }) => {
   const animatedComponents = makeAnimated();
-  const { t } = useTranslation();
+  const { t , i18n} = useTranslation();
   const loading = useSelector((state) => state.auth.status);
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);

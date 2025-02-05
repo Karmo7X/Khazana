@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ResendCodeApi, VerifyPhoneApi } from "../../Api/Auth/AuthSlice";
 import Cookies from "js-cookie";
 const OTP = ({ phonenum }) => {
-  const { t } = useTranslation();
+  const { t , i18n} = useTranslation();
   const loading = useSelector((state) => state.auth.status);
   const [otp, setOtp] = useState(new Array(4).fill(""));
   const [timer, setTimer] = useState(30); // Countdown time in seconds

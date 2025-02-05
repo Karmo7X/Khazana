@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { GetCategoryApi } from '../Api/Category/CategorySlice';
 import { GetAboutApi } from '../Api/App/App';
 const Footer = () => {
-  const { t } = useTranslation();  // Assuming you're using i18next
+  const { t , i18n} = useTranslation();  // Assuming you're using i18next
   const dispatch = useDispatch();
   const [category, setCategory] = useState([]);
   const [about,setAbout]=useState()

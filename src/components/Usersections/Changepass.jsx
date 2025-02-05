@@ -7,7 +7,7 @@ import { IoIosEyeOff } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { ChangeUserpassApi } from "../../Api/User/UserSlice";
 const Changepass = () => {
-  const { t } = useTranslation();
+  const { t , i18n} = useTranslation();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.user.status);
    const [formData, setFormData] = useState({

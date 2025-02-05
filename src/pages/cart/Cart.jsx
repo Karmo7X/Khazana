@@ -68,7 +68,7 @@ const Cart = () => {
                   <a href="/">{t("global.nav.home")}</a>
                 </li>
                 <li>
-                  <i class="fa-solid fa-chevron-right"></i>
+                  <i className={`fa-solid ${i18n.language === "ar" ? "fa-chevron-left":"fa-chevron-right"}`}></i>
                 </li>
                 <li>{t("global.nav.cart")}</li>
               </ul>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AddAuthorApi } from "../../Api/Authors/AuthorsSlice";
 
 const RegisterAuthor = () => {
-  const { t } = useTranslation();
+  const { t , i18n} = useTranslation();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.authors.status);
   const [addauthordata, setAddauthordata] = useState({

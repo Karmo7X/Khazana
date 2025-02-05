@@ -6,7 +6,7 @@ import { ResendCodeApi, VerifyCodeApi, VerifyPhoneApi } from "../../Api/Auth/Aut
 import Cookies from "js-cookie";
 import ResetPassword from "./Restpassword";
 const OTPForgetpass = ({ phonenum }) => {
-  const { t } = useTranslation();
+  const { t , i18n} = useTranslation();
   const loading = useSelector((state) => state.auth.status);
   const [otp, setOtp] = useState(new Array(4).fill(""));
   const [timer, setTimer] = useState(30); // Countdown time in seconds

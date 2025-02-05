@@ -7,7 +7,7 @@ import Wishlistcomponent from "../../components/wishlist/Wishlistcomponent";
 import Notfound from "../../components/Notfound/Notfound";
 import bookundefine from '../../../public/assets/img/bookundefine.jpg'
 const Wishlist = () => {
-    const { t } = useTranslation();
+    const { t , i18n} = useTranslation();
     const dispatch = useDispatch();
     const loading = useSelector((state) => state.user.status);
     const [wishlist,setWishlist]=useState([])
@@ -40,7 +40,7 @@ const Wishlist = () => {
                             </a>
                         </li>
                         <li>
-                            <i class="fa-solid fa-chevron-right"></i>
+                            <i className={`fa-solid ${i18n.language === "ar" ? "fa-chevron-left":"fa-chevron-right"}`}></i>
                         </li>
                         <li>
                         {t("global.nav.wishlist")}
